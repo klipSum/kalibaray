@@ -20,6 +20,7 @@
                     // //////////////////////////////////////////////////
 
                         var navItemsStringCollector = ""
+                        var navItemLinksStringCollector = ""
                         var navTitleStringCollector = ""
 
                     // NAV BAR NUMBER SELECTOR xxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -40,8 +41,8 @@
                     // NAV BAR MENU ITEMS SIZING SETTINGS xxxxxxxxxxxxxxx
                     // //////////////////////////////////////////////////
 
-                        var getNavBarDesktopTitleItemsSizing = "40%"
-                        var getNavBarDesktopMenuItemsSizing = "60%"
+                        var getNavBarLogoAndTitleSideSizing = "50%"
+                        var getNavBarMenuItemsSideSizing = "50%"
 
                     // NAV BAR MENU ITEMS DISPLAY SETTINGS xxxxxxxxxxxxxx
                     // //////////////////////////////////////////////////
@@ -107,6 +108,7 @@
 
                 var storeNavBarItems = []
                 var storeNavBarTitle = []
+                var storeNavBarItemLinks = []
                 var storeNavBarItemsClassNames = []
                 var storeNavBarMobileClickersClassNames = []
 
@@ -132,7 +134,7 @@
 
                     var storeNavBarThemeBackground = [
 
-                        "#B35151"
+                        "#B35151", "#DF7cDF", "#2824C9", "#FEAB3D", "#86fe3d"
 
                     ]
 
@@ -207,10 +209,10 @@
             // BUILD ELEMENTS FOR NAV BAR OPTION ONE ------------------------
             // //////////////////////////////////////////////////////////////
 
-                // GET NAV BAR TITLE FROM TEXT DOC //////////////////////////
+                // GET NAV BAR ITEMS FROM TEXT DOC //////////////////////////
                 // //////////////////////////////////////////////////////////
 
-                    function getNavBarTitleTextItemFromTextDoc () {
+                    function getNavBarItemsFromTextDoc () {
 
                         // RUN FETCH FROM TEXT DOC --------------------------
                         // //////////////////////////////////////////////////
@@ -272,12 +274,54 @@
                                 
                                 })
 
+
+
+
+
+
+
+
+
+                        // RUN AUTO RUN FUNCTIONS AFTER DELAY ---------------
+                        // //////////////////////////////////////////////////
+
+                            setTimeout(() => {
+
+
+
+                                // RUN SIZE DETECTION -----------------------
+                                // //////////////////////////////////////////
+                    
+                                    detectCurrentWindowSize()
+                    
+                                // RUN LIVING BAR ---------------------------
+                                // //////////////////////////////////////////
+                                    
+                                    detectLivingBar()
+                    
+                                // RUN LIVING HEADER SECTION ----------------
+                                // //////////////////////////////////////////
+                    
+                                    detectHeaderSection()
+
+
+                                
+                            }, 200);
+
+
+
+
+
+
                     }
 
 
 
 
-                    function getNavBarItemsFromTextDoc () {
+                // GET NAV BAR TITLE FROM TEXT DOC //////////////////////////
+                // //////////////////////////////////////////////////////////
+
+                    function getNavBarTitleTextItemFromTextDoc () {
 
                         // RUN FETCH FROM TEXT DOC --------------------------
                         // //////////////////////////////////////////////////
@@ -316,6 +360,82 @@
                                 
                                 })
 
+
+                    }
+
+
+
+                    
+
+                // GET NAV BAR MENU ITEM LINKS FROM TEXT DOC ////////////////
+                // //////////////////////////////////////////////////////////
+
+                    function getNavBarItemLinksFromTextDoc () {
+
+                        // RUN FETCH FROM TEXT DOC --------------------------
+                        // //////////////////////////////////////////////////
+
+                            // FETCH DOC AND STORE IN TEMP MEMORY xxxxxxxxxxx
+                            // //////////////////////////////////////////////
+
+
+                                fetch("dox/navBarTexts/navOneTexts/navBarOneItemLinksText.txt")
+                                .then(res => res.text())
+                                .then((text) => {
+
+
+                                    // SET TEXT TO STRING AND MAKE READY FOR SPLITS
+                                    // //////////////////////////////////////
+
+                                        navItemLinksStringCollector = text
+
+
+                                            // CHECK IF TEXT CAPTURE IS EMPTY
+                                            // //////////////////////////////
+
+                                                if ( navItemLinksStringCollector == "" ) {
+
+                                                    for ( navBarDummyPopulate = 0; navBarDummyPopulate < 5; navBarDummyPopulate++ ) {
+            
+                                                        storeNavBarItemLinks.push(`item${classNumberMapper[navBarDummyPopulate]}`)
+            
+                                                    }
+
+                                                }
+
+                                            // AND IF TEXT CAPTURE HAS ITEMS
+                                            // //////////////////////////////
+
+                                                else {
+
+                                                    // FIRST EMPTY UP NAV BAR STORAGE ARRAY
+                                                    // //////////////////////
+
+                                                        storeNavBarItemLinks = []
+
+                                                    // THEN POPULATE NAV BAR ITEMS ARRAY
+                                                    // //////////////////////
+
+                                                        var navBarItemLinksSplits = navItemLinksStringCollector.split(",").length
+                                                        var navBarItemLinksSplitsFilter = navItemLinksStringCollector.split(",")
+                
+                                                        for ( navBarItemLinksCounter = 0; navBarItemLinksCounter < navBarItemLinksSplits; navBarItemLinksCounter++ ) {
+                
+                                                            storeNavBarItemLinks.push(navBarItemLinksSplitsFilter[navBarItemLinksCounter])
+                
+                                                        }
+
+                                                }
+
+
+
+                                
+                                })
+
+
+
+
+                            
 
                     }
 
@@ -578,9 +698,7 @@
                     // //////////////////////////////////////////////////////
 
                         var windowWidth = window.innerWidth
-
-
-
+                        
 
                         // CHECK IF WINDOW IS IN SIZE xxxxxxxxxxxxxxxxxxxxxxx
                         // //////////////////////////////////////////////////
@@ -597,6 +715,19 @@
 
                                             screenWidthSelector = "200px"
                                             screenWidthResizerSelector = "176px"
+
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "80%"
+                                            getNavBarMenuItemsSideSizing = "20%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "none"
+                                            getNavBarMobileMenuItemsSetting = "inline-table"
 
                                                     
 
@@ -617,6 +748,19 @@
                                             screenWidthSelector = "200px"
                                             screenWidthResizerSelector = "176px"
 
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "80%"
+                                            getNavBarMenuItemsSideSizing = "20%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "none"
+                                            getNavBarMobileMenuItemsSetting = "inline-table"
+
                                                     
 
                                 }
@@ -633,6 +777,19 @@
 
                                             screenWidthSelector = "300px"
                                             screenWidthResizerSelector = "276px"
+
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "80%"
+                                            getNavBarMenuItemsSideSizing = "20%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "none"
+                                            getNavBarMobileMenuItemsSetting = "inline-table"
 
                                                     
 
@@ -651,6 +808,19 @@
                                             screenWidthSelector = "600px"
                                             screenWidthResizerSelector = "576px"
 
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "40%"
+                                            getNavBarMenuItemsSideSizing = "60%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "inline-table"
+                                            getNavBarMobileMenuItemsSetting = "none"
+
                                                     
 
                                 }
@@ -668,6 +838,19 @@
                                             screenWidthSelector = "800px"
                                             screenWidthResizerSelector = "776px"
 
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "30%"
+                                            getNavBarMenuItemsSideSizing = "70%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "inline-table"
+                                            getNavBarMobileMenuItemsSetting = "none"
+
                                                     
 
                                 }
@@ -684,6 +867,19 @@
 
                                             screenWidthSelector = "800px"
                                             screenWidthResizerSelector = "776px"
+
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "30%"
+                                            getNavBarMenuItemsSideSizing = "70%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "inline-table"
+                                            getNavBarMobileMenuItemsSetting = "none"
 
                                                     
 
@@ -738,13 +934,90 @@
 
 
 
+                            // CREATE MAIN NAV BAR PLATE ELEMENT AND RESIZER 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateOneMainElement = document.createElement("div")
+                                navBarPlateOneMainElement.className = `navBarOnePlateElementContainer`
+
+                                    var navBarPlateOneElementResizer = document.createElement("div")
+                                    navBarPlateOneElementResizer.className = `navBarOnePlateElementResizer`
 
 
-                                        var navBarPlateOneMainElement = document.createElement("div")
-                                        navBarPlateOneMainElement.className = `navBarOnePlateElementContainer`
 
-                                            var navBarPlateOneElementResizer = document.createElement("div")
-                                            navBarPlateOneElementResizer.className = `navBarOnePlateElementResizer`
+
+
+                            // CREATE MAIN NAV BAR LOGO AND MENU ITEMS SIDES
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateOneLogoTitleSide = document.createElement("div")
+                                navBarPlateOneLogoTitleSide.className = `navBarOnePlateElementLogoTitleSideContainer`
+
+                                var navBarPlateOneDesktopMenuItemsSide = document.createElement("div")
+                                navBarPlateOneDesktopMenuItemsSide.className = `navBarOnePlateElementDesktopMenuItemsSideContainer`
+
+                                var navBarPlateOneMobileMenuItemsSide = document.createElement("div")
+                                navBarPlateOneMobileMenuItemsSide.className = `navBarOnePlateElementMobileMenuItemsSideContainer`
+
+
+
+
+
+                            // CREATE NAV BAR LOGO AND TITLE ITEMS xxxxxx
+                            // //////////////////////////////////////////
+
+                                var createNavBarLogoContainer = document.createElement("div")
+                                createNavBarLogoContainer.className = `navBarOneLogoContainer`
+
+                                    var createNavBarLogoActual = document.createElement("div")
+                                    createNavBarLogoActual.className = `navBarOneLogoActual`
+
+
+                                
+                                var createNavBarTitleContainer = document.createElement("div")
+                                createNavBarTitleContainer.className = `navBarOneTitleContainer`
+
+                                    var createNavBarTitleActual = document.createElement("div")
+                                    createNavBarTitleActual.className = `navBarOneTitleActual`
+
+
+
+
+
+
+                            // CREATE NAV BAR MENU ITEMS MOBILE xxxxxxxxx
+                            // //////////////////////////////////////////
+
+                                var createNavBarMenuItemsMobileButtonContainer = document.createElement("div")
+                                createNavBarMenuItemsMobileButtonContainer.className = `navBarOneMenuItemsButtonContainer`
+
+                                    var createNavBarMenuItemsMobileButtonIconMover = document.createElement("div")
+                                    createNavBarMenuItemsMobileButtonIconMover.className = `navBarOneMenuItemsButtonIconMover`
+
+
+
+                                        var createNavBarMenuItemsmobileButtonIconLineOne = document.createElement("div")
+                                        createNavBarMenuItemsmobileButtonIconLineOne.className = `navBarOneMenuItemsButtonIconLineOne`
+
+                                        var createNavBarMenuItemsmobileButtonIconLineTwo = document.createElement("div")
+                                        createNavBarMenuItemsmobileButtonIconLineTwo.className = `navBarOneMenuItemsButtonIconLineTwo`
+
+                                        var createNavBarMenuItemsmobileButtonIconLineThree = document.createElement("div")
+                                        createNavBarMenuItemsmobileButtonIconLineThree.className = `navBarOneMenuItemsButtonIconLineThree`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -761,33 +1034,18 @@
                             // STYLE MAIN NAV BAR PLATE AND ELEMENTS ========
                             // //////////////////////////////////////////////
 
-                                navBarPlateOneMainContainer.style = `
-                                
-                                    width:100%;
-                                    top:0;
-                                    left:0;
-                                    right:0;
-                                    margin:0px auto;
-                                    z-index:2;
-                                    position:fixed;
-                                    transition:all 600ms ease;
-                                    -webkit-transition:all 600ms ease;
-                                    -moz-transition:all 600ms ease;
-                                    -o-transition:all 600ms ease;
-                                    -ms-transition:all 600ms ease;
+                                // STYLE MAIN NAV BAR ELEMENTS xxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
 
-                                `
-
-                                    navBarPlateOneMainBlocker.style = `
+                                    navBarPlateOneMainContainer.style = `
                                     
                                         width:100%;
-                                        height:50px;
                                         top:0;
                                         left:0;
                                         right:0;
                                         margin:0px auto;
+                                        z-index:2;
                                         position:fixed;
-                                        background:${storeNavBarThemeBackground[0]};
                                         transition:all 600ms ease;
                                         -webkit-transition:all 600ms ease;
                                         -moz-transition:all 600ms ease;
@@ -796,18 +1054,16 @@
 
                                     `
 
-                                        navBarPlateOneMainElement.style = `
+                                        navBarPlateOneMainBlocker.style = `
                                         
-                                            width:${screenWidthSelector};
-                                            top:20px;
+                                            width:100%;
+                                            height:50px;
+                                            top:0;
                                             left:0;
                                             right:0;
                                             margin:0px auto;
-                                            padding:10px 0px;
-                                            position:absolute;
-                                            background:#FFFFFF;
-                                            border-radius:1000px;
-                                            box-shadow:0px 30px 30px -10px rgba(0,0,0,0.2);
+                                            position:fixed;
+                                            background:${storeNavBarThemeBackground[0]};
                                             transition:all 600ms ease;
                                             -webkit-transition:all 600ms ease;
                                             -moz-transition:all 600ms ease;
@@ -817,18 +1073,81 @@
                                         `
 
 
-                                            navBarPlateOneElementResizer.style = `
+
+                                // STYLE MAIN NAV BAR PLATE ELEMENT AND RESIZER
+                                // //////////////////////////////////////////
+
+
+                                    navBarPlateOneMainElement.style = `
+                                    
+                                        width:${screenWidthSelector};
+                                        top:20px;
+                                        left:0;
+                                        right:0;
+                                        margin:0px auto;
+                                        padding:10px 0px;
+                                        position:absolute;
+                                        background:#FFFFFF;
+                                        border-radius:1000px;
+                                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.2);
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                        navBarPlateOneElementResizer.style = `
+                                        
+                                            width:92%;
+                                            height:50px;
+                                            top:0;
+                                            left:0;
+                                            right:0;
+                                            bottom:0;
+                                            margin:auto;
+                                            position:relative;
+                                            background:#2C2C2C;
+                                            border-radius:1000px;
+                                            transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+
+                                        `
+
+
+
+                                // STYLE MAIN NAV BAR LOGO AND MENU ITEMS SIDES
+                                // //////////////////////////////////////////
+
+                                    navBarPlateOneLogoTitleSide.style = `
+                                    
+                                        width:${getNavBarLogoAndTitleSideSizing};
+                                        height:50px;
+                                        float:left;
+                                        position:relative;
+                                        background:#564456;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                        // STYLE MAIN NAV BAR LOGO AND TITLE ITEMS
+                                        // //////////////////////////////////
+
+                                            createNavBarLogoContainer.style = `
                                             
-                                                width:92%;
+                                                width:40%;
                                                 height:50px;
-                                                top:0;
-                                                left:0;
-                                                right:0;
-                                                bottom:0;
-                                                margin:auto;
+                                                float:left;
                                                 position:relative;
-                                                background:#2C2C2C;
-                                                border-radius:1000px;
+                                                background:#3a885a;
                                                 transition:all 600ms ease;
                                                 -webkit-transition:all 600ms ease;
                                                 -moz-transition:all 600ms ease;
@@ -836,6 +1155,233 @@
                                                 -ms-transition:all 600ms ease;
 
                                             `
+
+                                                createNavBarLogoActual.style = `
+                                                
+                                                    width:100%;
+                                                    height:50px;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    position:absolute;
+                                                    background:#df7cdf;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+
+                                            createNavBarTitleContainer.style = `
+                                            
+                                                width:60%;
+                                                height:50px;
+                                                float:left;
+                                                position:relative;
+                                                background:#7c9adf;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                createNavBarTitleActual.style = `
+                                                
+                                                    width:100%;
+                                                    height:50px;
+                                                    coolor:#2C2C2C;
+                                                    position:relative;
+                                                    font-size:15px;
+                                                    text-align:center;
+                                                    font-weight:700;
+                                                    font-family:arial, sans-serif;
+                                                    line-height:50px;
+                                                    letter-spacing:1px;
+                                                    text-transform:lowercase;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                // STYLE MAIN NAV BAR MENU ITEMS SIDES xxxxxx
+                                // //////////////////////////////////////////
+
+
+
+
+                                    // STYLE NAV BAR DESKTOP MENU ITEMS SIDE 
+                                    // //////////////////////////////////////
+
+                                        navBarPlateOneDesktopMenuItemsSide.style = `
+                                        
+                                            width:${getNavBarMenuItemsSideSizing};
+                                            height:50px;
+                                            float:right;
+                                            display:${getNavBarDesktopMenuItemsSetting};
+                                            background:#3C5472;
+                                            text-align:right;
+                                            position:relative;
+                                            transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+
+                                        `
+
+
+
+
+                                    // STYLE NAV BAR MOBILE MENU ITEMS SIDE -
+                                    // //////////////////////////////////////
+
+                                        navBarPlateOneMobileMenuItemsSide.style = `
+                                        
+                                            width:${getNavBarMenuItemsSideSizing};
+                                            height:50px;
+                                            float:right;
+                                            display:${getNavBarMobileMenuItemsSetting};
+                                            background:#3A5688;
+                                            position:relative;
+                                            transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+
+                                        `
+
+                                            // CREATE SIDE MENU /////////////
+                                            // //////////////////////////////
+
+
+
+
+
+
+                                            // STYLE MOBILE ITEMS MENU ICON ELEMENTS
+                                            // //////////////////////////////
+
+                                                createNavBarMenuItemsMobileButtonIconMover.style = `
+                                                
+                                                    
+
+                                                `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+                                // STYLE MAIN NAV BAR LOGO AND TITLE ITEMS xx
+                                // //////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+                            // STYLE NAV BAR MENU ITEMS DESKTOP xxxxxxxxx
+                            // //////////////////////////////////////////
+
+                                
+
+
+
+                                                
+
+
+
+
+
+                            // STYLE NAV BAR MENU ITEMS MOBILE xxxxxxxxxx
+                            // //////////////////////////////////////////
+
+                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // ADD TEXT TO ITEMS ============================
+                            // //////////////////////////////////////////////
+
+                                createNavBarTitleActual.textContent = `${navTitleStringCollector}`
+
+                                            
+
+
+
+
+
+
+
+
+
 
 
 
@@ -856,11 +1402,183 @@
 
                                     navBarPlateOneMainContainer.appendChild(navBarPlateOneMainBlocker)
 
-                                        navBarPlateOneMainBlocker.appendChild(navBarPlateOneMainElement)
+
+
+                            // APPEND MAIN NAV BAR PLATE ELEMENT AND RESIZER
+                            // //////////////////////////////////////////
+
+                                navBarPlateOneMainBlocker.appendChild(navBarPlateOneMainElement)
+
+                                    navBarPlateOneMainElement.appendChild(navBarPlateOneElementResizer)
 
 
 
-                                            navBarPlateOneMainElement.appendChild(navBarPlateOneElementResizer)
+                            // APPEND MAIN NAV BAR LOGO AND MENU ITEMS SIDES
+                            // //////////////////////////////////////////
+
+                                navBarPlateOneElementResizer.appendChild(navBarPlateOneLogoTitleSide)
+
+
+                                    // APPEND MAIN NAV BAR LOGO AND TITLE ITEMS
+                                    // //////////////////////////////////
+
+                                        navBarPlateOneLogoTitleSide.appendChild(createNavBarLogoContainer)
+
+                                            createNavBarLogoContainer.appendChild(createNavBarLogoActual)
+                                        
+
+                                        navBarPlateOneLogoTitleSide.appendChild(createNavBarTitleContainer)
+
+                                            createNavBarTitleContainer.appendChild(createNavBarTitleActual)
+
+
+
+
+
+
+                                    // APPEND MAIN NAV BAR MENU ITEMS CONTAINERS
+                                    // //////////////////////////////////
+
+                                        navBarPlateOneElementResizer.appendChild(navBarPlateOneDesktopMenuItemsSide)
+
+                                            // RUN LOOP TO APPEND MENU ITEMS
+                                            // //////////////////////////
+
+                                                for ( itemsGenerateCounter = 0; itemsGenerateCounter < 5; itemsGenerateCounter ++ ) {
+
+
+                                                    // CHECK IF NAV MENU ITEMS ARE INVALID OR DON'T EXIST
+                                                    // /////////////////////////////////
+
+                                                        if ( 
+                                                            
+                                                                storeNavBarItems[itemsGenerateCounter] == null || 
+                                                                storeNavBarItems[itemsGenerateCounter] == undefined
+                                                            
+                                                            ) 
+                                                            
+                                                        {
+                                                            
+                                                        }
+
+
+                                                    // CHECK IF NAV MENU ITEMS ARE VALID OR EXISTS
+                                                    // /////////////////////////////////
+
+                                                        else {
+
+                                                            // CREATE NEW ITEMS FOR DESKTOP MENU
+                                                            // //////////////////////
+
+                                                                var createNavBarOneMenuItem = document.createElement("div")
+                                                                createNavBarOneMenuItem.className = `navBarOneMenuItem${classNumberMapper[itemsGenerateCounter]}Container`
+
+                                                                    var createNavBarOneMenuItemResizer = document.createElement("div")
+                                                                    createNavBarOneMenuItemResizer.className = `navBarOneMenuItem${classNumberMapper[itemsGenerateCounter]}Resizer`
+
+
+
+                                                            // STYLE NEW ITEMS FOR DESKTOP MENU
+                                                            // /////////////////////////////////
+
+                                                                createNavBarOneMenuItem.style = `
+                                                                
+                                                                    width:20%;
+                                                                    height:50px;
+                                                                    cursor:pointer;
+                                                                    display:inline-block;
+                                                                    position:relative;
+                                                                    background:${storeNavBarThemeBackground[itemsGenerateCounter]};
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+
+                                                                `
+
+                                                                    createNavBarOneMenuItemResizer.style = `
+                                                                    
+                                                                        height:50px;
+                                                                        color:#2C2C2C;
+                                                                        font-size:15px;
+                                                                        font-weight:700;
+                                                                        font-family:arial, sans-serif;
+                                                                        line-height:50px;
+                                                                        text-align:center;
+                                                                        letter-spacing:2px;
+                                                                        transition:all 600ms ease;
+                                                                        -webkit-transition:all 600ms ease;
+                                                                        -moz-transition:all 600ms ease;
+                                                                        -o-transition:all 600ms ease;
+                                                                        -ms-transition:all 600ms ease;
+
+                                                                    `
+
+
+
+                                                            // ADD TEXT TO MENU ITEM BLOCK =====
+                                                            // /////////////////////////////////
+
+                                                                createNavBarOneMenuItemResizer.textContent = `${storeNavBarItems[itemsGenerateCounter]}`
+
+
+
+                                                            // STORE MENU ITEM CLASSNAME IN ARRAY
+                                                            // /////////////////////////////////
+
+
+                                                                storeNavBarItemsClassNames.push(`navBarOneMenuItem${classNumberMapper[itemsGenerateCounter]}Container`)
+
+
+
+                                                            // APPEND MENU ITEM BLOCKS TO DESKTOP SIDE CONTAINER
+                                                            // /////////////////////////////////
+
+                                                                navBarPlateOneDesktopMenuItemsSide.appendChild(createNavBarOneMenuItem)
+
+                                                                    createNavBarOneMenuItem.appendChild(createNavBarOneMenuItemResizer)
+
+
+
+                                                        }
+
+
+                                                }
+
+
+                                
+
+
+
+                                    // ASSIGN EVENT LISTENERS TO NEWLY CREATED MENU ELEMENTS
+                                    // //////////////////////////////////
+
+                                        storeNavBarItemsClassNames.forEach((navItem) => {
+
+                                            var getCurrentMenuItem = document.querySelector(`.${navItem}`)
+
+                                            getCurrentMenuItem.addEventListener("click", function () {
+
+                                                window.open(`${storeNavBarItemLinks[storeNavBarItemsClassNames.indexOf(navItem)]}`, `_blank`)
+
+                                            })
+
+                                        })
+
+                                        
+
+
+                                
+
+
+
+                                    // APPEND MAIN NAV BAR MENU ITEMS CONTAINERS
+                                    // //////////////////////////////////
+
+                                        navBarPlateOneElementResizer.appendChild(navBarPlateOneMobileMenuItemsSide)
+
+
 
                     }
 
@@ -898,22 +1616,8 @@
             // //////////////////////////////////////////////////////////
 
                 getNavBarTitleTextItemFromTextDoc()
+                getNavBarItemLinksFromTextDoc()
                 getNavBarItemsFromTextDoc()
-
-            // RUN SIZE DETECTION ---------------------------------------
-            // //////////////////////////////////////////////////////////
-
-                detectCurrentWindowSize()
-
-            // RUN LIVING BAR -------------------------------------------
-            // //////////////////////////////////////////////////////////
-                
-                detectLivingBar()
-
-            // RUN LIVING HEADER SECTION --------------------------------
-            // //////////////////////////////////////////////////////////
-
-                detectHeaderSection()
 
 
 
@@ -954,9 +1658,7 @@
                         // //////////////////////////////////////////////
 
                             var windowWidth = window.innerWidth
-
-
-
+                        
 
                         // CHECK IF WINDOW IS IN SIZE xxxxxxxxxxxxxxxxxxxxxxx
                         // //////////////////////////////////////////////////
@@ -973,6 +1675,19 @@
 
                                             screenWidthSelector = "200px"
                                             screenWidthResizerSelector = "176px"
+
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "80%"
+                                            getNavBarMenuItemsSideSizing = "20%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "none"
+                                            getNavBarMobileMenuItemsSetting = "inline-table"
 
                                                     
 
@@ -993,6 +1708,19 @@
                                             screenWidthSelector = "200px"
                                             screenWidthResizerSelector = "176px"
 
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "80%"
+                                            getNavBarMenuItemsSideSizing = "20%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "none"
+                                            getNavBarMobileMenuItemsSetting = "inline-table"
+
                                                     
 
                                 }
@@ -1009,6 +1737,19 @@
 
                                             screenWidthSelector = "300px"
                                             screenWidthResizerSelector = "276px"
+
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "80%"
+                                            getNavBarMenuItemsSideSizing = "20%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "none"
+                                            getNavBarMobileMenuItemsSetting = "inline-table"
 
                                                     
 
@@ -1027,6 +1768,19 @@
                                             screenWidthSelector = "600px"
                                             screenWidthResizerSelector = "576px"
 
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "40%"
+                                            getNavBarMenuItemsSideSizing = "60%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "inline-table"
+                                            getNavBarMobileMenuItemsSetting = "none"
+
                                                     
 
                                 }
@@ -1044,6 +1798,19 @@
                                             screenWidthSelector = "800px"
                                             screenWidthResizerSelector = "776px"
 
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "30%"
+                                            getNavBarMenuItemsSideSizing = "70%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "inline-table"
+                                            getNavBarMobileMenuItemsSetting = "none"
+
                                                     
 
                                 }
@@ -1060,6 +1827,19 @@
 
                                             screenWidthSelector = "800px"
                                             screenWidthResizerSelector = "776px"
+
+
+                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                        // //////////////////////////////////
+
+                                            getNavBarLogoAndTitleSideSizing = "30%"
+                                            getNavBarMenuItemsSideSizing = "70%"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                        // //////////////////////////////////
+
+                                            getNavBarDesktopMenuItemsSetting = "inline-table"
+                                            getNavBarMobileMenuItemsSetting = "none"
 
                                                     
 
