@@ -47,6 +47,7 @@
                     // NAV BAR MENU ITEMS DISPLAY SETTINGS xxxxxxxxxxxxxx
                     // //////////////////////////////////////////////////
 
+                        var getNavBarTitleControl = "block"
                         var getNavBarDesktopMenuItemsSetting = "inline-table"
                         var getNavBarMobileMenuItemsSetting = "none"
 
@@ -125,7 +126,8 @@
 
                     var storeNavBarMainPlates = [
 
-                        createNavBarOneMainPlate
+                        createNavBarOneMainPlate,
+                        createNavBarTwoMainPlate
                         
                     ]
 
@@ -288,7 +290,9 @@
                             setTimeout(() => {
 
 
-
+                                // CREATE NAV BAR CUSHION 
+                                
+                                
                                 // RUN SIZE DETECTION -----------------------
                                 // //////////////////////////////////////////
                     
@@ -547,18 +551,10 @@
 
                                                             {
 
-                                                                // CREATE NEW ELEMENT SELECTOR //////////
-                                                                // //////////////////////////////////////
-                            
-                                                                    var getSelectedNavBar = document.querySelector(`.navBar${classNumberMapper[navBarNumberCounter]}`)
-
-
-
-
                                                                 // PLACE MAIN NAV BAR PLATE /////////////
                                                                 // //////////////////////////////////////
 
-                                                                    storeNavBarMainPlates[navBarNumberCounter]()
+                                                                    storeNavBarMainPlates[navBarNumberCounter](classNumberMapper[navBarNumberCounter])
 
                                                             }
 
@@ -665,10 +661,6 @@
 
                         }
 
-
-
-                        var getSelectedHeaderPlate = document.querySelector(`.${gatherSelectedSectionHeaderName}`)
-
                 }
 
 
@@ -698,6 +690,8 @@
                     // //////////////////////////////////////////////////////
 
                         var windowWidth = window.innerWidth
+
+                        console.log("SIZE NOW: " + windowWidth)
                         
 
                         // CHECK IF WINDOW IS IN SIZE xxxxxxxxxxxxxxxxxxxxxxx
@@ -706,7 +700,7 @@
                             // FOR SCREEN SIZE 300 --------------------------
                             // //////////////////////////////////////////////
 
-                                if ( windowWidth > 0 && windowWidth < 300 ) {
+                                if ( windowWidth > 0 && windowWidth < 301 ) {
 
                                     console.log("300 LOCKED IN...")
 
@@ -720,14 +714,15 @@
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
                                         // //////////////////////////////////
 
-                                            getNavBarLogoAndTitleSideSizing = "80%"
-                                            getNavBarMenuItemsSideSizing = "20%"
+                                            getNavBarLogoAndTitleSideSizing = "76%"
+                                            getNavBarMenuItemsSideSizing = "24%"
 
                                         // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
                                         // //////////////////////////////////
 
-                                            getNavBarDesktopMenuItemsSetting = "none"
+                                            getNavBarTitleControl = "none"
                                             getNavBarMobileMenuItemsSetting = "inline-table"
+                                            getNavBarDesktopMenuItemsSetting = "none"
 
                                                     
 
@@ -738,28 +733,29 @@
                             // FOR SCREEN SIZE 500 --------------------------
                             // //////////////////////////////////////////////
 
-                                else if ( windowWidth > 300 && windowWidth < 500 ) {
+                                else if ( windowWidth > 300 && windowWidth < 501 ) {
 
                                     console.log("300 LOCKED IN...")
 
                                         // UPDATE WINDOW SIZE FOR COLLECTOR x
                                         // //////////////////////////////////
 
-                                            screenWidthSelector = "200px"
+                                            screenWidthSelector = "250px"
                                             screenWidthResizerSelector = "176px"
 
 
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
                                         // //////////////////////////////////
 
-                                            getNavBarLogoAndTitleSideSizing = "80%"
-                                            getNavBarMenuItemsSideSizing = "20%"
+                                            getNavBarLogoAndTitleSideSizing = "76%"
+                                            getNavBarMenuItemsSideSizing = "24%"
 
                                         // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
                                         // //////////////////////////////////
 
-                                            getNavBarDesktopMenuItemsSetting = "none"
+                                            getNavBarTitleControl = "none"
                                             getNavBarMobileMenuItemsSetting = "inline-table"
+                                            getNavBarDesktopMenuItemsSetting = "none"
 
                                                     
 
@@ -768,7 +764,7 @@
                             // FOR SCREEN SIZE 800 --------------------------
                             // //////////////////////////////////////////////
 
-                                else if ( windowWidth > 500 && windowWidth < 800 ) {
+                                else if ( windowWidth > 500 && windowWidth < 801 ) {
 
                                     console.log("500 LOCKED IN...")
 
@@ -788,8 +784,9 @@
                                         // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
                                         // //////////////////////////////////
 
-                                            getNavBarDesktopMenuItemsSetting = "none"
+                                            getNavBarTitleControl = "block"
                                             getNavBarMobileMenuItemsSetting = "inline-table"
+                                            getNavBarDesktopMenuItemsSetting = "none"
 
                                                     
 
@@ -798,7 +795,7 @@
                             // FOR SCREEN SIZE 1000 -------------------------
                             // //////////////////////////////////////////////
 
-                                else if ( windowWidth > 800 && windowWidth < 1000 ) {
+                                else if ( windowWidth > 800 && windowWidth < 1001 ) {
 
                                     console.log("800 LOCKED IN...")
 
@@ -812,14 +809,15 @@
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
                                         // //////////////////////////////////
 
-                                            getNavBarLogoAndTitleSideSizing = "40%"
-                                            getNavBarMenuItemsSideSizing = "60%"
+                                            getNavBarLogoAndTitleSideSizing = "50%"
+                                            getNavBarMenuItemsSideSizing = "50%"
 
                                         // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
                                         // //////////////////////////////////
 
-                                            getNavBarDesktopMenuItemsSetting = "inline-table"
+                                            getNavBarTitleControl = "block"
                                             getNavBarMobileMenuItemsSetting = "none"
+                                            getNavBarDesktopMenuItemsSetting = "inline-table"
 
                                                     
 
@@ -828,7 +826,7 @@
                             // FOR SCREEN SIZE 1200 -------------------------
                             // //////////////////////////////////////////////
 
-                                else if ( windowWidth > 1000 && windowWidth < 1200 ) {
+                                else if ( windowWidth > 1000 && windowWidth < 1201 ) {
 
                                     console.log("1000 LOCKED IN...")
 
@@ -842,14 +840,15 @@
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
                                         // //////////////////////////////////
 
-                                            getNavBarLogoAndTitleSideSizing = "30%"
-                                            getNavBarMenuItemsSideSizing = "70%"
+                                            getNavBarLogoAndTitleSideSizing = "50%"
+                                            getNavBarMenuItemsSideSizing = "50%"
 
                                         // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
                                         // //////////////////////////////////
 
-                                            getNavBarDesktopMenuItemsSetting = "inline-table"
+                                            getNavBarTitleControl = "block"
                                             getNavBarMobileMenuItemsSetting = "none"
+                                            getNavBarDesktopMenuItemsSetting = "inline-table"
 
                                                     
 
@@ -872,14 +871,15 @@
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
                                         // //////////////////////////////////
 
-                                            getNavBarLogoAndTitleSideSizing = "30%"
-                                            getNavBarMenuItemsSideSizing = "70%"
+                                            getNavBarLogoAndTitleSideSizing = "50%"
+                                            getNavBarMenuItemsSideSizing = "50%"
 
                                         // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
                                         // //////////////////////////////////
 
-                                            getNavBarDesktopMenuItemsSetting = "inline-table"
+                                            getNavBarTitleControl = "block"
                                             getNavBarMobileMenuItemsSetting = "none"
+                                            getNavBarDesktopMenuItemsSetting = "inline-table"
 
                                                     
 
@@ -911,15 +911,15 @@
                 // CREATE NAV BAR ONE ACTUAL --------------------------------
                 // //////////////////////////////////////////////////////////
 
-                    function createNavBarOneMainPlate () {
+                    function createNavBarOneMainPlate (cushionNumber) {
+
+                        // GET NAV BAR CUSHION xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            var createNavBarCushion = document.querySelector(`.navBar${cushionNumber}`)
 
                         // CREATE NAV BAR ONE ELEMENTS xxxxxxxxxxxxxxxxxxxxxx
                         // //////////////////////////////////////////////////
-
-
-
-
-
 
                             // CREATE MAIN NAV BAR PLATE AND ELEMENTS =======
                             // //////////////////////////////////////////////
@@ -1004,6 +1004,72 @@
 
                                         var createNavBarMenuItemsmobileButtonIconLineThree = document.createElement("div")
                                         createNavBarMenuItemsmobileButtonIconLineThree.className = `navBarOneMenuItemsButtonIconLineThree`
+
+
+                                            // CREATE MOBILE SIDE MENU AND ITEMS
+                                            // //////////////////////////
+
+                                                var createNavBarMenuMobileSideMenuContainer = document.createElement("div")
+                                                createNavBarMenuMobileSideMenuContainer.className = `navBarOneMobileSideMenuContainer`
+
+                                                    var createNavBarMenuMobileSideMenuResizer = document.createElement("div")
+                                                    createNavBarMenuMobileSideMenuResizer.className = `navBarOneMobileSideMenuContentResizer`
+
+                                                        var createNavBarMenuMobileSideMenuHeaderContainer = document.createElement("div")
+                                                        createNavBarMenuMobileSideMenuHeaderContainer.className = `navBarOneMobileSideMenuHeaderContainer`
+
+
+
+
+
+                                                            // CREATE MOBILE SIDE MENU HEADLINE
+                                                            // //////////
+
+                                                                var createNavBarMenuMobileSideMenuHeadlineContainer = document.createElement("div")
+                                                                createNavBarMenuMobileSideMenuHeadlineContainer.className = `navBarOneMobileSideMenuHeadlineContainer`
+
+                                                                    var createNavBarMenuMobileSideMenuHeadlineTextActual = document.createElement("div")
+                                                                    createNavBarMenuMobileSideMenuHeadlineTextActual.className = `navBarOneMobileSideMenuHeadlineText`
+
+
+
+
+
+                                                            // CREATE MOBILE SIDE MENU CLOSE BUTTON
+                                                            // //////////
+
+
+                                                                var createNavBarMenuMobileSideMenuCloseButtonContainer = document.createElement("div")
+                                                                createNavBarMenuMobileSideMenuCloseButtonContainer.className = `navBarOneMobileSideMenuButtonContainer`
+
+                                                                    var createNavBarMenuMobileSideMenuCloseButtonItem = document.createElement("div")
+                                                                    createNavBarMenuMobileSideMenuCloseButtonItem.className = `navBarOneMobileSideMenuButtonItem`
+
+                                                                        var createNavBarMenuMobileSideMenuCloseButtonIconMover = document.createElement("div")
+                                                                        createNavBarMenuMobileSideMenuCloseButtonIconMover.className = `navBarOneMobileSideMenuButtonIconMover`
+
+
+                                                                            var createNavBarMenuMobileSideMenuCloseButtonIconLineOne = document.createElement("div")
+                                                                            createNavBarMenuMobileSideMenuCloseButtonIconLineOne.className = `navBarOneMobileSideMenuButtonIconLineOne`
+
+                                                                            var createNavBarMenuMobileSideMenuCloseButtonIconLineTwo = document.createElement("div")
+                                                                            createNavBarMenuMobileSideMenuCloseButtonIconLineTwo.className = `navBarOneMobileSideMenuButtonIconLineTwo`
+
+                                                                            var createNavBarMenuMobileSideMenuCloseButtonIconLineThree = document.createElement("div")
+                                                                            createNavBarMenuMobileSideMenuCloseButtonIconLineThree.className = `navBarOneMobileSideMenuButtonIconLineThree`
+
+
+
+
+
+                                                            // CREATE MOBILE SIDE MENU ITEMS
+                                                            // //////////
+
+                                                                var createNavBarMenuMobileSideMenuItemsContainer = document.createElement("div")
+                                                                createNavBarMenuMobileSideMenuItemsContainer.className = `navBarOneMobileSideMenuItemsContainer`
+
+                                                                    var createNavBarMenuMobileSideMenuItemsScrollControl = document.createElement("div")
+                                                                    createNavBarMenuMobileSideMenuItemsScrollControl.className = `navBarOneMobileSideMenuItemsScrollContainer`
 
 
 
@@ -1108,7 +1174,7 @@
                                             bottom:0;
                                             margin:auto;
                                             position:relative;
-                                            background:#2C2C2C;
+                                            /*background:#2C2C2C;*/
                                             border-radius:1000px;
                                             transition:all 600ms ease;
                                             -webkit-transition:all 600ms ease;
@@ -1129,7 +1195,6 @@
                                         height:50px;
                                         float:left;
                                         position:relative;
-                                        background:#564456;
                                         transition:all 600ms ease;
                                         -webkit-transition:all 600ms ease;
                                         -moz-transition:all 600ms ease;
@@ -1143,7 +1208,7 @@
 
                                             createNavBarLogoContainer.style = `
                                             
-                                                width:40%;
+                                                width:45%;
                                                 height:50px;
                                                 float:left;
                                                 position:relative;
@@ -1178,11 +1243,11 @@
 
                                             createNavBarTitleContainer.style = `
                                             
-                                                width:60%;
+                                                width:55%;
                                                 height:50px;
                                                 float:left;
+                                                display:${getNavBarTitleControl};
                                                 position:relative;
-                                                background:#7c9adf;
                                                 transition:all 600ms ease;
                                                 -webkit-transition:all 600ms ease;
                                                 -moz-transition:all 600ms ease;
@@ -1228,8 +1293,6 @@
                                 // //////////////////////////////////////////
 
 
-
-
                                     // STYLE NAV BAR DESKTOP MENU ITEMS SIDE 
                                     // //////////////////////////////////////
 
@@ -1239,7 +1302,7 @@
                                             height:50px;
                                             float:right;
                                             display:${getNavBarDesktopMenuItemsSetting};
-                                            background:#3C5472;
+                                            /*background:#3C5472;*/
                                             text-align:right;
                                             position:relative;
                                             transition:all 600ms ease;
@@ -1262,7 +1325,6 @@
                                             height:50px;
                                             float:right;
                                             display:${getNavBarMobileMenuItemsSetting};
-                                            background:#3A5688;
                                             position:relative;
                                             transition:all 600ms ease;
                                             -webkit-transition:all 600ms ease;
@@ -1272,9 +1334,259 @@
 
                                         `
 
-                                            // CREATE SIDE MENU /////////////
+
+
+
+
+
+                                            // STYLE MOBILE SIDE MENU -------
                                             // //////////////////////////////
 
+                                                createNavBarMenuMobileSideMenuContainer.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    top:0;
+                                                    left:-300%;
+                                                    right:0;
+                                                    bottom:0;
+                                                    opacity:1;
+                                                    z-index:2;
+                                                    margin:auto;
+                                                    display:block;
+                                                    position:fixed;
+                                                    background:#FFFFFF;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                    createNavBarMenuMobileSideMenuResizer.style = `
+                                                    
+                                                        width:80%;
+                                                        height:80%;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+                                                        createNavBarMenuMobileSideMenuHeaderContainer.style = `
+                                                        
+                                                            width:100%;
+                                                            position:relative;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+
+
+
+
+                                                                // SIDE MENU HEADLINE CONTAINER
+                                                                // //////////
+
+                                                                    createNavBarMenuMobileSideMenuHeadlineContainer.style = `
+                                                                    
+                                                                        width:90%;
+                                                                        height:50px;
+                                                                        top:0;
+                                                                        left:0;
+                                                                        display:inline-block;
+                                                                        position:absolute;
+                                                                        transition:all 600ms ease;
+                                                                        -webkit-transition:all 600ms ease;
+                                                                        -moz-transition:all 600ms ease;
+                                                                        -o-transition:all 600ms ease;
+                                                                        -ms-transition:all 600ms ease;
+
+                                                                    `
+
+                                                                        createNavBarMenuMobileSideMenuHeadlineTextActual.style = `
+                                                                        
+                                                                            font-size:30px;
+                                                                            color:#2C2C2C;
+                                                                            text-align:left;
+                                                                            font-weight:700;
+                                                                            font-family:arial, sans-serif;
+                                                                            line-height:70px;
+                                                                            letter-spacing:5px;
+                                                                            transition:all 600ms ease;
+                                                                            -webkit-transition:all 600ms ease;
+                                                                            -moz-transition:all 600ms ease;
+                                                                            -o-transition:all 600ms ease;
+                                                                            -ms-transition:all 600ms ease;
+
+                                                                        `
+
+
+
+
+
+                                                                // CLOSE SIDE MENU BUTTON
+                                                                // //////////
+                                                                
+                                                                    createNavBarMenuMobileSideMenuCloseButtonContainer.style = `
+                                                                    
+                                                                        width:10%;
+                                                                        height:50px;
+                                                                        top:0;
+                                                                        right:0;
+                                                                        display:inline-block;
+                                                                        position:absolute;
+                                                                        transition:all 600ms ease;
+                                                                        -webkit-transition:all 600ms ease;
+                                                                        -moz-transition:all 600ms ease;
+                                                                        -o-transition:all 600ms ease;
+                                                                        -ms-transition:all 600ms ease;
+
+                                                                    `
+
+                                                                        createNavBarMenuMobileSideMenuCloseButtonItem.style = `
+                                                                        
+                                                                            width:50px;
+                                                                            height:50px;
+                                                                            cursor:pointer;
+                                                                            position:relative;
+                                                                            background:#FFFFFF;
+                                                                            border-radius:1000px;
+                                                                            box-shadow:0px 20px 30px -10px rgba(0, 0, 0, 0.5);
+                                                                            transition:all 600ms ease;
+                                                                            -webkit-transition:all 600ms ease;
+                                                                            -moz-transition:all 600ms ease;
+                                                                            -o-transition:all 600ms ease;
+                                                                            -ms-transition:all 600ms ease;
+
+                                                                        `
+
+                                                                            createNavBarMenuMobileSideMenuCloseButtonIconMover.style = `
+                                                                            
+                                                                                width:20px;
+                                                                                height:25px;
+                                                                                top:0;
+                                                                                left:0;
+                                                                                right:0;
+                                                                                bottom:0;
+                                                                                margin:auto;
+                                                                                position:absolute;
+                                                                                transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+
+                                                                            `
+
+
+                                                                                createNavBarMenuMobileSideMenuCloseButtonIconLineOne.style = `
+                                                                                
+                                                                                    width:100%;
+                                                                                    height:3px;
+                                                                                    inset:1px 0px 0px 0px;
+                                                                                    margin:auto;
+                                                                                    opacity:1;
+                                                                                    position:absolute;
+                                                                                    transform:rotateZ(45deg);
+                                                                                    background:rgb(44, 44, 44);
+                                                                                    border-radius:1000px;
+                                                                                    transition:all 600ms ease;
+                                                                                    -webkit-transition:all 600ms ease;
+                                                                                    -moz-transition:all 600ms ease;
+                                                                                    -o-transition:all 600ms ease;
+                                                                                    -ms-transition:all 600ms ease;
+
+                                                                                `
+
+
+                                                                                createNavBarMenuMobileSideMenuCloseButtonIconLineTwo.style = `
+                                                                                
+                                                                                    width:100%;
+                                                                                    height:3px;
+                                                                                    inset:1px 0px 0px 0px;
+                                                                                    margin:auto;
+                                                                                    opacity:0;
+                                                                                    position:absolute;
+                                                                                    transform:rotateZ(0deg);
+                                                                                    background:rgb(44, 44, 44);
+                                                                                    border-radius:1000px;
+                                                                                    transition:all 600ms ease;
+                                                                                    -webkit-transition:all 600ms ease;
+                                                                                    -moz-transition:all 600ms ease;
+                                                                                    -o-transition:all 600ms ease;
+                                                                                    -ms-transition:all 600ms ease;
+
+                                                                                `
+
+
+                                                                                createNavBarMenuMobileSideMenuCloseButtonIconLineThree.style = `
+                                                                                
+                                                                                    width:100%;
+                                                                                    height:3px;
+                                                                                    inset:1px 0px 0px 0px;
+                                                                                    margin:auto;
+                                                                                    opacity:1;
+                                                                                    position:absolute;
+                                                                                    transform:rotateZ(-45deg);
+                                                                                    background:rgb(44, 44, 44);
+                                                                                    border-radius:1000px;
+                                                                                    transition:all 600ms ease;
+                                                                                    -webkit-transition:all 600ms ease;
+                                                                                    -moz-transition:all 600ms ease;
+                                                                                    -o-transition:all 600ms ease;
+                                                                                    -ms-transition:all 600ms ease;
+
+                                                                                `
+
+
+
+
+
+
+                                                                // SIDE MENU MENU ITEM CONTENT CONTAINER
+                                                                // ///////////
+
+                                                                    createNavBarMenuMobileSideMenuItemsContainer.style = `
+                                                                    
+                                                                        width:100%;
+                                                                        top:100px;
+                                                                        position:relative;
+                                                                        transition:all 600ms ease;
+                                                                        -webkit-transition:all 600ms ease;
+                                                                        -moz-transition:all 600ms ease;
+                                                                        -o-transition:all 600ms ease;
+                                                                        -ms-transition:all 600ms ease;
+
+                                                                    `
+
+                                                                        createNavBarMenuMobileSideMenuItemsScrollControl.style = `
+                                                                        
+                                                                            width:100%;
+                                                                            overflow:hidden;
+                                                                            position:relative;
+                                                                            transition:all 600ms ease;
+                                                                            -webkit-transition:all 600ms ease;
+                                                                            -moz-transition:all 600ms ease;
+                                                                            -o-transition:all 600ms ease;
+                                                                            -ms-transition:all 600ms ease;
+
+                                                                        `
+
+                                                                    
 
 
 
@@ -1283,66 +1595,102 @@
                                             // STYLE MOBILE ITEMS MENU ICON ELEMENTS
                                             // //////////////////////////////
 
-                                                createNavBarMenuItemsMobileButtonIconMover.style = `
+
+                                                createNavBarMenuItemsMobileButtonContainer.style = `
                                                 
-                                                    
+                                                    width:50px;
+                                                    height:50px;
+                                                    cursor:pointer;
+                                                    margin:auto;
+                                                    position:relative;
+                                                    background:#FFFFFF;
+                                                    border-radius:1000px;
+                                                    box-shadow:0px 20px 30px -10px rgba(0,0,0,0.5);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
 
                                                 `
 
+                                                    createNavBarMenuItemsMobileButtonIconMover.style = `
+                                                    
+                                                        width:20px;
+                                                        height:25px;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
 
+                                                    `
 
+                                                        createNavBarMenuItemsmobileButtonIconLineOne.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            top:-14px;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            background:#2C2C2C;
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
 
+                                                        `
 
+                                                        createNavBarMenuItemsmobileButtonIconLineTwo.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            top:0;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            background:#2C2C2C;
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
 
+                                                        `
 
+                                                        createNavBarMenuItemsmobileButtonIconLineThree.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            top:15px;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            background:#2C2C2C;
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
 
-
-
-
-
-
-
-                                
-
-
-
-
-
-
-
-
-
-
-
-
-                                // STYLE MAIN NAV BAR LOGO AND TITLE ITEMS xx
-                                // //////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-                            // STYLE NAV BAR MENU ITEMS DESKTOP xxxxxxxxx
-                            // //////////////////////////////////////////
-
-                                
-
-
-
-                                                
-
-
-
-
-
-                            // STYLE NAV BAR MENU ITEMS MOBILE xxxxxxxxxx
-                            // //////////////////////////////////////////
+                                                        `
 
                                             
 
@@ -1372,6 +1720,8 @@
 
                                 createNavBarTitleActual.textContent = `${navTitleStringCollector}`
 
+                                createNavBarMenuMobileSideMenuHeadlineTextActual.textContent = `MENU`
+
                                             
 
 
@@ -1398,7 +1748,7 @@
                             // APPEND MAIN NAV BAR PLATE AND ELEMENTS =======
                             // //////////////////////////////////////////////
 
-                                getNavBarOneCushion.appendChild(navBarPlateOneMainContainer)
+                                createNavBarCushion.appendChild(navBarPlateOneMainContainer)
 
                                     navBarPlateOneMainContainer.appendChild(navBarPlateOneMainBlocker)
 
@@ -1436,6 +1786,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+                                    // //////////////////////////////////
+                                    // MENU ITEMS ASSIGNS FOR DESKTOP ===
+                                    // //////////////////////////////////
+
+
+                                    
                                     // APPEND MAIN NAV BAR MENU ITEMS CONTAINERS
                                     // //////////////////////////////////
 
@@ -1488,7 +1856,7 @@
                                                                     cursor:pointer;
                                                                     display:inline-block;
                                                                     position:relative;
-                                                                    background:${storeNavBarThemeBackground[itemsGenerateCounter]};
+                                                                    /*background:${storeNavBarThemeBackground[itemsGenerateCounter]};*/
                                                                     transition:all 600ms ease;
                                                                     -webkit-transition:all 600ms ease;
                                                                     -moz-transition:all 600ms ease;
@@ -1499,8 +1867,13 @@
 
                                                                     createNavBarOneMenuItemResizer.style = `
                                                                     
+                                                                        width:80%;
                                                                         height:50px;
-                                                                        color:#2C2C2C;
+                                                                        left:0px;
+                                                                        right:0px;
+                                                                        color:rgba(44, 44, 44, 0.2);
+                                                                        margin:0px auto;
+                                                                        position:relative;
                                                                         font-size:15px;
                                                                         font-weight:700;
                                                                         font-family:arial, sans-serif;
@@ -1547,6 +1920,23 @@
                                                 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 
 
 
@@ -1554,17 +1944,102 @@
                                     // ASSIGN EVENT LISTENERS TO NEWLY CREATED MENU ELEMENTS
                                     // //////////////////////////////////
 
-                                        storeNavBarItemsClassNames.forEach((navItem) => {
+                                        // FOR DESKTOP NAV BAR ITEMS ----
+                                        // //////////////////////////////
 
-                                            var getCurrentMenuItem = document.querySelector(`.${navItem}`)
 
-                                            getCurrentMenuItem.addEventListener("click", function () {
 
-                                                window.open(`${storeNavBarItemLinks[storeNavBarItemsClassNames.indexOf(navItem)]}`, `_blank`)
+
+                                            storeNavBarItemsClassNames.forEach((navItem) => {
+
+                                                var getCurrentMenuItem = document.querySelector(`.${navItem}`)
+                                                var getItemChild = getCurrentMenuItem.children[0]
+
+                                                // HOVER EFFECTS ========
+                                                // //////////////////////
+
+                                                    getCurrentMenuItem.addEventListener("mouseover", function () {
+
+                                                        getItemChild.style = `
+                                                        
+                                                            width:80%;
+                                                            height:50px;
+                                                            left:0px;
+                                                            right:0px;
+                                                            color:rgba(44, 44, 44, 1.0);
+                                                            margin:0px auto;
+                                                            position:relative;
+                                                            font-size:15px;
+                                                            font-weight:700;
+                                                            font-family:arial, sans-serif;
+                                                            line-height:50px;
+                                                            text-align:center;
+                                                            letter-spacing:2px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                    })
+
+                                                    getCurrentMenuItem.addEventListener("mouseout", function () {
+
+                                                        getItemChild.style = `
+                                                        
+                                                            width:80%;
+                                                            height:50px;
+                                                            left:0px;
+                                                            right:0px;
+                                                            color:rgba(44, 44, 44, 0.2);
+                                                            margin:0px auto;
+                                                            position:relative;
+                                                            font-size:15px;
+                                                            font-weight:700;
+                                                            font-family:arial, sans-serif;
+                                                            line-height:50px;
+                                                            text-align:center;
+                                                            letter-spacing:2px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                    })
+
+
+
+                                                // CLICKS ===============
+                                                // //////////////////////
+
+                                                    getCurrentMenuItem.addEventListener("click", function () {
+
+                                                        window.open(`${storeNavBarItemLinks[storeNavBarItemsClassNames.indexOf(navItem)]}`, `_blank`)
+
+                                                    })
 
                                             })
 
-                                        })
+                                            
+
+                                            
+
+
+
+
+
+
+
+
+
+
+
+
 
                                         
 
@@ -1573,14 +2048,1157 @@
 
 
 
-                                    // APPEND MAIN NAV BAR MENU ITEMS CONTAINERS
+                                    // APPEND MAIN NAV BAR MOBILE SIDE MENU
+                                    // //////////////////////////////////
+
+                                        getBody.appendChild(createNavBarMenuMobileSideMenuContainer)
+
+                                            createNavBarMenuMobileSideMenuContainer.appendChild(createNavBarMenuMobileSideMenuResizer)
+
+                                                createNavBarMenuMobileSideMenuResizer.appendChild(createNavBarMenuMobileSideMenuHeaderContainer)
+
+
+
+                                                    createNavBarMenuMobileSideMenuHeaderContainer.appendChild(createNavBarMenuMobileSideMenuHeadlineContainer)
+
+                                                        createNavBarMenuMobileSideMenuHeadlineContainer.appendChild(createNavBarMenuMobileSideMenuHeadlineTextActual)
+
+                                                    
+                                                    createNavBarMenuMobileSideMenuHeaderContainer.appendChild(createNavBarMenuMobileSideMenuCloseButtonContainer)
+
+                                                        createNavBarMenuMobileSideMenuCloseButtonContainer.appendChild(createNavBarMenuMobileSideMenuCloseButtonItem)
+
+                                                            createNavBarMenuMobileSideMenuCloseButtonItem.appendChild(createNavBarMenuMobileSideMenuCloseButtonIconMover)
+
+
+                                                                createNavBarMenuMobileSideMenuCloseButtonIconMover.appendChild(createNavBarMenuMobileSideMenuCloseButtonIconLineOne)
+
+                                                                createNavBarMenuMobileSideMenuCloseButtonIconMover.appendChild(createNavBarMenuMobileSideMenuCloseButtonIconLineTwo)
+
+                                                                createNavBarMenuMobileSideMenuCloseButtonIconMover.appendChild(createNavBarMenuMobileSideMenuCloseButtonIconLineThree)
+
+                                        
+
+
+                                
+
+
+
+                                    // APPEND MAIN NAV BAR MOBILE MENU ITEMS CONTAINERS
                                     // //////////////////////////////////
 
                                         navBarPlateOneElementResizer.appendChild(navBarPlateOneMobileMenuItemsSide)
 
+                                        navBarPlateOneMobileMenuItemsSide.appendChild(createNavBarMenuItemsMobileButtonContainer)
+
+                                            createNavBarMenuItemsMobileButtonContainer.appendChild(createNavBarMenuItemsMobileButtonIconMover)
+
+                                                createNavBarMenuItemsMobileButtonIconMover.appendChild(createNavBarMenuItemsmobileButtonIconLineOne)
+
+                                                createNavBarMenuItemsMobileButtonIconMover.appendChild(createNavBarMenuItemsmobileButtonIconLineTwo)
+
+                                                createNavBarMenuItemsMobileButtonIconMover.appendChild(createNavBarMenuItemsmobileButtonIconLineThree)
+
+                                        
+
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    // //////////////////////////////////
+                                    // MENU ITEMS ASSIGNS FOR MOBILE ====
+                                    // //////////////////////////////////
+
+
+                                    
+                                    // APPEND MOBILE SIDE MENU ITEMS CONTAINERS
+                                    // //////////////////////////////////
+
+                                        createNavBarMenuMobileSideMenuResizer.appendChild(createNavBarMenuMobileSideMenuItemsContainer)
+
+                                            createNavBarMenuMobileSideMenuItemsContainer.appendChild(createNavBarMenuMobileSideMenuItemsScrollControl)
+
+
+                                    // //////////////////////////////////
+                                    // MENU ITEMS ASSIGNS FOR MOBILE ====
+                                    // //////////////////////////////////
+
+                                        for ( menuItemsPopulateCounter = 0; menuItemsPopulateCounter < storeNavBarItems.length; menuItemsPopulateCounter++ ) {
+
+                                            // CREATE NAV LIST ITEM
+                                            // //////////////////////////
+
+                                                var createNavBarMenuMobileSideMenuItemBlockContainer = document.createElement("div")
+                                                createNavBarMenuMobileSideMenuItemBlockContainer.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockContainer`
+
+
+
+
+
+
+                                                    var createNavBarMenuMobileSideMenuItemBlockTextSide = document.createElement("div")
+                                                    createNavBarMenuMobileSideMenuItemBlockTextSide.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextSideContainer`
+
+                                                        var createNavBarMenuMobileSideMenuItemBlockTextActual = document.createElement("div")
+                                                        createNavBarMenuMobileSideMenuItemBlockTextActual.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextActual`
+
+
+
+                                                            var createNavBarMenuMobileSideMenuItemBlockTextUnderlinerContainer = document.createElement("div")
+                                                            createNavBarMenuMobileSideMenuItemBlockTextUnderlinerContainer.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextUnderlinerContainer`
+
+                                                                var createNavBarMenuMobileSideMenuItemBlockTextUnderlinerActual = document.createElement("div")
+                                                                createNavBarMenuMobileSideMenuItemBlockTextUnderlinerActual.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextUnderlinerActual`
+
+
+
+
+
+
+
+
+                                                    var createNavBarMenuMobileSideMenuItemBlockIconSide = document.createElement("div")
+                                                    createNavBarMenuMobileSideMenuItemBlockIconSide.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconSideContainer`
+
+                                                        var createNavBarMenuMobileSideMenuItemBlockIconCircle = document.createElement("div")
+                                                        createNavBarMenuMobileSideMenuItemBlockIconCircle.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconCircle`
+
+                                                            var createNavBarMenuMobileSideMenuItemBlockIconMover = document.createElement("div")
+                                                            createNavBarMenuMobileSideMenuItemBlockIconMover.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconMover`
+
+                                                                var createNavBarMenuMobileSideMenuItemBlockIconLineOne = document.createElement("div")
+                                                                createNavBarMenuMobileSideMenuItemBlockIconLineOne.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconLineOne`
+
+                                                                var createNavBarMenuMobileSideMenuItemBlockIconLineTwo = document.createElement("div")
+                                                                createNavBarMenuMobileSideMenuItemBlockIconLineTwo.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconLineTwo`
+
+                                                                var createNavBarMenuMobileSideMenuItemBlockIconLineThree = document.createElement("div")
+                                                                createNavBarMenuMobileSideMenuItemBlockIconLineThree.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconLineThree`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            // STYLE ELEMENTS -----------
+                                            // //////////////////////////
+
+                                                createNavBarMenuMobileSideMenuItemBlockContainer.style = `
+                                                
+                                                    width:100%;
+                                                    height:70px;
+                                                    cursor:pointer;
+                                                    position:relative;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+
+
+
+                                                `
+
+
+
+
+                                                    createNavBarMenuMobileSideMenuItemBlockTextSide.style = `
+                                                    
+                                                        width:90%;
+                                                        height:70px;
+                                                        top:0px;
+                                                        left:0px;
+                                                        display:inline-block;
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+
+                                                    `
+
+                                                        createNavBarMenuMobileSideMenuItemBlockTextActual.style = `
+                                                        
+                                                            font-size:20px;
+                                                            color:#2C2C2C;
+                                                            text-align:left;
+                                                            font-weight:700;
+                                                            font-family:arial, sans-serif;
+                                                            line-height:65px;
+                                                            padding-left:0px;
+                                                            letter-spacing:3px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+
+                                                            createNavBarMenuMobileSideMenuItemBlockTextUnderlinerContainer.style = `
+                                                            
+                                                                width:100%;
+                                                                height:3px;
+                                                                bottom:0;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    createNavBarMenuMobileSideMenuItemBlockIconSide.style = `
+                                                    
+                                                        width:10%;
+                                                        height:70px;
+                                                        top:0px;
+                                                        right:0px;
+                                                        display:inline-block;
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+                                                        createNavBarMenuMobileSideMenuItemBlockIconCircle.style = `
+                                                        
+                                                            width:30px;
+                                                            height:30px;
+                                                            top:-5px;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            border:3px solid #2C2C2C;
+                                                            position:absolute;
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                            createNavBarMenuMobileSideMenuItemBlockIconMover.style = `
+                                                            
+                                                                width:20px;
+                                                                height:20px;
+                                                                top:0;
+                                                                left:0;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                position:absolute;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+
+
+
+
+                                                                createNavBarMenuMobileSideMenuItemBlockIconLineOne.style = `
+                                                                
+                                                                    width:6px;
+                                                                    height:3px;
+                                                                    top:-6px;
+                                                                    left:0;
+                                                                    right:-3px;
+                                                                    bottom:0;
+                                                                    margin:auto;
+                                                                    background:#2C2C2C;
+                                                                    position:absolute;
+                                                                    transform:rotateZ(45deg);
+                                                                    border-radius:1000px;
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+
+                                                                `
+
+                                                                createNavBarMenuMobileSideMenuItemBlockIconLineTwo.style = `
+                                                                
+                                                                    width:12px;
+                                                                    height:3px;
+                                                                    top:1px;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    margin:auto;
+                                                                    background:#2C2C2C;
+                                                                    position:absolute;
+                                                                    transform:rotateZ(0deg);
+                                                                    border-radius:1000px;
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+
+                                                                `
+
+                                                                createNavBarMenuMobileSideMenuItemBlockIconLineThree.style = `
+                                                                
+                                                                    width:6px;
+                                                                    height:3px;
+                                                                    top:6px;
+                                                                    left:0;
+                                                                    right:-3px;
+                                                                    bottom:0;
+                                                                    margin:auto;
+                                                                    background:#2C2C2C;
+                                                                    position:absolute;
+                                                                    transform:rotateZ(-45deg);
+                                                                    border-radius:1000px;
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+
+                                                                `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            // ADD TEXT TO ITEM BLOCKS --
+                                            // //////////////////////////
+
+                                                createNavBarMenuMobileSideMenuItemBlockTextActual.textContent = `${storeNavBarItems[menuItemsPopulateCounter]}`
+
+
+
+
+
+
+
+
+
+
+                                                    
+
+
+
+
+
+
+                                            // APPEND ELEMENTS ----------
+                                            // //////////////////////////
+                                             
+                                                createNavBarMenuMobileSideMenuItemsScrollControl.appendChild(createNavBarMenuMobileSideMenuItemBlockContainer)
+
+
+
+
+                                                    createNavBarMenuMobileSideMenuItemBlockContainer.appendChild(createNavBarMenuMobileSideMenuItemBlockTextSide)
+
+                                                        createNavBarMenuMobileSideMenuItemBlockTextSide.appendChild(createNavBarMenuMobileSideMenuItemBlockTextActual)
+
+
+
+                                                        createNavBarMenuMobileSideMenuItemBlockContainer.appendChild(createNavBarMenuMobileSideMenuItemBlockTextUnderlinerContainer)
+
+                                                            createNavBarMenuMobileSideMenuItemBlockTextUnderlinerContainer.appendChild(createNavBarMenuMobileSideMenuItemBlockTextUnderlinerActual)
+
+                                                            
+
+                                                    
+
+                                                    createNavBarMenuMobileSideMenuItemBlockContainer.appendChild(createNavBarMenuMobileSideMenuItemBlockIconSide)
+
+                                                        createNavBarMenuMobileSideMenuItemBlockIconSide.appendChild(createNavBarMenuMobileSideMenuItemBlockIconCircle)
+
+                                                            createNavBarMenuMobileSideMenuItemBlockIconCircle.appendChild(createNavBarMenuMobileSideMenuItemBlockIconMover)
+
+
+
+                                                                createNavBarMenuMobileSideMenuItemBlockIconMover.appendChild(createNavBarMenuMobileSideMenuItemBlockIconLineOne)
+
+                                                                createNavBarMenuMobileSideMenuItemBlockIconMover.appendChild(createNavBarMenuMobileSideMenuItemBlockIconLineTwo)
+
+                                                                createNavBarMenuMobileSideMenuItemBlockIconMover.appendChild(createNavBarMenuMobileSideMenuItemBlockIconLineThree)
+
+
+
+
+
+
+
+
+
+
+                                                    
+
+
+
+
+
+
+                                            // ADD EVENT LISTENERS FOR ITEMS
+                                            // //////////////////////////
+
+                                               var getListedItems = document.querySelector(`.navBarOneMobileSideMenuItemsScrollContainer`) 
+
+                                               var getListeItemsChildren = getListedItems.children
+
+                                               var getListemItemsCounter = getListedItems.children.length
+
+                                               var sideMenuItemsClassNamesArray = []
+
+                                               var sideMenuItemsTextClassNamesArray = []
+
+
+                                                    // RUN LOOP FOR ARRAY POPULATION
+                                                    // //////////////////
+
+                                                        for ( sideMenuItemCounter = 0; sideMenuItemCounter < getListemItemsCounter; sideMenuItemCounter++ ) {
+
+                                                            // IF DOESN NOT EXIST
+                                                            // //////////
+
+                                                                if ( 
+                                                                    
+                                                                        getListeItemsChildren[sideMenuItemCounter] == null || 
+                                                                        getListeItemsChildren[sideMenuItemCounter] == undefined 
+                                                                    
+                                                                    ) 
+                                                                    
+                                                                {
+
+                                                                }
+
+                                                            // IF EXISTS
+                                                            // //////////
+
+                                                                else {
+
+                                                                    var getSideMenuItemsTextObject = document.querySelector(`.navBarOneMobileSideMenuItem${classNumberMapper[sideMenuItemCounter]}BlockTextActual`)
+
+                                                                    sideMenuItemsClassNamesArray.push(getListeItemsChildren[sideMenuItemCounter].className)
+                                                                    sideMenuItemsTextClassNamesArray.push(getSideMenuItemsTextObject)
+
+                                                                }
+
+                                                        }
+
+
+                                                    // RUN LOOP FOR CHILDREN COUNTER AND ASSIGN EVENTS
+                                                    // //////////////////
+
+                                                        sideMenuItemsClassNamesArray.forEach((itemChaser) => {
+
+                                                            var getListedItemAssigner = sideMenuItemsTextClassNamesArray[sideMenuItemsClassNamesArray.indexOf(itemChaser)]
+
+
+                                                                // FOR HOVERS 
+                                                                // //////
+
+                                                                    // MOUSE OVER OR MOUSE ENTER
+                                                                    // //
+
+                                                                        getListedItemAssigner.addEventListener("mouseover", function () {
+
+                                                                            sideMenuItemsTextClassNamesArray[sideMenuItemsClassNamesArray.indexOf(itemChaser)].style = `
+                                                                            
+                                                                                font-size:20px;
+                                                                                color:#2C2C2C;
+                                                                                text-align:left;
+                                                                                font-weight:700;
+                                                                                font-family:arial, sans-serif;
+                                                                                line-height:65px;
+                                                                                padding-left:20px;
+                                                                                letter-spacing:3px;
+                                                                                transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+
+                                                                            `
+
+                                                                        })
+
+                                                                    // MOUSE OUT OR MOUSE LEAVE
+                                                                    // //
+
+                                                                        getListedItemAssigner.addEventListener("mouseout", function () {
+
+                                                                            sideMenuItemsTextClassNamesArray[sideMenuItemsClassNamesArray.indexOf(itemChaser)].style = `
+                                                                            
+                                                                                font-size:20px;
+                                                                                color:#2C2C2C;
+                                                                                text-align:left;
+                                                                                font-weight:700;
+                                                                                font-family:arial, sans-serif;
+                                                                                line-height:65px;
+                                                                                padding-left:0px;
+                                                                                letter-spacing:3px;
+                                                                                transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+
+                                                                            `
+
+                                                                        })
+
+
+
+
+
+
+
+                                                                // FOR CLICKS 
+                                                                // //////
+
+                                                                    getListedItemAssigner.addEventListener("click", function () {
+
+                                                                        window.open(`${storeNavBarItemLinks[sideMenuItemsClassNamesArray.indexOf(itemChaser)]}`, `_blank`)
+
+                                                                    })
+
+                                                        })
+
+
+
+                                        }
+
+
+
+
+
+
+
+
+
+
+                                                    
+
+
+
+
+
+
+                                        // ADD EVENT LISTENERS FOR CLOSE MENU BUTTON
+                                        // //////////////////////////
+
+                                            var getSideMenuSlider = document.querySelector(`.navBarOneMobileSideMenuContainer`)
+
+                                            var getSideMenuCloseButtonALoaded = document.querySelector(`.navBarOneMobileSideMenuButtonContainer`)
+
+
+                                            var getSideMenuCloseButtonIconLineOne = document.querySelector(`.navBarOneMobileSideMenuButtonIconLineOne`)
+                                            var getSideMenuCloseButtonIconLineTwo = document.querySelector(`.navBarOneMobileSideMenuButtonIconLineTwo`)
+                                            var getSideMenuCloseButtonIconLineThree = document.querySelector(`.navBarOneMobileSideMenuButtonIconLineThree`)
+
+
+                                            getSideMenuCloseButtonALoaded.addEventListener("click", function () {
+
+
+
+                                                getSideMenuCloseButtonIconLineOne.style = `
+                                                
+                                                    width:100%;
+                                                    height:3px;
+                                                    inset:-14px 0px 0px 0px;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    background:rgb(44, 44, 44);
+                                                    border-radius:1000px;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                getSideMenuCloseButtonIconLineTwo.style = `
+                                                
+                                                    width:100%;
+                                                    height:3px;
+                                                    inset:1px 0px 0px 0px;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    background:rgb(44, 44, 44);
+                                                    border-radius:1000px;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                getSideMenuCloseButtonIconLineThree.style = `
+                                                
+                                                    width:100%;
+                                                    height:3px;
+                                                    inset:17px 0px 0px 0px;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    background:rgb(44, 44, 44);
+                                                    border-radius:1000px;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+
+
+                                                    // SLIDE SIDE MOBILE SIDE MENU TO DEFAULT
+                                                    // //////////////
+
+                                                        getSideMenuSlider.style = `
+                                                        
+                                                            width:100%;
+                                                            height:100%;
+                                                            top:0;
+                                                            left:-300%;
+                                                            right:0;
+                                                            bottom:0;
+                                                            z-index:2;
+                                                            margin:auto;
+                                                            position:fixed;
+                                                            background:#FFFFFF;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+
+                                                        `
+
+                                                
+
+                                            })
+
+
+
+
+
+
+
+                                        // FOR DESKTOP NAV BAR ITEMS ----
+                                        // //////////////////////////////
+
+                                            var getSideMenu = document.querySelector(".navBarOnePlateElementMobileMenuItemsSideContainer")
+                                            var getMobileSideMenuContainer = document.querySelector(".navBarOneMobileSideMenuContainer")
+
+                                            getSideMenu.addEventListener("click", function () {
+
+                                                var getSideMenuCloseButtonIconLineOne = document.querySelector(".navBarOneMobileSideMenuButtonIconLineOne")
+                                                var getSideMenuCloseButtonIconLineTwo = document.querySelector(".navBarOneMobileSideMenuButtonIconLineTwo")
+                                                var getSideMenuCloseButtonIconLineThree = document.querySelector(".navBarOneMobileSideMenuButtonIconLineThree")
+
+                                                getMobileSideMenuContainer.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    top:0;
+                                                    left:0%;
+                                                    right:0;
+                                                    bottom:0;
+                                                    z-index:2;
+                                                    margin:auto;
+                                                    position:fixed;
+                                                    background:#FFFFFF;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                
+                                                `
+
+                                                    // SIDE MENU CLOSE MENU BUTTON ICON LINES
+                                                    // //////////////////
+
+                                                        getSideMenuCloseButtonIconLineOne.style = `
+                                                
+                                                            width:100%;
+                                                            height:3px;
+                                                            inset:0px 0px 0px 0px;
+                                                            margin:auto;
+                                                            opacity:1;
+                                                            position:absolute;
+                                                            transform:rotateZ(45deg);
+                                                            background:rgb(44, 44, 44);
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                        getSideMenuCloseButtonIconLineTwo.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            inset:1px 0px 0px 0px;
+                                                            margin:auto;
+                                                            opacity:0;
+                                                            position:absolute;
+                                                            transform:rotateZ(0deg);
+                                                            background:rgb(44, 44, 44);
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                        getSideMenuCloseButtonIconLineThree.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            inset:0px 0px 0px 0px;
+                                                            margin:auto;
+                                                            opacity:1;
+                                                            position:absolute;
+                                                            transform:rotateZ(-45deg);
+                                                            background:rgb(44, 44, 44);
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+
+
+                                            })
+
 
 
                     }
+
+
+
+
+
+                // CREATE NAV BAR TWO ACTUAL --------------------------------
+                // //////////////////////////////////////////////////////////
+
+                    function createNavBarTwoMainPlate (cushionNumber) {
+
+                        // GET NAV BAR CUSHION xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            var createNavBarCushion = document.querySelector(`.navBar${cushionNumber}`)
+
+                        // CREATE NAV BAR TWO ELEMENTS xxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            // CREATE MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateTwoMainContainer = document.createElement("div")
+                                navBarPlateTwoMainContainer.className = `navBarTwoMainContainer`
+
+                                    var navBarPlateTwoMainBlocker = document.createElement("div")
+                                    navBarPlateTwoMainBlocker.className = `navBarTwoMainBackgroundBlocker`
+
+
+
+
+
+                            // CREATE MAIN NAV BAR PLATE ELEMENT AND RESIZER 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateTwoMainElement = document.createElement("div")
+                                navBarPlateTwoMainElement.className = `navBarTwoPlateElementContainer`
+
+                                    var navBarPlateTwoElementResizer = document.createElement("div")
+                                    navBarPlateTwoElementResizer.className = `navBarTwoPlateElementResizer`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // STYLE MAIN NAV BAR PLATE AND ELEMENTS ========
+                            // //////////////////////////////////////////////
+
+                                // STYLE MAIN NAV BAR ELEMENTS xxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateTwoMainContainer.style = `
+                                    
+                                        width:100%;
+                                        top:0;
+                                        left:0;
+                                        right:0;
+                                        margin:0px auto;
+                                        z-index:2;
+                                        position:fixed;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                        navBarPlateTwoMainBlocker.style = `
+                                        
+                                            width:100%;
+                                            height:50px;
+                                            top:0;
+                                            left:0;
+                                            right:0;
+                                            margin:0px auto;
+                                            position:fixed;
+                                            background:${storeNavBarThemeBackground[0]};
+                                            transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+
+                                        `
+
+
+
+                                // STYLE MAIN NAV BAR PLATE ELEMENT AND RESIZER
+                                // //////////////////////////////////////////
+
+
+                                    navBarPlateTwoMainElement.style = `
+                                    
+                                        width:${screenWidthSelector};
+                                        top:20px;
+                                        left:0;
+                                        right:0;
+                                        margin:0px auto;
+                                        backdrop-filter:blur(10px);
+                                        padding:10px 0px;
+                                        position:absolute;
+                                        background:rgba(255, 255, 255, 0.8);
+                                        border-radius:8px;
+                                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.2);
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                        navBarPlateTwoElementResizer.style = `
+                                        
+                                            width:92%;
+                                            height:50px;
+                                            top:0;
+                                            left:0;
+                                            right:0;
+                                            bottom:0;
+                                            margin:auto;
+                                            position:relative;
+                                            /*background:#2C2C2C;*/
+                                            border-radius:1000px;
+                                            transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+
+                                        `
+
+                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // APPEND MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                createNavBarCushion.appendChild(navBarPlateTwoMainContainer)
+
+                                    navBarPlateTwoMainContainer.appendChild(navBarPlateTwoMainBlocker)
+
+
+
+                            // APPEND MAIN NAV BAR PLATE ELEMENT AND RESIZER
+                            // //////////////////////////////////////////
+
+                                navBarPlateTwoMainBlocker.appendChild(navBarPlateTwoMainElement)
+
+                                    navBarPlateTwoMainElement.appendChild(navBarPlateTwoElementResizer)
+
+                        
+
+                    }
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+                
+
+            // //////////////////////////////////////////////////////////////
+            // NAV BAR RESIZER CHECKERS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            // //////////////////////////////////////////////////////////////
+
+                function navBarSizingChecks () {
+
+
+                    for ( navBarFinderCounter = 0; navBarFinderCounter < sectionLoopCounter; navBarFinderCounter ++ ) {
+
+                        var getNavBarSetter = document.querySelector(`.navBar${classNumberMapper[navBarFinderCounter]}`)
+
+                        if ( getNavBarSetter == null || getNavBarSetter == undefined ) {
+
+                        } else {
+
+                            // GET VISIBLE NAV BAR CLASS NAME
+                            // //////////////
+
+                                var getVisibleNavBarClassName = getNavBarSetter.className
+
+                            // CHECK IF DOESNT HAVE CHILDREN THEN ADD NEW FROM SCRATCH
+                            // //////////////////////
+
+                                if ( 
+                                    
+                                        getNavBarSetter.children[0] == null || 
+                                        getNavBarSetter.children[0] == undefined 
+                                    
+                                    ) 
+                                    
+                                {
+
+                                    console.log("NEW COPY LOADING...")
+
+                                    // CHECK WHICH NUMBER IS INCLUDED IN CLASS NAME
+                                    // //////////////
+
+                                        
+                                        for ( navBarSeekerCounter = 0; navBarSeekerCounter < classNumberMapper.length; navBarSeekerCounter++ ) {
+
+                                            // IF NAV BAR IS A MATCH
+                                            // //////
+
+                                                if ( getVisibleNavBarClassName.includes(classNumberMapper[navBarSeekerCounter]) ) {
+
+
+                                                        // CREATE NEW COPY OF NAV BAR ITEMS
+                                                        // //////////////
+
+                                                            storeNavBarMainPlates[navBarSeekerCounter](classNumberMapper[navBarSeekerCounter])
+
+
+                                                }
+
+                                            // IF NAV BAR IS NOT A MATCH
+                                            // //////
+
+                                                else {
+
+                                                }
+
+                                        }
+
+                                }
+
+                            // AND IF HAS CHILDREN THEN REMOVE AND RESTART
+                            // //////////////////////
+
+                                else {
+
+                                    console.log("RESTARTING...")
+
+                                    // CHECK WHICH NUMBER IS INCLUDED IN CLASS NAME
+                                    // //////////////
+
+                                        
+                                        for ( navBarSeekerCounter = 0; navBarSeekerCounter < classNumberMapper.length; navBarSeekerCounter++ ) {
+
+                                            // IF NAV BAR IS A MATCH
+                                            // //////
+
+                                                if ( getVisibleNavBarClassName.includes(classNumberMapper[navBarSeekerCounter]) ) {
+
+
+                                                        // WIPE NAV BAR OF ALL CHILDREN
+                                                        // //////////////
+                    
+                                                            getNavBarSetter.removeChild(getNavBarSetter.children[0])
+                    
+                                                        // CREATE NEW COPY OF NAV BAR ITEMS
+                                                        // //////////////
+
+                                                            storeNavBarMainPlates[navBarSeekerCounter](classNumberMapper[navBarSeekerCounter])
+
+
+                                                }
+
+                                            // IF NAV BAR IS NOT A MATCH
+                                            // //////
+
+                                                else {
+
+                                                }
+
+                                        }
+
+
+
+                                }
+
+                        }
+
+                    }
+
+
+                }
 
 
 
@@ -1654,195 +3272,240 @@
 
                     window.addEventListener("resize", function () {
 
-                        // DECLARE PRIMARY VARIABLES ////////////////////
-                        // //////////////////////////////////////////////
-
+                        // DECLARE PRIMARY VARIABLES ////////////////////////////
+                        // //////////////////////////////////////////////////////
+    
                             var windowWidth = window.innerWidth
-                        
-
-                        // CHECK IF WINDOW IS IN SIZE xxxxxxxxxxxxxxxxxxxxxxx
-                        // //////////////////////////////////////////////////
-
-                            // FOR SCREEN SIZE 300 --------------------------
-                            // //////////////////////////////////////////////
-
-                                if ( windowWidth > 0 && windowWidth < 300 ) {
-
-                                    console.log("300 LOCKED IN...")
-
-                                        // UPDATE WINDOW SIZE FOR COLLECTOR x
-                                        // //////////////////////////////////
-
-                                            screenWidthSelector = "200px"
-                                            screenWidthResizerSelector = "176px"
-
-
-                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
-                                        // //////////////////////////////////
-
-                                            getNavBarLogoAndTitleSideSizing = "80%"
-                                            getNavBarMenuItemsSideSizing = "20%"
-
-                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
-                                        // //////////////////////////////////
-
-                                            getNavBarDesktopMenuItemsSetting = "none"
-                                            getNavBarMobileMenuItemsSetting = "inline-table"
-
-                                                    
-
-                                                    
-
-                                }
-
-                            // FOR SCREEN SIZE 500 --------------------------
-                            // //////////////////////////////////////////////
-
-                                else if ( windowWidth > 300 && windowWidth < 500 ) {
-
-                                    console.log("300 LOCKED IN...")
-
-                                        // UPDATE WINDOW SIZE FOR COLLECTOR x
-                                        // //////////////////////////////////
-
-                                            screenWidthSelector = "200px"
-                                            screenWidthResizerSelector = "176px"
-
-
-                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
-                                        // //////////////////////////////////
-
-                                            getNavBarLogoAndTitleSideSizing = "80%"
-                                            getNavBarMenuItemsSideSizing = "20%"
-
-                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
-                                        // //////////////////////////////////
-
-                                            getNavBarDesktopMenuItemsSetting = "none"
-                                            getNavBarMobileMenuItemsSetting = "inline-table"
-
-                                                    
-
-                                }
-
-                            // FOR SCREEN SIZE 800 --------------------------
-                            // //////////////////////////////////////////////
-
-                                else if ( windowWidth > 500 && windowWidth < 800 ) {
-
-                                    console.log("500 LOCKED IN...")
-
-                                        // UPDATE WINDOW SIZE FOR COLLECTOR x
-                                        // //////////////////////////////////
-
-                                            screenWidthSelector = "300px"
-                                            screenWidthResizerSelector = "276px"
-
-
-                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
-                                        // //////////////////////////////////
-
-                                            getNavBarLogoAndTitleSideSizing = "80%"
-                                            getNavBarMenuItemsSideSizing = "20%"
-
-                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
-                                        // //////////////////////////////////
-
-                                            getNavBarDesktopMenuItemsSetting = "none"
-                                            getNavBarMobileMenuItemsSetting = "inline-table"
-
-                                                    
-
-                                }
-
-                            // FOR SCREEN SIZE 1000 -------------------------
-                            // //////////////////////////////////////////////
-
-                                else if ( windowWidth > 800 && windowWidth < 1000 ) {
-
-                                    console.log("800 LOCKED IN...")
-
-                                        // UPDATE WINDOW SIZE FOR COLLECTOR x
-                                        // //////////////////////////////////
-
-                                            screenWidthSelector = "600px"
-                                            screenWidthResizerSelector = "576px"
-
-
-                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
-                                        // //////////////////////////////////
-
-                                            getNavBarLogoAndTitleSideSizing = "40%"
-                                            getNavBarMenuItemsSideSizing = "60%"
-
-                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
-                                        // //////////////////////////////////
-
-                                            getNavBarDesktopMenuItemsSetting = "inline-table"
-                                            getNavBarMobileMenuItemsSetting = "none"
-
-                                                    
-
-                                }
-
-                            // FOR SCREEN SIZE 1200 -------------------------
-                            // //////////////////////////////////////////////
-
-                                else if ( windowWidth > 1000 && windowWidth < 1200 ) {
-
-                                    console.log("1000 LOCKED IN...")
-
-                                        // UPDATE WINDOW SIZE FOR COLLECTOR x
-                                        // //////////////////////////////////
-
-                                            screenWidthSelector = "800px"
-                                            screenWidthResizerSelector = "776px"
-
-
-                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
-                                        // //////////////////////////////////
-
-                                            getNavBarLogoAndTitleSideSizing = "30%"
-                                            getNavBarMenuItemsSideSizing = "70%"
-
-                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
-                                        // //////////////////////////////////
-
-                                            getNavBarDesktopMenuItemsSetting = "inline-table"
-                                            getNavBarMobileMenuItemsSetting = "none"
-
-                                                    
-
-                                }
-
-                            // FOR SCREEN SIZE 1200 + -----------------------
-                            // //////////////////////////////////////////////
-
-                                else if ( windowWidth > 1200 ) {
-
-                                    console.log("BEYOND LOCKED IN...")
-
-                                        // UPDATE WINDOW SIZE FOR COLLECTOR x
-                                        // //////////////////////////////////
-
-                                            screenWidthSelector = "800px"
-                                            screenWidthResizerSelector = "776px"
-
-
-                                        // UPDATE LOGO TITLE AND MENU ITEMS SIZING
-                                        // //////////////////////////////////
-
-                                            getNavBarLogoAndTitleSideSizing = "30%"
-                                            getNavBarMenuItemsSideSizing = "70%"
-
-                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
-                                        // //////////////////////////////////
-
-                                            getNavBarDesktopMenuItemsSetting = "inline-table"
-                                            getNavBarMobileMenuItemsSetting = "none"
-
-                                                    
-
-                                }
+    
+                            console.log("SIZE NOW: " + windowWidth)
+                            
+    
+                            // CHECK IF WINDOW IS IN SIZE xxxxxxxxxxxxxxxxxxxxxxx
+                            // //////////////////////////////////////////////////
+    
+                                // FOR SCREEN SIZE 300 --------------------------
+                                // //////////////////////////////////////////////
+    
+                                    if ( windowWidth > 0 && windowWidth < 301 ) {
+    
+                                        console.log("300 LOCKED IN...")
+    
+                                            // UPDATE WINDOW SIZE FOR COLLECTOR x
+                                            // //////////////////////////////////
+    
+                                                screenWidthSelector = "200px"
+                                                screenWidthResizerSelector = "176px"
+    
+    
+                                            // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                            // //////////////////////////////////
+    
+                                                getNavBarLogoAndTitleSideSizing = "76%"
+                                                getNavBarMenuItemsSideSizing = "24%"
+
+    
+                                            // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                            // //////////////////////////////////
+    
+                                                getNavBarTitleControl = "none"
+                                                getNavBarMobileMenuItemsSetting = "inline-table"
+                                                getNavBarDesktopMenuItemsSetting = "none"
+
+
+                                            // CHECK IF NAV BAR BLOCK EXISTS ----
+                                            // //////////////////////////////////
+
+                                                navBarSizingChecks()
+    
+                                                        
+    
+                                                        
+    
+                                    }
+    
+                                // FOR SCREEN SIZE 500 --------------------------
+                                // //////////////////////////////////////////////
+    
+                                    else if ( windowWidth > 300 && windowWidth < 501 ) {
+    
+                                        console.log("300 LOCKED IN...")
+    
+                                            // UPDATE WINDOW SIZE FOR COLLECTOR x
+                                            // //////////////////////////////////
+    
+                                                screenWidthSelector = "250px"
+                                                screenWidthResizerSelector = "176px"
+    
+    
+                                            // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                            // //////////////////////////////////
+    
+                                                getNavBarLogoAndTitleSideSizing = "76%"
+                                                getNavBarMenuItemsSideSizing = "24%"
+    
+                                            // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                            // //////////////////////////////////
+    
+                                                getNavBarTitleControl = "none"
+                                                getNavBarMobileMenuItemsSetting = "inline-table"
+                                                getNavBarDesktopMenuItemsSetting = "none"
+                                                
+
+                                            // CHECK IF NAV BAR BLOCK EXISTS ----
+                                            // //////////////////////////////////
+
+                                                navBarSizingChecks()
+    
+                                                        
+    
+                                    }
+    
+                                // FOR SCREEN SIZE 800 --------------------------
+                                // //////////////////////////////////////////////
+    
+                                    else if ( windowWidth > 500 && windowWidth < 801 ) {
+    
+                                        console.log("500 LOCKED IN...")
+    
+                                            // UPDATE WINDOW SIZE FOR COLLECTOR x
+                                            // //////////////////////////////////
+    
+                                                screenWidthSelector = "300px"
+                                                screenWidthResizerSelector = "276px"
+    
+    
+                                            // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                            // //////////////////////////////////
+    
+                                                getNavBarLogoAndTitleSideSizing = "80%"
+                                                getNavBarMenuItemsSideSizing = "20%"
+    
+                                            // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                            // //////////////////////////////////
+    
+                                                getNavBarTitleControl = "block"
+                                                getNavBarMobileMenuItemsSetting = "inline-table"
+                                                getNavBarDesktopMenuItemsSetting = "none"
+                                                
+
+                                            // CHECK IF NAV BAR BLOCK EXISTS ----
+                                            // //////////////////////////////////
+
+                                                navBarSizingChecks()
+    
+                                                        
+    
+                                    }
+    
+                                // FOR SCREEN SIZE 1000 -------------------------
+                                // //////////////////////////////////////////////
+    
+                                    else if ( windowWidth > 800 && windowWidth < 1001 ) {
+    
+                                        console.log("800 LOCKED IN...")
+    
+                                            // UPDATE WINDOW SIZE FOR COLLECTOR x
+                                            // //////////////////////////////////
+    
+                                                screenWidthSelector = "600px"
+                                                screenWidthResizerSelector = "576px"
+    
+    
+                                            // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                            // //////////////////////////////////
+    
+                                                getNavBarLogoAndTitleSideSizing = "50%"
+                                                getNavBarMenuItemsSideSizing = "50%"
+    
+                                            // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                            // //////////////////////////////////
+    
+                                                getNavBarTitleControl = "block"
+                                                getNavBarMobileMenuItemsSetting = "none"
+                                                getNavBarDesktopMenuItemsSetting = "inline-table"
+                                                
+
+                                            // CHECK IF NAV BAR BLOCK EXISTS ----
+                                            // //////////////////////////////////
+
+                                                navBarSizingChecks()
+    
+                                                        
+    
+                                    }
+    
+                                // FOR SCREEN SIZE 1200 -------------------------
+                                // //////////////////////////////////////////////
+    
+                                    else if ( windowWidth > 1000 && windowWidth < 1201 ) {
+    
+                                        console.log("1000 LOCKED IN...")
+    
+                                            // UPDATE WINDOW SIZE FOR COLLECTOR x
+                                            // //////////////////////////////////
+    
+                                                screenWidthSelector = "800px"
+                                                screenWidthResizerSelector = "776px"
+    
+    
+                                            // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                            // //////////////////////////////////
+    
+                                                getNavBarLogoAndTitleSideSizing = "50%"
+                                                getNavBarMenuItemsSideSizing = "50%"
+    
+                                            // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                            // //////////////////////////////////
+    
+                                                getNavBarTitleControl = "block"
+                                                getNavBarMobileMenuItemsSetting = "none"
+                                                getNavBarDesktopMenuItemsSetting = "inline-table"
+                                                
+
+                                            // CHECK IF NAV BAR BLOCK EXISTS ----
+                                            // //////////////////////////////////
+
+                                                navBarSizingChecks()
+    
+                                                        
+    
+                                    }
+    
+                                // FOR SCREEN SIZE 1200 + -----------------------
+                                // //////////////////////////////////////////////
+    
+                                    else if ( windowWidth > 1200 ) {
+    
+                                        console.log("BEYOND LOCKED IN...")
+    
+                                            // UPDATE WINDOW SIZE FOR COLLECTOR x
+                                            // //////////////////////////////////
+    
+                                                screenWidthSelector = "800px"
+                                                screenWidthResizerSelector = "776px"
+    
+    
+                                            // UPDATE LOGO TITLE AND MENU ITEMS SIZING
+                                            // //////////////////////////////////
+    
+                                                getNavBarLogoAndTitleSideSizing = "50%"
+                                                getNavBarMenuItemsSideSizing = "50%"
+    
+                                            // UPDATE MOBILE AND DESKTOP MENU ITEMS DISPLAY SETTINGS
+                                            // //////////////////////////////////
+    
+                                                getNavBarTitleControl = "block"
+                                                getNavBarMobileMenuItemsSetting = "none"
+                                                getNavBarDesktopMenuItemsSetting = "inline-table"
+                                                
+
+                                            // CHECK IF NAV BAR BLOCK EXISTS ----
+                                            // //////////////////////////////////
+
+                                                navBarSizingChecks()
+    
+                                                        
+    
+                                    }
 
                     })
