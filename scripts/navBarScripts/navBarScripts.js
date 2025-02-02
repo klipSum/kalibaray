@@ -2913,6 +2913,53 @@
 
 
 
+                            // CREATE MAIN NAV BAR LOGO AND MENU ITEMS SIDES
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateTwoLogoSide = document.createElement("div")
+                                navBarPlateTwoLogoSide.className = `navBarTwoPlateElementLogoTitleSideContainer`
+
+                                    var createNavBarPlateTwoLogoContainer = document.createElement("div")
+                                    createNavBarPlateTwoLogoContainer.className = `navBarTwoPlateLogoContainer`
+
+                                        var createNavBarPlateTwoLogoActual = document.createElement("div")
+                                        createNavBarPlateTwoLogoActual.className = `navBarTwoPlateLogoActual`
+
+
+
+
+                                var navBarPlateTwoDesktopMenuItemsSide = document.createElement("div")
+                                navBarPlateTwoDesktopMenuItemsSide.className = `navBarTwoPlateElementDesktopMenuItemsSideContainer`
+
+                                var navBarPlateTwoMobileMenuItemsSide = document.createElement("div")
+                                navBarPlateTwoMobileMenuItemsSide.className = `navBarTwoPlateElementMobileMenuItemsSideContainer`
+
+
+
+                                    // CREATE MOBILE MENU BUTTONS AND ICON CONTAINERS
+                                    // //////////////////////////////////////
+
+                                        var createNavBarTwoMenuItemsMobileButtonContainer = document.createElement("div")
+                                        createNavBarTwoMenuItemsMobileButtonContainer.className = `navBarTwoMenuItemsButtonContainer`
+        
+                                            var createNavBarTwoMenuItemsMobileButtonIconMover = document.createElement("div")
+                                            createNavBarTwoMenuItemsMobileButtonIconMover.className = `navBarTwoMenuItemsButtonIconMover`
+        
+        
+        
+                                                var createNavBarTwoMenuItemsmobileButtonIconLineOne = document.createElement("div")
+                                                createNavBarTwoMenuItemsmobileButtonIconLineOne.className = `navBarTwoMenuItemsButtonIconLineOne`
+        
+                                                var createNavBarTwoMenuItemsmobileButtonIconLineTwo = document.createElement("div")
+                                                createNavBarTwoMenuItemsmobileButtonIconLineTwo.className = `navBarTwoMenuItemsButtonIconLineTwo`
+        
+                                                var createNavBarTwoMenuItemsmobileButtonIconLineThree = document.createElement("div")
+                                                createNavBarTwoMenuItemsmobileButtonIconLineThree.className = `navBarTwoMenuItemsButtonIconLineThree`
+
+
+
+
+
 
 
 
@@ -3023,6 +3070,196 @@
 
                                         `
 
+
+
+                                // STYLE MAIN NAV BAR LOGO SIDE =============
+                                // //////////////////////////////////////////
+
+                                    navBarPlateTwoLogoSide.style = `
+                                    
+                                        width:${getNavBarLogoAndTitleSideSizing};
+                                        height:50px;
+                                        float:left;
+                                        position:relative;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                        createNavBarPlateTwoLogoContainer.style = `
+                                        
+                                            width:100%;
+                                            height:50px;
+                                            float:left;
+                                            position:relative;
+                                            background:#3a885a;
+                                            transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+
+                                        `
+
+                                            createNavBarPlateTwoLogoActual.style = `
+                                            
+                                                width:150px;
+                                                height:50px;
+                                                top:0;
+                                                left:0;
+                                                bottom:0;
+                                                margin:auto;
+                                                position:absolute;
+                                                background:#df7cdf;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+
+                                // STYLE MAIN NAV BAR MENU ITEMS SIDE =======
+                                // //////////////////////////////////////////
+
+                                    navBarPlateTwoDesktopMenuItemsSide.style = `
+                                    
+                                        width:${getNavBarMenuItemsSideSizing};
+                                        height:50px;
+                                        float:right;
+                                        display:${getNavBarDesktopMenuItemsSetting};
+                                        /*background:#3C5472;*/
+                                        text-align:right;
+                                        position:relative;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                    navBarPlateTwoMobileMenuItemsSide.style = `
+                                    
+                                        width:${getNavBarMenuItemsSideSizing};
+                                        height:50px;
+                                        float:right;
+                                        display:${getNavBarMobileMenuItemsSetting};
+                                        position:relative;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+
+                                        // STYLE MOBILE ITEMS MENU ICON ELEMENTS
+                                        // //////////////////////////////
+
+
+                                            createNavBarTwoMenuItemsMobileButtonContainer.style = `
+                                            
+                                                width:50px;
+                                                height:50px;
+                                                cursor:pointer;
+                                                margin:auto;
+                                                position:relative;
+                                                background:#FFFFFF;
+                                                border-radius:8px;
+                                                box-shadow:0px 20px 30px -10px rgba(0,0,0,0.5);
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                createNavBarTwoMenuItemsMobileButtonIconMover.style = `
+                                                
+                                                    width:20px;
+                                                    height:25px;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                    createNavBarTwoMenuItemsmobileButtonIconLineOne.style = `
+                                                    
+                                                        width:100%;
+                                                        height:3px;
+                                                        top:-14px;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        background:#2C2C2C;
+                                                        border-radius:1000px;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+                                                    createNavBarTwoMenuItemsmobileButtonIconLineTwo.style = `
+                                                    
+                                                        width:100%;
+                                                        height:3px;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        background:#2C2C2C;
+                                                        border-radius:1000px;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+                                                    createNavBarTwoMenuItemsmobileButtonIconLineThree.style = `
+                                                    
+                                                        width:100%;
+                                                        height:3px;
+                                                        top:15px;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        background:#2C2C2C;
+                                                        border-radius:1000px;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
                                             
 
 
@@ -3056,11 +3293,46 @@
 
 
                             // APPEND MAIN NAV BAR PLATE ELEMENT AND RESIZER
-                            // //////////////////////////////////////////
+                            // //////////////////////////////////////////////
 
                                 navBarPlateTwoMainBlocker.appendChild(navBarPlateTwoMainElement)
 
                                     navBarPlateTwoMainElement.appendChild(navBarPlateTwoElementResizer)
+
+
+
+                            // APPEND MAIN NAV BAR LOGO SIDE CONTAINER ======
+                            // //////////////////////////////////////////////
+
+                                navBarPlateTwoElementResizer.appendChild(navBarPlateTwoLogoSide)
+
+                                    navBarPlateTwoLogoSide.appendChild(createNavBarPlateTwoLogoContainer)
+
+                                        createNavBarPlateTwoLogoContainer.appendChild(createNavBarPlateTwoLogoActual)
+
+
+
+                            // APPEND MAIN NAV BAR MENU ITEMS SIDE CONTAINER 
+                            // //////////////////////////////////////////////
+
+                                navBarPlateTwoElementResizer.appendChild(navBarPlateTwoDesktopMenuItemsSide)
+
+                                navBarPlateTwoElementResizer.appendChild(navBarPlateTwoMobileMenuItemsSide)
+
+
+
+                            // APPEND MAIN NAV BAR MENU ICON CONTAINER ====== 
+                            // //////////////////////////////////////////////
+
+                                navBarPlateTwoMobileMenuItemsSide.appendChild(createNavBarTwoMenuItemsMobileButtonContainer)
+
+                                    createNavBarTwoMenuItemsMobileButtonContainer.appendChild(createNavBarTwoMenuItemsMobileButtonIconMover)
+
+                                        createNavBarTwoMenuItemsMobileButtonIconMover.appendChild(createNavBarTwoMenuItemsmobileButtonIconLineOne)
+
+                                        createNavBarTwoMenuItemsMobileButtonIconMover.appendChild(createNavBarTwoMenuItemsmobileButtonIconLineTwo)
+
+                                        createNavBarTwoMenuItemsMobileButtonIconMover.appendChild(createNavBarTwoMenuItemsmobileButtonIconLineThree)
 
                         
 
