@@ -127,7 +127,8 @@
                     var storeNavBarMainPlates = [
 
                         createNavBarOneMainPlate,
-                        createNavBarTwoMainPlate
+                        createNavBarTwoMainPlate,
+                        createNavBarThreeMainPlate
                         
                     ]
 
@@ -2928,33 +2929,121 @@
 
 
 
-                                var navBarPlateTwoDesktopMenuItemsSide = document.createElement("div")
-                                navBarPlateTwoDesktopMenuItemsSide.className = `navBarTwoPlateElementDesktopMenuItemsSideContainer`
-
-                                var navBarPlateTwoMobileMenuItemsSide = document.createElement("div")
-                                navBarPlateTwoMobileMenuItemsSide.className = `navBarTwoPlateElementMobileMenuItemsSideContainer`
 
 
 
-                                    // CREATE MOBILE MENU BUTTONS AND ICON CONTAINERS
-                                    // //////////////////////////////////////
 
-                                        var createNavBarTwoMenuItemsMobileButtonContainer = document.createElement("div")
-                                        createNavBarTwoMenuItemsMobileButtonContainer.className = `navBarTwoMenuItemsButtonContainer`
-        
-                                            var createNavBarTwoMenuItemsMobileButtonIconMover = document.createElement("div")
-                                            createNavBarTwoMenuItemsMobileButtonIconMover.className = `navBarTwoMenuItemsButtonIconMover`
-        
-        
-        
-                                                var createNavBarTwoMenuItemsmobileButtonIconLineOne = document.createElement("div")
-                                                createNavBarTwoMenuItemsmobileButtonIconLineOne.className = `navBarTwoMenuItemsButtonIconLineOne`
-        
-                                                var createNavBarTwoMenuItemsmobileButtonIconLineTwo = document.createElement("div")
-                                                createNavBarTwoMenuItemsmobileButtonIconLineTwo.className = `navBarTwoMenuItemsButtonIconLineTwo`
-        
-                                                var createNavBarTwoMenuItemsmobileButtonIconLineThree = document.createElement("div")
-                                                createNavBarTwoMenuItemsmobileButtonIconLineThree.className = `navBarTwoMenuItemsButtonIconLineThree`
+                                // CREATE MENU LIST ITEMS --------------------
+                                // ///////////////////////////////////////////
+
+                                    // FOR DESKTOP MENU LIST ITEMS ...........
+                                    // ///////////////////////////////////////
+
+                                        var navBarPlateTwoDesktopMenuItemsSide = document.createElement("div")
+                                        navBarPlateTwoDesktopMenuItemsSide.className = `navBarTwoPlateElementDesktopMenuItemsSideContainer`
+
+                                    // FOR MOBILE MENU LIST ITEMS ............
+                                    // ///////////////////////////////////////
+
+                                        var navBarPlateTwoMobileMenuItemsSide = document.createElement("div")
+                                        navBarPlateTwoMobileMenuItemsSide.className = `navBarTwoPlateElementMobileMenuItemsSideContainer`
+
+
+
+
+
+
+
+
+                                            // CREATE MOBILE MENU BUTTONS AND ICON CONTAINERS
+                                            // ///////////////////////////////
+
+                                                var createNavBarTwoMenuItemsMobileButtonContainer = document.createElement("div")
+                                                createNavBarTwoMenuItemsMobileButtonContainer.className = `navBarTwoMenuItemsButtonContainer`
+                
+                                                    var createNavBarTwoMenuItemsMobileButtonIconMover = document.createElement("div")
+                                                    createNavBarTwoMenuItemsMobileButtonIconMover.className = `navBarTwoMenuItemsButtonIconMover`
+                
+                
+                
+                                                        var createNavBarTwoMenuItemsmobileButtonIconLineOne = document.createElement("div")
+                                                        createNavBarTwoMenuItemsmobileButtonIconLineOne.className = `navBarTwoMenuItemsButtonIconLineOne`
+                
+                                                        var createNavBarTwoMenuItemsmobileButtonIconLineTwo = document.createElement("div")
+                                                        createNavBarTwoMenuItemsmobileButtonIconLineTwo.className = `navBarTwoMenuItemsButtonIconLineTwo`
+                
+                                                        var createNavBarTwoMenuItemsmobileButtonIconLineThree = document.createElement("div")
+                                                        createNavBarTwoMenuItemsmobileButtonIconLineThree.className = `navBarTwoMenuItemsButtonIconLineThree`
+
+
+
+
+
+
+
+
+                                            // CREATE MOBILE MENU LIST ITEMS 
+                                            // ///////////////////////////////
+
+                                                var createNavBarTwoMenuItemsMobileSideMenu = document.createElement("div")
+                                                createNavBarTwoMenuItemsMobileSideMenu.className = `navBarTwoPlateElementMobileMenuItemsSideContentContainer`
+
+                                                    var createNavBarTwoMenuItemsMobileSideMenuResizer = document.createElement("div")
+                                                    createNavBarTwoMenuItemsMobileSideMenuResizer.className = `navBarTwoPlateElementMobileMenuItemsSideResizer`
+
+
+                                                        // HEADER AND SIDE MENU CLOSE BUTTON CONTAINER
+                                                        // ///////////////////
+
+                                                            var createNavBarTwoMenuItemsMobileSideMenuHeadlineCloseMenuButtonContainer = document.createElement("div")
+                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineCloseMenuButtonContainer.className = `navBarTwoPlateElementMobileMenuItemsSideHeadlineCloseMenuButtonContainer`
+
+
+                                                                // HEADLINER TEXT CONTAINER
+                                                                // ///////////
+
+                                                                    var createNavBarTwoMenuItemsMobileSideMenuHeadlineSideContainer = document.createElement("div")
+                                                                    createNavBarTwoMenuItemsMobileSideMenuHeadlineSideContainer.className = `navBarTwoPlateElementMobileMenuItemsSideHeadlineSideContainer`
+
+                                                                        var createNavBarTwoMenuItemsMobileSideMenuHeadlineTextContainer = document.createElement("div")
+                                                                        createNavBarTwoMenuItemsMobileSideMenuHeadlineTextContainer.className = `navBarTwoPlateElementMobileMenuItemsSideHeadlineTextContainer`
+
+                                                                            var createNavBarTwoMenuItemsMobileSideMenuHeadlineTextActual = document.createElement("div")
+                                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineTextActual.className = `navBarTwoPlateElementMobileMenuItemsSideHeadlineTextActual`
+
+
+                                                                // MENU BUTTON CLOSE MENU CONTAINER
+                                                                // ///////////
+
+                                                                    var createNavBarTwoMenuItemsMobileSideMenuCloseButtonSideContainer = document.createElement("div")
+                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonSideContainer.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonSideContainer`
+
+                                                                        var createNavBarTwoMenuItemsMobileSideMenuCloseButtonContainer = document.createElement("div")
+                                                                        createNavBarTwoMenuItemsMobileSideMenuCloseButtonContainer.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonContainer`
+
+                                                                            // MENU BUTTON CLOSE MENU BUTTON ICON 
+                                                                            // 
+
+                                                                                var createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover = document.createElement("div")
+                                                                                createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconMover`
+
+                                                                                    var createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineOne = document.createElement("div")
+                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineOne.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineOne`
+
+                                                                                    var createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineTwo = document.createElement("div")
+                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineTwo.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineTwo`
+
+                                                                                    var createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineThree = document.createElement("div")
+                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineThree.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineThree`
+
+
+                                                                // MENU ITEMS LIST CONTAINER
+                                                                // ///////////
+
+                                                                    var createNavBarTwoMenuItemsSideMenuListItemsContainer = document.createElement("div")
+                                                                    createNavBarTwoMenuItemsSideMenuListItemsContainer.className = `navBarTwoPlateElementMobileMenuSideItemsListContainer`
+
+
 
 
 
@@ -3124,74 +3213,62 @@
 
 
 
-                                // STYLE MAIN NAV BAR MENU ITEMS SIDE =======
+                                // STYLE MAIN NAV BAR MENU ITEMS SIDES ======
                                 // //////////////////////////////////////////
 
-                                    navBarPlateTwoDesktopMenuItemsSide.style = `
-                                    
-                                        width:${getNavBarMenuItemsSideSizing};
-                                        height:50px;
-                                        float:right;
-                                        display:${getNavBarDesktopMenuItemsSetting};
-                                        /*background:#3C5472;*/
-                                        text-align:right;
-                                        position:relative;
-                                        transition:all 600ms ease;
-                                        -webkit-transition:all 600ms ease;
-                                        -moz-transition:all 600ms ease;
-                                        -o-transition:all 600ms ease;
-                                        -ms-transition:all 600ms ease;
+                                    // FOR MOBILE MENU ATTRIBUTES -----------
+                                    // //////////////////////////////////////
 
-                                    `
+                                        navBarPlateTwoDesktopMenuItemsSide.style = `
+                                        
+                                            width:${getNavBarMenuItemsSideSizing};
+                                            height:50px;
+                                            float:right;
+                                            display:${getNavBarDesktopMenuItemsSetting};
+                                            /*background:#3C5472;*/
+                                            text-align:right;
+                                            position:relative;
+                                            transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
 
-                                    navBarPlateTwoMobileMenuItemsSide.style = `
-                                    
-                                        width:${getNavBarMenuItemsSideSizing};
-                                        height:50px;
-                                        float:right;
-                                        display:${getNavBarMobileMenuItemsSetting};
-                                        position:relative;
-                                        transition:all 600ms ease;
-                                        -webkit-transition:all 600ms ease;
-                                        -moz-transition:all 600ms ease;
-                                        -o-transition:all 600ms ease;
-                                        -ms-transition:all 600ms ease;
+                                        `
 
-                                    `
+                                    // FOR DESKTOP MENU ATTRIBUTES ----------
+                                    // //////////////////////////////////////
+
+                                        navBarPlateTwoMobileMenuItemsSide.style = `
+                                        
+                                            width:${getNavBarMenuItemsSideSizing};
+                                            height:50px;
+                                            float:right;
+                                            display:${getNavBarMobileMenuItemsSetting};
+                                            position:relative;
+                                            transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+
+                                        `
 
 
-                                        // STYLE MOBILE ITEMS MENU ICON ELEMENTS
-                                        // //////////////////////////////
+                                            // STYLE MOBILE ITEMS MENU ICON ELEMENTS
+                                            // //////////////////////////////
 
 
-                                            createNavBarTwoMenuItemsMobileButtonContainer.style = `
-                                            
-                                                width:50px;
-                                                height:50px;
-                                                cursor:pointer;
-                                                margin:auto;
-                                                position:relative;
-                                                background:#FFFFFF;
-                                                border-radius:8px;
-                                                box-shadow:0px 20px 30px -10px rgba(0,0,0,0.5);
-                                                transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-
-                                            `
-
-                                                createNavBarTwoMenuItemsMobileButtonIconMover.style = `
+                                                createNavBarTwoMenuItemsMobileButtonContainer.style = `
                                                 
-                                                    width:20px;
-                                                    height:25px;
-                                                    top:0;
-                                                    left:0;
-                                                    right:0;
-                                                    bottom:0;
+                                                    width:50px;
+                                                    height:50px;
+                                                    cursor:pointer;
                                                     margin:auto;
-                                                    position:absolute;
+                                                    position:relative;
+                                                    background:#FFFFFF;
+                                                    border-radius:8px;
+                                                    box-shadow:0px 20px 30px -10px rgba(0,0,0,0.5);
                                                     transition:all 600ms ease;
                                                     -webkit-transition:all 600ms ease;
                                                     -moz-transition:all 600ms ease;
@@ -3200,38 +3277,16 @@
 
                                                 `
 
-                                                    createNavBarTwoMenuItemsmobileButtonIconLineOne.style = `
+                                                    createNavBarTwoMenuItemsMobileButtonIconMover.style = `
                                                     
-                                                        width:100%;
-                                                        height:3px;
-                                                        top:-14px;
-                                                        left:0;
-                                                        right:0;
-                                                        bottom:0;
-                                                        margin:auto;
-                                                        position:absolute;
-                                                        background:#2C2C2C;
-                                                        border-radius:1000px;
-                                                        transition:all 600ms ease;
-                                                        -webkit-transition:all 600ms ease;
-                                                        -moz-transition:all 600ms ease;
-                                                        -o-transition:all 600ms ease;
-                                                        -ms-transition:all 600ms ease;
-
-                                                    `
-
-                                                    createNavBarTwoMenuItemsmobileButtonIconLineTwo.style = `
-                                                    
-                                                        width:100%;
-                                                        height:3px;
+                                                        width:20px;
+                                                        height:25px;
                                                         top:0;
                                                         left:0;
                                                         right:0;
                                                         bottom:0;
                                                         margin:auto;
                                                         position:absolute;
-                                                        background:#2C2C2C;
-                                                        border-radius:1000px;
                                                         transition:all 600ms ease;
                                                         -webkit-transition:all 600ms ease;
                                                         -moz-transition:all 600ms ease;
@@ -3240,25 +3295,367 @@
 
                                                     `
 
-                                                    createNavBarTwoMenuItemsmobileButtonIconLineThree.style = `
-                                                    
-                                                        width:100%;
-                                                        height:3px;
-                                                        top:15px;
-                                                        left:0;
-                                                        right:0;
-                                                        bottom:0;
-                                                        margin:auto;
-                                                        position:absolute;
-                                                        background:#2C2C2C;
-                                                        border-radius:1000px;
-                                                        transition:all 600ms ease;
-                                                        -webkit-transition:all 600ms ease;
-                                                        -moz-transition:all 600ms ease;
-                                                        -o-transition:all 600ms ease;
-                                                        -ms-transition:all 600ms ease;
+                                                        createNavBarTwoMenuItemsmobileButtonIconLineOne.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            top:-14px;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            background:#2C2C2C;
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
 
-                                                    `
+                                                        `
+
+                                                        createNavBarTwoMenuItemsmobileButtonIconLineTwo.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            top:0;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            background:#2C2C2C;
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                        createNavBarTwoMenuItemsmobileButtonIconLineThree.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            top:15px;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            background:#2C2C2C;
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+
+
+
+
+
+
+
+                                                            // STYLE MOBILE MENU LIST ITEMS
+                                                            // //////////////
+
+                                                                createNavBarTwoMenuItemsMobileSideMenu.style = `
+                                                                
+                                                                    width:100%;
+                                                                    height:100%;
+                                                                    top:0;
+                                                                    left:0%;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    margin:auto;
+                                                                    opacity:0;
+                                                                    z-index:-1;
+                                                                    display:none;
+                                                                    position:fixed;
+                                                                    background:rgba(255,255,255,0.8);
+                                                                    backdrop-filter:blur(0px);
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+
+                                                                `
+
+                                                                    createNavBarTwoMenuItemsMobileSideMenuResizer.style = `
+                                                                    
+                                                                        width:80%;
+                                                                        height:80%;
+                                                                        top:0;
+                                                                        left:0;
+                                                                        right:0;
+                                                                        bottom:0;
+                                                                        margin:auto;
+                                                                        overflow:auto;
+                                                                        position:absolute;
+                                                                        transition:all 600ms ease;
+                                                                        -webkit-transition:all 600ms ease;
+                                                                        -moz-transition:all 600ms ease;
+                                                                        -o-transition:all 600ms ease;
+                                                                        -ms-transition:all 600ms ease;
+
+                                                                    `
+
+
+
+                                                                        // STYLE HEADER AND SIDE MENU CLOSE BUTTON CONTAINER
+                                                                        // ///////////////////
+
+                                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineCloseMenuButtonContainer.style = `
+                                                                            
+                                                                                width:100%;
+                                                                                top:0;
+                                                                                padding:20px 0px;
+                                                                                margin:0px auto;
+                                                                                position:relative;
+                                                                                transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+
+                                                                            `
+
+
+                                                                                // HEADLINER TEXT CONTAINER
+                                                                                // ///////////
+
+                                                                                    createNavBarTwoMenuItemsMobileSideMenuHeadlineSideContainer.style = `
+                                                                                    
+                                                                                        width:80%;
+                                                                                        height:50px;
+                                                                                        left:0px;
+                                                                                        display:inline-block;
+                                                                                        position:relative;
+                                                                                        transition:all 600ms ease;
+                                                                                        -webkit-transition:all 600ms ease;
+                                                                                        -moz-transition:all 600ms ease;
+                                                                                        -o-transition:all 600ms ease;
+                                                                                        -ms-transition:all 600ms ease;
+
+                                                                                    `
+
+                                                                                        createNavBarTwoMenuItemsMobileSideMenuHeadlineTextContainer.style = `
+                                                                                        
+                                                                                            width:100%;
+                                                                                            height:50px;
+                                                                                            top:0;
+                                                                                            left:0;
+                                                                                            right:0;
+                                                                                            bottom:0;
+                                                                                            margin:auto;
+                                                                                            position:absolute;
+                                                                                            transition:all 600ms ease;
+                                                                                            -webkit-transition:all 600ms ease;
+                                                                                            -moz-transition:all 600ms ease;
+                                                                                            -o-transition:all 600ms ease;
+                                                                                            -ms-transition:all 600ms ease;
+
+                                                                                        `
+
+                                                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineTextActual.style = `
+                                                                                            
+                                                                                                font-size:30px;
+                                                                                                color:#2C2C2C;
+                                                                                                text-align:left;
+                                                                                                font-weight:700;
+                                                                                                font-family:arial, sans-serif;
+                                                                                                line-height:60px;
+                                                                                                letter-spacing:5px;
+                                                                                                transition:all 600ms ease;
+                                                                                                -webkit-transition:all 600ms ease;
+                                                                                                -moz-transition:all 600ms ease;
+                                                                                                -o-transition:all 600ms ease;
+                                                                                                -ms-transition:all 600ms ease;
+
+                                                                                            `
+
+
+
+                                                                                // MENU BUTTON CLOSE MENU CONTAINER
+                                                                                // ///////////
+
+                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonSideContainer.style = `
+                                                                                    
+                                                                                        width:20%;
+                                                                                        height:50px;
+                                                                                        right:0px;
+                                                                                        display:inline-block;
+                                                                                        position:relative;
+                                                                                        transition:all 600ms ease;
+                                                                                        -webkit-transition:all 600ms ease;
+                                                                                        -moz-transition:all 600ms ease;
+                                                                                        -o-transition:all 600ms ease;
+                                                                                        -ms-transition:all 600ms ease;
+
+                                                                                    `
+
+                                                                                        createNavBarTwoMenuItemsMobileSideMenuCloseButtonContainer.style = `
+                                                                                        
+                                                                                            width:50px;
+                                                                                            height:50px;
+                                                                                            top:0;
+                                                                                            left:0;
+                                                                                            right:0;
+                                                                                            bottom:0;
+                                                                                            cursor:pointer;
+                                                                                            margin:auto;
+                                                                                            position:absolute;
+                                                                                            box-shadow:0px 20px 30px -10px rgba(0,0,0,0.5);
+                                                                                            background:#FFFFFF;
+                                                                                            border-radius:8px;
+                                                                                            transition:all 600ms ease;
+                                                                                            -webkit-transition:all 600ms ease;
+                                                                                            -moz-transition:all 600ms ease;
+                                                                                            -o-transition:all 600ms ease;
+                                                                                            -ms-transition:all 600ms ease;
+
+                                                                                        `
+
+                                                                                            // MENU BUTTON CLOSE MENU BUTTON ICON 
+                                                                                            // 
+
+                                                                                                createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover.style = `
+                                                                                                
+                                                                                                    width:25px;
+                                                                                                    height:30px;
+                                                                                                    top:0;
+                                                                                                    left:0;
+                                                                                                    right:0;
+                                                                                                    bottom:0;
+                                                                                                    margin:auto;
+                                                                                                    position:absolute;
+                                                                                                    transition:all 600ms ease;
+                                                                                                    -webkit-transition:all 600ms ease;
+                                                                                                    -moz-transition:all 600ms ease;
+                                                                                                    -o-transition:all 600ms ease;
+                                                                                                    -ms-transition:all 600ms ease;
+
+                                                                                                `
+
+                                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineOne.style = `
+                                                                                                    
+                                                                                                        width:20px;
+                                                                                                        height:3px;
+                                                                                                        top:0;
+                                                                                                        left:0;
+                                                                                                        right:0;
+                                                                                                        bottom:0;
+                                                                                                        margin:auto;
+                                                                                                        opacity:1;
+                                                                                                        position:absolute;
+                                                                                                        transform:rotateZ(45deg);
+                                                                                                        background:#2C2C2C;
+                                                                                                        transition:all 600ms ease;
+                                                                                                        -webkit-transition:all 600ms ease;
+                                                                                                        -moz-transition:all 600ms ease;
+                                                                                                        -o-transition:all 600ms ease;
+                                                                                                        -ms-transition:all 600ms ease;
+
+                                                                                                    `
+
+                                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineTwo.style = `
+                                                                                                    
+                                                                                                        width:20px;
+                                                                                                        height:3px;
+                                                                                                        top:1px;
+                                                                                                        left:0;
+                                                                                                        right:0;
+                                                                                                        bottom:0;
+                                                                                                        margin:auto;
+                                                                                                        opacity:0;
+                                                                                                        position:absolute;
+                                                                                                        transform:rotateZ(0deg);
+                                                                                                        background:#2C2C2C;
+                                                                                                        transition:all 600ms ease;
+                                                                                                        -webkit-transition:all 600ms ease;
+                                                                                                        -moz-transition:all 600ms ease;
+                                                                                                        -o-transition:all 600ms ease;
+                                                                                                        -ms-transition:all 600ms ease;
+
+                                                                                                    `
+
+                                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineThree.style = `
+                                                                                                    
+                                                                                                        width:20px;
+                                                                                                        height:3px;
+                                                                                                        top:0;
+                                                                                                        left:0;
+                                                                                                        right:0;
+                                                                                                        bottom:0;
+                                                                                                        margin:auto;
+                                                                                                        opacity:1;
+                                                                                                        position:absolute;
+                                                                                                        transform:rotateZ(-45deg);
+                                                                                                        background:#2C2C2C;
+                                                                                                        transition:all 600ms ease;
+                                                                                                        -webkit-transition:all 600ms ease;
+                                                                                                        -moz-transition:all 600ms ease;
+                                                                                                        -o-transition:all 600ms ease;
+                                                                                                        -ms-transition:all 600ms ease;
+
+                                                                                                    `
+
+
+                                                                        // STYLE MENU ITEMS LIST CONTAINER
+                                                                        // ///////////
+
+                                                                            createNavBarTwoMenuItemsSideMenuListItemsContainer.style = `
+                                                                            
+                                                                                width:100%;
+                                                                                top:0;
+                                                                                padding:20px 0px;
+                                                                                margin:0px auto;
+                                                                                position:relative;
+                                                                                transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+
+                                                                            `
+
+                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // APPEND TEXT ELEMENTS TO RELATED TO ELEMENTS ==
+                            // //////////////////////////////////////////////
+
+                                // APPEND TEXT ELEMENTS TO SIDE MENU BLOCK --
+                                // //////////////////////////////////////////
+
+                                    createNavBarTwoMenuItemsMobileSideMenuHeadlineTextActual.textContent = `MENU`
 
                                             
 
@@ -3334,7 +3731,1624 @@
 
                                         createNavBarTwoMenuItemsMobileButtonIconMover.appendChild(createNavBarTwoMenuItemsmobileButtonIconLineThree)
 
+
+
+
+
+
+
+
+                                            // APPEND MOBILE MENU LIST ITEMS
+                                            // //////////////
+
+                                                getBody.appendChild(createNavBarTwoMenuItemsMobileSideMenu)
+
+                                                    createNavBarTwoMenuItemsMobileSideMenu.appendChild(createNavBarTwoMenuItemsMobileSideMenuResizer)
+
+
+
+
+                                                        // APPEND HEADER AND SIDE MENU CLOSE BUTTON CONTAINER
+                                                        // ///////////////////
+
+                                                            createNavBarTwoMenuItemsMobileSideMenuResizer.appendChild(createNavBarTwoMenuItemsMobileSideMenuHeadlineCloseMenuButtonContainer)
+
+                                                                createNavBarTwoMenuItemsMobileSideMenuHeadlineCloseMenuButtonContainer.appendChild(createNavBarTwoMenuItemsMobileSideMenuHeadlineSideContainer)
+
+
+                                                                    // APPEND HEADLINER TEXT CONTAINER
+                                                                    // ///////////
+
+                                                                        createNavBarTwoMenuItemsMobileSideMenuHeadlineSideContainer.appendChild(createNavBarTwoMenuItemsMobileSideMenuHeadlineTextContainer)
+
+                                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineTextContainer.appendChild(createNavBarTwoMenuItemsMobileSideMenuHeadlineTextActual)
+
+
+
+                                                        // APPEND MENU BUTTON CLOSE MENU CONTAINER
+                                                        // ///////////
+
+                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineCloseMenuButtonContainer.appendChild(createNavBarTwoMenuItemsMobileSideMenuCloseButtonSideContainer)
+
+                                                                createNavBarTwoMenuItemsMobileSideMenuCloseButtonSideContainer.appendChild(createNavBarTwoMenuItemsMobileSideMenuCloseButtonContainer)
+
+                                                                    // MENU BUTTON CLOSE MENU BUTTON ICON 
+                                                                    // 
+
+                                                                        createNavBarTwoMenuItemsMobileSideMenuCloseButtonContainer.appendChild(createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover)
+
+                                                                            createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover.appendChild(createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineOne)
+
+                                                                            createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover.appendChild(createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineTwo)
+
+                                                                            createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover.appendChild(createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineThree)
+
+
+                                                        // APPEND MENU ITEMS LIST CONTAINER
+                                                        // ///////////
+
+                                                            createNavBarTwoMenuItemsMobileSideMenuResizer.appendChild(createNavBarTwoMenuItemsSideMenuListItemsContainer)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            // APPEND SIDE MENU LIST ITEMS -----------
+                            // ///////////////////////////////////////
+
+
+                                // ARRAYS FOR COLLECTIONS xxxxxxxxxxx 
+                                // //////////////////////////////////
+
+                                    var collectListItemsArray = []
+
+
+                                    // CHECK IF MENU ITEMS ALREADY EXIST OR NOT
+                                    // //////////////////
+
+
+                                        // IF MENU ITEMS EXIST ALREADY THEN CLEAR AND START OVER
+                                        // /////////////
+
+
+                                            var getListItemsContainerMain = document.querySelector(`.navBarTwoPlateElementMobileMenuSideItemsListContainer`)
+
+                                                // IF CHILDREN LENGTH MORE THAN 0 RESET AND RESTART
+                                                // /////
+
+                                                    if ( getListItemsContainerMain.children.length > 0 ) 
+                                                        
+                                                    {
+
+
+                                                    }
+
+                                                // IF CHILDREN LENGTH EQUALS 0 ADD NEW COPY
+                                                // /////
+
+                                                    else if ( getListItemsContainerMain.children.length == 0 ) 
+                                                        
+                                                    {
+
+
+                                                        
+
+
+                                                        // RUN CREATE ITEMS BLOCK xxxxxxxxxxx
+                                                        // //////////////////////////////////
+
+                                                            for ( mobileItemsPopulateCounter = 0; mobileItemsPopulateCounter < 5; mobileItemsPopulateCounter++ ) {
+
+
+                                                                // IF MENU ITEM DOESNT EXIST
+                                                                // //////////////////////////
+
+                                                                    if ( 
+                                                                        
+                                                                            storeNavBarItems[mobileItemsPopulateCounter] == null  || 
+                                                                            storeNavBarItems[mobileItemsPopulateCounter] == undefined 
+                                                                        
+                                                                        ) 
+                                                                        
+                                                                    {
+
+                                                                    }
+
+
+                                                                // IF MENU ITEM EXISTS ------
+                                                                // //////////////////////////
+
+                                                                    else {
+
+
+                                                                        // BUILD SIDE MENU LIST ITEM
+                                                                        // //////////////////
+
+                                                                            // CREATE LIST ITEM VARIABLES
+                                                                            // //////////////
+
+                                                                                var createNavBarTwoSideMenuItemContainer = document.createElement("div")
+                                                                                createNavBarTwoSideMenuItemContainer.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}`
+
+                                                                                    var createNavBarTwoSideMenuItemTextContainer = document.createElement("div")
+                                                                                    createNavBarTwoSideMenuItemTextContainer.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}TextContainer`
+
+                                                                                        var createNavBarTwoSideMenuItemTextActual = document.createElement("div")
+                                                                                        createNavBarTwoSideMenuItemTextActual.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}TextActual`
+
+
+
+
+
+
+                                                                                    var createNavBarTwoSideMenuItemUnderlinerContainer = document.createElement("div")
+                                                                                    createNavBarTwoSideMenuItemUnderlinerContainer.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}UnderlinerContainer`
+
+                                                                                        var createNavBarTwoSideMenuItemUnderlinerActual = document.createElement("div")
+                                                                                        createNavBarTwoSideMenuItemUnderlinerActual.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}UnderlinerActual`
+
+
+
+
+
+
+
+
+                                                                            // STYLE LIST ITEM VARIABLES
+                                                                            // //////////////
+
+                                                                                createNavBarTwoSideMenuItemContainer.style = `
+                                                                                
+                                                                                    width:100%;
+                                                                                    position:relative;
+                                                                                    transition:all 600ms ease;
+                                                                                    -webkit-transition:all 600ms ease;
+                                                                                    -moz-transition:all 600ms ease;
+                                                                                    -o-transition:all 600ms ease;
+                                                                                    -ms-transition:all 600ms ease;
+
+                                                                                `
+
+                                                                                    createNavBarTwoSideMenuItemTextContainer.style = `
+                                                                                    
+                                                                                        width:100%;
+                                                                                        top:0;
+                                                                                        position:relative;
+                                                                                        transition:all 600ms ease;
+                                                                                        -webkit-transition:all 600ms ease;
+                                                                                        -moz-transition:all 600ms ease;
+                                                                                        -o-transition:all 600ms ease;
+                                                                                        -ms-transition:all 600ms ease;
+
+                                                                                    `
+
+                                                                                        createNavBarTwoSideMenuItemTextActual.style = `
+                                                                                        
+                                                                                            width:100%;
+                                                                                            height:50px;
+                                                                                            color:#2c2c2c;
+                                                                                            cursor:pointer;
+                                                                                            margin:0px auto;
+                                                                                            padding:10px 0px 10px 0px;
+                                                                                            position:relative;
+                                                                                            font-size:25px;
+                                                                                            font-weight:700;
+                                                                                            font-family:arial, sans-serif;
+                                                                                            text-align:left;
+                                                                                            line-height:50px;
+                                                                                            letter-spacing:5px;
+                                                                                            transition:all 600ms ease;
+                                                                                            -webkit-transition:all 600ms ease;
+                                                                                            -moz-transition:all 600ms ease;
+                                                                                            -o-transition:all 600ms ease;
+                                                                                            -ms-transition:all 600ms ease;
+
+                                                                                        `
+
+
+
+
+
+
+                                                                                    createNavBarTwoSideMenuItemUnderlinerContainer.style = `
+                                                                                    
+                                                                                        width:100%;
+                                                                                        bottom:0;
+                                                                                        position:relative;
+                                                                                        transition:all 600ms ease;
+                                                                                        -webkit-transition:all 600ms ease;
+                                                                                        -moz-transition:all 600ms ease;
+                                                                                        -o-transition:all 600ms ease;
+                                                                                        -ms-transition:all 600ms ease;
+
+                                                                                    `
+
+                                                                                        createNavBarTwoSideMenuItemUnderlinerActual.style = `
+                                                                                        
+                                                                                            width:100%;
+                                                                                            height:5px;
+                                                                                            background:#2C2C2C;
+                                                                                            transition:all 600ms ease;
+                                                                                            -webkit-transition:all 600ms ease;
+                                                                                            -moz-transition:all 600ms ease;
+                                                                                            -o-transition:all 600ms ease;
+                                                                                            -ms-transition:all 600ms ease;
+
+                                                                                        `
+
+
+
+
+
+
+
+
+                                                                            // ADD LIST ITEM TEXT CONTENT
+                                                                            // //////////////
+
+                                                                                createNavBarTwoSideMenuItemTextActual.textContent = `${storeNavBarItems[mobileItemsPopulateCounter]}`
+
+
+
+
+
+
+
+
+                                                                            // APPEND ITEMS TO SIDE MENU LIST CONTAINER
+                                                                            // //////////////
+
+                                                                                var getSideMenuItemsListContainer = document.querySelector(`.navBarTwoPlateElementMobileMenuSideItemsListContainer`)
+
+
+
+                                                                                getSideMenuItemsListContainer.appendChild(createNavBarTwoSideMenuItemContainer)
+
+
+
+
+
+                                                                                    createNavBarTwoSideMenuItemContainer.appendChild(createNavBarTwoSideMenuItemTextContainer)
+
+                                                                                        createNavBarTwoSideMenuItemTextContainer.appendChild(createNavBarTwoSideMenuItemTextActual)
+
+
+                                                                                    createNavBarTwoSideMenuItemContainer.appendChild(createNavBarTwoSideMenuItemUnderlinerContainer)
+
+                                                                                        createNavBarTwoSideMenuItemUnderlinerContainer.appendChild(createNavBarTwoSideMenuItemUnderlinerActual)
+
+
+
+
+
+
+
+
+                                                                            // ADD EVENT LISTENERS TO LIST ITEMS
+                                                                            // //////////////
+
+                                                                            
+                                                                                var getSideMenuItemsListTextBoxEntire = document.querySelector(`.navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}TextActual`)
+
+
+
+                                                                                    // PUSH OBJECTIVES INTO OBJECT COLLECTOR
+                                                                                    // /////////
+
+                                                                                        collectListItemsArray.push(getSideMenuItemsListTextBoxEntire)
+
+
+
+                                                                                    // RUN EACH LOOP TO GET EVENTS
+                                                                                    // /////////
+
+
+                                                                                        collectListItemsArray.forEach((objectSelector) => {
+
+
+                                                                                            // HOVER EVENTS 
+                                                                                            // /
+
+                                                                                                // FOR MOUSE OVER
+                                                                                                // 
+
+                                                                                                    objectSelector.addEventListener("mouseover", function () {
+
+                                                                                                        console.log("THIS ONE IS: " + objectSelector.className)
+
+                                                                                                        objectSelector.style = `
+                                                                                                        
+                                                                                                            width:100%;
+                                                                                                            height:50px;
+                                                                                                            color:#2c2c2c;
+                                                                                                            cursor:pointer;
+                                                                                                            margin:0px auto;
+                                                                                                            padding:10px 0px 30px 0px;
+                                                                                                            position:relative;
+                                                                                                            font-size:25px;
+                                                                                                            font-weight:700;
+                                                                                                            font-family:arial, sans-serif;
+                                                                                                            text-align:left;
+                                                                                                            line-height:50px;
+                                                                                                            letter-spacing:5px;
+                                                                                                            transition:all 600ms ease;
+                                                                                                            -webkit-transition:all 600ms ease;
+                                                                                                            -moz-transition:all 600ms ease;
+                                                                                                            -o-transition:all 600ms ease;
+                                                                                                            -ms-transition:all 600ms ease;
+
+                                                                                                        `
+                                    
+                                                                                                    })
+
+                                                                                                    
+
+                                                                                                // FOR MOUSE OUT
+                                                                                                // 
+
+                                                                                                    objectSelector.addEventListener("mouseout", function () {
+
+                                                                                                        console.log("THIS ONE IS: " + objectSelector.className)
+
+                                                                                                        objectSelector.style = `
+                                                                                                        
+                                                                                                            width:100%;
+                                                                                                            height:50px;
+                                                                                                            color:#2c2c2c;
+                                                                                                            cursor:pointer;
+                                                                                                            margin:0px auto;
+                                                                                                            padding:10px 0px 10px 0px;
+                                                                                                            position:relative;
+                                                                                                            font-size:25px;
+                                                                                                            font-weight:700;
+                                                                                                            font-family:arial, sans-serif;
+                                                                                                            text-align:left;
+                                                                                                            line-height:50px;
+                                                                                                            letter-spacing:5px;
+                                                                                                            transition:all 600ms ease;
+                                                                                                            -webkit-transition:all 600ms ease;
+                                                                                                            -moz-transition:all 600ms ease;
+                                                                                                            -o-transition:all 600ms ease;
+                                                                                                            -ms-transition:all 600ms ease;
+
+                                                                                                        `
+                                    
+                                                                                                    })
+
+
+                                                                                            // CLICKER EVENTS
+                                                                                            // /
+
+                                                                                                objectSelector.addEventListener("click", function () {
+
+                                                                                                    console.log("THIS ONE IS: " + objectSelector.className)
+                                
+                                                                                                })
+
+
+
+                                                                                        })
+
+
+
+
+
+                                                                    }
+
+                                                            }
+
+                                                        
+                                                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            // ADD EVENT LISTENERS TO MAIN ELEMENTS --
+                            // ///////////////////////////////////////
+
+
+                                var getNavBarMainOpenMenuButton = document.querySelector(`.navBarTwoMenuItemsButtonContainer`)
+
+                                var getsideMenuCloseButton = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonContainer`)
+                                var getsideMenuCloseButtonIconLineOne = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineOne`)
+                                var getsideMenuCloseButtonIconLineTwo = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineTwo`)
+                                var getsideMenuCloseButtonIconLineThree = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineThree`)
+
+                                var getSideMobileMenuContainer = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideContentContainer`)
+
+
+
+
+
+
+
+                                    // OPEN SIDE MENU BUTTON CLICKER
+                                    // ///////////////////////////////
+
+                                        getNavBarMainOpenMenuButton.addEventListener("click", function () {
+
+                                            // CHANGE SIDE MENU CLOSE BUTTON ICON LINES TO OPENED
+                                            // ///////////////////////
+
+                                                getsideMenuCloseButtonIconLineOne.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(45deg);
+                                                    background:#2C2C2C;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                getsideMenuCloseButtonIconLineTwo.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:1px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:0;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    background:rgb(44, 44, 44);
+                                                    border-radius:1000px;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                getsideMenuCloseButtonIconLineThree.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(-45deg);
+                                                    background:#2C2C2C;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+
+
+
+                                            // REVIVE MENU //////////////////
+                                            // //////////////////////////////
+
+                                                getSideMobileMenuContainer.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    top:0;
+                                                    left:0%;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:0;
+                                                    z-index:2;
+                                                    display:block;
+                                                    position:fixed;
+                                                    background:rgba(255,255,255,0.8);
+                                                    backdrop-filter:blur(0px);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+
+                                                    // THEN FADE IN CONTENT MENU
+                                                    // //////////////////////
+
+                                                        setTimeout(() => {
+
+                                                            getSideMobileMenuContainer.style = `
+                                                
+                                                                width:100%;
+                                                                height:100%;
+                                                                top:0;
+                                                                left:0%;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                z-index:2;
+                                                                display:block;
+                                                                position:fixed;
+                                                                background:rgba(255,255,255,0.8);
+                                                                backdrop-filter:blur(10px);
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+                                                        }, 100)
+
+                                        })
+
+
+
+
+
+
+
+
+
+                                    // SIDE MENU CLOSE BUTTON CLICKER
+                                    // ///////////////////////////////
+
+                                        getsideMenuCloseButton.addEventListener("click", function () {
+
+
+
+
+                                            // CHANGE SIDE MENU CLOSE BUTTON ICON LINES TO DEFAULT
+                                            // ///////////////////////
+
+                                                getsideMenuCloseButtonIconLineOne.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:-13px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    background:#2C2C2C;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                getsideMenuCloseButtonIconLineTwo.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:1px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    background:rgb(44, 44, 44);
+                                                    border-radius:1000px;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                getsideMenuCloseButtonIconLineThree.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:15px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    background:#2C2C2C;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+
+
+
+                                            // FADE OUT CONTENT MENU ////////
+                                            // //////////////////////////////
+
+                                                getSideMobileMenuContainer.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    top:0;
+                                                    left:0%;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:0;
+                                                    z-index:2;
+                                                    display:block;
+                                                    position:fixed;
+                                                    background:rgba(255,255,255,0.8);
+                                                    backdrop-filter:blur(0px);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+
+                                                    // THEN KILL MENU -------
+                                                    // //////////////////////
+
+                                                        setTimeout(() => {
+
+                                                            getSideMobileMenuContainer.style = `
+                                                        
+                                                                width:100%;
+                                                                height:100%;
+                                                                top:0;
+                                                                left:0%;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:0;
+                                                                z-index:-1;
+                                                                display:none;
+                                                                position:fixed;
+                                                                background:rgba(255,255,255,0.8);
+                                                                backdrop-filter:blur(0px);
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+                                                        }, 500)
+
+
+
+
+
+
+
+                                        })
+
                         
+
+                    }
+
+
+
+
+
+                // CREATE NAV BAR THREE ACTUAL ------------------------------
+                // //////////////////////////////////////////////////////////
+
+                    function createNavBarThreeMainPlate (cushionNumber) {
+
+                        // GET NAV BAR CUSHION xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            var createNavBarCushion = document.querySelector(`.navBar${cushionNumber}`)
+
+                        // CREATE NAV BAR TWO ELEMENTS xxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            // CREATE MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateThreeMainContainer = document.createElement("div")
+                                navBarPlateThreeMainContainer.className = `navBarThreeMainContainer`
+
+
+
+
+
+                            // CREATE MAIN NAV BAR PLATE ELEMENT ============ 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateThreeMainElement = document.createElement("div")
+                                navBarPlateThreeMainElement.className = `navBarThreePlateElementContainer`
+
+
+
+
+
+                            // CREATE MAIN NAV BAR PLATE ELEMENT RESIZER ==== 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateThreeMainElementResizer = document.createElement("div")
+                                navBarPlateThreeMainElementResizer.className = `navBarThreePlateElementContainerResizer`
+
+
+
+
+
+                            // CREATE MAIN NAV BAR LOGO SIDE CONTAINER ======
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateThreeLogoSide = document.createElement("div")
+                                navBarPlateThreeLogoSide.className = `navBarThreePlateLogoSideContainer`
+
+                                    var createNavBarPlateThreeLogoContainer = document.createElement("div")
+                                    createNavBarPlateThreeLogoContainer.className = `navBarThreePlateLogoContainer`
+
+                                        var createNavBarPlateThreeLogoActual = document.createElement("div")
+                                        createNavBarPlateThreeLogoActual.className = `navBarThreePlateLogoActual`
+
+
+
+
+
+                            // CREATE MAIN NAV BAR MENU SIDE CONTAINER ======
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateThreeMenuSide = document.createElement("div")
+                                navBarPlateThreeMenuSide.className = `navBarThreePlateMenuSideContainer`
+
+                                    var navBarPlateThreeMenuButtonContainer = document.createElement("div")
+                                    navBarPlateThreeMenuButtonContainer.className = `navBarThreePlateMenuButtonContainer`
+
+                                        var navBarPlateThreeMenuButtonActual = document.createElement("div")
+                                        navBarPlateThreeMenuButtonActual.className = `navBarThreePlateMenuButtonActual`
+
+
+
+
+                                            // BUTTON CLICKER CONTAINER -----
+                                            // //////////////////////////////
+
+                                                var navBarPlateThreeMenuButtonClickerContainer = document.createElement("div")
+                                                navBarPlateThreeMenuButtonClickerContainer.className = `navBarThreePlateMenuButtonClickersContainer`
+
+                                                    var navBarPlateThreeMenuButtonClickerOn = document.createElement("div")
+                                                    navBarPlateThreeMenuButtonClickerOn.className = `navBarThreePlateMenuButtonClickerOn`
+
+                                                    var navBarPlateThreeMenuButtonClickerOff = document.createElement("div")
+                                                    navBarPlateThreeMenuButtonClickerOff.className = `navBarThreePlateMenuButtonClickerOff`
+
+
+
+
+                                            // BUTTON CLICKER CONTAINER -----
+                                            // //////////////////////////////
+
+                                                var navBarPlateThreeMenuButtonIconMover = document.createElement("div")
+                                                navBarPlateThreeMenuButtonIconMover.className = `navBarThreePlateMenuButtonIconMover`
+
+                                                    var navBarPlateThreeMenuButtonIconLineOne = document.createElement("div")
+                                                    navBarPlateThreeMenuButtonIconLineOne.className = `navBarThreePlateMenuButtonIconLineOne`
+
+                                                    var navBarPlateThreeMenuButtonIconLineTwo = document.createElement("div")
+                                                    navBarPlateThreeMenuButtonIconLineTwo.className = `navBarThreePlateMenuButtonIconLineTwo`
+
+                                                    var navBarPlateThreeMenuButtonIconLineThree = document.createElement("div")
+                                                    navBarPlateThreeMenuButtonIconLineThree.className = `navBarThreePlateMenuButtonIconLineThree`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // STYLE MAIN NAV BAR PLATE AND ELEMENTS ========
+                            // //////////////////////////////////////////////
+
+                                // STYLE MAIN NAV BAR ELEMENTS xxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateThreeMainContainer.style = `
+                                    
+                                        width:100%;
+                                        top:0;
+                                        left:0;
+                                        right:0;
+                                        margin:0px auto;
+                                        z-index:2;
+                                        position:fixed;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                // STYLE MAIN NAV BAR PLATE ELEMENT xxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateThreeMainElement.style = `
+                                    
+                                        width:200px;
+                                        top:20px;
+                                        left:0;
+                                        right:0;
+                                        margin:0px auto;
+                                        padding:10px 0px;
+                                        position:absolute;
+                                        border-radius:1000px;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                // STYLE MAIN NAV BAR PLATE ELEMENT RESIZER x
+                                // //////////////////////////////////////////
+
+                                    navBarPlateThreeMainElementResizer.style = `
+                                    
+                                        width:88%;
+                                        height:50px;
+                                        top:0;
+                                        left:0;
+                                        right:0;
+                                        bottom:0;
+                                        margin:auto;
+                                        position:relative;
+                                        border-radius:1000px;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+
+
+
+                                        // STYLE MAIN NAV BAR LOGO SIDE CONTAINER
+                                        // //////////////////////////////////
+
+                                            navBarPlateThreeLogoSide.style = `
+                                            
+                                                width:80%;
+                                                height:50px;
+                                                float:left;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                createNavBarPlateThreeLogoContainer.style = `
+                                                
+                                                    width:90%;
+                                                    height:50px;
+                                                    float:left;
+                                                    position:relative;
+                                                    background:#FFFFFF;
+                                                    border-radius:8px;
+                                                    box-shadow:0px 20px 20px -10px rgba(0,0,0,0.5);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                    createNavBarPlateThreeLogoActual.style = `
+                                                    
+                                                        width:115px;
+                                                        height:40px;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        background:#2C2C2C;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+
+
+                                        // STYLE MAIN NAV BAR MENU OPEN CLOSE CONTAINER
+                                        // //////////////////////////////////////
+
+                                            navBarPlateThreeMenuSide.style = `
+                                            
+                                                width:20%;
+                                                height:50px;
+                                                float:right;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarPlateThreeMenuButtonContainer.style = `
+                                                
+                                                    width:50px;
+                                                    height:50px;
+                                                    position:relative;
+                                                    background:#FFFFFF;
+                                                    border-radius:1000px;
+                                                    box-shadow:0px 20px 20px -10px rgba(0,0,0,0.5);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                    navBarPlateThreeMenuButtonActual.style = `
+                                                    
+                                                        width:35px;
+                                                        height:35px;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        background:#FFFFFF;
+                                                        border-radius:1000px;
+                                                        box-shadow:0px 15px 20px -10px rgba(0,0,0,0.7);
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+
+
+
+                                                        // STYLE BUTTON CLICKER CONTAINER
+                                                        // //////////////////////
+
+                                                            navBarPlateThreeMenuButtonClickerContainer.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                top:0;
+                                                                left:0;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                z-index:1;
+                                                                position:absolute;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+                                                                navBarPlateThreeMenuButtonClickerOn.style = `
+                                                                
+                                                                    width:100%;
+                                                                    height:100%;
+                                                                    top:0;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    margin:auto;
+                                                                    cursor:pointer;
+                                                                    z-index:1;
+                                                                    position:absolute;
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease; 
+
+                                                                `
+
+                                                                navBarPlateThreeMenuButtonClickerOff.style = `
+                                                                
+                                                                    width:100%;
+                                                                    height:100%;
+                                                                    top:0;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    margin:auto;
+                                                                    cursor:pointer;
+                                                                    z-index:0;
+                                                                    position:absolute;
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+
+                                                                `
+
+
+
+
+                                                        // BUTTON CLICKER CONTAINER
+                                                        // //////////////////////
+
+                                                            navBarPlateThreeMenuButtonIconMover.style = `
+                                                            
+                                                                width:20px;
+                                                                height:30px;
+                                                                top:0;
+                                                                left:0;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                z-index:0;
+                                                                position:absolute;
+                                                                background:#FFFFFF;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+                                                                navBarPlateThreeMenuButtonIconLineOne.style = `
+                                                                
+                                                                    width:20px;
+                                                                    height:3px;
+                                                                    top:-15px;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    background:#2C2C2C;
+                                                                    margin:auto;
+                                                                    opacity:1;
+                                                                    position:absolute;
+                                                                    transform:rotateZ(0deg);
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+
+                                                                `
+
+                                                                navBarPlateThreeMenuButtonIconLineTwo.style = `
+                                                                
+                                                                    width:20px;
+                                                                    height:3px;
+                                                                    top:-1px;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    background:#2C2C2C;
+                                                                    margin:auto;
+                                                                    opacity:1;
+                                                                    position:absolute;
+                                                                    transform:rotateZ(0deg);
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+
+                                                                `
+
+                                                                navBarPlateThreeMenuButtonIconLineThree.style = `
+                                                                
+                                                                    width:20px;
+                                                                    height:3px;
+                                                                    top:13px;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    background:#2C2C2C;
+                                                                    margin:auto;
+                                                                    opacity:1;
+                                                                    position:absolute;
+                                                                    transform:rotateZ(0deg);
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+
+                                                                `
+
+                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // APPEND TEXT ELEMENTS TO RELATED TO ELEMENTS ==
+                            // //////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // APPEND MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                createNavBarCushion.appendChild(navBarPlateThreeMainContainer)
+
+                                navBarPlateThreeMainContainer.appendChild(navBarPlateThreeMainElement)
+
+
+
+                                    // APPEND MAIN NAV BAR CONTENT RESIZER --
+                                    // //////////////////////////////////////
+
+                                        navBarPlateThreeMainElement.appendChild(navBarPlateThreeMainElementResizer)
+
+
+
+                                    // APPEND MAIN NAV BAR LOGO SIDE CONTAINER
+                                    // //////////////////////////////////////
+
+                                        navBarPlateThreeMainElementResizer.appendChild(navBarPlateThreeLogoSide)
+
+                                            navBarPlateThreeLogoSide.appendChild(createNavBarPlateThreeLogoContainer)
+
+                                                createNavBarPlateThreeLogoContainer.appendChild(createNavBarPlateThreeLogoActual)
+
+
+
+                                    // APPEND MAIN NAV BAR MENU ITEMS SIDES =
+                                    // //////////////////////////////////////
+
+                                        navBarPlateThreeMainElementResizer.appendChild(navBarPlateThreeMenuSide)
+
+                                            navBarPlateThreeMenuSide.appendChild(navBarPlateThreeMenuButtonContainer)
+
+                                                navBarPlateThreeMenuButtonContainer.appendChild(navBarPlateThreeMenuButtonActual)
+
+
+
+
+                                                        // APPEND BUTTON CLICKER CONTAINER
+                                                        // //////////////////////
+
+                                                            navBarPlateThreeMenuButtonActual.appendChild(navBarPlateThreeMenuButtonClickerContainer)
+
+                                                                navBarPlateThreeMenuButtonClickerContainer.appendChild(navBarPlateThreeMenuButtonClickerOn)
+                                                                navBarPlateThreeMenuButtonClickerContainer.appendChild(navBarPlateThreeMenuButtonClickerOff)
+
+
+
+
+                                                        // BUTTON CLICKER CONTAINER
+                                                        // //////////////////////
+
+                                                            navBarPlateThreeMenuButtonActual.appendChild(navBarPlateThreeMenuButtonIconMover)
+
+                                                                navBarPlateThreeMenuButtonIconMover.appendChild(navBarPlateThreeMenuButtonIconLineOne)
+                                                                navBarPlateThreeMenuButtonIconMover.appendChild(navBarPlateThreeMenuButtonIconLineTwo)
+                                                                navBarPlateThreeMenuButtonIconMover.appendChild(navBarPlateThreeMenuButtonIconLineThree)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // ADD EVENT LISTENERS FOR OBJECTS ==============
+                            // //////////////////////////////////////////////
+
+                                // EVENT LISTENERS FOR OPEN CLOSE MAIN MENU BUTTONS
+                                // /////////////////////////////////////////
+
+                                    // FOR OPEN MAIN MENU BUTTON CLICKER ---
+                                    // /////////////////////////////////////
+
+                                        navBarPlateThreeMenuButtonClickerOn.addEventListener("click", function () {
+
+                                            console.log("MENU IS OPEN...")
+
+                                            // SEND CLICKED BUTTON TO BACK =
+                                            // /////////////////////////////
+
+                                                navBarPlateThreeMenuButtonClickerOn.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    cursor:pointer;
+                                                    z-index:-1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                            // BRING UNCLICKED BUTTON TO FRONT
+                                            // /////////////////////////////
+
+                                                navBarPlateThreeMenuButtonClickerOff.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    cursor:pointer;
+                                                    z-index:1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                            // CHANGE MENU ICON LINES TO OPENED
+                                            // /////////////////////////////
+
+                                                navBarPlateThreeMenuButtonIconLineOne.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:-1px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    background:#2C2C2C;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(45deg);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                navBarPlateThreeMenuButtonIconLineTwo.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:-1px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    background:#2C2C2C;
+                                                    margin:auto;
+                                                    opacity:0;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                navBarPlateThreeMenuButtonIconLineThree.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:-1px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    background:#2C2C2C;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(-45deg);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+                                                
+
+                                        })
+
+                                    // FOR OPEN MAIN MENU BUTTON CLICKER ---
+                                    // /////////////////////////////////////
+
+                                        navBarPlateThreeMenuButtonClickerOff.addEventListener("click", function () {
+
+                                            console.log("MENU IS CLOSED...")
+
+                                            // SEND CLICKED BUTTON TO BACK =
+                                            // /////////////////////////////
+
+                                                navBarPlateThreeMenuButtonClickerOff.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    cursor:pointer;
+                                                    z-index:-1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                            // BRING UNCLICKED BUTTON TO FRONT
+                                            // /////////////////////////////
+
+                                                navBarPlateThreeMenuButtonClickerOn.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    cursor:pointer;
+                                                    z-index:1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                            // CHANGE MENU ICON LINES TO DEFAULT
+                                            // /////////////////////////////
+
+                                                navBarPlateThreeMenuButtonIconLineOne.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:-15px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    background:#2C2C2C;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                navBarPlateThreeMenuButtonIconLineTwo.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:-1px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    background:#2C2C2C;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                navBarPlateThreeMenuButtonIconLineThree.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    top:13px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    background:#2C2C2C;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+
+                                        })
+
+
+
+
+
+
+
+
 
                     }
 
