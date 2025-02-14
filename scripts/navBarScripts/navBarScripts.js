@@ -4057,6 +4057,15 @@
                                                                                         collectListItemsArray.forEach((objectSelector) => {
 
 
+
+                                                                                            // CREATE INDEX OF SELECTED OBJECT
+                                                                                            // /
+
+                                                                                                var getIndexOfSelectedObject = collectListItemsArray.indexOf(objectSelector)
+
+                                                                                                var getSelectedObjectLink = storeNavBarItemLinks[getIndexOfSelectedObject]
+
+
                                                                                             // HOVER EVENTS 
                                                                                             // /
 
@@ -4132,7 +4141,7 @@
 
                                                                                                 objectSelector.addEventListener("click", function () {
 
-                                                                                                    console.log("THIS ONE IS: " + objectSelector.className)
+                                                                                                    window.open(`${getSelectedObjectLink}`, `_blank`)
                                 
                                                                                                 })
 
@@ -4552,7 +4561,7 @@
 
 
 
-                                            // BUTTON CLICKER CONTAINER -----
+                                            // CREATE BUTTON CLICKER CONTAINER -----
                                             // //////////////////////////////
 
                                                 var navBarPlateThreeMenuButtonClickerContainer = document.createElement("div")
@@ -4567,7 +4576,7 @@
 
 
 
-                                            // BUTTON CLICKER CONTAINER -----
+                                            // CREATE BUTTON CLICKER CONTAINER -----
                                             // //////////////////////////////
 
                                                 var navBarPlateThreeMenuButtonIconMover = document.createElement("div")
@@ -4581,6 +4590,37 @@
 
                                                     var navBarPlateThreeMenuButtonIconLineThree = document.createElement("div")
                                                     navBarPlateThreeMenuButtonIconLineThree.className = `navBarThreePlateMenuButtonIconLineThree`
+
+
+
+
+                                            // CREATE SIDE MENU CONTAINER ----------
+                                            // //////////////////////////////
+
+                                                var navBarPlateThreeSideMenuContainer = document.createElement("div")
+                                                navBarPlateThreeSideMenuContainer.className = `navBarThreePlateSideMenuMainContainer`
+
+
+
+                                                    // CREATE SIDE MENU MENU POINTER CONTAINER
+                                                    // /////////////////////
+
+                                                        var navBarPlateThreeSideMenPointerContainer = document.createElement("div")
+                                                        navBarPlateThreeSideMenPointerContainer.className = `navBarThreePlateSideMenuPointerContainer`
+
+                                                            var navBarPlateThreeSideMenPointerActual = document.createElement("div")
+                                                            navBarPlateThreeSideMenPointerActual.className = `navBarThreePlateSideMenuPointerActual`
+
+
+
+                                                    // CREATE SIDE MENU CONTENT CONTAINER ELEMENT
+                                                    // /////////////////////
+
+                                                        var navBarPlateThreeSideMenContentContainer = document.createElement("div")
+                                                        navBarPlateThreeSideMenContentContainer.className = `navBarThreePlateSideMenuContentContainerElement`
+
+                                                            var navBarPlateThreeSideMenContentResizer = document.createElement("div")
+                                                            navBarPlateThreeSideMenContentResizer.className = `navBarThreePlateSideMenuContentResizer`
 
 
 
@@ -4942,40 +4982,111 @@
 
                                                                 `
 
-                                            
 
 
 
+                                                        // STYLE SIDE MENU CONTAINER
+                                                        // //////////////////////
+
+                                                            navBarPlateThreeSideMenuContainer.style = `
+                                                            
+                                                                width:250px;
+                                                                top:50px;
+                                                                left:0;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:0;
+                                                                display:none;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+                                                                // STYLE SIDE MENU MENU POINTER CONTAINER
+                                                                // //////////////
+
+                                                                    navBarPlateThreeSideMenPointerContainer.style = `
+                                                                    
+                                                                        width:100%;
+                                                                        height:20px;
+                                                                        left:0px;
+                                                                        right:0px;
+                                                                        margin:0px auto;
+                                                                        position:rleative;
+                                                                        transition:all 600ms ease;
+                                                                        -webkit-transition:all 600ms ease;
+                                                                        -moz-transition:all 600ms ease;
+                                                                        -o-transition:all 600ms ease;
+                                                                        -ms-transition:all 600ms ease;
+
+                                                                    `
+
+                                                                        navBarPlateThreeSideMenPointerActual.style = `
+                                                                        
+                                                                            width:20px;
+                                                                            height:20px;
+                                                                            top:0px;
+                                                                            left:77px;
+                                                                            right:0px;
+                                                                            margin:0px auto;
+                                                                            display:inline-block;
+                                                                            position:relative;
+                                                                            background:#FFFFFF;
+                                                                            border-radius:5px;
+                                                                            transform:rotateZ(45deg);
+                                                                            transition:all 600ms ease;
+                                                                            -webkit-transition:all 600ms ease;
+                                                                            -moz-transition:all 600ms ease;
+                                                                            -o-transition:all 600ms ease;
+                                                                            -ms-transition:all 600ms ease;
+
+                                                                        `
 
 
 
+                                                                // STYLE SIDE MENU CONTENT CONTAINER ELEMENT
+                                                                // //////////////
 
+                                                                    navBarPlateThreeSideMenContentContainer.style = `
+                                                                    
+                                                                        width:100%;
+                                                                        top:-12px;
+                                                                        left:0:
+                                                                        right:0;
+                                                                        bottom:0;
+                                                                        padding:20px 0px;
+                                                                        position:relative;
+                                                                        background:#FFFFFF;
+                                                                        box-shadow:0px 20px 30px -10px rgba(0,0,0,0.5);
+                                                                        border-radius:10px;
+                                                                        transition:all 600ms ease;
+                                                                        -webkit-transition:all 600ms ease;
+                                                                        -moz-transition:all 600ms ease;
+                                                                        -o-transition:all 600ms ease;
+                                                                        -ms-transition:all 600ms ease;
 
+                                                                    `
 
+                                                                        navBarPlateThreeSideMenContentResizer.style = `
+                                                                        
+                                                                            width:80%;
+                                                                            top:0;
+                                                                            left:0;
+                                                                            right:0;
+                                                                            bottom:0;
+                                                                            margin:auto;
+                                                                            transition:all 600ms ease;
+                                                                            -webkit-transition:all 600ms ease;
+                                                                            -moz-transition:all 600ms ease;
+                                                                            -o-transition:all 600ms ease;
+                                                                            -ms-transition:all 600ms ease;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        
-
-                            // APPEND TEXT ELEMENTS TO RELATED TO ELEMENTS ==
-                            // //////////////////////////////////////////////
+                                                                        `
 
 
 
@@ -5055,7 +5166,7 @@
 
 
 
-                                                        // BUTTON CLICKER CONTAINER
+                                                        // APPEND BUTTON CLICKER CONTAINER
                                                         // //////////////////////
 
                                                             navBarPlateThreeMenuButtonActual.appendChild(navBarPlateThreeMenuButtonIconMover)
@@ -5063,6 +5174,32 @@
                                                                 navBarPlateThreeMenuButtonIconMover.appendChild(navBarPlateThreeMenuButtonIconLineOne)
                                                                 navBarPlateThreeMenuButtonIconMover.appendChild(navBarPlateThreeMenuButtonIconLineTwo)
                                                                 navBarPlateThreeMenuButtonIconMover.appendChild(navBarPlateThreeMenuButtonIconLineThree)
+
+
+
+
+                                                        // APPEND SIDE MENU CONTAINER
+                                                        // //////////////////////
+
+                                                            navBarPlateThreeMainContainer.appendChild(navBarPlateThreeSideMenuContainer)
+
+                                                                // APPEND SIDE MENU MENU POINTER CONTAINER
+                                                                // //////////////
+
+                                                                    navBarPlateThreeSideMenuContainer.appendChild(navBarPlateThreeSideMenPointerContainer)
+
+                                                                        navBarPlateThreeSideMenPointerContainer.appendChild(navBarPlateThreeSideMenPointerActual)
+
+
+
+                                                                // APPEND SIDE MENU CONTENT CONTAINER ELEMENT
+                                                                // //////////////
+
+                                                                    navBarPlateThreeSideMenuContainer.appendChild(navBarPlateThreeSideMenContentContainer)
+
+                                                                        navBarPlateThreeSideMenContentContainer.appendChild(navBarPlateThreeSideMenContentResizer)
+
+
 
 
 
@@ -5216,6 +5353,55 @@
                                                     -ms-transition:all 600ms ease;
 
                                                 `
+
+                                            // CHANGE MENU CONTAINER LINES TO OPENED
+                                            // /////////////////////////////
+
+                                                navBarPlateThreeSideMenuContainer.style = `
+                                                
+                                                    width:250px;
+                                                    top:50px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:0;
+                                                    display:block;
+                                                    position:relative;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                    // THEN FADE MENU IN xxx
+                                                    // /////////////////////
+
+                                                        setTimeout(() => {
+
+                                                            navBarPlateThreeSideMenuContainer.style = `
+                                                            
+                                                                width:250px;
+                                                                top:100px;
+                                                                left:0;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                display:block;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+    
+                                                            `
+
+
+                                                        }, 50)
                                                 
 
                                         })
@@ -5339,8 +5525,462 @@
 
                                                 `
 
+                                            // CHANGE MENU CONTAINER LINES TO DEFAULT
+                                            // /////////////////////////////
+
+                                                // FADE OUT MENU BLOCK -----
+                                                // /////////////////////////
+
+                                                    navBarPlateThreeSideMenuContainer.style = `
+                                                    
+                                                        width:250px;
+                                                        top:50px;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        opacity:0;
+                                                        display:block;
+                                                        position:relative;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+                                                        // THEN KILL MENU BLOCK
+                                                        // /////////////////
+
+                                                            setTimeout(() => {
+
+                                                                navBarPlateThreeSideMenuContainer.style = `
+                                                                
+                                                                    width:250px;
+                                                                    top:50px;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    margin:auto;
+                                                                    opacity:0;
+                                                                    display:none;
+                                                                    position:relative;
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+    
+                                                                `
+
+
+                                                            }, 200)
+
 
                                         })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // CREATE SIDE MENU LIST ITEMS ==================
+                            // //////////////////////////////////////////////
+
+                                // RUN LOOP TO RETRIEVE ELEMENTS xxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    var retrievedMenuItemElements = []
+                                    var getListItemsObjects = []
+
+                                    for ( sideMenuItemCounter = 0; sideMenuItemCounter < 5; sideMenuItemCounter ++ ) {
+
+                                        // CHECK IF ELEMENT IS NULL OR UNDEFINED
+                                        // //////////////////////////////////
+
+                                            if ( 
+                                                
+                                                    storeNavBarItems[sideMenuItemCounter] == null || 
+                                                    storeNavBarItems[sideMenuItemCounter] == undefined
+                                                
+                                                ) 
+                                                
+                                            {
+
+                                            }
+
+                                        // AND IF NOT NULL OR UNDEFINED THEN PASS
+                                        // //////////////////////////////////
+
+                                            else {
+
+                                                // PUSH ACCAPTED ELEMENTS INTO ELEMENTS ARRAY
+                                                // //////////////////////////
+
+                                                    retrievedMenuItemElements.push(storeNavBarItems[sideMenuItemCounter])
+
+                                            }
+
+                                    }
+
+
+
+
+
+
+                                // RUN LOOP TO CREATE ELEMENTS xxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    for ( menuItemsPopCounter = 0; menuItemsPopCounter < retrievedMenuItemElements.length; menuItemsPopCounter++ ) {
+
+
+
+
+
+
+
+
+
+
+
+
+                                        // CREATE ELEMENTS ------------------
+                                        // //////////////////////////////////
+
+                                            var navBarPlateThreeSideMenListItemContainer = document.createElement("div")
+                                            navBarPlateThreeSideMenListItemContainer.className = `navBarThreePlateSideMenuListItemContainer`
+
+                                                var navBarPlateThreeSideMenListItemHighlightBlockContainer = document.createElement("div")
+                                                navBarPlateThreeSideMenListItemHighlightBlockContainer.className = `navBarThreePlateSideMenuListItemHighlightBlock${classNumberMapper[menuItemsPopCounter]}Container`
+
+                                                    var navBarPlateThreeSideMenListItemTextContainer = document.createElement("div")
+                                                    navBarPlateThreeSideMenListItemTextContainer.className = `navBarThreePlateSideMenuListItemTextContainer`
+
+
+
+
+
+                                            var navBarPlateThreeSideMenListItemDividerLineContainer = document.createElement("div")
+                                            navBarPlateThreeSideMenListItemDividerLineContainer.className = `navBarThreePlateSideMenuListItemDividerLineContainer`
+
+                                                var navBarPlateThreeSideMenListItemDividerLineActual = document.createElement("div")
+                                                navBarPlateThreeSideMenListItemDividerLineActual.className = `navBarThreePlateSideMenuListItemDividerLineActual`
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                                        // STYLE ELEMENTS -------------------
+                                        // //////////////////////////////////
+
+                                            navBarPlateThreeSideMenListItemContainer.style = `
+                                            
+                                                width:100%;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarPlateThreeSideMenListItemHighlightBlockContainer.style = `
+                                                
+                                                    width:100%;
+                                                    cursor:pointer;
+                                                    padding:20px 0px;
+                                                    position:relative;
+                                                    background:rgba(239, 239, 239, 0.0);
+                                                    border-radius:6px;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                    navBarPlateThreeSideMenListItemTextContainer.style = `
+                                                    
+                                                        width:80%;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        color:#3f3f3f;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        font-size:15px;
+                                                        font-weight:700;
+                                                        line-height:40px;
+                                                        font-family:arial, sans-serif;
+                                                        letter-spacing:3px;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+
+
+
+
+                                            navBarPlateThreeSideMenListItemDividerLineContainer.style = `
+                                            
+                                                width:100%;
+                                                height:20px;
+                                                top:0;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                margin:auto;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarPlateThreeSideMenListItemDividerLineActual.style = `
+                                                
+                                                    width:60%;
+                                                    height:2px;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    position:absolute;
+                                                    background:rgba(0,0,0,0.1);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                                        // SET TEXT TO ELEMENTS -------------
+                                        // //////////////////////////////////
+
+                                            navBarPlateThreeSideMenListItemTextContainer.textContent = `${storeNavBarItems[menuItemsPopCounter]}`
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                                        // APPEND ELEMENTS ------------------
+                                        // //////////////////////////////////
+
+                                            navBarPlateThreeSideMenContentResizer.appendChild(navBarPlateThreeSideMenListItemContainer)
+
+                                                navBarPlateThreeSideMenListItemContainer.appendChild(navBarPlateThreeSideMenListItemHighlightBlockContainer)
+
+                                                    navBarPlateThreeSideMenListItemHighlightBlockContainer.appendChild(navBarPlateThreeSideMenListItemTextContainer)
+
+
+                                            
+                                            
+
+                                                        // CHECK IF COUNTER NUMBER IS AT END POINT
+                                                        // //////////////////
+
+                                                            // IF COUNTER NUMBER IS AT END
+                                                            // //////////////
+
+                                                                if ( menuItemsPopCounter == (retrievedMenuItemElements.length - 1) ) {
+
+                                                                    
+
+                                                                }
+
+                                                            // IF COUNTER NUMBER IS AT END
+                                                            // //////////////
+
+                                                                else {
+
+                                                                    navBarPlateThreeSideMenContentResizer.appendChild(navBarPlateThreeSideMenListItemDividerLineContainer)
+    
+                                                                        navBarPlateThreeSideMenListItemDividerLineContainer.appendChild(navBarPlateThreeSideMenListItemDividerLineActual)
+
+                                                                }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                                        // PUSH ACCAPTED ELEMENTS INTO ELEMENTS ARRAY
+                                        // //////////////////////////////////
+                                                
+                                            getListItemsObjects.push(document.querySelector(`.navBarThreePlateSideMenuListItemHighlightBlock${classNumberMapper[menuItemsPopCounter]}Container`))
+
+
+
+                                    }
+
+
+
+
+
+
+                                // RUN LOOP TO CREATE EVENTS FOR ELEMENTS xxx
+                                // //////////////////////////////////////////
+
+                                    getListItemsObjects.forEach((elementRunner) => {
+
+
+
+
+
+                                        // GET INDEX NUMBER FOR SELECTED OBJECT
+                                        // //////////////////////////////
+
+                                            var getIndexOfSelectedObject = getListItemsObjects.indexOf(elementRunner)
+
+                                            var getProposedLink = storeNavBarItemLinks[getIndexOfSelectedObject]
+
+
+
+
+
+                                        // EVENTS FOR HOVER EFFECTS xxxxx
+                                        // //////////////////////////////
+
+                                            // MOUSE OVER EFFECTS =======
+                                            // //////////////////////////
+
+                                                elementRunner.addEventListener("mouseover", function () {
+
+                                                    // SIWTCH ON BACKGROUND HIGHLIGHTER
+                                                    // //////////////////
+
+                                                        elementRunner.style = `
+                                                        
+                                                            width:100%;
+                                                            cursor:pointer;
+                                                            padding:20px 0px;
+                                                            position:relative;
+                                                            background:rgba(239, 239, 239, 1.0);
+                                                            border-radius:6px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                })
+
+                                            // MOUSE OUT EFFECTS ========
+                                            // //////////////////////////
+
+                                                elementRunner.addEventListener("mouseout", function () {
+
+                                                    // SIWTCH OFF BACKGROUND HIGHLIGHTER
+                                                    // //////////////////
+
+                                                        elementRunner.style = `
+                                                        
+                                                            width:100%;
+                                                            cursor:pointer;
+                                                            padding:20px 0px;
+                                                            position:relative;
+                                                            background:rgba(239, 239, 239, 0.0);
+                                                            border-radius:6px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                })
+
+
+
+
+
+                                        // EVENTS FOR HOVER EFFECTS xxxxx
+                                        // //////////////////////////////
+
+                                            elementRunner.addEventListener("click", function () {
+
+                                                window.open(`${getProposedLink}`, `_blank`)
+
+                                            })
+                                        
+                                    })
+
+
+
+
+
+
+
+
+
+
 
 
 
