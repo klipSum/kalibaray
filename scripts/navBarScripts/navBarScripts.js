@@ -5996,6 +5996,19 @@
 
 
 
+                // CREATE NAV BAR FOUR ACTUAL -------------------------------
+                // //////////////////////////////////////////////////////////
+
+                    function createNavBarFourMainPlate (cushionNumber) {
+
+
+
+                    }
+
+
+
+
+
 
 
                 
