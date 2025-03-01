@@ -111,6 +111,7 @@
                 var storeNavBarTitle = []
                 var storeNavBarItemLinks = []
                 var storeNavBarItemsClassNames = []
+                var storeNavBarSideMenuIconItems = []
                 var storeNavBarMobileClickersClassNames = []
 
             // FOR NAV BAR SELECTED /////////////////////////////////////
@@ -128,7 +129,8 @@
 
                         createNavBarOneMainPlate,
                         createNavBarTwoMainPlate,
-                        createNavBarThreeMainPlate
+                        createNavBarThreeMainPlate,
+                        createNavBarFourMainPlate
                         
                     ]
 
@@ -6000,6 +6002,1498 @@
                 // //////////////////////////////////////////////////////////
 
                     function createNavBarFourMainPlate (cushionNumber) {
+
+                        // GET NAV BAR CUSHION xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            var createNavBarCushion = document.querySelector(`.navBar${cushionNumber}`)
+
+                        // CREATE NAV BAR FOUR ELEMENTS xxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            // CREATE MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateFourMainContainer = document.createElement("div")
+                                navBarPlateFourMainContainer.className = `navBarFourMainContainer`
+
+
+
+
+
+                            // CREATE MAIN NAV BAR PLATE ELEMENT ============ 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateFourMainElement = document.createElement("div")
+                                navBarPlateFourMainElement.className = `navBarFourPlateElementContainer`
+
+
+
+
+
+
+
+
+
+
+
+
+                            // CREATE MAIN NAV BAR PLATE LOGO AND MENU BUTTON CONTAINER 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateFourLogoSideContainer = document.createElement("div")
+                                navBarPlateFourLogoSideContainer.className = `navBarFourPlateElementLogoSideContainer`
+
+                                    // LOGO ACTUAL CONTAINER -------------
+                                    // //////////////////////////////////
+
+                                        var navBarPlateFourLogoActual = document.createElement("div")
+                                        navBarPlateFourLogoActual.className = `navBarFourPlateElementLogoActual`
+
+                                var navBarPlateFourMenuButtonSideContainer = document.createElement("div")
+                                navBarPlateFourMenuButtonSideContainer.className = `navBarFourPlateElementMenuButtonSideContainer`
+
+                                    // CLICKERS CONTAINER ---------------
+                                    // //////////////////////////////////
+
+                                        var navBarPlateFourMenuButtonSideClickerContainer = document.createElement("div")
+                                        navBarPlateFourMenuButtonSideClickerContainer.className = `navBarFourPlateElementMenuButtonSideClickerContainer`
+
+                                            var navBarPlateFourMenuButtonSideClickerOn = document.createElement("div")
+                                            navBarPlateFourMenuButtonSideClickerOn.className = `navBarFourPlateElementMenuButtonSideClickerOn`
+
+                                            var navBarPlateFourMenuButtonSideClickerOff = document.createElement("div")
+                                            navBarPlateFourMenuButtonSideClickerOff.className = `navBarFourPlateElementMenuButtonSideClickerOff`
+
+                                    // DIVIDER LINE CONTAINER -----------
+                                    // //////////////////////////////////
+
+                                        var navBarPlateFourMenuButtonSideDividerLineContainer = document.createElement("div")
+                                        navBarPlateFourMenuButtonSideDividerLineContainer.className = `navBarFourPlateElementMenuButtonSideDividerLineContainer`
+
+                                        var navBarPlateFourMenuButtonSideDividerLineActual = document.createElement("div")
+                                        navBarPlateFourMenuButtonSideDividerLineActual.className = `navBarFourPlateElementMenuButtonSideDividerLineActual`
+
+                                    // MENU BUTTON CONTAINER ------------
+                                    // //////////////////////////////////
+
+                                        var navBarPlateFourMenuButtonSideMenuButtonIconMover = document.createElement("div")
+                                        navBarPlateFourMenuButtonSideMenuButtonIconMover.className = `navBarFourPlateElementMenuButtonSideMenuButtonIconMover`
+
+                                            var navBarPlateFourMenuButtonSideMenuButtonIconLineOne = document.createElement("div")
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineOne.className = `navBarFourPlateElementMenuButtonSideMenuButtonIconLineOne`
+
+                                            var navBarPlateFourMenuButtonSideMenuButtonIconLineTwo = document.createElement("div")
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineTwo.className = `navBarFourPlateElementMenuButtonSideMenuButtonIconLineTwo`
+
+                                            var navBarPlateFourMenuButtonSideMenuButtonIconLineThree = document.createElement("div")
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineThree.className = `navBarFourPlateElementMenuButtonSideMenuButtonIconLineThree`
+
+
+
+
+
+
+                                
+
+
+
+
+
+                            // CREATE SIDE NAV BAR PLATE ====================
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateFourSideMenuMainContainer = document.createElement("div")
+                                navBarPlateFourSideMenuMainContainer.className = `navBarFourPlateSideMenuMainContainer`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // STYLE MAIN NAV BAR PLATE AND ELEMENTS ========
+                            // //////////////////////////////////////////////
+
+                                // STYLE MAIN NAV BAR ELEMENTS xxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateFourMainContainer.style = `
+                                    
+                                        width:200px;
+                                        height:50px;
+                                        top:0;
+                                        left:0;
+                                        right:0;
+                                        margin:auto;
+                                        z-index:2;
+                                        position:fixed;
+                                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.5);
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                // STYLE MAIN NAV BAR PLATE ELEMENT xxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateFourMainElement.style = `
+                                    
+                                        width:100%;
+                                        height:50px;
+                                        top:20px;
+                                        left:0px;
+                                        right:0;
+                                        margin:0px auto;
+                                        position:relative;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                        // STYLE MAIN NAV BAR PLATE ELEMENT SIDE ELEMNTS
+                                        // //////////////////////////////////
+
+                                            navBarPlateFourLogoSideContainer.style = `
+                                            
+                                                width:150px;
+                                                height:50px;
+                                                top:0;
+                                                left:0;
+                                                margin:0px auto;
+                                                display:inline-block;
+                                                position:relative;
+                                                background:#FFFFFF;
+                                                border-radius:10px 0px 0px 10px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                // STYLE LOGO ACTUAL CONTAINER
+                                                // //////////////////////////
+
+                                                    navBarPlateFourLogoActual.style = `
+                                                    
+                                                        width:90%;
+                                                        height:40px;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        background:#2C2C2C;
+                                                        border-radius:6px;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+
+
+                                            navBarPlateFourMenuButtonSideContainer.style = `
+                                            
+                                                width:50px;
+                                                height:50px;
+                                                top:0;
+                                                right:0;
+                                                margin:0px auto;
+                                                display:inline-block;
+                                                position:relative;
+                                                background:#f1f1f1;
+                                                border-radius:0px 10px 10px 0px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                // STYLE CLICKERS CONTAINER -
+                                                // //////////////////////////
+
+                                                    navBarPlateFourMenuButtonSideClickerContainer.style = `
+                                                    
+                                                        width:100%;
+                                                        height:100%;
+                                                        z-index:1;
+                                                        margin:auto;
+                                                        background:rgba(0,0,0,0.00);
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+                                                        navBarPlateFourMenuButtonSideClickerOn.style = `
+                                                        
+                                                            width:100%;
+                                                            height:100%;
+                                                            cursor:pointer;
+                                                            margin:0px auto;
+                                                            z-index:1;
+                                                            position:absolute;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+                                                        navBarPlateFourMenuButtonSideClickerOff.style = `
+                                                        
+                                                            width:100%;
+                                                            height:100%;
+                                                            cursor:pointer;
+                                                            margin:0px auto;
+                                                            z-index:-1;
+                                                            position:absolute;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+
+                                                // STYLE DIVIDER LINE CONTAINER
+                                                // //////////////////////////
+
+                                                    navBarPlateFourMenuButtonSideDividerLineContainer.style = `
+                                                    
+                                                        width:3px;
+                                                        height:50%;
+                                                        top:0;
+                                                        left:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+                                                        navBarPlateFourMenuButtonSideDividerLineActual.style = `
+                                                        
+                                                            width:100%;
+                                                            height:100%;
+                                                            top:0;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            background:rgba(0,0,0,0.2);
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                // STYLE MENU BUTTON CONTAINER
+                                                // //////////////////////////
+
+                                                    navBarPlateFourMenuButtonSideMenuButtonIconMover.style = `
+                                                    
+                                                        width:20px;
+                                                        height:60%;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        z-index:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+                                                        navBarPlateFourMenuButtonSideMenuButtonIconLineOne.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            top:-14px;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            opacity:1;
+                                                            position:absolute;
+                                                            transform:rotateZ(0deg);
+                                                            background:#2C2C2C;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                        navBarPlateFourMenuButtonSideMenuButtonIconLineTwo.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            top:0px;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            opacity:1;
+                                                            position:absolute;
+                                                            transform:rotateZ(0deg);
+                                                            background:#2C2C2C;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                        navBarPlateFourMenuButtonSideMenuButtonIconLineThree.style = `
+                                                        
+                                                            width:100%;
+                                                            height:3px;
+                                                            top:14px;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            opacity:1;
+                                                            position:absolute;
+                                                            transform:rotateZ(0deg);
+                                                            background:#2C2C2C;
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+
+
+
+
+
+                                
+
+
+
+
+
+                                // CREATE SIDE NAV BAR PLATE xxxxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateFourSideMenuMainContainer.style = `
+                                    
+                                        top:20px;
+                                        top:100px;
+                                        left:10px;
+                                        display:block;
+                                        padding:5px 5px;
+                                        position:fixed;
+                                        background:#FFFFFF;
+                                        border-radius:8px;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // ADD EVENT LISTENERS FOR MENU OPEN CLOSE CLICKERS
+                            // //////////////////////////////////////////////
+
+                                // FOR MENU OPEN CLICKER --------------------
+                                // //////////////////////////////////////////
+
+                                    navBarPlateFourMenuButtonSideClickerOn.addEventListener("click", function () {
+
+                                        // CHANGE ICON LINES TO READY CLOSE x
+                                        // //////////////////////////////////
+
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineOne.style = `
+                                            
+                                                width:100%;
+                                                height:3px;
+                                                top:0px;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                transform:rotateZ(45deg);
+                                                background:#2C2C2C;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineTwo.style = `
+                                            
+                                                width:100%;
+                                                height:3px;
+                                                top:0px;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:0;
+                                                position:absolute;
+                                                transform:rotateZ(0deg);
+                                                background:#2C2C2C;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineThree.style = `
+                                            
+                                                width:100%;
+                                                height:3px;
+                                                top:0px;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                transform:rotateZ(-45deg);
+                                                background:#2C2C2C;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                        // SEND OPEN MENU CLICKER TO BACK xxx
+                                        // //////////////////////////////////
+
+                                            navBarPlateFourMenuButtonSideClickerOn.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                cursor:pointer;
+                                                margin:0px auto;
+                                                z-index:-1;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                        // SEND CLOSE MENU CLICKER TO FRONT x
+                                        // //////////////////////////////////
+
+                                            navBarPlateFourMenuButtonSideClickerOff.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                cursor:pointer;
+                                                margin:0px auto;
+                                                z-index:1;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                        
+                                    })
+
+
+
+
+
+                                // FOR MENU CLOSE CLICKER -------------------
+                                // //////////////////////////////////////////
+
+                                    navBarPlateFourMenuButtonSideClickerOff.addEventListener("click", function () {
+
+                                        // CHANGE ICON LINES TO READY OPEN xx
+                                        // //////////////////////////////////
+
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineOne.style = `
+                                            
+                                                width:100%;
+                                                height:3px;
+                                                top:-14px;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                transform:rotateZ(0deg);
+                                                background:#2C2C2C;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineTwo.style = `
+                                            
+                                                width:100%;
+                                                height:3px;
+                                                top:0px;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                transform:rotateZ(0deg);
+                                                background:#2C2C2C;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineThree.style = `
+                                            
+                                                width:100%;
+                                                height:3px;
+                                                top:14px;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                transform:rotateZ(0deg);
+                                                background:#2C2C2C;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                        // SEND CLOSE MENU CLICKER TO BACK xxx
+                                        // //////////////////////////////////
+
+                                            navBarPlateFourMenuButtonSideClickerOff.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                cursor:pointer;
+                                                margin:0px auto;
+                                                z-index:-1;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                        // SEND OPEN MENU CLICKER TO FRONT x
+                                        // //////////////////////////////////
+
+                                            navBarPlateFourMenuButtonSideClickerOn.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                cursor:pointer;
+                                                margin:0px auto;
+                                                z-index:1;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                        
+                                    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // APPEND MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                createNavBarCushion.appendChild(navBarPlateFourMainContainer)
+
+                                navBarPlateFourMainContainer.appendChild(navBarPlateFourMainElement)
+
+
+
+                                    // APPEND MAIN NAV BAR CONTENT RESIZER --
+                                    // //////////////////////////////////////
+
+                                        navBarPlateFourMainElement.appendChild(navBarPlateFourLogoSideContainer)
+                                        navBarPlateFourMainElement.appendChild(navBarPlateFourMenuButtonSideContainer)
+
+
+
+                                            // APPEND MAIN NAV BAR LOGO SIDE CONTAINER
+                                            // //////////////////////////////////
+
+                                                navBarPlateFourLogoSideContainer.appendChild(navBarPlateFourLogoActual)
+
+
+                                            // APPEND MAIN NAV BAR MENU BUTTON SIDE CONTAINER
+                                            // //////////////////////////////////
+
+
+                                                    // APPEND CLICKERS CONTAINER
+                                                    // //////////////////////////
+
+                                                        navBarPlateFourMenuButtonSideContainer.appendChild(navBarPlateFourMenuButtonSideClickerContainer)
+
+                                                            navBarPlateFourMenuButtonSideClickerContainer.appendChild(navBarPlateFourMenuButtonSideClickerOn)
+
+                                                            navBarPlateFourMenuButtonSideClickerContainer.appendChild(navBarPlateFourMenuButtonSideClickerOff)
+
+
+                                                    // APPEND DIVIDER LINE CONTAINER
+                                                    // //////////////////////////
+
+                                                        navBarPlateFourMenuButtonSideClickerContainer.appendChild(navBarPlateFourMenuButtonSideDividerLineContainer)
+
+                                                            navBarPlateFourMenuButtonSideDividerLineContainer.appendChild(navBarPlateFourMenuButtonSideDividerLineActual)
+
+
+                                                    // APPEND MENU BUTTON CONTAINER
+                                                    // //////////////////////////
+
+                                                        navBarPlateFourMenuButtonSideClickerContainer.appendChild(navBarPlateFourMenuButtonSideMenuButtonIconMover)
+
+                                                            navBarPlateFourMenuButtonSideMenuButtonIconMover.appendChild(navBarPlateFourMenuButtonSideMenuButtonIconLineOne)
+
+                                                            navBarPlateFourMenuButtonSideMenuButtonIconMover.appendChild(navBarPlateFourMenuButtonSideMenuButtonIconLineTwo)
+
+                                                            navBarPlateFourMenuButtonSideMenuButtonIconMover.appendChild(navBarPlateFourMenuButtonSideMenuButtonIconLineThree)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // APPEND SIDE NAV BAR PLATE ====================
+                            // //////////////////////////////////////////////
+
+                                createNavBarCushion.appendChild(navBarPlateFourSideMenuMainContainer)
+
+
+
+
+                                // CREATE LOOP FOR ICON BLOCKS xxxxxxxxxx
+                                // //////////////////////////////////////
+
+                                    for ( elementsIconCounter = 0; elementsIconCounter < storeNavBarItems.length; elementsIconCounter++ ) {
+
+
+                                        // DECLARE VARIABLES ------------
+                                        // //////////////////////////////
+
+                                            var getSideMenuPannel = document.querySelector(`.navBarFourPlateSideMenuMainContainer`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        // DECLARE VARIABLES FOR ITEM CRATIONS
+                                        // //////////////////////////////
+
+                                            var navBarPlateFourSideMenuIconeBlockContainer = document.createElement("div")
+                                            navBarPlateFourSideMenuIconeBlockContainer.className = `navBarFourPlateSideMenuIconBlockContainer${classNumberMapper[elementsIconCounter]}`
+
+                                            var navBarPlateFourSideMenuIconBlockClicker = document.createElement("div")
+                                            navBarPlateFourSideMenuIconBlockClicker.className = `navBarFourPlateSideMenuIconBlockClicker${classNumberMapper[elementsIconCounter]}`
+
+
+                                                // HOVER BLOCK FOR ICON CONTAINER
+                                                // //////////////////////
+
+                                                    var navBarPlateFourSideMenuIconeBlockHoverBlock = document.createElement("div")
+                                                    navBarPlateFourSideMenuIconeBlockHoverBlock.className = `navBarFourPlateSideMenuIconBlockHoverBlockContainer${classNumberMapper[elementsIconCounter]}`
+
+                                                        var navBarPlateFourSideMenuIconeActual = document.createElement("div")
+                                                        navBarPlateFourSideMenuIconeActual.className = `navBarFourPlateSideMenuIconActual${classNumberMapper[elementsIconCounter]}`
+
+
+                                                // HOVER TAG FOR ICON DESCRIPTION
+                                                // //////////////////////
+
+                                                    var navBarPlateFourSideMenuIconeBlockHoverTagContainer = document.createElement("div")
+                                                    navBarPlateFourSideMenuIconeBlockHoverTagContainer.className = `navBarFourPlateSideMenuIconBlockHoverTagContainer${classNumberMapper[elementsIconCounter]}`
+
+                                                        var navBarPlateFourSideMenuIconeBlockHoverTagPointer = document.createElement("div")
+                                                        navBarPlateFourSideMenuIconeBlockHoverTagPointer.className = `navBarFourPlateSideMenuIconBlockHoverTagPointer${classNumberMapper[elementsIconCounter]}`
+
+                                                        var navBarPlateFourSideMenuIconeBlockHoverTagActual = document.createElement("div")
+                                                        navBarPlateFourSideMenuIconeBlockHoverTagActual.className = `navBarFourPlateSideMenuIconBlockHoverTagActual${classNumberMapper[elementsIconCounter]}`
+
+                                                            var navBarPlateFourSideMenuIconeBlockHoverTagTextActual = document.createElement("div")
+                                                            navBarPlateFourSideMenuIconeBlockHoverTagTextActual.className = `navBarFourPlateSideMenuIconBlockHoverTagTextActual${classNumberMapper[elementsIconCounter]}`
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        // STYLE ITEM CRATIONS ----------
+                                        // //////////////////////////////
+
+                                            navBarPlateFourSideMenuIconeBlockContainer.style = `
+                                            
+                                                width:50px;
+                                                height:50px;
+                                                opacity:1;
+                                                display:block;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                            navBarPlateFourSideMenuIconBlockClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                left:0;
+                                                right:0;
+                                                cursor:pointer;
+                                                z-index:2;
+                                                margin:0px auto;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+
+                                                // STYLE HOVER BLOCK FOR ICON CONTAINER
+                                                // //////////////////////
+
+                                                    navBarPlateFourSideMenuIconeBlockHoverBlock.style = `
+                                                    
+                                                        width:100%;
+                                                        height:100%;
+                                                        z-index:1;
+                                                        cursor:pointer;
+                                                        position:absolute;
+                                                        background:rgba(0,0,0,0.0);
+                                                        border-radius:5px;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+                                                        navBarPlateFourSideMenuIconeActual.style = `
+                                                        
+                                                            width:25px;
+                                                            height:25px;
+                                                            top:0;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            background:#2C2C2C;
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+
+                                                // STYLE HOVER TAG FOR ICON DESCRIPTION
+                                                // //////////////////////
+
+                                                    navBarPlateFourSideMenuIconeBlockHoverTagContainer.style = `
+                                                    
+                                                        height:100%;
+                                                        left:0px;
+                                                        z-index:-1;
+                                                        opacity:0;
+                                                        display:block;
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+                                                        navBarPlateFourSideMenuIconeBlockHoverTagPointer.style = `
+                                                        
+                                                            width:15px;
+                                                            height:15px;
+                                                            top:0;
+                                                            left:-100%;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            transform:rotateZ(45deg);
+                                                            background:#FFFFFF;
+                                                            border-radius:3px;
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+                                                        navBarPlateFourSideMenuIconeBlockHoverTagActual.style = `
+                                                        
+                                                            width:100%;
+                                                            height:100%;
+                                                            padding:0px 10px;
+                                                            background:#FFFFFF;
+                                                            border-radius:5px;
+                                                            box-shadow:0px 20px 20px -10px rgba(0,0,0,0.3);
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+                                                            navBarPlateFourSideMenuIconeBlockHoverTagTextActual.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                color:#2C2C2C;
+                                                                position:relative;
+                                                                font-size:15px;
+                                                                font-weight:700;
+                                                                font-family:arial, sans-serif;
+                                                                line-height:50px;
+                                                                letter-spacing:2px;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+
+
+
+
+
+
+                                            
+
+
+
+
+
+
+                                        // APPEND OBJECTS TO PARENTS ----
+                                        // //////////////////////////////
+
+                                            getSideMenuPannel.appendChild(navBarPlateFourSideMenuIconeBlockContainer)
+                                            navBarPlateFourSideMenuIconeBlockContainer.appendChild(navBarPlateFourSideMenuIconBlockClicker)
+
+
+                                                // APPEND HOVER BLOCK FOR ICON CONTAINER
+                                                // //////////////////////
+
+                                                    navBarPlateFourSideMenuIconeBlockContainer.appendChild(navBarPlateFourSideMenuIconeBlockHoverBlock)
+
+                                                        navBarPlateFourSideMenuIconeBlockHoverBlock.appendChild(navBarPlateFourSideMenuIconeActual)
+
+
+                                                // STYLE HOVER TAG FOR ICON DESCRIPTION
+                                                // //////////////////////
+
+                                                    navBarPlateFourSideMenuIconeBlockContainer.appendChild(navBarPlateFourSideMenuIconeBlockHoverTagContainer)
+
+                                                        navBarPlateFourSideMenuIconeBlockHoverTagContainer.appendChild(navBarPlateFourSideMenuIconeBlockHoverTagPointer)
+
+                                                        navBarPlateFourSideMenuIconeBlockHoverTagContainer.appendChild(navBarPlateFourSideMenuIconeBlockHoverTagActual)
+
+                                                            navBarPlateFourSideMenuIconeBlockHoverTagActual.appendChild(navBarPlateFourSideMenuIconeBlockHoverTagTextActual)
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        // ADD TEXT TO OBJECT BLOCK -----
+                                        // //////////////////////////////
+
+                                            navBarPlateFourSideMenuIconeBlockHoverTagTextActual.textContent = `${storeNavBarItems[elementsIconCounter]}`
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        // ADD CLASS NAMES TO ARRAY FOR USE
+                                        // //////////////////////////////
+
+                                            storeNavBarItemsClassNames.push(`navBarFourPlateSideMenuIconBlockClicker${classNumberMapper[elementsIconCounter]}`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        // CREATE STYLE AND APPEND ICON BLOCK DIVIDER
+                                                        // //////////////////////
+
+                                                            if ( elementsIconCounter == storeNavBarItems.length -1 ) {
+
+
+                                                            } else {
+
+                                                                // CREATE DIVIDER LINE
+                                                                // //////////////
+
+                                                                    var navBarPlateFourSideMenuIconeBlocDividerContainer = document.createElement("div")
+                                                                    navBarPlateFourSideMenuIconeBlocDividerContainer.className = `navBarFourPlateSideMenuIconBlockDividerContainer`
+
+                                                                        var navBarPlateFourSideMenuIconeBlocDividerLineActual = document.createElement("div")
+                                                                        navBarPlateFourSideMenuIconeBlocDividerLineActual.className = `navBarFourPlateSideMenuIconBlockDividerLineActual`
+
+                                                                        
+
+
+
+
+
+                                                                // STYLE DIVIDER LINE
+                                                                // //////////////
+
+                                                                    navBarPlateFourSideMenuIconeBlocDividerContainer.style = `
+                                                                    
+                                                                        width:100%;
+                                                                        padding:5px 0px;
+                                                                        position:relative;
+                                                                        transition:all 600ms ease;
+                                                                        -o-transition:all 600ms ease;
+                                                                        -ms-transition:all 600ms ease;
+                                                                        -moz-transition:all 600ms ease;
+                                                                        -webkit-transition:all 600ms ease;
+
+                                                                    `
+
+                                                                        navBarPlateFourSideMenuIconeBlocDividerLineActual.style = `
+                                                                        
+                                                                            width:100%;
+                                                                            height:2px;
+                                                                            background:rgba(0,0,0,0.1);
+                                                                            transition:all 600ms ease;
+                                                                            -o-transition:all 600ms ease;
+                                                                            -ms-transition:all 600ms ease;
+                                                                            -moz-transition:all 600ms ease;
+                                                                            -webkit-transition:all 600ms ease;
+
+                                                                        `
+
+
+
+
+
+
+                                                                    
+                                                                // APPEND DIVIDER LINE
+                                                                // //////////////
+
+                                                                    getSideMenuPannel.appendChild(navBarPlateFourSideMenuIconeBlocDividerContainer)
+
+                                                                        navBarPlateFourSideMenuIconeBlocDividerContainer.appendChild(navBarPlateFourSideMenuIconeBlocDividerLineActual)
+
+                                                                
+                                                            }
+
+
+                                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // ADD EVENT LISTENERS TO OBJECTS ===============
+                            // //////////////////////////////////////////////
+
+                                storeNavBarItemsClassNames.forEach((selector) => {
+
+
+                                    // DECLARE OBJECT VARIABLES xxxxxxxxxxxxx
+                                    // //////////////////////////////////////
+
+                                        var getObjectInArray = document.querySelector(`.${selector}`)
+
+                                        var makeIndexNumber = storeNavBarItemsClassNames.indexOf(selector)
+
+                                        var getTagBlock = document.querySelector(`.navBarFourPlateSideMenuIconBlockHoverTagContainer${classNumberMapper[makeIndexNumber]}`)
+
+                                        var getIconHoverBlock = document.querySelector(`.navBarFourPlateSideMenuIconBlockHoverBlockContainer${classNumberMapper[makeIndexNumber]}`)
+
+
+                                    // HOVER EVENTS xxxxxxxxxxxxxxxxxxxxxxxxx
+                                    // //////////////////////////////////////
+
+                                        // MOUSE OVER -----------------------
+                                        // //////////////////////////////////
+
+                                            getObjectInArray.addEventListener("mouseover", function () {
+
+                                                // CHANGE HOVER BLOCK TO ACTIVE STATE
+                                                // //////////////////////////
+
+                                                    getIconHoverBlock.style = `
+                                                    
+                                                        width:100%;
+                                                        height:100%;
+                                                        z-index:1;
+                                                        cursor:pointer;
+                                                        position:absolute;
+                                                        background:rgba(0,0,0,0.1);
+                                                        border-radius:5px;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+                                                // CHANGE TAG BLOCK TO ACTIVE STATE
+                                                // //////////////////////////
+
+                                                    getTagBlock.style = `
+                                                    
+                                                        height:100%;
+                                                        left:0px;
+                                                        z-index:0;
+                                                        opacity:0;
+                                                        display:block;
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+                                                        setTimeout(() => {
+
+                                                            getTagBlock.style = `
+                                                    
+                                                                height:100%;
+                                                                left:75px;
+                                                                z-index:0;
+                                                                opacity:1;
+                                                                display:block;
+                                                                position:absolute;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+                                                            
+                                                        }, 20);
+
+                                            })
+
+                                        // MOUSE OUT ------------------------
+                                        // //////////////////////////////////
+
+                                            getObjectInArray.addEventListener("mouseout", function () {
+
+                                                // CHANGE HOVER BLOCK TO INACTIVE STATE
+                                                // //////////////////////////
+
+                                                    getIconHoverBlock.style = `
+                                                    
+                                                        width:100%;
+                                                        height:100%;
+                                                        z-index:1;
+                                                        cursor:pointer;
+                                                        position:absolute;
+                                                        background:rgba(0,0,0,0.0);
+                                                        border-radius:5px;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+                                                // CHANGE TAG BLOCK TO INACTIVE STATE
+                                                // //////////////////////////
+
+                                                    getTagBlock.style = `
+                                                    
+                                                        height:100%;
+                                                        left:0px;
+                                                        z-index:0;
+                                                        opacity:0;
+                                                        display:block;
+                                                        position:absolute;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+                                                        // KILL BLOCK -------
+                                                        // //////////////////
+
+                                                            setTimeout(() => {
+
+                                                                getTagBlock.style = `
+                                                    
+                                                                    height:100%;
+                                                                    left:0px;
+                                                                    z-index:0;
+                                                                    opacity:0;
+                                                                    display:none;
+                                                                    position:absolute;
+                                                                    transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+
+                                                                `
+
+                                                            }, 300)
+
+                                            })
+
+
+
+
+
+                                    // CLICKER EVENTS xxxxxxxxxxxxxxxxxxxxxxx
+                                    // //////////////////////////////////////
+
+                                        getObjectInArray.addEventListener("click", function () {
+
+                                            // CHANGE HOVER BLOCK TO ACTIVE STATE
+                                            // //////////////////////////
+
+                                                getIconHoverBlock.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    z-index:1;
+                                                    cursor:pointer;
+                                                    position:absolute;
+                                                    background:rgba(0,0,0,0.0);
+                                                    border-radius:5px;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            // CHANGE TAG BLOCK TO ACTIVE STATE
+                                            // //////////////////////////
+
+                                                getTagBlock.style = `
+                                                
+                                                    height:100%;
+                                                    left:0px;
+                                                    z-index:0;
+                                                    opacity:0;
+                                                    display:block;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                    // KILL BLOCK -------
+                                                    // //////////////////
+
+                                                        setTimeout(() => {
+
+                                                            getTagBlock.style = `
+                                                
+                                                                height:100%;
+                                                                left:0px;
+                                                                z-index:0;
+                                                                opacity:0;
+                                                                display:none;
+                                                                position:absolute;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        }, 300)
+
+                                        })
+
+
+
+                                })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+                                    
 
 
 
