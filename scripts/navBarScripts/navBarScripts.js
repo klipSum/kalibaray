@@ -111,7 +111,21 @@
                 var storeNavBarTitle = []
                 var storeNavBarItemLinks = []
                 var storeNavBarItemsClassNames = []
-                var storeNavBarSideMenuIconItems = []
+                var storeNavBarSideMenuIconItems = [
+
+                    `images/icons/sideMenuIcons/sideMenuIconOne.png`,
+                    `images/icons/sideMenuIcons/sideMenuIconTwo.png`,
+                    `images/icons/sideMenuIcons/sideMenuIconThree.png`,
+                    `images/icons/sideMenuIcons/sideMenuIconFour.png`,
+                    `images/icons/sideMenuIcons/sideMenuIconFive.png`,
+
+                    `images/icons/sideMenuIcons/sideMenuIconSix.png`,
+                    `images/icons/sideMenuIcons/sideMenuIconSeven.png`,
+                    `images/icons/sideMenuIcons/sideMenuIconEight.png`,
+                    `images/icons/sideMenuIcons/sideMenuIconNine.png`,
+                    `images/icons/sideMenuIcons/sideMenuIconTen.png`,
+
+                ]
                 var storeNavBarMobileClickersClassNames = []
 
             // FOR NAV BAR SELECTED /////////////////////////////////////
@@ -6431,8 +6445,9 @@
                                     
                                         top:20px;
                                         top:100px;
-                                        left:10px;
-                                        display:block;
+                                        left:-50px;
+                                        opacity:0;
+                                        display:none;
                                         padding:5px 5px;
                                         position:fixed;
                                         background:#FFFFFF;
@@ -6581,6 +6596,54 @@
 
                                             `
 
+                                        // OPEN SIDE MENU xxxxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            navBarPlateFourSideMenuMainContainer.style = `
+                                            
+                                                top:20px;
+                                                top:100px;
+                                                left:-50px;
+                                                opacity:0;
+                                                display:block;
+                                                padding:5px 5px;
+                                                position:fixed;
+                                                background:#FFFFFF;
+                                                border-radius:8px;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                // THEN FADE SIDE MNEU IN ===
+                                                // //////////////////////////
+
+                                                    setTimeout(() => {
+
+                                                        navBarPlateFourSideMenuMainContainer.style = `
+                                            
+                                                            top:20px;
+                                                            top:100px;
+                                                            left:10px;
+                                                            opacity:1;
+                                                            display:block;
+                                                            padding:5px 5px;
+                                                            position:fixed;
+                                                            background:#FFFFFF;
+                                                            border-radius:8px;
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+                                                    }, 20)
+
                                         
                                     })
 
@@ -6690,6 +6753,54 @@
                                                 -ms-transition:all 600ms ease;
 
                                             `
+
+                                        // OPEN SIDE MENU xxxxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            navBarPlateFourSideMenuMainContainer.style = `
+                                            
+                                                top:20px;
+                                                top:100px;
+                                                left:-50px;
+                                                opacity:0;
+                                                display:block;
+                                                padding:5px 5px;
+                                                position:fixed;
+                                                background:#FFFFFF;
+                                                border-radius:8px;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                // THEN FADE SIDE MNEU IN ===
+                                                // //////////////////////////
+
+                                                    setTimeout(() => {
+
+                                                        navBarPlateFourSideMenuMainContainer.style = `
+                                            
+                                                            top:20px;
+                                                            top:100px;
+                                                            left:-50px;
+                                                            opacity:0;
+                                                            display:none;
+                                                            padding:5px 5px;
+                                                            position:fixed;
+                                                            background:#FFFFFF;
+                                                            border-radius:8px;
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+                                                    }, 200)
 
                                         
                                     })
@@ -6955,7 +7066,11 @@
                                                             bottom:0;
                                                             margin:auto;
                                                             position:absolute;
-                                                            background:#2C2C2C;
+                                                            /*background:#2C2C2C;*/
+                                                            background:url(${storeNavBarSideMenuIconItems[elementsIconCounter]});
+                                                            background-size:cover;
+                                                            background-repeat:no-repeat;
+                                                            background-position:center;
                                                             transition:all 600ms ease;
                                                             -o-transition:all 600ms ease;
                                                             -ms-transition:all 600ms ease;
