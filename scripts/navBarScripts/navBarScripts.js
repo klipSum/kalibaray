@@ -144,7 +144,8 @@
                         createNavBarOneMainPlate,
                         createNavBarTwoMainPlate,
                         createNavBarThreeMainPlate,
-                        createNavBarFourMainPlate
+                        createNavBarFourMainPlate,
+                        createNavBarFiveMainPlate
                         
                     ]
 
@@ -7609,6 +7610,728 @@
 
 
                                     
+
+
+
+                    }
+
+
+
+
+
+                // CREATE NAV BAR FIVE ACTUAL -------------------------------
+                // //////////////////////////////////////////////////////////
+
+                    function createNavBarFiveMainPlate (cushionNumber) {
+
+                        // GET NAV BAR CUSHION xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            var createNavBarCushion = document.querySelector(`.navBar${cushionNumber}`)
+
+                            console.log("CLASS: " + createNavBarCushion.className)
+
+                        // CREATE NAV BAR FOUR ELEMENTS xxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            // CREATE MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateFiveMainContainer = document.createElement("div")
+                                navBarPlateFiveMainContainer.className = `navBarFiveMainContainer`
+
+
+
+
+
+                            // CREATE MAIN NAV BAR PLATE ELEMENT ============ 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateFiveMainElement = document.createElement("div")
+                                navBarPlateFiveMainElement.className = `navBarFivePlateElementContainer`
+
+
+
+                                    // SIDE MENU CONTAINER ELEMENT xxxxxxxxxx
+                                    // //////////////////////////////////////
+
+                                        var navBarPlateFiveSideMenuContainer = document.createElement("div")
+                                        navBarPlateFiveSideMenuContainer.className = `navBarFivePlateSideMenuContainer`
+
+
+
+                                            // SIDE MENU CONTAINER ELEMENT AND OPEN CLOSE LIP CONTAINER
+                                            // //////////////////////////////
+
+                                                var navBarPlateFiveSideMenuOpenerLipContainer = document.createElement("div")
+                                                navBarPlateFiveSideMenuOpenerLipContainer.className = `navBarFivePlateSideMenuOpenerLipContainer`
+
+                                                    var navBarPlateFiveSideMenuOpenerLipOpenClicker = document.createElement("div")
+                                                    navBarPlateFiveSideMenuOpenerLipOpenClicker.className = `navBarFivePlateSideMenuOpenerLipOpenClicker`
+
+                                                    var navBarPlateFiveSideMenuOpenerLipCloseClicker = document.createElement("div")
+                                                    navBarPlateFiveSideMenuOpenerLipCloseClicker.className = `navBarFivePlateSideMenuOpenerLipCloseClicker`
+
+
+
+                                            // SIDE MENU CONTAINER ELEMENT PHYSICAL CLOSE BUTTON CONTAINER
+                                            // //////////////////////////////
+
+                                                var navBarPlateFiveSideMenuPhysicalCloseButtonContainer = document.createElement("div")
+                                                navBarPlateFiveSideMenuPhysicalCloseButtonContainer.className = `navBarFivePlateSideMenuPhysicalCloseButtonContainer`
+
+                                                    var navBarPlateFiveSideMenuPhysicalCloseButtonElement = document.createElement("div")
+                                                    navBarPlateFiveSideMenuPhysicalCloseButtonElement.className = `navBarFivePlateSideMenuPhysicalCloseButtonElement`
+
+                                                        var navBarPlateFiveSideMenuPhysicalCloseButtonIconMover = document.createElement("div")
+                                                        navBarPlateFiveSideMenuPhysicalCloseButtonIconMover.className = `navBarFivePlateSideMenuPhysicalCloseButtonIconMover`
+
+                                                            var navBarPlateFiveSideMenuPhysicalCloseButtonIconLineOne = document.createElement("div")
+                                                            navBarPlateFiveSideMenuPhysicalCloseButtonIconLineOne.className = `navBarFivePlateSideMenuPhysicalCloseButtonIconLineOne`
+
+                                                            var navBarPlateFiveSideMenuPhysicalCloseButtonIconLineTwo = document.createElement("div")
+                                                            navBarPlateFiveSideMenuPhysicalCloseButtonIconLineTwo.className = `navBarFivePlateSideMenuPhysicalCloseButtonIconLineTwo`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // STYLE MAIN NAV BAR PLATE AND ELEMENTS ========
+                            // //////////////////////////////////////////////
+
+                                // STYLE MAIN NAV BAR ELEMENTS xxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateFiveMainContainer.style = `
+                                    
+                                        width:200px;
+                                        height:50px;
+                                        top:0;
+                                        left:20px;
+                                        margin:0px auto;
+                                        z-index:2;
+                                        position:fixed;
+                                        box-shadow:0px 30px 50px -10px rgba(0,0,0,0.3);
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                // STYLE MAIN NAV BAR PLATE ELEMENT xxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateFiveMainElement.style = `
+                                    
+                                        width:100%;
+                                        height:50px;
+                                        top:0px;
+                                        left:0px;
+                                        right:0;
+                                        margin:0px auto;
+                                        position:relative;
+                                        background:#FFFFFF;
+                                        border-radius:0px 0px 8px 8px;
+                                        transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+
+                                    `
+
+                                        // STYLE SIDE MENU CONTAINER ELEMENT
+                                        // //////////////////////////////////
+
+                                            navBarPlateFiveSideMenuContainer.style = `
+                                            
+                                                width:210px;
+                                                top:70px;
+                                                left:-250px;
+                                                padding:20px 20px;
+                                                position:fixed;
+                                                background:#FFFFFF;
+                                                border-radius:8px 0px 8px 8px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                // STYLE SIDE MENU CONTAINER ELEMENT AND OPEN CLOSE LIP CONTAINER
+                                                // //////////////////////////
+
+                                                    navBarPlateFiveSideMenuOpenerLipContainer.style = `
+                                                    
+                                                        width:10px;
+                                                        height:70px;
+                                                        top:0;
+                                                        right:-10px;
+                                                        margin:auto 0px;
+                                                        cursor:pointer;
+                                                        opacity:1;
+                                                        display:block;
+                                                        position:absolute;
+                                                        background:#FFFFFF;
+                                                        border-radius:0px 5px 5px 0px;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+                                                        navBarPlateFiveSideMenuOpenerLipOpenClicker.style = `
+                                                        
+                                                            width:100%;
+                                                            height:100%;
+                                                            z-index:1;
+                                                            margin:0px auto;
+                                                            position:absolute;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                        navBarPlateFiveSideMenuOpenerLipCloseClicker.style = `
+                                                        
+                                                            width:100%;
+                                                            height:100%;
+                                                            z-index:-1;
+                                                            margin:0px auto;
+                                                            position:absolute;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+
+
+                                                // SIDE MENU CONTAINER ELEMENT PHYSICAL CLOSE BUTTON CONTAINER
+                                                // //////////////////////////
+
+                                                    navBarPlateFiveSideMenuPhysicalCloseButtonContainer.style = `
+                                                    
+                                                        width:100%;
+                                                        height:40px;
+                                                        top:0;
+                                                        margin:0px auto;
+                                                        display:block;
+                                                        position:relative;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                    
+                                                    `
+
+                                                        navBarPlateFiveSideMenuPhysicalCloseButtonElement.style = `
+                                                    
+                                                            width:30px;
+                                                            height:30px;
+                                                            top:-10px;
+                                                            right:-95px;
+                                                            cursor:pointer;
+                                                            margin:0px auto;
+                                                            border:3px solid #2C2C2C;
+                                                            display:inline-block;
+                                                            position:relative;
+                                                            border-radius:1000px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                    
+                                                        `
+
+                                                            navBarPlateFiveSideMenuPhysicalCloseButtonIconMover.style = `
+                                                    
+                                                                width:20px;
+                                                                height:20px;
+                                                                top:0;
+                                                                left:0;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                position:absolute;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                    
+                                                            `
+
+                                                                navBarPlateFiveSideMenuPhysicalCloseButtonIconLineOne.style = `
+                                                    
+                                                                    width:15px;
+                                                                    height:3px;
+                                                                    top:0;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    margin:auto;
+                                                                    position:absolute;
+                                                                    background:#2C2C2C;
+                                                                    transform:rotateZ(45deg);
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+                                                    
+                                                                `
+
+                                                                navBarPlateFiveSideMenuPhysicalCloseButtonIconLineTwo.style = `
+                                                    
+                                                                    width:15px;
+                                                                    height:3px;
+                                                                    top:0;
+                                                                    left:0;
+                                                                    right:0;
+                                                                    bottom:0;
+                                                                    margin:auto;
+                                                                    position:absolute;
+                                                                    background:#2C2C2C;
+                                                                    transform:rotateZ(-45deg);
+                                                                    transition:all 600ms ease;
+                                                                    -webkit-transition:all 600ms ease;
+                                                                    -moz-transition:all 600ms ease;
+                                                                    -o-transition:all 600ms ease;
+                                                                    -ms-transition:all 600ms ease;
+                                                    
+                                                                `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // APPEND MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                createNavBarCushion.appendChild(navBarPlateFiveMainContainer)
+
+                                navBarPlateFiveMainContainer.appendChild(navBarPlateFiveMainElement)
+
+
+
+                                    // SIDE MENU CONTAINER ELEMENT ----------
+                                    // //////////////////////////////////////
+
+                                        createNavBarCushion.appendChild(navBarPlateFiveSideMenuContainer)
+
+
+
+                                            // SIDE MENU CONTAINER ELEMENT --
+                                            // //////////////////////////////
+
+                                                navBarPlateFiveSideMenuContainer.appendChild(navBarPlateFiveSideMenuOpenerLipContainer)
+
+                                                    navBarPlateFiveSideMenuOpenerLipContainer.appendChild(navBarPlateFiveSideMenuOpenerLipOpenClicker)
+
+                                                    navBarPlateFiveSideMenuOpenerLipContainer.appendChild(navBarPlateFiveSideMenuOpenerLipCloseClicker)
+
+
+
+                                            // SIDE MENU CONTAINER ELEMENT PHYSICAL CLOSE BUTTON CONTAINER
+                                            // //////////////////////////////
+
+                                                navBarPlateFiveSideMenuContainer.appendChild(navBarPlateFiveSideMenuPhysicalCloseButtonContainer)
+
+                                                    navBarPlateFiveSideMenuPhysicalCloseButtonContainer.appendChild(navBarPlateFiveSideMenuPhysicalCloseButtonElement)
+
+                                                        navBarPlateFiveSideMenuPhysicalCloseButtonElement.appendChild(navBarPlateFiveSideMenuPhysicalCloseButtonIconMover)
+
+                                                            navBarPlateFiveSideMenuPhysicalCloseButtonIconMover.appendChild(navBarPlateFiveSideMenuPhysicalCloseButtonIconLineOne)
+
+                                                            navBarPlateFiveSideMenuPhysicalCloseButtonIconMover.appendChild(navBarPlateFiveSideMenuPhysicalCloseButtonIconLineTwo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // ADD EVENTS FOR IMMEDIATE CLICKERS ============
+                            // //////////////////////////////////////////////
+
+
+                                // DECLARE VRAIABLES ------------------------
+                                // //////////////////////////////////////////
+
+                                    var getSideMenuLipContainerMain = document.querySelector(`.navBarFivePlateSideMenuOpenerLipContainer`)
+
+                                    var getSideMenuOpenClicker = document.querySelector(`.navBarFivePlateSideMenuOpenerLipOpenClicker`)
+                                    var getSideMenuCloseClicker = document.querySelector(`.navBarFivePlateSideMenuOpenerLipCloseClicker`)
+
+                                    var getSideMenuTray = document.querySelector(`.navBarFivePlateSideMenuContainer`)
+
+                                // FOR OPEN SIDE TRAY MENU CLICKER ----------
+                                // //////////////////////////////////////////
+
+                                    getSideMenuOpenClicker.addEventListener("click", function () {
+
+                                        console.log("OPENED")
+
+                                        // HIDE SIDE MENU LIP CONTAINER xxxxx
+                                        // //////////////////////////////////
+
+                                            getSideMenuLipContainerMain.style = `
+                                            
+                                                width:10px;
+                                                height:70px;
+                                                top:0;
+                                                right:0px;
+                                                margin:auto 0px;
+                                                cursor:pointer;
+                                                opacity:1;
+                                                display:block;
+                                                position:absolute;
+                                                background:#FFFFFF;
+                                                border-radius:0px 5px 5px 0px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                // THEN KILL LIP ============
+                                                // //////////////////////////
+
+                                                    setTimeout(() => {
+
+                                                        getSideMenuLipContainerMain.style = `
+                                                        
+                                                            width:10px;
+                                                            height:70px;
+                                                            top:0;
+                                                            right:0px;
+                                                            margin:auto 0px;
+                                                            cursor:pointer;
+                                                            opacity:1;
+                                                            display:none;
+                                                            position:absolute;
+                                                            background:#FFFFFF;
+                                                            border-radius:0px 5px 5px 0px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                    }, 300)
+
+
+
+
+
+                                        // MOVE OPEN BUTTON TO BACK xxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getSideMenuOpenClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                z-index:-1;
+                                                margin:0px auto;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+                                                // CHANGE MENU OPEN CLOSE INDICATOR ICON TO READY FOR CLOSE
+                                                // //////////////////////////
+                                        
+
+
+
+                                        // MOVE CLOSE BUTTON TO FRONT xxxxxxx
+                                        // //////////////////////////////////
+
+                                            getSideMenuCloseClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                z-index:1;
+                                                margin:0px auto;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+                                                // CHANGE MENU OPEN CLOSE INDICATOR ICON TO READY FOR OPEN
+                                                // //////////////////////////
+
+                                                
+
+
+                                        // CHANGE MENU SIDE TRAY TO OPENED MODE
+                                        // //////////////////////////////////
+
+                                            getSideMenuTray.style = `
+                                            
+                                                width:210px;
+                                                top:70px;
+                                                left:20px;
+                                                padding:20px 20px;
+                                                position:fixed;
+                                                background:#FFFFFF;
+                                                border-radius:8px 8px 8px 8px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+                                    })
+
+
+
+
+
+                                // FOR CLOSE SIDE TRAY MENU CLICKER ---------
+                                // //////////////////////////////////////////
+
+                                    getSideMenuCloseClicker.addEventListener("click", function () {
+
+                                        console.log("CLOSED")
+
+                                        
+
+                                        // FIRST REVIVE LIP xxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getSideMenuLipContainerMain.style = `
+                                            
+                                                width:10px;
+                                                height:70px;
+                                                top:0;
+                                                right:0px;
+                                                margin:auto 0px;
+                                                cursor:pointer;
+                                                opacity:1;
+                                                display:block;
+                                                position:absolute;
+                                                background:#FFFFFF;
+                                                border-radius:0px 5px 5px 0px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                // THEN SHOW SIDE MENU LIP CONTAINER
+                                                // //////////////////////////
+
+                                                    setTimeout(() => {
+
+                                                        getSideMenuLipContainerMain.style = `
+                                                        
+                                                            width:10px;
+                                                            height:70px;
+                                                            top:0;
+                                                            right:-10px;
+                                                            margin:auto 0px;
+                                                            cursor:pointer;
+                                                            opacity:1;
+                                                            display:block;
+                                                            position:absolute;
+                                                            background:#FFFFFF;
+                                                            border-radius:0px 5px 5px 0px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                    }, 50)
+                                                    
+
+
+
+
+                                        // MOVE CLOSE BUTTON TO BACK xxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getSideMenuCloseClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                z-index:-1;
+                                                margin:0px auto;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+                                                // CHANGE MENU OPEN CLOSE INDICATOR ICON TO READY FOR CLOSE
+                                                // //////////////////////////
+
+
+
+
+                                        // MOVE OPEN BUTTON TO FRONT xxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getSideMenuOpenClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                z-index:1;
+                                                margin:0px auto;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+                                                // CHANGE MENU OPEN CLOSE INDICATOR ICON TO READY FOR OPEN
+                                                // //////////////////////////
+
+
+
+
+                                        // CHANGE MENU SIDE TRAY TO CLOSED MODE
+                                        // //////////////////////////////////
+
+                                            getSideMenuTray.style = `
+                                            
+                                                width:210px;
+                                                top:70px;
+                                                left:-250px;
+                                                padding:20px 20px;
+                                                position:fixed;
+                                                background:#FFFFFF;
+                                                border-radius:8px 0px 8px 8px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+                                    })
+
+
+
+
+
+
 
 
 
