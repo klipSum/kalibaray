@@ -7696,6 +7696,16 @@
 
 
 
+                            // CREATE SIDE MENU LIST ITEMS CONTAINER ======== 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateFiveSideMenuListItemsContainer = document.createElement("div")
+                                navBarPlateFiveSideMenuListItemsContainer.className = `navBarFivePlateSideMenuListItemsContainer`
+
+
+
+
+
 
 
 
@@ -7941,6 +7951,25 @@
 
 
 
+                            // STYLE SIDE MENU LIST ITEMS CONTAINER ========= 
+                            // //////////////////////////////////////////////
+
+                                navBarPlateFiveSideMenuListItemsContainer.style = `
+                                
+                                    width:100%;
+                                    position:relative;
+                                    transition:all 600ms ease;
+                                    -webkit-transition:all 600ms ease;
+                                    -moz-transition:all 600ms ease;
+                                    -o-transition:all 600ms ease;
+                                    -ms-transition:all 600ms ease;
+
+                                `
+
+
+
+
+
 
 
 
@@ -8011,6 +8040,15 @@
 
 
 
+                            // APPEND SIDE MENU LIST ITEMS CONTAINER ======== 
+                            // //////////////////////////////////////////////
+
+                                navBarPlateFiveSideMenuContainer.appendChild(navBarPlateFiveSideMenuListItemsContainer)
+
+
+
+
+
 
 
 
@@ -8048,6 +8086,8 @@
                                     var getSideMenuCloseClicker = document.querySelector(`.navBarFivePlateSideMenuOpenerLipCloseClicker`)
 
                                     var getSideMenuTray = document.querySelector(`.navBarFivePlateSideMenuContainer`)
+
+                                    var getTrayCloseButton = document.querySelector(`.navBarFivePlateSideMenuPhysicalCloseButtonElement`)
 
                                 // FOR OPEN SIDE TRAY MENU CLICKER ----------
                                 // //////////////////////////////////////////
@@ -8184,6 +8224,11 @@
 
 
                                     })
+
+
+
+
+
 
 
 
@@ -8326,6 +8371,396 @@
 
 
                                     })
+
+
+
+
+                                    
+
+
+
+
+
+                                // FOR CLOSE SIDE TRAY MENU CLICKER ---------
+                                // //////////////////////////////////////////
+
+                                    getTrayCloseButton.addEventListener("click", function () {
+
+                                        console.log("ALSO CLOSED")
+
+                                        
+
+                                        // FIRST REVIVE LIP xxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getSideMenuLipContainerMain.style = `
+                                            
+                                                width:10px;
+                                                height:70px;
+                                                top:0;
+                                                right:0px;
+                                                margin:auto 0px;
+                                                cursor:pointer;
+                                                opacity:1;
+                                                display:block;
+                                                position:absolute;
+                                                background:#FFFFFF;
+                                                border-radius:0px 5px 5px 0px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                // THEN SHOW SIDE MENU LIP CONTAINER
+                                                // //////////////////////////
+
+                                                    setTimeout(() => {
+
+                                                        getSideMenuLipContainerMain.style = `
+                                                        
+                                                            width:10px;
+                                                            height:70px;
+                                                            top:0;
+                                                            right:-10px;
+                                                            margin:auto 0px;
+                                                            cursor:pointer;
+                                                            opacity:1;
+                                                            display:block;
+                                                            position:absolute;
+                                                            background:#FFFFFF;
+                                                            border-radius:0px 5px 5px 0px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                    }, 500)
+                                                    
+
+
+
+
+                                        // MOVE CLOSE BUTTON TO BACK xxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getSideMenuCloseClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                z-index:-1;
+                                                margin:0px auto;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+                                                // CHANGE MENU OPEN CLOSE INDICATOR ICON TO READY FOR CLOSE
+                                                // //////////////////////////
+
+
+
+
+                                        // MOVE OPEN BUTTON TO FRONT xxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getSideMenuOpenClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                z-index:1;
+                                                margin:0px auto;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+                                                // CHANGE MENU OPEN CLOSE INDICATOR ICON TO READY FOR OPEN
+                                                // //////////////////////////
+
+
+
+
+                                        // CHANGE MENU SIDE TRAY TO CLOSED MODE
+                                        // //////////////////////////////////
+
+                                            getSideMenuTray.style = `
+                                            
+                                                width:210px;
+                                                top:70px;
+                                                left:-250px;
+                                                padding:20px 20px;
+                                                position:fixed;
+                                                background:#FFFFFF;
+                                                border-radius:8px 0px 8px 8px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+
+                                    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // CREATE AND ADD MENU ITEMS ====================
+                            // //////////////////////////////////////////////
+
+
+                                // RUN FOR LOOP TO ADD LIST ITEMS xxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    for ( listItemsCounter = 0; listItemsCounter < storeNavBarItems.length; listItemsCounter++ ) {
+
+
+
+
+                                        // DECLARE VARIABLES xxxxxxxxxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////////////
+
+                                            var getSideMenuListItemMainContainer = document.querySelector(`.navBarFivePlateSideMenuListItemsContainer`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        // CREATION OF MENU ITEMS xxxxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////////////
+
+                                            var navBarPlateFiveSideMenuListItemBlockContainer = document.createElement("div")
+                                            navBarPlateFiveSideMenuListItemBlockContainer.className = `navBarFivePlateSideMenuListItemBlockContainer${classNumberMapper[listItemsCounter]}`
+
+                                                var navBarPlateFiveSideMenuListItemTextSide = document.createElement("div")
+                                                navBarPlateFiveSideMenuListItemTextSide.className = `navBarFivePlateSideMenuListItemTextSide${classNumberMapper[listItemsCounter]}`
+
+                                                    var navBarPlateFiveSideMenuListItemTextActual = document.createElement("div")
+                                                    navBarPlateFiveSideMenuListItemTextActual.className = `navBarFivePlateSideMenuListItemTextActual${classNumberMapper[listItemsCounter]}`
+
+
+
+
+
+
+                                                var navBarPlateFiveSideMenuListItemIconSide = document.createElement("div")
+                                                navBarPlateFiveSideMenuListItemIconSide.className = `navBarFivePlateSideMenuListItemIconSide${classNumberMapper[listItemsCounter]}`
+
+                                                    var navBarPlateFiveSideMenuListItemIconElementContainer = document.createElement("div")
+                                                    navBarPlateFiveSideMenuListItemIconElementContainer.className = `navBarFivePlateSideMenuListItemIconElement${classNumberMapper[listItemsCounter]}`
+
+                                                        var navBarPlateFiveSideMenuListItemIconMover = document.createElement("div")
+                                                        navBarPlateFiveSideMenuListItemIconMover.className = `navBarFivePlateSideMenuListItemIconMover${classNumberMapper[listItemsCounter]}`
+
+                                                            var navBarPlateFiveSideMenuListItemIconLineOne = document.createElement("div")
+                                                            navBarPlateFiveSideMenuListItemIconLineOne.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineOne`
+
+                                                            var navBarPlateFiveSideMenuListItemIconLineTwo = document.createElement("div")
+                                                            navBarPlateFiveSideMenuListItemIconLineTwo.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineTwo`
+
+                                                            var navBarPlateFiveSideMenuListItemIconLineThree = document.createElement("div")
+                                                            navBarPlateFiveSideMenuListItemIconLineThree.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineThree`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        // STYLE NAV BAR ITEMS xxxxxxxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////////////
+
+                                            navBarPlateFiveSideMenuListItemBlockContainer.style = `
+                                            
+                                                width:100%;
+                                                color:#2C2C2C;
+                                                font-size:15px;
+                                                text-align:left;
+                                                font-weight:700;
+                                                position:relative;
+                                                font-family:arial, sans-serif;
+                                                letter-spacing:3px;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarPlateFiveSideMenuListItemTextSide.style = `
+                                                
+                                                    width:80%;
+                                                    height:30px;
+                                                    left:0;
+                                                    float:left;
+                                                    display:inline-block;
+                                                    position:relative;
+                                                    background:#326fe1;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                    navBarPlateFiveSideMenuListItemTextActual.style = `
+                                                    
+                                                        width:100%;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                navBarPlateFiveSideMenuListItemIconSide.style = `
+                                                
+                                                    width:30px;
+                                                    height:30px;
+                                                    right:0;
+                                                    float:right;
+                                                    display:inline-block;
+                                                    position:relative;
+                                                    background:#32e169;
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
+                                                `
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                                                
+        
+                                        // ADD TEXT ITEMS TO LIST ITEM BLOCK xxxxxxxx
+                                        // //////////////////////////////////////////
+
+                                            navBarPlateFiveSideMenuListItemTextActual.textContent = `${storeNavBarItems[listItemsCounter]}`
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                                                
+        
+                                        // APPEND NAV BAR ITEMS xxxxxxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////////////
+
+                                            getSideMenuListItemMainContainer.appendChild(navBarPlateFiveSideMenuListItemBlockContainer)
+
+                                                navBarPlateFiveSideMenuListItemBlockContainer.appendChild(navBarPlateFiveSideMenuListItemTextSide)
+
+                                                    navBarPlateFiveSideMenuListItemTextSide.appendChild(navBarPlateFiveSideMenuListItemTextActual)
+
+
+
+
+
+
+
+
+
+
+
+                                                navBarPlateFiveSideMenuListItemBlockContainer.appendChild(navBarPlateFiveSideMenuListItemIconSide)
+
+
+
+                                    }
+
+
 
 
 
