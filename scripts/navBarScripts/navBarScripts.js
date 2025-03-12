@@ -7736,7 +7736,7 @@
 
                                     navBarPlateFiveMainContainer.style = `
                                     
-                                        width:200px;
+                                        width:150px;
                                         height:50px;
                                         top:0;
                                         left:20px;
@@ -7785,6 +7785,7 @@
                                                 padding:20px 20px;
                                                 position:fixed;
                                                 background:#FFFFFF;
+                                                box-shadow:0px 30px 30px -20px rgba(0,0,0,0.5);
                                                 border-radius:8px 0px 8px 8px;
                                                 transition:all 600ms ease;
                                                 -webkit-transition:all 600ms ease;
@@ -7856,7 +7857,7 @@
                                                     navBarPlateFiveSideMenuPhysicalCloseButtonContainer.style = `
                                                     
                                                         width:100%;
-                                                        height:40px;
+                                                        height:60px;
                                                         top:0;
                                                         margin:0px auto;
                                                         display:block;
@@ -7871,8 +7872,8 @@
 
                                                         navBarPlateFiveSideMenuPhysicalCloseButtonElement.style = `
                                                     
-                                                            width:30px;
-                                                            height:30px;
+                                                            width:25px;
+                                                            height:25px;
                                                             top:-10px;
                                                             right:-95px;
                                                             cursor:pointer;
@@ -8213,6 +8214,7 @@
                                                 padding:20px 20px;
                                                 position:fixed;
                                                 background:#FFFFFF;
+                                                box-shadow:0px 30px 30px -20px rgba(0,0,0,0.3);
                                                 border-radius:8px 8px 8px 8px;
                                                 transition:all 600ms ease;
                                                 -webkit-transition:all 600ms ease;
@@ -8360,6 +8362,7 @@
                                                 padding:20px 20px;
                                                 position:fixed;
                                                 background:#FFFFFF;
+                                                box-shadow:0px 30px 30px -20px rgba(0,0,0,0.3);
                                                 border-radius:8px 0px 8px 8px;
                                                 transition:all 600ms ease;
                                                 -webkit-transition:all 600ms ease;
@@ -8507,6 +8510,7 @@
                                                 padding:20px 20px;
                                                 position:fixed;
                                                 background:#FFFFFF;
+                                                box-shadow:0px 30px 30px -20px rgba(0,0,0,0.3);
                                                 border-radius:8px 0px 8px 8px;
                                                 transition:all 600ms ease;
                                                 -webkit-transition:all 600ms ease;
@@ -8613,6 +8617,17 @@
                                                             navBarPlateFiveSideMenuListItemIconLineThree.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineThree`
 
 
+                                                            
+                                                            
+
+
+                                                var navBarPlateFiveSideMenuListItemUnderlinerContainer = document.createElement("div")
+                                                navBarPlateFiveSideMenuListItemUnderlinerContainer.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}UnderlinerContainer`
+
+                                                    var navBarPlateFiveSideMenuListItemUnderlinerActual = document.createElement("div")
+                                                    navBarPlateFiveSideMenuListItemUnderlinerActual.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}UnderlinerActual`
+
+
 
 
 
@@ -8632,10 +8647,12 @@
                                             
                                                 width:100%;
                                                 color:#2C2C2C;
+                                                cursor:pointer;
+                                                display:inline-block;
+                                                position:relative;
                                                 font-size:15px;
                                                 text-align:left;
                                                 font-weight:700;
-                                                position:relative;
                                                 font-family:arial, sans-serif;
                                                 letter-spacing:3px;
                                                 transition:all 600ms ease;
@@ -8654,7 +8671,6 @@
                                                     float:left;
                                                     display:inline-block;
                                                     position:relative;
-                                                    background:#326fe1;
                                                     transition:all 600ms ease;
                                                     -webkit-transition:all 600ms ease;
                                                     -moz-transition:all 600ms ease;
@@ -8666,6 +8682,8 @@
                                                     navBarPlateFiveSideMenuListItemTextActual.style = `
                                                     
                                                         width:100%;
+                                                        padding:0px 0px 0px 0px;
+                                                        line-height:30px;
                                                         transition:all 600ms ease;
                                                         -webkit-transition:all 600ms ease;
                                                         -moz-transition:all 600ms ease;
@@ -8691,16 +8709,154 @@
                                                 
                                                     width:30px;
                                                     height:30px;
-                                                    right:0;
+                                                    right:-5px;
                                                     float:right;
                                                     display:inline-block;
                                                     position:relative;
-                                                    background:#32e169;
                                                     transition:all 600ms ease;
                                                     -webkit-transition:all 600ms ease;
                                                     -moz-transition:all 600ms ease;
                                                     -o-transition:all 600ms ease;
                                                     -ms-transition:all 600ms ease;
+
+                                                `
+
+                                                    navBarPlateFiveSideMenuListItemIconElementContainer.style = `
+                                                    
+                                                        width:30px;
+                                                        height:30px;
+                                                        position:relative;
+                                                        background:#2C2C2C;
+                                                        border-radius:1000px;
+                                                        transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+
+                                                    `
+
+                                                        navBarPlateFiveSideMenuListItemIconMover.style = `
+                                                        
+                                                            width:20px;
+                                                            height:20px;
+                                                            top:0;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+                                                            navBarPlateFiveSideMenuListItemIconLineOne.style = `
+                                                            
+                                                                width:7px;
+                                                                height:3px;
+                                                                top:-5px;
+                                                                left:0;
+                                                                right:-5px;
+                                                                bottom:0;
+                                                                opacity:1;
+                                                                margin:auto;
+                                                                position:absolute;
+                                                                background:#FFFFFF;
+                                                                transform:rotateZ(45deg);
+                                                                border-radius:1000px;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+                                                            navBarPlateFiveSideMenuListItemIconLineTwo.style = `
+                                                            
+                                                                width:12px;
+                                                                height:3px;
+                                                                top:0;
+                                                                left:0;
+                                                                right:0;
+                                                                bottom:0;
+                                                                opacity:1;
+                                                                margin:auto;
+                                                                position:absolute;
+                                                                background:#FFFFFF;
+                                                                transform:rotateZ(0deg);
+                                                                border-radius:1000px;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+                                                            navBarPlateFiveSideMenuListItemIconLineThree.style = `
+                                                            
+                                                                width:7px;
+                                                                height:3px;
+                                                                top:6px;
+                                                                left:0;
+                                                                right:-5px;
+                                                                bottom:0;
+                                                                opacity:1;
+                                                                margin:auto;
+                                                                position:absolute;
+                                                                background:#FFFFFF;
+                                                                transform:rotateZ(-45deg);
+                                                                border-radius:1000px;
+                                                                transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+
+                                                            `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            navBarPlateFiveSideMenuListItemUnderlinerContainer.style = `
+                                            
+                                                width:100%;
+                                                padding:10px 0px;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarPlateFiveSideMenuListItemUnderlinerActual.style = `
+                                                
+                                                    width:100%;
+                                                    height:3px;
+                                                    background:rgba(0,0,0,0.05);
+                                                    transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+
 
                                                 `
         
@@ -8756,9 +8912,219 @@
 
                                                 navBarPlateFiveSideMenuListItemBlockContainer.appendChild(navBarPlateFiveSideMenuListItemIconSide)
 
+                                                    navBarPlateFiveSideMenuListItemIconSide.appendChild(navBarPlateFiveSideMenuListItemIconElementContainer)
+
+                                                        navBarPlateFiveSideMenuListItemIconElementContainer.appendChild(navBarPlateFiveSideMenuListItemIconMover)
+
+                                                            navBarPlateFiveSideMenuListItemIconMover.appendChild(navBarPlateFiveSideMenuListItemIconLineOne)
+
+                                                            navBarPlateFiveSideMenuListItemIconMover.appendChild(navBarPlateFiveSideMenuListItemIconLineTwo)
+
+                                                            navBarPlateFiveSideMenuListItemIconMover.appendChild(navBarPlateFiveSideMenuListItemIconLineThree)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                                                
+        
+                                        // CHECK IF COUNTER NUMBERS ARE EQUAL TO MAKE LINE
+                                        // //////////////////////////////////////////
+
+                                            if ( listItemsCounter == ((storeNavBarItems.length)-1) ) {
+
+
+                                            } else {
+
+                                                getSideMenuListItemMainContainer.appendChild(navBarPlateFiveSideMenuListItemUnderlinerContainer)
+
+                                                    navBarPlateFiveSideMenuListItemUnderlinerContainer.appendChild(navBarPlateFiveSideMenuListItemUnderlinerActual)
+
+                                            }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                                                
+        
+                                        // ADD ELEMENT CLASSNAME TO ARRAY AND GET READY FOR ASSIGNMENTS
+                                        // //////////////////////////////////////////
+
+                                            storeNavBarItemsClassNames.push(`navBarFivePlateSideMenuListItemBlockContainer${classNumberMapper[listItemsCounter]}`)
+
+                                            
+
+
+
+
+
+
+
+
+
+
 
 
                                     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // RUN FOR EACH LOOP ON MENU LIST ITEMS =========
+                            // //////////////////////////////////////////////
+
+
+                                storeNavBarItemsClassNames.forEach((elementSkipper) => {
+
+
+
+                                    // DECLARE VARIABLES ////////////////////////
+                                    // //////////////////////////////////////////
+    
+                                        var getNumberCounter = storeNavBarItemsClassNames.indexOf(elementSkipper)
+
+                                        var getMenuListItem = document.querySelector(`.${elementSkipper}`)
+    
+                                        var getMenuItemText = document.querySelector(`.navBarFivePlateSideMenuListItemTextActual${classNumberMapper[getNumberCounter]}`)
+
+
+                                            // HOVER EFFECTS FOR MENU ITEM ------
+                                            // //////////////////////////////////
+
+                                                // FOR MOUSE OVER xxxxxxxxxxxxxxx
+                                                // //////////////////////////////
+
+                                                    getMenuListItem.addEventListener("mouseover", function () {
+
+
+                                                        getMenuItemText.style = `
+                                                        
+                                                            width:100%;
+                                                            padding:0px 0px 0px 20px;
+                                                            line-height:30px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+
+                                                    })
+
+
+
+
+
+                                                // FOR MOUSE OUT xxxxxxxxxxxxxxxx
+                                                // //////////////////////////////
+
+                                                    getMenuListItem.addEventListener("mouseout", function () {
+
+
+                                                        getMenuItemText.style = `
+                                                        
+                                                            width:100%;
+                                                            padding:0px 0px 0px 0px;
+                                                            line-height:30px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+
+                                                    })
+
+
+
+
+
+
+
+
+
+                                            // CLICK EFFECTS FOR MENU ITEM ------
+                                            // //////////////////////////////////
+
+                                                getMenuListItem.addEventListener("click", function () {
+
+
+                                                    // RESET TEXT TO DEFAULT xxxx
+                                                    // //////////////////////////
+
+
+                                                        getMenuItemText.style = `
+                                                        
+                                                            width:100%;
+                                                            padding:0px 0px 0px 0px;
+                                                            line-height:30px;
+                                                            transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+
+                                                        `
+
+
+                                                    // ADD SELECTED LINK xxxxxxxx
+                                                    // //////////////////////////
+
+                                                        window.open(`${storeNavBarItemLinks[getNumberCounter]}`, `_blank`)
+
+
+
+
+
+
+                                                })
+
+
+                                })
 
 
 
