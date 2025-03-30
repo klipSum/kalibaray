@@ -11100,7 +11100,7 @@
                                                     z-index:0;
                                                     margin:0px auto;
                                                     position:absolute;
-                                                    background:#e1dfdf;
+                                                    background:#fbfbfb;
                                                     border-radius:8px 0px 0px 8px;
                                                     transition:all 600ms ease;
                                                     -o-transition:all 600ms ease;
@@ -11140,7 +11140,7 @@
                                                             margin:auto;
                                                             opacity:1;
                                                             position:absolute;
-                                                            background:#FFFFFF;
+                                                            background:#dfdfdf;
                                                             transform:rotateZ(-45deg);
                                                             transition:all 600ms ease;
                                                             -o-transition:all 600ms ease;
@@ -11163,7 +11163,7 @@
                                                             margin:auto;
                                                             opacity:0;
                                                             position:absolute;
-                                                            background:#FFFFFF;
+                                                            background:#dfdfdf;
                                                             transform:rotateZ(0deg);
                                                             transition:all 600ms ease;
                                                             -o-transition:all 600ms ease;
@@ -11186,7 +11186,7 @@
                                                             margin:auto;
                                                             opacity:1;
                                                             position:absolute;
-                                                            background:#FFFFFF;
+                                                            background:#dfdfdf;
                                                             transform:rotateZ(45deg);
                                                             transition:all 600ms ease;
                                                             -o-transition:all 600ms ease;
@@ -11301,7 +11301,7 @@
                                                     z-index:0;
                                                     margin:0px auto;
                                                     position:absolute;
-                                                    background:#2C2C2C;
+                                                    background:#fbfbfb;
                                                     border-radius:0px 8px 8px 0px;
                                                     transition:all 600ms ease;
                                                     -o-transition:all 600ms ease;
@@ -11341,7 +11341,7 @@
                                                             margin:auto;
                                                             opacity:1;
                                                             position:absolute;
-                                                            background:#FFFFFF;
+                                                            background:#2C2C2C;
                                                             transform:rotateZ(45deg);
                                                             transition:all 600ms ease;
                                                             -o-transition:all 600ms ease;
@@ -11364,7 +11364,7 @@
                                                             margin:auto;
                                                             opacity:0;
                                                             position:absolute;
-                                                            background:#FFFFFF;
+                                                            background:#2C2C2C;
                                                             transform:rotateZ(0deg);
                                                             transition:all 600ms ease;
                                                             -o-transition:all 600ms ease;
@@ -11387,7 +11387,7 @@
                                                             margin:auto;
                                                             opacity:1;
                                                             position:absolute;
-                                                            background:#FFFFFF;
+                                                            background:#2C2C2C;
                                                             transform:rotateZ(-45deg);
                                                             transition:all 600ms ease;
                                                             -o-transition:all 600ms ease;
@@ -11603,6 +11603,13 @@
                                                         navBarPlateSevenMainElementBottomNewListItemTextActual.className = `navBarSevenPlateElementBottomLefNewtListItem${classNumberMapper[shelfItemsCounter]}TextActual`
 
 
+                                                // ADD DROP DOWN MENU TEXT TO CLASS COLLECTOR ARRAY
+                                                // //////////////////////////
+
+
+                                                    storeNavBarItemsClassNames.push(`navBarSevenPlateElementBottomLefNewtListItem${classNumberMapper[shelfItemsCounter]}TextActual`)
+
+
                                                 // STYLE NEW VARIABLES ------
                                                 // //////////////////////////
 
@@ -11626,6 +11633,7 @@
                                                             width:100%;
                                                             height:100%;
                                                             color:#2C2C2C;
+                                                            cursor:pointer;
                                                             position:relative;
                                                             font-size:15px;
                                                             font-weight:700;
@@ -11674,16 +11682,22 @@
 
                                             var getLeftMenuScrollButton = document.querySelector(".navBarSevenPlateElementBottomLeftButtonIconContainer")
 
+                                                var getLeftMenuIconLineOne = document.querySelector(".navBarSevenPlateElementBottomLeftButtonIconLineOneContainer")
+                                                var getLeftMenuIconLineThree = document.querySelector(".navBarSevenPlateElementBottomLeftButtonIconLineThreeContainer")
+
 
 
                                             var getRightMenuScrollButton = document.querySelector(".navBarSevenPlateElementBottomRightButtonIconContainer")
+
+                                                var getRightMenuIconLineOne = document.querySelector(".navBarSevenPlateElementBottomRightButtonIconLineOneContainer")
+                                                var getRightMenuIconLineThree = document.querySelector(".navBarSevenPlateElementBottomRightButtonIconLineThreeContainer")
 
 
 
                                 
 
-                                    // EVENTS FOR LEFT MENU BUTTON CLICKER -
-                                    // /////////////////////////////////////
+                                    // EVENTS FOR LEFT MENU BUTTON CLICKER --
+                                    // //////////////////////////////////////
 
                                         getMenuLeftClickerButton.addEventListener("click", function () {
 
@@ -11750,7 +11764,7 @@
                                                                             z-index:0;
                                                                             margin:0px auto;
                                                                             position:absolute;
-                                                                            background:#e1dfdf;
+                                                                            background:#fbfbfb;
                                                                             border-radius:8px 0px 0px 8px;
                                                                             transition:all 600ms ease;
                                                                             -o-transition:all 600ms ease;
@@ -11759,6 +11773,44 @@
                                                                             -webkit-transition:all 600ms ease;
 
                                                                         `
+
+                                                                            getLeftMenuIconLineOne.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                z-index:1;
+                                                                                inset:-5px 0px 0px;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#DFDFDF;
+                                                                                transform:rotateZ(-45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
+
+                                                                            getLeftMenuIconLineThree.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                z-index:1;
+                                                                                inset:5px 0px 0px;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#DFDFDF;
+                                                                                transform:rotateZ(45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
 
 
                                                                     // DISABLE LEFT CLICKER BUTTON
@@ -11828,7 +11880,7 @@
                                                                         `
 
 
-                                                                    // FADE LEFT BUTTON BACK IN
+                                                                    // FADE RIGHT BUTTON BACK IN
                                                                     // ////
 
                                                                         getRightMenuScrollButton.style = `
@@ -11838,7 +11890,7 @@
                                                                             z-index:0;
                                                                             margin:0px auto;
                                                                             position:absolute;
-                                                                            background:#2C2C2C;
+                                                                            background:#fbfbfb;
                                                                             border-radius:0px 8px 8px 0px;
                                                                             transition:all 600ms ease;
                                                                             -o-transition:all 600ms ease;
@@ -11847,6 +11899,44 @@
                                                                             -webkit-transition:all 600ms ease;
 
                                                                         `
+
+                                                                            getRightMenuIconLineOne.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                z-index:1;
+                                                                                inset:-5px 0px 0px;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#2C2C2C;
+                                                                                transform:rotateZ(45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
+
+                                                                            getRightMenuIconLineThree.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                z-index:1;
+                                                                                inset:5px 0px 0px;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#2C2C2C;
+                                                                                transform:rotateZ(-45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
 
 
 
@@ -11862,8 +11952,8 @@
 
 
 
-                                    // EVENTS FOR RIGHT MENU BUTTON CLICKER 
-                                    // /////////////////////////////////////
+                                    // EVENTS FOR RIGHT MENU BUTTON CLICKER -
+                                    // //////////////////////////////////////
 
                                         getMenuRightClickerButton.addEventListener("click", function () {
 
@@ -11922,7 +12012,7 @@
                                                                             z-index:0;
                                                                             margin:0px auto;
                                                                             position:absolute;
-                                                                            background:#e1dfdf;
+                                                                            background:#fbfbfb;
                                                                             border-radius:0px 8px 8px 0px;
                                                                             transition:all 600ms ease;
                                                                             -o-transition:all 600ms ease;
@@ -11931,6 +12021,44 @@
                                                                             -webkit-transition:all 600ms ease;
 
                                                                         `
+
+                                                                            getRightMenuIconLineOne.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                z-index:1;
+                                                                                inset:-5px 0px 0px;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#DFDFDF;
+                                                                                transform:rotateZ(45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
+
+                                                                            getRightMenuIconLineThree.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                z-index:1;
+                                                                                inset:5px 0px 0px;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#DFDFDF;
+                                                                                transform:rotateZ(-45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
 
 
                                                                     // DISABLE RIGHT CLICKER BUTTON
@@ -11960,7 +12088,7 @@
                                                                 else {
 
 
-                                                                    // SWICTH ON RIGHT CLICKER BUTTON
+                                                                    // SWICTH ON LEFT CLICKER BUTTON
                                                                     // ////
 
                                                                         getMenuLeftClickerButton.style = `
@@ -11998,7 +12126,7 @@
                                                                         `
 
 
-                                                                    // FADE RIGHT BUTTON BACK IN
+                                                                    // FADE LEFT BUTTON BACK IN
                                                                     // ////
 
                                                                         getLeftMenuScrollButton.style = `
@@ -12008,7 +12136,7 @@
                                                                             z-index:0;
                                                                             margin:0px auto;
                                                                             position:absolute;
-                                                                            background:#2C2C2C;
+                                                                            background:#fbfbfb;
                                                                             border-radius:8px 0px 0px 8px;
                                                                             transition:all 600ms ease;
                                                                             -o-transition:all 600ms ease;
@@ -12017,6 +12145,44 @@
                                                                             -webkit-transition:all 600ms ease;
 
                                                                         `
+
+                                                                            getLeftMenuIconLineOne.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                z-index:1;
+                                                                                inset:-5px 0px 0px;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#2C2C2C;
+                                                                                transform:rotateZ(-45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
+
+                                                                            getLeftMenuIconLineThree.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                z-index:1;
+                                                                                inset:5px 0px 0px;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#2C2C2C;
+                                                                                transform:rotateZ(45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
 
 
 
@@ -12031,12 +12197,12 @@
 
 
 
-                                    // EVENTS FOR MENU OPEN AND CLOSE ------ 
-                                    // /////////////////////////////////////
+                                    // EVENTS FOR MENU OPEN AND CLOSE -------
+                                    // //////////////////////////////////////
 
 
-                                        // DECLARE VARIABLES xxxxxxxxxxxxxxx
-                                        // /////////////////////////////////
+                                        // DECLARE VARIABLES xxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////
 
                                             var getMenuOpenClicker = document.querySelector(`.navBarSevenPlateElementMenuButtonClickerOn`)
                                             var getMenuCloseClicker = document.querySelector(`.navBarSevenPlateElementMenuButtonClickerOff`)
@@ -12050,14 +12216,14 @@
 
 
 
-                                        // EVENTS FOR CLICKERS xxxxxxxxxxxxx
-                                        // /////////////////////////////////
+                                        // EVENTS FOR CLICKERS xxxxxxxxxxxxxx
+                                        // //////////////////////////////////
 
 
 
 
-                                            // FOR OPEN CLICK ==============
-                                            // /////////////////////////////
+                                            // FOR OPEN CLICK ===============
+                                            // //////////////////////////////
 
                                                 getMenuOpenClicker.addEventListener("click", function () {
 
@@ -12236,8 +12402,8 @@
 
 
 
-                                            // FOR CLOSE CLICK =============
-                                            // /////////////////////////////
+                                            // FOR CLOSE CLICK ==============
+                                            // //////////////////////////////
 
                                                 getMenuCloseClicker.addEventListener("click", function () {
 
@@ -12407,6 +12573,36 @@
                                                                 },300)
                                                 
                                                 })
+
+
+
+
+
+                            
+
+
+                                // RUN LOOP FOR LINK APPLICATIONS TO MENU LIST ITEMS 
+                                // //////////////////////////////////////////
+
+                                    storeNavBarItemsClassNames.forEach((menuItemSkipper) => {
+
+
+                                        var makeDropDownMenuItemText = document.querySelector(`.${menuItemSkipper}`)
+
+                                        var getIndexNumber = storeNavBarItemsClassNames.indexOf(menuItemSkipper)
+
+
+                                            // ADD EVENT LISTENERS FOR DROP DOWN MENU TEXT ITEMS
+                                            // //////////////////////////////
+
+                                                makeDropDownMenuItemText.addEventListener("click", function () {
+
+                                                    window.open(`${storeNavBarItemLinks[getIndexNumber]}`, `_blank`)
+
+                                                })
+
+
+                                    })
 
 
 
