@@ -12699,6 +12699,19 @@
 
 
 
+                            // CREATE MAIN NAV BAR MENU LIST ITEMS CONTAINER 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateEightDropDownMenuContainer = document.createElement("div")
+                                navBarPlateEightDropDownMenuContainer.className = `navBarEightPlateDropDownMenuListContainer`
+
+                                    var navBarPlateEightDropDownMenuResizer = document.createElement("div")
+                                    navBarPlateEightDropDownMenuResizer.className = `navBarEightPlateDropDownMenuListResizer`
+
+
+
+
+
 
 
 
@@ -12741,10 +12754,10 @@
                                         box-shadow:10px 10px 0px 0px rgba(0,0,0,1.0);
                                         border-radius:10px;
                                         transition:all 600ms ease;
-                                        -webkit-transition:all 600ms ease;
-                                        -moz-transition:all 600ms ease;
                                         -o-transition:all 600ms ease;
                                         -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
 
                                     `
 
@@ -12764,10 +12777,10 @@
                                         background:#FFFFFF;
                                         border-radius:8px 0px 0px 8px;
                                         transition:all 600ms ease;
-                                        -webkit-transition:all 600ms ease;
-                                        -moz-transition:all 600ms ease;
                                         -o-transition:all 600ms ease;
                                         -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
 
                                     `
 
@@ -12782,10 +12795,10 @@
                                         display:inline-block;
                                         position:relative;
                                         transition:all 600ms ease;
-                                        -webkit-transition:all 600ms ease;
-                                        -moz-transition:all 600ms ease;
                                         -o-transition:all 600ms ease;
                                         -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
 
                                     `
 
@@ -12803,10 +12816,10 @@
                                             border-radius:0px 8px 8px 0px;
                                             box-shadow:0px 10px 15px -10px rgba(0,0,0,0.5);
                                             transition:all 600ms ease;
-                                            -webkit-transition:all 600ms ease;
-                                            -moz-transition:all 600ms ease;
                                             -o-transition:all 600ms ease;
                                             -ms-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
 
                                         `
 
@@ -12827,12 +12840,42 @@
                                                 bottom:0;
                                                 position:absolute;
                                                 transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
                                                 -o-transition:all 600ms ease;
                                                 -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
 
                                             `
+
+                                                navBarPlateEightMainElementMenuButtonClickerOn.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                navBarPlateEightMainElementMenuButtonClickerOff.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:-1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
 
 
 
@@ -12851,10 +12894,10 @@
                                                 bottom:0;
                                                 position:absolute;
                                                 transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
                                                 -o-transition:all 600ms ease;
                                                 -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
 
                                             `
 
@@ -12870,10 +12913,10 @@
                                                     margin:auto;
                                                     position:absolute;
                                                     transition:all 600ms ease;
-                                                    -webkit-transition:all 600ms ease;
-                                                    -moz-transition:all 600ms ease;
                                                     -o-transition:all 600ms ease;
                                                     -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
 
                                                 `
 
@@ -12892,10 +12935,10 @@
                                                         background:#2C2C2C;
                                                         transform:rotateZ(0deg);
                                                         transition:all 600ms ease;
-                                                        -webkit-transition:all 600ms ease;
-                                                        -moz-transition:all 600ms ease;
                                                         -o-transition:all 600ms ease;
                                                         -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
 
                                                     `
 
@@ -12914,10 +12957,10 @@
                                                         background:#2C2C2C;
                                                         transform:rotateZ(0deg);
                                                         transition:all 600ms ease;
-                                                        -webkit-transition:all 600ms ease;
-                                                        -moz-transition:all 600ms ease;
                                                         -o-transition:all 600ms ease;
                                                         -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
 
                                                     `
 
@@ -12936,12 +12979,57 @@
                                                         background:#2C2C2C;
                                                         transform:rotateZ(0deg);
                                                         transition:all 600ms ease;
-                                                        -webkit-transition:all 600ms ease;
-                                                        -moz-transition:all 600ms ease;
                                                         -o-transition:all 600ms ease;
                                                         -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
 
                                                     `
+
+
+
+
+
+                            // STYLE MAIN NAV BAR MENU LIST ITEMS CONTAINER x
+                            // //////////////////////////////////////////////
+
+                                navBarPlateEightDropDownMenuContainer.style = `
+                                
+                                    width:300px;
+                                    top:50px;
+                                    left:0;
+                                    right:0;
+                                    bottom:0;
+                                    margin:0px auto;
+                                    opacity:1;
+                                    padding:50px 0px;
+                                    display:none;
+                                    position:relative;
+                                    transition:all 600ms ease;
+                                    -o-transition:all 600ms ease;
+                                    -ms-transition:all 600ms ease;
+                                    -moz-transition:all 600ms ease;
+                                    -webkit-transition:all 600ms ease;
+
+                                `
+
+                                    navBarPlateEightDropDownMenuResizer.style = `
+                                    
+                                        width:100%;
+                                        height:80%;
+                                        top:0;
+                                        left:0;
+                                        right:0;
+                                        bottom:0;
+                                        margin:auto;
+                                        position:absolute;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
 
 
 
@@ -12981,7 +13069,7 @@
                                 navBarPlateEightMainContainer.appendChild(navBarPlateEightMainElement)
 
 
-                            // CREATE MAIN NAV BAR MENU BUTTON CONTAINER ====
+                            // APPEND MAIN NAV BAR MENU BUTTON CONTAINER ====
                             // //////////////////////////////////////////////
 
                                 navBarPlateEightMainContainer.appendChild(navBarPlateEightMainElementMenuButtonContainer)
@@ -12995,6 +13083,10 @@
 
 
                                         navBarPlateEightMainElementMenuButtonElement.appendChild(navBarPlateEightMainElementMenuButtonClickerContainer)
+
+                                            navBarPlateEightMainElementMenuButtonClickerContainer.appendChild(navBarPlateEightMainElementMenuButtonClickerOn)
+
+                                            navBarPlateEightMainElementMenuButtonClickerContainer.appendChild(navBarPlateEightMainElementMenuButtonClickerOff)
 
 
 
@@ -13011,6 +13103,764 @@
                                                 navBarPlateEightMainElementMenuButtonIconMover.appendChild(navBarPlateEightMainElementMenuButtonIconLineTwo)
 
                                                 navBarPlateEightMainElementMenuButtonIconMover.appendChild(navBarPlateEightMainElementMenuButtonIconLineThree)
+
+
+                            // APPEND MAIN NAV BAR MENU BUTTON CONTAINER ====
+                            // //////////////////////////////////////////////
+
+                                createNavBarCushion.appendChild(navBarPlateEightDropDownMenuContainer)
+
+                                    navBarPlateEightDropDownMenuContainer.appendChild(navBarPlateEightDropDownMenuResizer)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // CREATE DROP DOWN MENU LIST ITEMS =============
+                            // //////////////////////////////////////////////
+
+                                // RESET CLASS NAMES ARRAY xxxxxxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    storeNavBarItemsClassNames = []
+
+                                // RUN LOOP FOR MENU ITEMS CREATION xxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    for ( menuItemCounter = 0; menuItemCounter < storeNavBarItems.length; menuItemCounter++ ) {
+
+
+
+
+
+                                        // DECLARE VARIABLES FOR MENU ITEMS 
+                                        // ////////////////////////////////
+
+
+                                            var navBarListMenuItemMainContainer = document.querySelector(".navBarEightPlateDropDownMenuListResizer")
+
+
+                                            var navBarListItemContainer = document.createElement("div")
+                                            navBarListItemContainer.className = `navBarListItemContainerMain${classNumberMapper[menuItemCounter]}`
+
+                                                var navBarListItemActualElement = document.createElement("div")
+                                                navBarListItemActualElement.className = `navBarListItemContainerActualElement${classNumberMapper[menuItemCounter]}`
+
+                                                    var navBarListItemTextActual = document.createElement("div")
+                                                    navBarListItemTextActual.className = `navBarListItemTextActual${classNumberMapper[menuItemCounter]}`
+
+
+
+                                        
+
+                                        // STYLE VARIABLES FOR MENU ITEMS -
+                                        // ////////////////////////////////
+
+                                            navBarListItemContainer.style = `
+                                            
+                                                display:inline-block;
+                                                margin:0px auto;
+                                                padding:5px 5px;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarListItemActualElement.style = `
+                                                
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    cursor:pointer;
+                                                    margin:auto;
+                                                    display:inline-table;
+                                                    border:3px solid #2C2C2C;
+                                                    padding:10px 20px;
+                                                    position:relative;
+                                                    background:#FFFFFF;
+                                                    box-shadow:5px 5px 0px 0px rgba(0, 0, 0, 1.0);
+                                                    border-radius:8px;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                    navBarListItemTextActual.style = `
+                                                    
+                                                        width:100%;
+                                                        height:100%;
+                                                        margin:0px auto;
+                                                        position:relative;
+                                                        font-size:15px;
+                                                        text-align:center;
+                                                        font-family:arial, sans-serif;
+                                                        font-weight:700;
+                                                        letter-spacing:2px;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+
+
+                                        
+
+                                        // ADD TEXT TO BLOCK CONTAINER ----
+                                        // ////////////////////////////////
+
+                                            navBarListItemTextActual.textContent = `${storeNavBarItems[menuItemCounter]}`
+
+
+
+                                        
+
+                                        // MAKE ARRAYS FOR DROP DOWN MENU LIST ITEMS ====
+                                        // //////////////////////////////////////////////
+
+                                            storeNavBarItemsClassNames.push(`navBarListItemContainerActualElement${classNumberMapper[menuItemCounter]}`)
+
+
+
+                                        
+
+                                        // APPEND VARIABLES FOR MENU ITEMS 
+                                        // ////////////////////////////////
+
+                                            navBarListMenuItemMainContainer.appendChild(navBarListItemContainer)
+
+                                                navBarListItemContainer.appendChild(navBarListItemActualElement)
+
+                                                    navBarListItemActualElement.appendChild(navBarListItemTextActual)
+
+
+
+
+
+                                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // CREATE EVENTS FOR MENU DROP DOWN LIST ITEMS BUTTONS
+                            // //////////////////////////////////////////////
+
+                                storeNavBarItemsClassNames.forEach((classNameSkipper) => {
+
+
+
+
+                                    // DECLARE VARIABLES --------------------
+                                    // //////////////////////////////////////
+
+                                        var getDropMenuItem = document.querySelector(`.${classNameSkipper}`)
+                                        var getIndexNumber = storeNavBarItemsClassNames.indexOf(classNameSkipper)
+
+
+
+
+                                    // HOVER EVENTS -------------------------
+                                    // //////////////////////////////////////
+
+                                        // MOUSEOVER EVENTS xxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getDropMenuItem.addEventListener("mouseover", function () {
+
+                                                getDropMenuItem.style = `
+                                                
+                                                    top:-5px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    cursor:pointer;
+                                                    margin:auto;
+                                                    display:inline-table;
+                                                    border:3px solid #2C2C2C;
+                                                    padding:10px 20px;
+                                                    position:relative;
+                                                    background:#FFFFFF;
+                                                    box-shadow:10px 10px 0px 0px rgba(0, 0, 0, 1.0);
+                                                    border-radius:8px;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            })
+
+                                        // MOUSEOVER EVENTS xxxxxxxxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getDropMenuItem.addEventListener("mouseout", function () {
+
+                                                getDropMenuItem.style = `
+                                                
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    cursor:pointer;
+                                                    margin:auto;
+                                                    display:inline-table;
+                                                    border:3px solid #2C2C2C;
+                                                    padding:10px 20px;
+                                                    position:relative;
+                                                    background:#FFFFFF;
+                                                    box-shadow:5px 5px 0px 0px rgba(0, 0, 0, 1.0);
+                                                    border-radius:8px;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            })
+
+
+
+
+                                    // CLICK EVENTS -------------------------
+                                    // //////////////////////////////////////
+
+                                        getDropMenuItem.addEventListener("click", function () {
+
+                                            window.open(`${storeNavBarItemLinks[getIndexNumber]}`, `_blank`)
+
+                                        })
+
+
+
+
+                                })
+
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // CREATE EVENTS FOR MENU OPEN CLOSE BUTTON =====
+                            // //////////////////////////////////////////////
+
+                                // DECLARE VARIABLES FOR EVENTS USE ---------
+                                // //////////////////////////////////////////
+
+                                    var getMenuOpenClicker = document.querySelector(".navBarEightPlateElementMenuButtonClickerOn")
+                                    var getMenuCloseClicker = document.querySelector(".navBarEightPlateElementMenuButtonClickerOff")
+
+                                    var getDropDownTrayMain = document.querySelector(".navBarEightPlateDropDownMenuListContainer")
+
+                                    var getMenuIconLineOne = document.querySelector(".navBarEightPlateElementMenuButtonIconLineOne")
+                                    var getMenuIconLineTwo = document.querySelector(".navBarEightPlateElementMenuButtonIconLineTwo")
+                                    var getMenuIconLineThree = document.querySelector(".navBarEightPlateElementMenuButtonIconLineThree")
+
+
+
+
+
+
+
+                                // EVENTS FOR OPEN MENU CLICKER -------------
+                                // //////////////////////////////////////////
+
+                                    getMenuOpenClicker.addEventListener("click", function () {
+
+
+
+
+
+
+
+
+
+
+                                        // CHANGE MENU CLICKERS POSITIONS ===
+                                        // //////////////////////////////////
+
+                                            // MOVE OPEN CLICKER TO BACK xxxx
+                                            // //////////////////////////////
+
+                                                getMenuOpenClicker.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:-1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            // MOVE CLOSE CLICKER TO FRONT xx
+                                            // //////////////////////////////
+
+                                                getMenuCloseClicker.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+
+
+
+
+
+
+
+                                        
+
+                                        // CHANGE MENU ICONS POSITIONS TO OPENED
+                                        // //////////////////////////////////
+
+                                            // ICON LINE ONE TO OPEN MODE xxx
+                                            // //////////////////////////////
+
+                                                getMenuIconLineOne.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:0px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(45deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            // ICON LINE TWO TO OPEN MODE xxx
+                                            // //////////////////////////////
+
+                                                getMenuIconLineTwo.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:0;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            // ICON LINE THREE TO OPEN MODE x
+                                            // //////////////////////////////
+
+                                                getMenuIconLineThree.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:0px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(-45deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+
+
+
+
+
+
+
+                                        
+
+                                        // CHANGE MENU DROP DOWN TRAY POSITION TO OPENED
+                                        // //////////////////////////////////
+
+                                            getDropDownTrayMain.style = `
+                                            
+                                                width:300px;
+                                                top:50px;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                margin:0px auto;
+                                                opacity:0;
+                                                padding:50px 0px;
+                                                display:block;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                setTimeout(() => {
+
+                                                    getDropDownTrayMain.style = `
+                                                    
+                                                        width:300px;
+                                                        top:100px;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:0px auto;
+                                                        opacity:1;
+                                                        padding:50px 0px;
+                                                        display:block;
+                                                        position:relative;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+        
+                                                    `
+
+                                                }, 50)
+
+
+
+
+
+                                    })
+
+
+                                    
+
+                                // EVENTS FOR CLOSE MENU CLICKER ------------
+                                // //////////////////////////////////////////
+
+                                    getMenuCloseClicker.addEventListener("click", function () {
+
+
+
+
+
+
+
+
+
+
+                                        // CHANGE MENU CLICKERS POSITIONS ===
+                                        // //////////////////////////////////
+
+                                            // MOVE BACK CLICKER TO BACK xxxx
+                                            // //////////////////////////////
+
+                                                getMenuOpenClicker.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            // MOVE OPEN CLICKER TO FRONT xx
+                                            // //////////////////////////////
+
+                                                getMenuCloseClicker.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:-1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+
+
+
+
+
+
+
+                                        
+
+                                        // CHANGE MENU ICONS POSITIONS TO CLOSED
+                                        // //////////////////////////////////
+
+                                            // ICON LINE ONE TO DEFAULT MODE 
+                                            // //////////////////////////////
+
+                                                getMenuIconLineOne.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:12px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            // ICON LINE TWO TO DEFAULT MODE
+                                            // //////////////////////////////
+
+                                                getMenuIconLineTwo.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            // ICON LINE THREE TO DEFAULT MODE
+                                            // //////////////////////////////
+
+                                                getMenuIconLineThree.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:-12px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+
+
+
+
+
+
+
+                                        
+
+                                        // CHANGE MENU DROP DOWN TRAY POSITION TO CLOSED
+                                        // //////////////////////////////////
+
+                                            getDropDownTrayMain.style = `
+                                            
+                                                width:300px;
+                                                top:0px;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                margin:0px auto;
+                                                opacity:0;
+                                                padding:50px 0px;
+                                                display:block;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                setTimeout(() => {
+
+                                                    getDropDownTrayMain.style = `
+                                            
+                                                        width:300px;
+                                                        top:0px;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:0px auto;
+                                                        opacity:0;
+                                                        padding:50px 0px;
+                                                        display:none;
+                                                        position:relative;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+                                                }, 300)
+
+
+
+
+
+                                    })
 
 
 
