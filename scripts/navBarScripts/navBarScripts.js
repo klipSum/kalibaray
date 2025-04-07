@@ -237,6 +237,7 @@
             // BUILD ELEMENTS FOR NAV BAR OPTION ONE ------------------------
             // //////////////////////////////////////////////////////////////
 
+                // //////////////////////////////////////////////////////////
                 // GET NAV BAR ITEMS FROM TEXT DOC //////////////////////////
                 // //////////////////////////////////////////////////////////
 
@@ -363,6 +364,161 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+                // //////////////////////////////////////////////////////////
+                // GET NAV BAR ITEMS FROM HTML FILE /////////////////////////
+                // //////////////////////////////////////////////////////////
+
+                    function getItemsFromHtmlBody () {
+
+
+
+
+                        // DECLARE VARIABLES FOR HTML BODY RETRIEVEL ========
+                        // //////////////////////////////////////////////////
+
+                            var getHtmlNavBarItemsMainContainer = document.querySelector(".navBarItemsContainer")
+                            var getHtmlNavBarItems = document.querySelector(".navBarList")
+
+
+                        
+
+                        // MAKE FUNCTIONS FOR RETRIEVALS ====================
+                        // //////////////////////////////////////////////////
+
+                            // RETRIEVE ITEMS FOR NAV BAR BUILD xxxxxxxxxxxxx
+                            // //////////////////////////////////////////////
+
+                                navItemsStringCollector = getHtmlNavBarItems.textContent
+
+                                    // CHECK IF COLLECTION COMES UP EMPTY ---
+                                    // //////////////////////////////////////
+
+                                        if ( navItemsStringCollector == "" ) {
+
+                                            for ( navBarDummyPopulate = 0; navBarDummyPopulate < 5; navBarDummyPopulate++ ) {
+            
+                                                storeNavBarItems.push(`item${classNumberMapper[navBarDummyPopulate]}`)
+    
+                                            }
+
+                                        }
+
+                                    // AND IF TEXT CAPTURE HAS ITEMS --------
+                                    // //////////////////////////////////////
+
+                                        else {
+
+                                            // FIRST EMPTY UP NAV BAR STORAGE ARRAY
+                                            // //////////////////////
+
+                                                storeNavBarItems = []
+
+                                                    // THEN POPULATE NAV BAR ITEMS ARRAY
+                                                    // //////////////////////
+
+                                                        var navBarItemsSplits = navItemsStringCollector.split(",").length
+                                                        var navBarItemsSplitsFilter = navItemsStringCollector.split(",")
+                
+                                                        for ( navBarItemsCounter = 0; navBarItemsCounter < navBarItemsSplits; navBarItemsCounter++ ) {
+                
+                                                            storeNavBarItems.push(`item ${(navBarItemsSplitsFilter[navBarItemsCounter]).replaceAll(" ","")}`)
+
+
+
+
+
+
+
+
+
+
+
+                                                            // BUILD WIDTH COUNTER AFTER LIST ITEMS COLLECTED ---------------
+                                                            // //////////////////////////////////////////////////////////////
+                                                
+                                                                makeMenuListWidthLength = makeMenuListWidthLength+1
+                
+                                                        }
+
+                                        }
+
+
+
+
+
+
+
+
+
+                        // THEN GET RID OF COLLECTOR BOXES ------------------
+                        // //////////////////////////////////////////////////
+
+                            getHtmlNavBarItemsMainContainer.remove(getHtmlNavBarItemsMainContainer)
+
+                            
+
+
+
+
+
+
+
+
+
+                        // RUN AUTO RUN FUNCTIONS AFTER DELAY ---------------
+                        // //////////////////////////////////////////////////
+
+                            setTimeout(() => {
+
+
+                                // CREATE NAV BAR CUSHION 
+                                
+                                
+                                // RUN SIZE DETECTION -----------------------
+                                // //////////////////////////////////////////
+                    
+                                    detectCurrentWindowSize()
+                    
+                                // RUN LIVING BAR ---------------------------
+                                // //////////////////////////////////////////
+                                    
+                                    detectLivingBar()
+                    
+                                // RUN LIVING HEADER SECTION ----------------
+                                // //////////////////////////////////////////
+                    
+                                    detectHeaderSection()
+
+
+                                
+                            }, 200);
+                                        
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+                // //////////////////////////////////////////////////////////
                 // GET NAV BAR TITLE FROM TEXT DOC //////////////////////////
                 // //////////////////////////////////////////////////////////
 
@@ -407,11 +563,9 @@
 
 
                     }
-
-
-
                     
 
+                // //////////////////////////////////////////////////////////
                 // GET NAV BAR MENU ITEM LINKS FROM TEXT DOC ////////////////
                 // //////////////////////////////////////////////////////////
 
@@ -543,6 +697,7 @@
 
 
 
+            // //////////////////////////////////////////////////////////////
             // DETECT LIVING BAR xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
             // //////////////////////////////////////////////////////////////
 
@@ -634,24 +789,9 @@
                             }
 
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 
 
+            // //////////////////////////////////////////////////////////////
             // DETECT HEADER SECTION xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
             // //////////////////////////////////////////////////////////////
 
@@ -722,22 +862,6 @@
                         }
 
                 }
-
-
-
-
-
-
-
-                
-
-
-
-
-
-
-
-
                 
 
             // //////////////////////////////////////////////////////////////
@@ -7165,7 +7289,7 @@
 
                                                         navBarPlateFourSideMenuIconeBlockHoverTagActual.style = `
                                                         
-                                                            width:100%;
+                                                            width:max-content;
                                                             height:100%;
                                                             padding:0px 10px;
                                                             background:#FFFFFF;
@@ -12617,7 +12741,7 @@
 
 
 
-                // CREATE NAV BAR SEVEN ACTUAL ------------------------------
+                // CREATE NAV BAR EIGHT ACTUAL ------------------------------
                 // //////////////////////////////////////////////////////////
 
                     function createNavBarEightMainPlate (cushionNumber) {
@@ -13872,6 +13996,32 @@
 
 
 
+                // CREATE NAV BAR NINE ACTUAL -------------------------------
+                // //////////////////////////////////////////////////////////
+
+                    function createNavBarNineMainPlate (cushionNumber) {
+
+                        
+
+                    }
+
+
+
+
+
+                // CREATE NAV BAR TEN ACTUAL --------------------------------
+                // //////////////////////////////////////////////////////////
+
+                    function createNavBarTenMainPlate (cushionNumber) {
+
+                        
+
+                    }
+
+
+
+
+
 
 
                 
@@ -14037,7 +14187,8 @@
 
                 getNavBarTitleTextItemFromTextDoc()
                 getNavBarItemLinksFromTextDoc()
-                getNavBarItemsFromTextDoc()
+                // getNavBarItemsFromTextDoc()
+                getItemsFromHtmlBody()
 
 
 
