@@ -153,7 +153,9 @@
                         createNavBarFiveMainPlate,
                         createNavBarSixMainPlate,
                         createNavBarSevenMainPlate,
-                        createNavBarEightMainPlate
+                        createNavBarEightMainPlate,
+                        createNavBarNineMainPlate,
+                        createNavBarTenMainPlate
                         
                     ]
 
@@ -14000,6 +14002,1203 @@
                 // //////////////////////////////////////////////////////////
 
                     function createNavBarNineMainPlate (cushionNumber) {
+
+                        // GET NAV BAR CUSHION xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            var createNavBarCushion = document.querySelector(`.navBar${cushionNumber}`)
+
+                        // CREATE NAV BAR FOUR ELEMENTS xxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            // CREATE MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateNineMainContainer = document.createElement("div")
+                                navBarPlateNineMainContainer.className = `navBarNineMainContainer`
+
+
+
+
+
+                            // CREATE MAIN NAV BAR PLATE ELEMENT ============ 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateNineMainElement = document.createElement("div")
+                                navBarPlateNineMainElement.className = `navBarNinePlateElementContainer`
+
+                                    var navBarPlateNineLogoMenuItemsContainer = document.createElement("div")
+                                    navBarPlateNineLogoMenuItemsContainer.className = `navBarNinePlateLogoMenuItemsContainer`
+
+                                        var navBarPlateNineLogoMenuItemsShifter = document.createElement("div")
+                                        navBarPlateNineLogoMenuItemsShifter.className = `navBarNinePlateLogoMenuItemsShifter`
+
+                                            var navBarPlateNineLogoContainer = document.createElement("div")
+                                            navBarPlateNineLogoContainer.className = `navBarNinePlateLogoContainer`
+
+                                                var navBarPlateNineLogoActual = document.createElement("div")
+                                                navBarPlateNineLogoActual.className = `navBarNinePlateLogoActual`
+
+
+
+
+
+                            // CREATE MAIN NAV BAR MENU BUTTON CONTAINER ==== 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateNineMainElementMenuButtonContainer = document.createElement("div")
+                                navBarPlateNineMainElementMenuButtonContainer.className = `navBarNinePlateElementMenuButtonContainer`
+
+                                    var navBarPlateNineMainElementMenuButtonElement = document.createElement("div")
+                                    navBarPlateNineMainElementMenuButtonElement.className = `navBarNinePlateElementMenuButtonElement`
+
+
+
+
+
+                                        
+
+                                        var navBarPlateNineMainElementMenuButtonClickerContainer = document.createElement("div")
+                                        navBarPlateNineMainElementMenuButtonClickerContainer.className = `navBarNinePlateElementMenuButtonClickerContainer`
+
+                                            var navBarPlateNineMainElementMenuButtonClickerOn = document.createElement("div")
+                                            navBarPlateNineMainElementMenuButtonClickerOn.className = `navBarNinePlateElementMenuButtonClickerOn`
+
+                                            var navBarPlateNineMainElementMenuButtonClickerOff = document.createElement("div")
+                                            navBarPlateNineMainElementMenuButtonClickerOff.className = `navBarNinePlateElementMenuButtonClickerOff`
+
+
+
+
+
+                                        
+
+                                        var navBarPlateNineMainElementMenuButtonIconContainer = document.createElement("div")
+                                        navBarPlateNineMainElementMenuButtonIconContainer.className = `navBarNinePlateElementMenuButtonIconContainer`
+
+                                            var navBarPlateNineMainElementMenuButtonIconMover = document.createElement("div")
+                                            navBarPlateNineMainElementMenuButtonIconMover.className = `navBarNinePlateElementMenuButtonIconMover`
+
+                                                var navBarPlateNineMainElementMenuButtonIconLineOne = document.createElement("div")
+                                                navBarPlateNineMainElementMenuButtonIconLineOne.className = `navBarNinePlateElementMenuButtonIconLineOne`
+
+                                                var navBarPlateNineMainElementMenuButtonIconLineTwo = document.createElement("div")
+                                                navBarPlateNineMainElementMenuButtonIconLineTwo.className = `navBarNinePlateElementMenuButtonIconLineTwo`
+
+                                                var navBarPlateNineMainElementMenuButtonIconLineThree = document.createElement("div")
+                                                navBarPlateNineMainElementMenuButtonIconLineThree.className = `navBarNinePlateElementMenuButtonIconLineThree`
+
+
+
+
+                        // GET NAV BAR CUSHION xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            var makeMathWidthPercentage = `${storeNavBarItems.length + 1}00`
+                            var makeMathWidthDivider = `${storeNavBarItems.length + 1}`
+                            var dividerFormulaMake = `${(makeMathWidthPercentage/makeMathWidthDivider)/(storeNavBarItems.length + 1)}`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // STYLE MAIN NAV BAR PLATE AND ELEMENTS ========
+                            // //////////////////////////////////////////////
+
+                                // STYLE MAIN NAV BAR ELEMENTS xxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateNineMainContainer.style = `
+                                    
+                                        width:200px;
+                                        height:50px;
+                                        top:20px;
+                                        left:0;
+                                        right:0;
+                                        margin:auto;
+                                        z-index:2;
+                                        position:fixed;
+                                        border-radius:10px;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+
+                                // STYLE MAIN NAV BAR PLATE ELEMENT xxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateNineMainElement.style = `
+                                    
+                                        width:75%;
+                                        height:50px;
+                                        top:0px;
+                                        left:0px;
+                                        right:0;
+                                        margin:0px auto;
+                                        display:inline-block;
+                                        position:relative;
+                                        background:#FFFFFF;
+                                        border-radius:8px 0px 0px 8px;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+
+                                        navBarPlateNineLogoMenuItemsContainer.style = `
+                                        
+                                            width:100%;
+                                            height:100%;
+                                            overflow:hidden;
+                                            position:relative;
+                                            transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+
+                                        `
+
+                                            navBarPlateNineLogoMenuItemsShifter.style = `
+                                            
+                                                width:${makeMathWidthPercentage}%;
+                                                height:100%;
+                                                left:0%;
+                                                right:0;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarPlateNineLogoContainer.style = `
+                                                
+                                                    width:${dividerFormulaMake}%;
+                                                    height:100%;
+                                                    float:left;
+                                                    position:relative;
+                                                    background:#2C2C2C;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                    navBarPlateNineLogoActual.style = `
+                                                    
+                                                        width:90%;
+                                                        height:70%;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        position:absolute;
+                                                        background:#FFFFFF;
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+
+                                // CREATE MAIN NAV BAR MENU BUTTON CONTAINER
+                                // //////////////////////////////////////////
+
+                                    navBarPlateNineMainElementMenuButtonContainer.style = `
+                                    
+                                        width:25%;
+                                        height:50px;
+                                        margin-left:0px;
+                                        display:inline-block;
+                                        position:relative;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+
+                                        navBarPlateNineMainElementMenuButtonElement.style = `
+                                        
+                                            width:100%;
+                                            height:50px;
+                                            top:0;
+                                            left:0;
+                                            right:0;
+                                            bottom:0;
+                                            margin:auto;
+                                            position:absolute;
+                                            background:#FFFFFF;
+                                            border-radius:0px 8px 8px 0px;
+                                            transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+
+                                        `
+
+
+
+
+
+
+
+                                            navBarPlateNineMainElementMenuButtonClickerContainer.style = `
+                                            
+                                                width:100%;
+                                                height:50px;
+                                                z-index:1;
+                                                top:0;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarPlateNineMainElementMenuButtonClickerOn.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                navBarPlateNineMainElementMenuButtonClickerOff.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:-1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+
+
+
+
+
+
+                                            navBarPlateNineMainElementMenuButtonIconContainer.style = `
+                                            
+                                                width:100%;
+                                                height:50px;
+                                                z-index:0;
+                                                top:0;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarPlateNineMainElementMenuButtonIconMover.style = `
+                                                
+                                                    width:20px;
+                                                    height:25px;
+                                                    z-index:1;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                    navBarPlateNineMainElementMenuButtonIconLineOne.style = `
+                                                    
+                                                        width:20px;
+                                                        height:3px;
+                                                        z-index:1;
+                                                        top:12px;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        opacity:1;
+                                                        position:absolute;
+                                                        background:#2C2C2C;
+                                                        transform:rotateZ(0deg);
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+                                                    navBarPlateNineMainElementMenuButtonIconLineTwo.style = `
+                                                    
+                                                        width:20px;
+                                                        height:3px;
+                                                        z-index:1;
+                                                        top:0;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        opacity:1;
+                                                        position:absolute;
+                                                        background:#2C2C2C;
+                                                        transform:rotateZ(0deg);
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+                                                    navBarPlateNineMainElementMenuButtonIconLineThree.style = `
+                                                    
+                                                        width:20px;
+                                                        height:3px;
+                                                        z-index:1;
+                                                        top:-12px;
+                                                        left:0;
+                                                        right:0;
+                                                        bottom:0;
+                                                        margin:auto;
+                                                        opacity:1;
+                                                        position:absolute;
+                                                        background:#2C2C2C;
+                                                        transform:rotateZ(0deg);
+                                                        transition:all 600ms ease;
+                                                        -o-transition:all 600ms ease;
+                                                        -ms-transition:all 600ms ease;
+                                                        -moz-transition:all 600ms ease;
+                                                        -webkit-transition:all 600ms ease;
+
+                                                    `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // APPEND MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                createNavBarCushion.appendChild(navBarPlateNineMainContainer)
+
+                                navBarPlateNineMainContainer.appendChild(navBarPlateNineMainElement)
+
+                                    navBarPlateNineMainElement.appendChild(navBarPlateNineLogoMenuItemsContainer)
+
+                                        navBarPlateNineLogoMenuItemsContainer.appendChild(navBarPlateNineLogoMenuItemsShifter)
+
+                                            navBarPlateNineLogoMenuItemsShifter.appendChild(navBarPlateNineLogoContainer)
+
+                                                navBarPlateNineLogoContainer.appendChild(navBarPlateNineLogoActual)
+
+
+                            // APPEND MAIN NAV BAR MENU BUTTON CONTAINER ====
+                            // //////////////////////////////////////////////
+
+                                navBarPlateNineMainContainer.appendChild(navBarPlateNineMainElementMenuButtonContainer)
+
+                                    navBarPlateNineMainElementMenuButtonContainer.appendChild(navBarPlateNineMainElementMenuButtonElement)
+
+
+
+
+
+
+
+                                        navBarPlateNineMainElementMenuButtonElement.appendChild(navBarPlateNineMainElementMenuButtonClickerContainer)
+
+                                            navBarPlateNineMainElementMenuButtonClickerContainer.appendChild(navBarPlateNineMainElementMenuButtonClickerOn)
+
+                                            navBarPlateNineMainElementMenuButtonClickerContainer.appendChild(navBarPlateNineMainElementMenuButtonClickerOff)
+
+
+
+
+
+
+
+                                        navBarPlateNineMainElementMenuButtonElement.appendChild(navBarPlateNineMainElementMenuButtonIconContainer)
+
+                                            navBarPlateNineMainElementMenuButtonIconContainer.appendChild(navBarPlateNineMainElementMenuButtonIconMover)
+
+                                                navBarPlateNineMainElementMenuButtonIconMover.appendChild(navBarPlateNineMainElementMenuButtonIconLineOne)
+
+                                                navBarPlateNineMainElementMenuButtonIconMover.appendChild(navBarPlateNineMainElementMenuButtonIconLineTwo)
+
+                                                navBarPlateNineMainElementMenuButtonIconMover.appendChild(navBarPlateNineMainElementMenuButtonIconLineThree)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // MAKE MENU ITEMS ==============================
+                            // //////////////////////////////////////////////
+
+                                // DECLARE VARIEBALES xxxxxxxxxxxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    var getShifterContainer = document.querySelector(".navBarNinePlateLogoMenuItemsShifter")
+
+
+
+
+
+                                // RUN LOOP TO CREATE MENU ITEMS xxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    for ( menuCreateCounter = 0; menuCreateCounter < storeNavBarItems.length; menuCreateCounter++ ) {
+
+                                        // CREATE NEW ELEMENTS xxxxxxxxxxxxxx
+                                        // //////////////////////////////////
+    
+                                            var createMenuItemContainer = document.createElement("div")
+                                            createMenuItemContainer.className = `navBarNinePlateMenuItem${classNumberMapper[menuCreateCounter]}`
+
+                                                var createMenuItemActual = document.createElement("div")
+                                                createMenuItemActual.className = `navBarNinePlateMenuItem${classNumberMapper[menuCreateCounter]}ActualText`
+                                                
+    
+                                        // STYLE MENU ITEM BLOCK xxxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            createMenuItemContainer.style = `
+                                            
+                                                width:${dividerFormulaMake}%;
+                                                height:100%;
+                                                float:left;
+                                                position:relative;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                createMenuItemActual.style = `
+                                                
+                                                    width:90%;
+                                                    height:70%;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    cursor:pointer;
+                                                    margin:auto;
+                                                    position:absolute;
+                                                    font-size:15px;
+                                                    text-align:center;
+                                                    line-height:35px;
+                                                    font-family:arial, sans-serif;
+                                                    font-weight:700;
+                                                    text-transform:lowercase;
+                                                    letter-spacing:2px;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+                                                
+    
+                                        // ADD TEXT TO ITEM BLOCK xxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            createMenuItemActual.textContent = `${storeNavBarItems[menuCreateCounter]}`
+                                                
+    
+                                        // ADD TEXT BLOCK CLASSNAME TO ARRAY HOLDER
+                                        // //////////////////////////////////
+
+                                            storeNavBarItemsClassNames.push(`navBarNinePlateMenuItem${classNumberMapper[menuCreateCounter]}ActualText`)
+
+    
+                                        // APPEND NEW ELEMENTS xxxxxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getShifterContainer.appendChild(createMenuItemContainer)
+
+                                                createMenuItemContainer.appendChild(createMenuItemActual)
+
+
+                                    }
+
+
+
+
+
+                                // CREATE EVENT LISTENERS xxxxxxxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    storeNavBarItemsClassNames.forEach((menuItemJumper) => {
+
+
+
+
+                                        // DECLARE VARIABLES FOR INDEX OF CLASS NAMES
+                                        // //////////////////////////////////
+                                        
+                                            var getIndexNumber = storeNavBarItemsClassNames.indexOf(menuItemJumper)
+                                            var makeSelectedMenuItem = document.querySelector(`.${menuItemJumper}`)
+
+
+
+                                        // CREATE EVENTS FOR SELECTED ITEM --
+                                        // //////////////////////////////////
+
+                                            makeSelectedMenuItem.addEventListener("click", function () {
+
+                                                window.open(`${storeNavBarItemLinks[getIndexNumber]}`, `_blank`)
+
+                                            })
+
+
+                                    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // MAKE MENU SHIFTER BUTTONS ====================
+                            // //////////////////////////////////////////////
+
+                                // DECLARE STRINGVARIABLES xxxxxxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    var getMainNavBarTab = document.querySelector(`.navBarNineMainContainer`)
+
+                                    
+
+                                // DECLARE VARIABLES xxxxxxxxxxxxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    var navBarPlateNineShifterButtonsContainer = document.createElement("div")
+                                    navBarPlateNineShifterButtonsContainer.className = `navBarNinePlateElementShifterButtonsContainer`
+
+                                        var navBarPlateNineShifterButtonsElementResizer = document.createElement("div")
+                                        navBarPlateNineShifterButtonsElementResizer.className = `navBarNinePlateElementShifterButtonsElementResizer`
+
+                                            // LEFT BUTTON CONTAINER --------
+                                            // //////////////////////////////
+
+                                                var navBarPlateNineShifterButtonsElementLeftButtonContainer = document.createElement("div")
+                                                navBarPlateNineShifterButtonsElementLeftButtonContainer.className = `navBarNinePlateElementShifterButtonsElementLeftButtonContainer`
+
+
+
+                                                    // LEFT BUTTON CLICKERS CONTAINER
+                                                    // /////////////////////
+
+                                                        var navBarPlateNineShifterButtonsElementLeftButtonClickerContainer = document.createElement("div")
+                                                        navBarPlateNineShifterButtonsElementLeftButtonClickerContainer.className = `navBarNinePlateElementShifterButtonsElementLeftButtonClickerContainer`
+
+                                                            var navBarPlateNineShifterButtonsElementLeftButtonClickerActual = document.createElement("div")
+                                                            navBarPlateNineShifterButtonsElementLeftButtonClickerActual.className = `navBarNinePlateElementShifterButtonsElementLeftButtonClickerActual`
+
+
+
+                                                    // LEFT BUTTON ICON CONTAINER
+                                                    // /////////////////////
+
+                                                        var navBarPlateNineShifterButtonsElementLeftButtonIconMover = document.createElement("div")
+                                                        navBarPlateNineShifterButtonsElementLeftButtonIconMover.className = `navBarNinePlateElementShifterButtonsElementLeftButtonMover`
+
+                                                            var navBarPlateNineShifterButtonsElementLeftButtonIconLineOne = document.createElement("div")
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineOne.className = `navBarNinePlateElementShifterButtonsElementLeftButtonIconLineOne`
+
+                                                            var navBarPlateNineShifterButtonsElementLeftButtonIconLineTwo = document.createElement("div")
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineTwo.className = `navBarNinePlateElementShifterButtonsElementLeftButtonIconLineTwo`
+
+                                                            var navBarPlateNineShifterButtonsElementLeftButtonIconLineThree = document.createElement("div")
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineThree.className = `navBarNinePlateElementShifterButtonsElementLeftButtonIconLineThree`
+
+
+
+
+                                            // RIGHT BUTTON CONTAINER -------
+                                            // //////////////////////////////
+
+                                                var navBarPlateNineShifterButtonsElementRightButtonContainer = document.createElement("div")
+                                                navBarPlateNineShifterButtonsElementRightButtonContainer.className = `navBarNinePlateElementShifterButtonsElementRightButtonContainer`
+
+
+
+                                                    // RIGHT BUTTON CLICKERS CONTAINER
+                                                    // /////////////////////
+
+                                                        var navBarPlateNineShifterButtonsElementRightButtonClickerContainer = document.createElement("div")
+                                                        navBarPlateNineShifterButtonsElementRightButtonClickerContainer.className = `navBarNinePlateElementShifterButtonsElementRightButtonClickerContainer`
+
+                                                            var navBarPlateNineShifterButtonsElementRightButtonClickerActual = document.createElement("div")
+                                                            navBarPlateNineShifterButtonsElementRightButtonClickerActual.className = `navBarNinePlateElementShifterButtonsElementRightButtonClickerActual`
+
+
+
+                                                    // RIGHT BUTTON ICON CONTAINER
+                                                    // /////////////////////
+
+                                                        var navBarPlateNineShifterButtonsElementRightButtonIconMover = document.createElement("div")
+                                                        navBarPlateNineShifterButtonsElementRightButtonIconMover.className = `navBarNinePlateElementShifterButtonsElementRightButtonMover`
+
+                                                            var navBarPlateNineShifterButtonsElementRightButtonIconLineOne = document.createElement("div")
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineOne.className = `navBarNinePlateElementShifterButtonsElementRightButtonIconLineOne`
+
+                                                            var navBarPlateNineShifterButtonsElementRightButtonIconLineTwo = document.createElement("div")
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineTwo.className = `navBarNinePlateElementShifterButtonsElementRightButtonIconLineTwo`
+
+                                                            var navBarPlateNineShifterButtonsElementRightButtonIconLineThree = document.createElement("div")
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineThree.className = `navBarNinePlateElementShifterButtonsElementRightButtonIconLineThree`
+
+
+
+
+
+
+
+
+                                // STYLE VARIABLES xxxxxxxxxxxxxxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateNineShifterButtonsContainer.style = `
+                                    
+                                        width:110px;
+                                        height:40px;
+                                        top:80px;
+                                        left:-45px;
+                                        right:0;
+                                        margin:auto;
+                                        position:fixed;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+
+                                        navBarPlateNineShifterButtonsElementResizer.style = `
+                                        
+                                            width:110px;
+                                            height:40px;
+                                            right:0;
+                                            position:relative;
+                                            transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+
+                                        `
+
+
+
+                                            // STYLE LEFT BUTTON CONTAINER --
+                                            // //////////////////////////////
+
+                                                navBarPlateNineShifterButtonsElementLeftButtonContainer.style = `
+                                                
+                                                    width:40px;
+                                                    height:40px;
+                                                    left:0;
+                                                    margin-right:5px;
+                                                    display:inline-block;
+                                                    position:relative;
+                                                    background:#FFFFFF;
+                                                    border-radius:1000px;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+
+                                                    // LEFT BUTTON CLICKERS CONTAINER
+                                                    // /////////////////////
+
+                                                        navBarPlateNineShifterButtonsElementLeftButtonClickerContainer.style = `
+                                                        
+                                                            width:100%;
+                                                            height:100%;
+                                                            position:absolute;
+                                                            z-index:1;
+                                                            display:block;
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+                                                            navBarPlateNineShifterButtonsElementLeftButtonClickerActual.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                cursor:pointer;
+                                                                display:block;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+
+                                                    // LEFT BUTTON ICON CONTAINER
+                                                    // /////////////////////
+
+                                                        navBarPlateNineShifterButtonsElementLeftButtonIconMover.style = `
+                                                        
+                                                            width:20px;
+                                                            height:20px;
+                                                            z-index:0;
+                                                            top:0;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineOne.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:-5px;
+                                                                left:0;
+                                                                right:2px;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(-45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineTwo.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:0;
+                                                                left:0;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:0;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(0deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineThree.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:5px;
+                                                                left:0;
+                                                                right:2px;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        
+
+
+
+                                        
+
+                                            // STYLE RIGHT BUTTON CONTAINER -
+                                            // //////////////////////////////
+
+                                                navBarPlateNineShifterButtonsElementRightButtonContainer.style = `
+                                                
+                                                    width:40px;
+                                                    height:40px;
+                                                    left:0;
+                                                    display:inline-block;
+                                                    position:relative;
+                                                    background:#FFFFFF;
+                                                    border-radius:1000px;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+
+                                                    // RIGHT BUTTON CLICKERS CONTAINER
+                                                    // /////////////////////
+
+                                                        navBarPlateNineShifterButtonsElementRightButtonClickerContainer.style = `
+                                                        
+                                                            width:100%;
+                                                            height:100%;
+                                                            position:absolute;
+                                                            z-index:1;
+                                                            display:block;
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+                                                            navBarPlateNineShifterButtonsElementRightButtonClickerActual.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                cursor:pointer;
+                                                                display:block;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+
+                                                    // RIGHT BUTTON ICON CONTAINER
+                                                    // /////////////////////
+
+                                                        navBarPlateNineShifterButtonsElementRightButtonIconMover.style = `
+                                                        
+                                                            width:20px;
+                                                            height:20px;
+                                                            z-index:0;
+                                                            top:0;
+                                                            left:0;
+                                                            right:0;
+                                                            bottom:0;
+                                                            margin:auto;
+                                                            position:absolute;
+                                                            transition:all 600ms ease;
+                                                            -o-transition:all 600ms ease;
+                                                            -ms-transition:all 600ms ease;
+                                                            -moz-transition:all 600ms ease;
+                                                            -webkit-transition:all 600ms ease;
+
+                                                        `
+
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineOne.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:-5px;
+                                                                left:2px;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineTwo.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:0;
+                                                                left:0;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:0;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(0deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineThree.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:5px;
+                                                                left:2px;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(-45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+
+
+
+
+
+
+
+                                // APPEND VARIABLE CHILDREN xxxxxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    getMainNavBarTab.appendChild(navBarPlateNineShifterButtonsContainer)
+
+                                        navBarPlateNineShifterButtonsContainer.appendChild(navBarPlateNineShifterButtonsElementResizer)
+
+                                            // APPEND LEFT BUTTON TO DOM ----
+                                            // //////////////////////////////
+
+                                                navBarPlateNineShifterButtonsElementResizer.appendChild(navBarPlateNineShifterButtonsElementLeftButtonContainer)
+
+
+                                                    // LEFT BUTTON CLICKERS CONTAINER
+                                                    // /////////////////////
+
+                                                        navBarPlateNineShifterButtonsElementLeftButtonContainer.appendChild(navBarPlateNineShifterButtonsElementLeftButtonClickerContainer)
+
+                                                            navBarPlateNineShifterButtonsElementLeftButtonClickerContainer.appendChild(navBarPlateNineShifterButtonsElementLeftButtonClickerActual)
+
+
+
+
+
+                                                    // LEFT BUTTON ICON CONTAINER
+                                                    // /////////////////////
+
+                                                        navBarPlateNineShifterButtonsElementLeftButtonContainer.appendChild(navBarPlateNineShifterButtonsElementLeftButtonIconMover)
+
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconMover.appendChild(navBarPlateNineShifterButtonsElementLeftButtonIconLineOne)
+
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconMover.appendChild(navBarPlateNineShifterButtonsElementLeftButtonIconLineTwo)
+
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconMover.appendChild(navBarPlateNineShifterButtonsElementLeftButtonIconLineThree)
+
+
+
+
+
+
+                                            // APPEND RIGHT BUTTON TO DOM ---
+                                            // //////////////////////////////
+
+                                                navBarPlateNineShifterButtonsElementResizer.appendChild(navBarPlateNineShifterButtonsElementRightButtonContainer)
+
+
+                                                    // RIGHT BUTTON CLICKERS CONTAINER
+                                                    // /////////////////////
+
+                                                        navBarPlateNineShifterButtonsElementRightButtonContainer.appendChild(navBarPlateNineShifterButtonsElementRightButtonClickerContainer)
+
+                                                            navBarPlateNineShifterButtonsElementRightButtonClickerContainer.appendChild(navBarPlateNineShifterButtonsElementRightButtonClickerActual)
+
+
+                                                        
+
+
+                                                    // RIGHT BUTTON ICON CONTAINER
+                                                    // /////////////////////
+
+                                                        navBarPlateNineShifterButtonsElementRightButtonContainer.appendChild(navBarPlateNineShifterButtonsElementRightButtonIconMover)
+
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconMover.appendChild(navBarPlateNineShifterButtonsElementRightButtonIconLineOne)
+
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconMover.appendChild(navBarPlateNineShifterButtonsElementRightButtonIconLineTwo)
+
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconMover.appendChild(navBarPlateNineShifterButtonsElementRightButtonIconLineThree)
+
+                                    
 
                         
 
