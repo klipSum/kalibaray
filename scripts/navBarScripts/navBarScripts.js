@@ -14160,6 +14160,7 @@
                                         left:0px;
                                         right:0;
                                         margin:0px auto;
+                                        z-index:2;
                                         display:inline-block;
                                         position:relative;
                                         background:#FFFFFF;
@@ -14807,10 +14808,12 @@
                                     
                                         width:110px;
                                         height:40px;
-                                        top:80px;
+                                        top:25px;
                                         left:-45px;
                                         right:0;
                                         margin:auto;
+                                        opacity:0;
+                                        z-index:0;
                                         position:fixed;
                                         transition:all 600ms ease;
                                         -o-transition:all 600ms ease;
@@ -15197,6 +15200,366 @@
                                                             navBarPlateNineShifterButtonsElementRightButtonIconMover.appendChild(navBarPlateNineShifterButtonsElementRightButtonIconLineTwo)
 
                                                             navBarPlateNineShifterButtonsElementRightButtonIconMover.appendChild(navBarPlateNineShifterButtonsElementRightButtonIconLineThree)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // MAKE MENU SHIFTER OPEN CLOSE FUNCTIONS =======
+                            // //////////////////////////////////////////////
+
+                                    
+
+
+
+
+
+
+                                // DECLARE VARAIBLES FOR USE ----------------
+                                // //////////////////////////////////////////
+
+                                    var getMenuOpenClicker = document.querySelector(".navBarNinePlateElementMenuButtonClickerOn")
+                                    var getMenuCloseClicker = document.querySelector(".navBarNinePlateElementMenuButtonClickerOff")
+
+                                    var getMenuIconLineOne = document.querySelector(".navBarNinePlateElementMenuButtonIconLineOne")
+                                    var getMenuIconLineTwo = document.querySelector(".navBarNinePlateElementMenuButtonIconLineTwo")
+                                    var getMenuIconLineThree = document.querySelector(".navBarNinePlateElementMenuButtonIconLineThree")
+
+                                    var getMenuShifter = document.querySelector(".navBarNinePlateLogoMenuItemsShifter")
+
+                                    var menuShifterWidthCalculation = ""
+
+                                    var shifterWidthMake = `${storeNavBarItems.length +1}00`
+
+                                    var getMenuShifterButtonsContainerMain = document.querySelector(".navBarNinePlateElementShifterButtonsContainer")
+
+                                        var getMenuShifterButtonLeftClicker = document.querySelector(".navBarNinePlateElementShifterButtonsElementLeftButtonClickerActual")
+                                        var getMenuShifterButtonRightClicker = document.querySelector(".navBarNinePlateElementShifterButtonsElementRightButtonClickerActual")
+
+                                    
+
+
+
+
+
+
+                                // MENU BUTTON OPEN FUNCTIONS ---------------
+                                // //////////////////////////////////////////
+
+                                    getMenuOpenClicker.addEventListener("click", function () {
+
+                                        
+                                        // SWITCH OFF OPEN CLICKER xxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getMenuOpenClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                cursor:pointer;
+                                                z-index:-1;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                        
+                                        // SWITCH ON CLOSE CLICKER xxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getMenuCloseClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                cursor:pointer;
+                                                z-index:1;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                        
+                                        // CHANGE ICONS TO OPENED MODE xxxxxx
+                                        // //////////////////////////////////
+
+                                            getMenuIconLineOne.style = `
+                                            
+                                                width:20px;
+                                                height:3px;
+                                                z-index:1;
+                                                top:0px;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                background:#2C2C2C;
+                                                transform:rotateZ(45deg);
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                            getMenuIconLineTwo.style = `
+                                            
+                                                width:20px;
+                                                height:3px;
+                                                z-index:1;
+                                                top:0;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:0;
+                                                position:absolute;
+                                                background:#2C2C2C;
+                                                transform:rotateZ(0deg);
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                            getMenuIconLineThree.style = `
+                                            
+                                                width:20px;
+                                                height:3px;
+                                                z-index:1;
+                                                top:0px;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                background:#2C2C2C;
+                                                transform:rotateZ(-45deg);
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                        
+                                        // BRING DOWN MENU SHIFTER BUTTONS xx
+                                        // //////////////////////////////////
+
+                                            getMenuShifterButtonsContainerMain.style = `
+                                            
+                                                width:110px;
+                                                height:40px;
+                                                top:80px;
+                                                left:-45px;
+                                                right:0;
+                                                margin:auto;
+                                                z-index:0;
+                                                opacity:1;
+                                                position:fixed;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+
+
+                                    })
+
+                                    
+
+
+
+
+
+
+                                // MENU BUTTON CLOSE FUNCTIONS --------------
+                                // //////////////////////////////////////////
+
+                                    getMenuCloseClicker.addEventListener("click", function () {
+
+                                        
+                                        // SWITCH OFF CLOSE CLICKER xxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getMenuCloseClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                cursor:pointer;
+                                                z-index:-1;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                        
+                                        // SWITCH ON OPEN CLICKER xxxxxxxxxxx
+                                        // //////////////////////////////////
+
+                                            getMenuOpenClicker.style = `
+                                            
+                                                width:100%;
+                                                height:100%;
+                                                cursor:pointer;
+                                                z-index:1;
+                                                position:absolute;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                        
+                                        // CHANGE ICONS TO CLOSED MODE xxxxxx
+                                        // //////////////////////////////////
+
+                                            getMenuIconLineOne.style = `
+                                            
+                                                width:20px;
+                                                height:3px;
+                                                z-index:1;
+                                                top:12px;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                background:#2C2C2C;
+                                                transform:rotateZ(0deg);
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                            getMenuIconLineTwo.style = `
+                                            
+                                                width:20px;
+                                                height:3px;
+                                                z-index:1;
+                                                top:0;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                background:#2C2C2C;
+                                                transform:rotateZ(0deg);
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                            getMenuIconLineThree.style = `
+                                            
+                                                width:20px;
+                                                height:3px;
+                                                z-index:1;
+                                                top:-12px;
+                                                left:0;
+                                                right:0;
+                                                bottom:0;
+                                                margin:auto;
+                                                opacity:1;
+                                                position:absolute;
+                                                background:#2C2C2C;
+                                                transform:rotateZ(0deg);
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                        
+                                        // BRING UP MENU SHIFTER BUTTONS xxxx
+                                        // //////////////////////////////////
+
+                                            getMenuShifterButtonsContainerMain.style = `
+                                            
+                                                width:110px;
+                                                height:40px;
+                                                top:25px;
+                                                left:-45px;
+                                                right:0;
+                                                margin:auto;
+                                                z-index:0;
+                                                opacity:0;
+                                                position:fixed;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                        
+
+                                    })
+
+
+
+
+
 
                                     
 
