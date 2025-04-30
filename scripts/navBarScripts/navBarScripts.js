@@ -77,6 +77,14 @@
 
                         var makeMenuListWidthLength = 0
 
+                    // CREATE ITEMS WIDTH LENGTH xxxxxxxxxxxxxxxxxxxxxxxx
+                    // //////////////////////////////////////////////////
+
+                        var makeMenuListItemShifterWidth = 0
+                        var menuListItemsShifterNumber = 0
+
+                        var menuListShifterNumberAltered = 0
+
         // ARRAYS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         // //////////////////////////////////////////////////////////////
 
@@ -14884,7 +14892,7 @@
                                                                 width:100%;
                                                                 height:100%;
                                                                 cursor:pointer;
-                                                                display:block;
+                                                                display:none;
                                                                 position:relative;
                                                                 transition:all 600ms ease;
                                                                 -o-transition:all 600ms ease;
@@ -14928,7 +14936,7 @@
                                                                 margin:auto;
                                                                 opacity:1;
                                                                 position:absolute;
-                                                                background:#2C2C2C;
+                                                                background:#d7d7d7;
                                                                 transform:rotateZ(-45deg);
                                                                 transition:all 600ms ease;
                                                                 -o-transition:all 600ms ease;
@@ -14970,7 +14978,7 @@
                                                                 margin:auto;
                                                                 opacity:1;
                                                                 position:absolute;
-                                                                background:#2C2C2C;
+                                                                background:#d7d7d7;
                                                                 transform:rotateZ(45deg);
                                                                 transition:all 600ms ease;
                                                                 -o-transition:all 600ms ease;
@@ -15253,161 +15261,18 @@
 
                                     var getMenuShifter = document.querySelector(".navBarNinePlateLogoMenuItemsShifter")
 
-                                    var menuShifterWidthCalculation = ""
-
-                                    var shifterWidthMake = `${storeNavBarItems.length +1}00`
-
                                     var getMenuShifterButtonsContainerMain = document.querySelector(".navBarNinePlateElementShifterButtonsContainer")
 
                                         var getMenuShifterButtonLeftClicker = document.querySelector(".navBarNinePlateElementShifterButtonsElementLeftButtonClickerActual")
+
+                                            var getMenuShifterButtonLeftIconLineOne = document.querySelector(".navBarNinePlateElementShifterButtonsElementLeftButtonIconLineOne")
+                                            var getMenuShifterButtonLeftIconLineThree = document.querySelector(".navBarNinePlateElementShifterButtonsElementLeftButtonIconLineThree")
+                                        
+
                                         var getMenuShifterButtonRightClicker = document.querySelector(".navBarNinePlateElementShifterButtonsElementRightButtonClickerActual")
 
-                                    
-
-
-
-
-
-
-                                // MENU BUTTON OPEN FUNCTIONS ---------------
-                                // //////////////////////////////////////////
-
-                                    getMenuOpenClicker.addEventListener("click", function () {
-
-                                        
-                                        // SWITCH OFF OPEN CLICKER xxxxxxxxxx
-                                        // //////////////////////////////////
-
-                                            getMenuOpenClicker.style = `
-                                            
-                                                width:100%;
-                                                height:100%;
-                                                cursor:pointer;
-                                                z-index:-1;
-                                                position:absolute;
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
-
-                                            `
-
-                                        
-                                        // SWITCH ON CLOSE CLICKER xxxxxxxxxx
-                                        // //////////////////////////////////
-
-                                            getMenuCloseClicker.style = `
-                                            
-                                                width:100%;
-                                                height:100%;
-                                                cursor:pointer;
-                                                z-index:1;
-                                                position:absolute;
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
-
-                                            `
-
-                                        
-                                        // CHANGE ICONS TO OPENED MODE xxxxxx
-                                        // //////////////////////////////////
-
-                                            getMenuIconLineOne.style = `
-                                            
-                                                width:20px;
-                                                height:3px;
-                                                z-index:1;
-                                                top:0px;
-                                                left:0;
-                                                right:0;
-                                                bottom:0;
-                                                margin:auto;
-                                                opacity:1;
-                                                position:absolute;
-                                                background:#2C2C2C;
-                                                transform:rotateZ(45deg);
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
-
-                                            `
-
-                                            getMenuIconLineTwo.style = `
-                                            
-                                                width:20px;
-                                                height:3px;
-                                                z-index:1;
-                                                top:0;
-                                                left:0;
-                                                right:0;
-                                                bottom:0;
-                                                margin:auto;
-                                                opacity:0;
-                                                position:absolute;
-                                                background:#2C2C2C;
-                                                transform:rotateZ(0deg);
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
-
-                                            `
-
-                                            getMenuIconLineThree.style = `
-                                            
-                                                width:20px;
-                                                height:3px;
-                                                z-index:1;
-                                                top:0px;
-                                                left:0;
-                                                right:0;
-                                                bottom:0;
-                                                margin:auto;
-                                                opacity:1;
-                                                position:absolute;
-                                                background:#2C2C2C;
-                                                transform:rotateZ(-45deg);
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
-
-                                            `
-
-                                        
-                                        // BRING DOWN MENU SHIFTER BUTTONS xx
-                                        // //////////////////////////////////
-
-                                            getMenuShifterButtonsContainerMain.style = `
-                                            
-                                                width:110px;
-                                                height:40px;
-                                                top:80px;
-                                                left:-45px;
-                                                right:0;
-                                                margin:auto;
-                                                z-index:0;
-                                                opacity:1;
-                                                position:fixed;
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
-
-                                            `
-
-
-
-                                    })
+                                            var getMenuShifterButtonRightIconLineOne = document.querySelector(".navBarNinePlateElementShifterButtonsElementRightButtonIconLineOne")
+                                            var getMenuShifterButtonRightIconLineThree = document.querySelector(".navBarNinePlateElementShifterButtonsElementRightButtonIconLineThree")
 
                                     
 
@@ -15416,145 +15281,1071 @@
 
 
 
-                                // MENU BUTTON CLOSE FUNCTIONS --------------
+                                // MENU BUTTON FUNCTIONS --------------------
                                 // //////////////////////////////////////////
 
-                                    getMenuCloseClicker.addEventListener("click", function () {
+                                    menuListItemsShifterNumber = `${storeNavBarItems.length}00`
 
-                                        
-                                        // SWITCH OFF CLOSE CLICKER xxxxxxxxx
-                                        // //////////////////////////////////
 
-                                            getMenuCloseClicker.style = `
+
+
+
+
+                                // MENU BUTTON FUNCTIONS --------------------
+                                // //////////////////////////////////////////
+
+
+                                    // OPEN MENU ----------------------------
+                                    // //////////////////////////////////////
+
+                                        getMenuOpenClicker.addEventListener("click", function () {
+
                                             
-                                                width:100%;
-                                                height:100%;
-                                                cursor:pointer;
-                                                z-index:-1;
-                                                position:absolute;
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
+                                            // SWITCH OFF OPEN CLICKER xxxxxx
+                                            // //////////////////////////////
 
-                                            `
+                                                getMenuOpenClicker.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:-1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
 
-                                        
-                                        // SWITCH ON OPEN CLICKER xxxxxxxxxxx
-                                        // //////////////////////////////////
+                                                `
 
-                                            getMenuOpenClicker.style = `
                                             
-                                                width:100%;
-                                                height:100%;
-                                                cursor:pointer;
-                                                z-index:1;
-                                                position:absolute;
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
+                                            // SWITCH ON CLOSE CLICKER xxxxxx
+                                            // //////////////////////////////
 
-                                            `
+                                                getMenuCloseClicker.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
 
-                                        
-                                        // CHANGE ICONS TO CLOSED MODE xxxxxx
-                                        // //////////////////////////////////
+                                                `
 
-                                            getMenuIconLineOne.style = `
                                             
-                                                width:20px;
-                                                height:3px;
-                                                z-index:1;
-                                                top:12px;
-                                                left:0;
-                                                right:0;
-                                                bottom:0;
-                                                margin:auto;
-                                                opacity:1;
-                                                position:absolute;
-                                                background:#2C2C2C;
-                                                transform:rotateZ(0deg);
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
+                                            // CHANGE ICONS TO OPENED MODE xx
+                                            // //////////////////////////////
 
-                                            `
+                                                getMenuIconLineOne.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:0px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(45deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
 
-                                            getMenuIconLineTwo.style = `
+                                                `
+
+                                                getMenuIconLineTwo.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:0;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                getMenuIconLineThree.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:0px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(-45deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
                                             
-                                                width:20px;
-                                                height:3px;
-                                                z-index:1;
-                                                top:0;
-                                                left:0;
-                                                right:0;
-                                                bottom:0;
-                                                margin:auto;
-                                                opacity:1;
-                                                position:absolute;
-                                                background:#2C2C2C;
-                                                transform:rotateZ(0deg);
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
+                                            // BRING DOWN MENU SHIFTER BUTTONS
+                                            // //////////////////////////////
 
-                                            `
+                                                getMenuShifterButtonsContainerMain.style = `
+                                                
+                                                    width:110px;
+                                                    height:40px;
+                                                    top:80px;
+                                                    left:-45px;
+                                                    right:0;
+                                                    margin:auto;
+                                                    z-index:0;
+                                                    opacity:1;
+                                                    position:fixed;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
 
-                                            getMenuIconLineThree.style = `
+                                                `
+
                                             
-                                                width:20px;
-                                                height:3px;
-                                                z-index:1;
-                                                top:-12px;
-                                                left:0;
-                                                right:0;
-                                                bottom:0;
-                                                margin:auto;
-                                                opacity:1;
-                                                position:absolute;
-                                                background:#2C2C2C;
-                                                transform:rotateZ(0deg);
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
+                                            // SHIFT MENU ITEMS TO START MODE
+                                            // //////////////////////////////
 
-                                            `
+                                                getMenuShifter.style = `
+                                                
+                                                    width:${makeMathWidthPercentage}%;
+                                                    height:100%;
+                                                    left:${menuListShifterNumberAltered = (-100)}%;
+                                                    right:0;
+                                                    position:relative;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
 
-                                        
-                                        // BRING UP MENU SHIFTER BUTTONS xxxx
-                                        // //////////////////////////////////
+                                                `
 
-                                            getMenuShifterButtonsContainerMain.style = `
                                             
-                                                width:110px;
-                                                height:40px;
-                                                top:25px;
-                                                left:-45px;
-                                                right:0;
-                                                margin:auto;
-                                                z-index:0;
-                                                opacity:0;
-                                                position:fixed;
-                                                transition:all 600ms ease;
-                                                -o-transition:all 600ms ease;
-                                                -ms-transition:all 600ms ease;
-                                                -moz-transition:all 600ms ease;
-                                                -webkit-transition:all 600ms ease;
+                                            // ADJUST CONTENT SHIFTER LEFT MATH
+                                            // //////////////////////////////
 
-                                            `
+                                                makeMenuListItemShifterWidth = (makeMenuListItemShifterWidth - 100)
 
-                                        
+                                            
+                                                // RESET ALTERED NUMBERS xxxxxxxx
+                                                // //////////////////////////////
+    
+                                                    menuListShifterNumberAltered = -100
+    
+                                                    makeMenuListItemShifterWidth = -100
 
-                                    })
+
+
+                                        })
+
+
+
+
+
+                                    // CLOSE MENU ---------------------------
+                                    // //////////////////////////////////////
+
+                                        getMenuCloseClicker.addEventListener("click", function () {
+
+                                            
+                                            // SWITCH OFF CLOSE CLICKER xxxxx
+                                            // //////////////////////////////
+
+                                                getMenuCloseClicker.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:-1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            
+                                            // SWITCH ON OPEN CLICKER xxxxxxx
+                                            // //////////////////////////////
+
+                                                getMenuOpenClicker.style = `
+                                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    z-index:1;
+                                                    position:absolute;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            
+                                            // CHANGE ICONS TO CLOSED MODE xx
+                                            // //////////////////////////////
+
+                                                getMenuIconLineOne.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:12px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                getMenuIconLineTwo.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:0;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                getMenuIconLineThree.style = `
+                                                
+                                                    width:20px;
+                                                    height:3px;
+                                                    z-index:1;
+                                                    top:-12px;
+                                                    left:0;
+                                                    right:0;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#2C2C2C;
+                                                    transform:rotateZ(0deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            
+                                            // BRING UP MENU SHIFTER BUTTONS 
+                                            // //////////////////////////////
+
+                                                getMenuShifterButtonsContainerMain.style = `
+                                                
+                                                    width:110px;
+                                                    height:40px;
+                                                    top:25px;
+                                                    left:-45px;
+                                                    right:0;
+                                                    margin:auto;
+                                                    z-index:0;
+                                                    opacity:0;
+                                                    position:fixed;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            
+                                            // SHIFT MENU ITEMS TO CLOSED MODE
+                                            // //////////////////////////////
+
+                                                getMenuShifter.style = `
+                                                
+                                                    width:${makeMathWidthPercentage}%;
+                                                    height:100%;
+                                                    left:${menuListShifterNumberAltered = 0}%;
+                                                    right:0;
+                                                    position:relative;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            
+                                            // RESET ALTERED NUMBERS xxxxxxxx
+                                            // //////////////////////////////
+
+                                                menuListShifterNumberAltered = 0
+
+                                                makeMenuListItemShifterWidth = 0
+                                                
+
+                                            // CHANGE RIGHT BUTTON CLICKER TO DISABLED MODE
+                                            // ///////////////
+
+                                                getMenuShifterButtonLeftClicker.style = `
+                                
+                                                    width:100%;
+                                                    height:100%;
+                                                    cursor:pointer;
+                                                    display:none;
+                                                    position:relative;
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            // CHANGE LEFT BUTTON AND ICONS TO DISABLED MODE
+                                            // ///////////////
+
+                                                getMenuShifterButtonLeftIconLineOne.style = `
+                                                
+                                                    width:10px;
+                                                    height:3px;
+                                                    top:-5px;
+                                                    left:0;
+                                                    right:2px;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#d7d7d7;
+                                                    transform:rotateZ(-45deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                                getMenuShifterButtonLeftIconLineThree.style = `
+                                                
+                                                    width:10px;
+                                                    height:3px;
+                                                    top:5px;
+                                                    left:0;
+                                                    right:2px;
+                                                    bottom:0;
+                                                    margin:auto;
+                                                    opacity:1;
+                                                    position:absolute;
+                                                    background:#d7d7d7;
+                                                    transform:rotateZ(45deg);
+                                                    transition:all 600ms ease;
+                                                    -o-transition:all 600ms ease;
+                                                    -ms-transition:all 600ms ease;
+                                                    -moz-transition:all 600ms ease;
+                                                    -webkit-transition:all 600ms ease;
+
+                                                `
+
+                                            
+
+                                        })
+
+                                    
+
+
+
+
+
+
+                                // SHIFTER MENU BUTTONS FUNCTIONS -----------
+                                // //////////////////////////////////////////
+
+
+                                    // LEFT BUTTON xxxxxxxxxxxxxxxxxxxxxxxxxx
+                                    // //////////////////////////////////////
+
+                                        getMenuShifterButtonLeftClicker.addEventListener("click", function () {
+
+
+                                            // CHECK IF NUMBER MEETS REQUIREMENTS
+                                            // /////////////////////////////
+
+                                                // CHECK IF NUMBER IS NOT AT MAX LEFT
+                                                // ////////////////////////
+
+                                                    if ( makeMenuListItemShifterWidth == (-100) ) {
+
+                                                        // CHANGE LEFT BUTTON CLICKER TO DISABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonLeftClicker.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                cursor:pointer;
+                                                                display:none;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        // CHANGE LEFT BUTTON AND ICONS TO DISABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonLeftIconLineOne.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:-5px;
+                                                                left:0;
+                                                                right:2px;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#d7d7d7;
+                                                                transform:rotateZ(-45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            getMenuShifterButtonLeftIconLineThree.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:5px;
+                                                                left:0;
+                                                                right:2px;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#d7d7d7;
+                                                                transform:rotateZ(45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                    }
+
+                                                // KEEP ON SCROLLING RIGHT TILL END
+                                                // ////////////////////////
+
+                                                    else {
+
+                                                        // CHANGE SHIFTER NUMBER
+                                                        // ///////////////
+
+                                                            makeMenuListItemShifterWidth = (makeMenuListItemShifterWidth + 100)
+
+                                                        // ALTER SHIFTER 
+                                                        // ///////////////
+
+                                                            menuListShifterNumberAltered = makeMenuListItemShifterWidth
+
+                                                        // CHANGE SHIFTER POSITION
+                                                        // ///////////////
+
+                                                            getMenuShifter.style = `
+                                                            
+                                                                width:${makeMathWidthPercentage}%;
+                                                                height:100%;
+                                                                left:${menuListShifterNumberAltered}%;
+                                                                right:0;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+        
+                                                            `
+
+                                                        // CHANGE LEFT BUTTON CLICKER TO ENABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonLeftClicker.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                cursor:pointer;
+                                                                display:block;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        // CHANGE LEFT BUTTON AND ICONS TO ENABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonLeftIconLineOne.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:-5px;
+                                                                left:0;
+                                                                right:2px;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2c2c2c;
+                                                                transform:rotateZ(-45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            getMenuShifterButtonLeftIconLineThree.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:5px;
+                                                                left:0;
+                                                                right:2px;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2c2c2c;
+                                                                transform:rotateZ(45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        // CHANGE RIGHT BUTTON CLICKER TO ENABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonRightClicker.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                cursor:pointer;
+                                                                display:block;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        // CHANGE RIGHT BUTTON AND ICONS TO ENABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonRightIconLineOne.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:-5px;
+                                                                left:2px;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            getMenuShifterButtonRightIconLineThree.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:5px;
+                                                                left:2px;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(-45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+
+                                                                // IF NUMBER IS HIT LIMIT THEN DISABLE LEFT BUTTON
+                                                                // ///////
+
+                                                                    if ( makeMenuListItemShifterWidth == -100 ) {
+
+                                                                        // CHANGE RIGHT BUTTON CLICKER TO DISABLED MODE
+                                                                        // ///////////////
+                
+                                                                            getMenuShifterButtonLeftClicker.style = `
+                                                            
+                                                                                width:100%;
+                                                                                height:100%;
+                                                                                cursor:pointer;
+                                                                                display:none;
+                                                                                position:relative;
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
+
+                                                                        // CHANGE LEFT BUTTON AND ICONS TO DISABLED MODE
+                                                                        // ///////////////
+
+                                                                            getMenuShifterButtonLeftIconLineOne.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                top:-5px;
+                                                                                left:0;
+                                                                                right:2px;
+                                                                                bottom:0;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#d7d7d7;
+                                                                                transform:rotateZ(-45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
+
+                                                                            getMenuShifterButtonLeftIconLineThree.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                top:5px;
+                                                                                left:0;
+                                                                                right:2px;
+                                                                                bottom:0;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#d7d7d7;
+                                                                                transform:rotateZ(45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+
+                                                                            `
+                                                                        
+                                                                    }
+
+                                                    }
+
+
+                                        })
+
+
+
+
+
+                                    // RIGHT BUTTON xxxxxxxxxxxxxxxxxxxxxxxxx
+                                    // //////////////////////////////////////
+
+                                        getMenuShifterButtonRightClicker.addEventListener("click", function () {
+
+
+                                            // CHECK IF NUMBER MEETS REQUIREMENTS
+                                            // /////////////////////////////
+
+                                                // CHECK IF NUMBER IS NOT AT MAX RIGHT
+                                                // ////////////////////////
+
+                                                    if ( (makeMathWidthPercentage - 100) == (-makeMenuListItemShifterWidth) ) {
+
+                                                        // CHANGE RIGHT BUTTON CLICKER TO DISABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonRightClicker.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                cursor:pointer;
+                                                                display:none;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        // CHANGE RIGHT BUTTON AND ICONS TO DISABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonRightIconLineOne.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:-5px;
+                                                                left:2px;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#d7d7d7;
+                                                                transform:rotateZ(45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            getMenuShifterButtonRightIconLineThree.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:5px;
+                                                                left:2px;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#d7d7d7;
+                                                                transform:rotateZ(-45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                    }
+
+                                                // KEEP ON SCROLLING RIGHT TILL END
+                                                // ////////////////////////
+
+                                                    else {
+
+                                                        // CHANGE SHIFTER NUMBER
+                                                        // ///////////////
+
+                                                            makeMenuListItemShifterWidth = (makeMenuListItemShifterWidth - 100)
+
+                                                        // ALTER SHIFTER 
+                                                        // ///////////////
+
+                                                            menuListShifterNumberAltered = makeMenuListItemShifterWidth
+
+                                                        // CHANGE SHIFTER POSITION
+                                                        // ///////////////
+
+                                                            getMenuShifter.style = `
+                                                            
+                                                                width:${makeMathWidthPercentage}%;
+                                                                height:100%;
+                                                                left:${menuListShifterNumberAltered}%;
+                                                                right:0;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+        
+                                                            `
+
+                                                        // CHANGE RIGHT BUTTON CLICKER TO ENABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonRightClicker.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                cursor:pointer;
+                                                                display:block;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        // CHANGE RIGHT BUTTON AND ICONS TO ENABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonRightIconLineOne.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:-5px;
+                                                                left:2px;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            getMenuShifterButtonRightIconLineThree.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:5px;
+                                                                left:2px;
+                                                                right:0;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2C2C2C;
+                                                                transform:rotateZ(-45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        // CHANGE LEFT BUTTON CLICKER TO ENABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonLeftClicker.style = `
+                                                            
+                                                                width:100%;
+                                                                height:100%;
+                                                                cursor:pointer;
+                                                                display:block;
+                                                                position:relative;
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                        // CHANGE LEFT BUTTON AND ICONS TO ENABLED MODE
+                                                        // ///////////////
+
+                                                            getMenuShifterButtonLeftIconLineOne.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:-5px;
+                                                                left:0;
+                                                                right:2px;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2c2c2c;
+                                                                transform:rotateZ(-45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+                                                            getMenuShifterButtonLeftIconLineThree.style = `
+                                                            
+                                                                width:10px;
+                                                                height:3px;
+                                                                top:5px;
+                                                                left:0;
+                                                                right:2px;
+                                                                bottom:0;
+                                                                margin:auto;
+                                                                opacity:1;
+                                                                position:absolute;
+                                                                background:#2c2c2c;
+                                                                transform:rotateZ(45deg);
+                                                                transition:all 600ms ease;
+                                                                -o-transition:all 600ms ease;
+                                                                -ms-transition:all 600ms ease;
+                                                                -moz-transition:all 600ms ease;
+                                                                -webkit-transition:all 600ms ease;
+
+                                                            `
+
+
+                                                                // IF NUMBER IS HIT LIMIT THEN DISABLE RIGHT BUTTON
+                                                                // ///////
+
+                                                                    if ( -menuListItemsShifterNumber == makeMenuListItemShifterWidth ) {
+
+                                                                        // CHANGE RIGHT BUTTON CLICKER TO DISABLED MODE
+                                                                        // ///////////////
+                
+                                                                            getMenuShifterButtonRightClicker.style = `
+                                                                            
+                                                                                width:100%;
+                                                                                height:100%;
+                                                                                cursor:pointer;
+                                                                                display:none;
+                                                                                position:relative;
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+                
+                                                                            `
+                
+                                                                        // CHANGE RIGHT BUTTON AND ICONS TO DISABLED MODE
+                                                                        // ///////////////
+                
+                                                                            getMenuShifterButtonRightIconLineOne.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                top:-5px;
+                                                                                left:2px;
+                                                                                right:0;
+                                                                                bottom:0;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#d7d7d7;
+                                                                                transform:rotateZ(45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+                
+                                                                            `
+                
+                                                                            getMenuShifterButtonRightIconLineThree.style = `
+                                                                            
+                                                                                width:10px;
+                                                                                height:3px;
+                                                                                top:5px;
+                                                                                left:2px;
+                                                                                right:0;
+                                                                                bottom:0;
+                                                                                margin:auto;
+                                                                                opacity:1;
+                                                                                position:absolute;
+                                                                                background:#d7d7d7;
+                                                                                transform:rotateZ(-45deg);
+                                                                                transition:all 600ms ease;
+                                                                                -o-transition:all 600ms ease;
+                                                                                -ms-transition:all 600ms ease;
+                                                                                -moz-transition:all 600ms ease;
+                                                                                -webkit-transition:all 600ms ease;
+                
+                                                                            `
+                                                                        
+                                                                    }
+
+                                                    }
+
+                                            
+
+                                        })
 
 
 
