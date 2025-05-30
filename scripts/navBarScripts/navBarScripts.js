@@ -19,9 +19,9 @@
                     // NAV BAR STRINGS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                     // //////////////////////////////////////////////////
 
+                        var navTitleStringCollector = ""
                         var navItemsStringCollector = ""
                         var navItemLinksStringCollector = ""
-                        var navTitleStringCollector = ""
 
                     // NAV BAR NUMBER SELECTOR xxxxxxxxxxxxxxxxxxxxxxxxxx
                     // //////////////////////////////////////////////////
@@ -54,7 +54,7 @@
                     // COUNTER FOR SECTION DETECTOR LOOP xxxxxxxxxxxxxxxx
                     // //////////////////////////////////////////////////
 
-                        var sectionLoopCounter = 10;
+                        var sectionLoopCounter = 15;
 
                     // COUNTER OFFICIAL xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                     // //////////////////////////////////////////////////
@@ -84,6 +84,8 @@
                         var menuListItemsShifterNumber = 0
 
                         var menuListShifterNumberAltered = 0
+
+                        var menuItemsSideWidth = 0
 
         // ARRAYS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         // //////////////////////////////////////////////////////////////
@@ -140,6 +142,44 @@
 
                 ]
                 var storeNavBarMobileClickersClassNames = []
+
+            // FOR DEFAULTS /////////////////////////////////////////////
+            // //////////////////////////////////////////////////////////
+
+                // DEFAULT NAV BAR ITEMS --------------------------------
+                // //////////////////////////////////////////////////////
+
+                    var defaultNavBarTitle = [
+                        
+                        "defaultTitle"
+                    
+                    ]
+
+                // DEFAULT NAV BAR ITEMS --------------------------------
+                // //////////////////////////////////////////////////////
+
+                    var defaultNavBarItems = [
+                        
+                        "itemOne", 
+                        "itemTwo", 
+                        "itemThree", 
+                        "itemFour", 
+                        "itemFive"
+                    
+                    ]
+
+                // DEFAULT NAV BAR LINKS --------------------------------
+                // //////////////////////////////////////////////////////
+
+                    var defaultNavBarLinks = [
+                        
+                        "https://www.google.com", 
+                        "https://www.spotify.com", 
+                        "https://codepen.io", 
+                        "https://github.com", 
+                        "https://www.netflix.com"
+                    
+                    ]
 
             // FOR NAV BAR SELECTED /////////////////////////////////////
             // //////////////////////////////////////////////////////////
@@ -397,7 +437,11 @@
                         // //////////////////////////////////////////////////
 
                             var getHtmlNavBarItemsMainContainer = document.querySelector(".navBarItemsContainer")
+
+
+                            var getHtmlNavBarTitleItems = document.querySelector(".navBarTitle")
                             var getHtmlNavBarItems = document.querySelector(".navBarList")
+                            var getHtmlNavBarLinkItems = document.querySelector(".navBarLinks")
 
 
                         
@@ -408,18 +452,37 @@
                             // RETRIEVE ITEMS FOR NAV BAR BUILD xxxxxxxxxxxxx
                             // //////////////////////////////////////////////
 
+                                navTitleStringCollector = getHtmlNavBarTitleItems.textContent
                                 navItemsStringCollector = getHtmlNavBarItems.textContent
+                                navItemLinksStringCollector = getHtmlNavBarLinkItems.textContent
 
                                     // CHECK IF COLLECTION COMES UP EMPTY ---
                                     // //////////////////////////////////////
 
                                         if ( navItemsStringCollector == "" ) {
 
-                                            for ( navBarDummyPopulate = 0; navBarDummyPopulate < 5; navBarDummyPopulate++ ) {
-            
-                                                storeNavBarItems.push(`item${classNumberMapper[navBarDummyPopulate]}`)
-    
-                                            }
+                                            // FETCH ITEMS FOR TITLE DEFAULT 
+                                            // /////////////////////////////
+
+                                                storeNavBarTitle.push(`${defaultNavBarTitle[navBarDummyPopulate]}`)
+
+                                            // FETCH ITEMS FOR NAV BAR DEFAULT 
+                                            // //////////////////////////////
+
+                                                for ( navBarDummyPopulate = 0; navBarDummyPopulate < 5; navBarDummyPopulate++ ) {
+                
+                                                    storeNavBarItems.push(`${defaultNavBarItems[navBarDummyPopulate]}`)
+        
+                                                }
+
+                                            // FETCH ITEMS FOR LINKS DEFAULT 
+                                            // //////////////////////////////
+
+                                                for ( navBarDummyPopulate = 0; navBarDummyPopulate < 5; navBarDummyPopulate++ ) {
+                
+                                                    storeNavBarItemLinks.push(`${defaultNavBarLinks[navBarDummyPopulate]}`)
+        
+                                                }
 
                                         }
 
@@ -429,36 +492,57 @@
                                         else {
 
                                             // FIRST EMPTY UP NAV BAR STORAGE ARRAY
-                                            // //////////////////////
+                                            // //////////////////////////////
 
+                                                storeNavBarTitle = []
                                                 storeNavBarItems = []
+                                                storeNavBarItemLinks = []
 
-                                                    // THEN POPULATE NAV BAR ITEMS ARRAY
+                                                    // THEN POPULATE NAV BAR TITLE ITEMS AND LINKS ARRAY
                                                     // //////////////////////
+
+                                                        var navBarTitleSplitsFilter = navTitleStringCollector.split(",")
 
                                                         var navBarItemsSplits = navItemsStringCollector.split(",").length
                                                         var navBarItemsSplitsFilter = navItemsStringCollector.split(",")
+
+                                                        var navBarLinksSplits = navItemLinksStringCollector.split(",").length
+                                                        var navBarLinksSplitsFilter = navItemLinksStringCollector.split(",")
+
+
+
+                                                            // RUN LOOP FOR NAV BAR TITLE POPULATE
+                                                            // ///////////////////////////////////
                 
-                                                        for ( navBarItemsCounter = 0; navBarItemsCounter < navBarItemsSplits; navBarItemsCounter++ ) {
+                                                                storeNavBarTitle.push(`${navTitleStringCollector.replaceAll(" ","")}`)
+
+
+
+                                                            // RUN LOOP FOR NAV BAR ITEMS POPULATE
+                                                            // ///////////////////////////////////
                 
-                                                            storeNavBarItems.push(`item ${(navBarItemsSplitsFilter[navBarItemsCounter]).replaceAll(" ","")}`)
+                                                                for ( navBarItemsCounter = 0; navBarItemsCounter < navBarItemsSplits; navBarItemsCounter++ ) {
+                        
+                                                                    storeNavBarItems.push(`item ${(navBarItemsSplitsFilter[navBarItemsCounter]).replaceAll(" ","")}`)
+
+
+                                                                    // BUILD WIDTH COUNTER AFTER LIST ITEMS COLLECTED
+                                                                    // ///////////////////////////
+                                                        
+                                                                        makeMenuListWidthLength = makeMenuListWidthLength+1
+                        
+                                                                }
 
 
 
-
-
-
-
-
-
-
-
-                                                            // BUILD WIDTH COUNTER AFTER LIST ITEMS COLLECTED ---------------
-                                                            // //////////////////////////////////////////////////////////////
-                                                
-                                                                makeMenuListWidthLength = makeMenuListWidthLength+1
+                                                            // RUN LOOP FOR NAV BAR ITEMS LINKS POPULATE
+                                                            // ///////////////////////////////////
                 
-                                                        }
+                                                                for ( navBarItemsLinksCounter = 0; navBarItemsLinksCounter < navBarLinksSplits; navBarItemsLinksCounter++ ) {
+                        
+                                                                    storeNavBarItemLinks.push(`${(navBarLinksSplitsFilter[navBarItemsLinksCounter]).replaceAll(" ","")}`)
+                        
+                                                                }
 
                                         }
 
@@ -894,7 +978,7 @@
                             // FOR SCREEN SIZE 300 --------------------------
                             // //////////////////////////////////////////////
 
-                                if ( windowWidth > 0 && windowWidth < 301 ) {
+                                if ( windowWidth > 0 && windowWidth < 299 ) {
 
                                     console.log("300 LOCKED IN...")
 
@@ -903,6 +987,11 @@
 
                                             screenWidthSelector = "200px"
                                             screenWidthResizerSelector = "176px"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS SIDE
+                                        // //////////////////////////////////
+
+                                            menuItemsSideWidth = 75
 
 
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
@@ -927,7 +1016,7 @@
                             // FOR SCREEN SIZE 500 --------------------------
                             // //////////////////////////////////////////////
 
-                                else if ( windowWidth > 300 && windowWidth < 501 ) {
+                                else if ( windowWidth > 300 && windowWidth < 499 ) {
 
                                     console.log("300 LOCKED IN...")
 
@@ -936,6 +1025,11 @@
 
                                             screenWidthSelector = "250px"
                                             screenWidthResizerSelector = "176px"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS SIDE
+                                        // //////////////////////////////////
+
+                                            menuItemsSideWidth = 65
 
 
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
@@ -958,7 +1052,7 @@
                             // FOR SCREEN SIZE 800 --------------------------
                             // //////////////////////////////////////////////
 
-                                else if ( windowWidth > 500 && windowWidth < 801 ) {
+                                else if ( windowWidth > 500 && windowWidth < 799 ) {
 
                                     console.log("500 LOCKED IN...")
 
@@ -967,6 +1061,11 @@
 
                                             screenWidthSelector = "300px"
                                             screenWidthResizerSelector = "276px"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS SIDE
+                                        // //////////////////////////////////
+
+                                            menuItemsSideWidth = 75
 
 
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
@@ -989,7 +1088,7 @@
                             // FOR SCREEN SIZE 1000 -------------------------
                             // //////////////////////////////////////////////
 
-                                else if ( windowWidth > 800 && windowWidth < 1001 ) {
+                                else if ( windowWidth > 800 && windowWidth < 999 ) {
 
                                     console.log("800 LOCKED IN...")
 
@@ -998,6 +1097,11 @@
 
                                             screenWidthSelector = "600px"
                                             screenWidthResizerSelector = "576px"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS SIDE
+                                        // //////////////////////////////////
+
+                                            menuItemsSideWidth = 91.6
 
 
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
@@ -1020,7 +1124,7 @@
                             // FOR SCREEN SIZE 1200 -------------------------
                             // //////////////////////////////////////////////
 
-                                else if ( windowWidth > 1000 && windowWidth < 1201 ) {
+                                else if ( windowWidth > 1000 && windowWidth < 1199 ) {
 
                                     console.log("1000 LOCKED IN...")
 
@@ -1029,6 +1133,11 @@
 
                                             screenWidthSelector = "800px"
                                             screenWidthResizerSelector = "776px"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS SIDE
+                                        // //////////////////////////////////
+
+                                            menuItemsSideWidth = 93.7
 
 
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
@@ -1051,7 +1160,7 @@
                             // FOR SCREEN SIZE 1200 + -----------------------
                             // //////////////////////////////////////////////
 
-                                else if ( windowWidth > 1200 ) {
+                                else if ( windowWidth == 1200 ) {
 
                                     console.log("BEYOND LOCKED IN...")
 
@@ -1060,6 +1169,11 @@
 
                                             screenWidthSelector = "800px"
                                             screenWidthResizerSelector = "776px"
+
+                                        // UPDATE MOBILE AND DESKTOP MENU ITEMS SIDE
+                                        // //////////////////////////////////
+
+                                            menuItemsSideWidth = 93.7
 
 
                                         // UPDATE LOGO TITLE AND MENU ITEMS SIZING
@@ -1119,10 +1233,10 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateOneMainContainer = document.createElement("div")
-                                navBarPlateOneMainContainer.className = `navBarOneMainContainer`
+                                navBarPlateOneMainContainer.className = `navBar${cushionNumber}MainContainer`
 
                                     var navBarPlateOneMainBlocker = document.createElement("div")
-                                    navBarPlateOneMainBlocker.className = `navBarOneMainBackgroundBlocker`
+                                    navBarPlateOneMainBlocker.className = `navBar${cushionNumber}MainBackgroundBlocker`
 
 
 
@@ -1132,10 +1246,10 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateOneMainElement = document.createElement("div")
-                                navBarPlateOneMainElement.className = `navBarOnePlateElementContainer`
+                                navBarPlateOneMainElement.className = `navBar${cushionNumber}PlateElementContainer`
 
                                     var navBarPlateOneElementResizer = document.createElement("div")
-                                    navBarPlateOneElementResizer.className = `navBarOnePlateElementResizer`
+                                    navBarPlateOneElementResizer.className = `navBar${cushionNumber}PlateElementResizer`
 
 
 
@@ -1145,13 +1259,13 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateOneLogoTitleSide = document.createElement("div")
-                                navBarPlateOneLogoTitleSide.className = `navBarOnePlateElementLogoTitleSideContainer`
+                                navBarPlateOneLogoTitleSide.className = `navBar${cushionNumber}PlateElementLogoTitleSideContainer`
 
                                 var navBarPlateOneDesktopMenuItemsSide = document.createElement("div")
-                                navBarPlateOneDesktopMenuItemsSide.className = `navBarOnePlateElementDesktopMenuItemsSideContainer`
+                                navBarPlateOneDesktopMenuItemsSide.className = `navBar${cushionNumber}PlateElementDesktopMenuItemsSideContainer`
 
                                 var navBarPlateOneMobileMenuItemsSide = document.createElement("div")
-                                navBarPlateOneMobileMenuItemsSide.className = `navBarOnePlateElementMobileMenuItemsSideContainer`
+                                navBarPlateOneMobileMenuItemsSide.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideContainer`
 
 
 
@@ -1161,18 +1275,18 @@
                             // //////////////////////////////////////////
 
                                 var createNavBarLogoContainer = document.createElement("div")
-                                createNavBarLogoContainer.className = `navBarOneLogoContainer`
+                                createNavBarLogoContainer.className = `navBar${cushionNumber}LogoContainer`
 
                                     var createNavBarLogoActual = document.createElement("div")
-                                    createNavBarLogoActual.className = `navBarOneLogoActual`
+                                    createNavBarLogoActual.className = `navBar${cushionNumber}LogoActual`
 
 
                                 
                                 var createNavBarTitleContainer = document.createElement("div")
-                                createNavBarTitleContainer.className = `navBarOneTitleContainer`
+                                createNavBarTitleContainer.className = `navBar${cushionNumber}TitleContainer`
 
                                     var createNavBarTitleActual = document.createElement("div")
-                                    createNavBarTitleActual.className = `navBarOneTitleActual`
+                                    createNavBarTitleActual.className = `navBar${cushionNumber}TitleActual`
 
 
 
@@ -1183,34 +1297,34 @@
                             // //////////////////////////////////////////
 
                                 var createNavBarMenuItemsMobileButtonContainer = document.createElement("div")
-                                createNavBarMenuItemsMobileButtonContainer.className = `navBarOneMenuItemsButtonContainer`
+                                createNavBarMenuItemsMobileButtonContainer.className = `navBar${cushionNumber}MenuItemsButtonContainer`
 
                                     var createNavBarMenuItemsMobileButtonIconMover = document.createElement("div")
-                                    createNavBarMenuItemsMobileButtonIconMover.className = `navBarOneMenuItemsButtonIconMover`
+                                    createNavBarMenuItemsMobileButtonIconMover.className = `navBar${cushionNumber}MenuItemsButtonIconMover`
 
 
 
                                         var createNavBarMenuItemsmobileButtonIconLineOne = document.createElement("div")
-                                        createNavBarMenuItemsmobileButtonIconLineOne.className = `navBarOneMenuItemsButtonIconLineOne`
+                                        createNavBarMenuItemsmobileButtonIconLineOne.className = `navBar${cushionNumber}MenuItemsButtonIconLineOne`
 
                                         var createNavBarMenuItemsmobileButtonIconLineTwo = document.createElement("div")
-                                        createNavBarMenuItemsmobileButtonIconLineTwo.className = `navBarOneMenuItemsButtonIconLineTwo`
+                                        createNavBarMenuItemsmobileButtonIconLineTwo.className = `navBar${cushionNumber}MenuItemsButtonIconLineTwo`
 
                                         var createNavBarMenuItemsmobileButtonIconLineThree = document.createElement("div")
-                                        createNavBarMenuItemsmobileButtonIconLineThree.className = `navBarOneMenuItemsButtonIconLineThree`
+                                        createNavBarMenuItemsmobileButtonIconLineThree.className = `navBar${cushionNumber}MenuItemsButtonIconLineThree`
 
 
                                             // CREATE MOBILE SIDE MENU AND ITEMS
                                             // //////////////////////////
 
                                                 var createNavBarMenuMobileSideMenuContainer = document.createElement("div")
-                                                createNavBarMenuMobileSideMenuContainer.className = `navBarOneMobileSideMenuContainer`
+                                                createNavBarMenuMobileSideMenuContainer.className = `navBar${cushionNumber}MobileSideMenuContainer`
 
                                                     var createNavBarMenuMobileSideMenuResizer = document.createElement("div")
-                                                    createNavBarMenuMobileSideMenuResizer.className = `navBarOneMobileSideMenuContentResizer`
+                                                    createNavBarMenuMobileSideMenuResizer.className = `navBar${cushionNumber}MobileSideMenuContentResizer`
 
                                                         var createNavBarMenuMobileSideMenuHeaderContainer = document.createElement("div")
-                                                        createNavBarMenuMobileSideMenuHeaderContainer.className = `navBarOneMobileSideMenuHeaderContainer`
+                                                        createNavBarMenuMobileSideMenuHeaderContainer.className = `navBar${cushionNumber}MobileSideMenuHeaderContainer`
 
 
 
@@ -1220,10 +1334,10 @@
                                                             // //////////
 
                                                                 var createNavBarMenuMobileSideMenuHeadlineContainer = document.createElement("div")
-                                                                createNavBarMenuMobileSideMenuHeadlineContainer.className = `navBarOneMobileSideMenuHeadlineContainer`
+                                                                createNavBarMenuMobileSideMenuHeadlineContainer.className = `navBar${cushionNumber}MobileSideMenuHeadlineContainer`
 
                                                                     var createNavBarMenuMobileSideMenuHeadlineTextActual = document.createElement("div")
-                                                                    createNavBarMenuMobileSideMenuHeadlineTextActual.className = `navBarOneMobileSideMenuHeadlineText`
+                                                                    createNavBarMenuMobileSideMenuHeadlineTextActual.className = `navBar${cushionNumber}MobileSideMenuHeadlineText`
 
 
 
@@ -1234,23 +1348,23 @@
 
 
                                                                 var createNavBarMenuMobileSideMenuCloseButtonContainer = document.createElement("div")
-                                                                createNavBarMenuMobileSideMenuCloseButtonContainer.className = `navBarOneMobileSideMenuButtonContainer`
+                                                                createNavBarMenuMobileSideMenuCloseButtonContainer.className = `navBar${cushionNumber}MobileSideMenuButtonContainer`
 
                                                                     var createNavBarMenuMobileSideMenuCloseButtonItem = document.createElement("div")
-                                                                    createNavBarMenuMobileSideMenuCloseButtonItem.className = `navBarOneMobileSideMenuButtonItem`
+                                                                    createNavBarMenuMobileSideMenuCloseButtonItem.className = `navBar${cushionNumber}MobileSideMenuButtonItem`
 
                                                                         var createNavBarMenuMobileSideMenuCloseButtonIconMover = document.createElement("div")
-                                                                        createNavBarMenuMobileSideMenuCloseButtonIconMover.className = `navBarOneMobileSideMenuButtonIconMover`
+                                                                        createNavBarMenuMobileSideMenuCloseButtonIconMover.className = `navBar${cushionNumber}MobileSideMenuButtonIconMover`
 
 
                                                                             var createNavBarMenuMobileSideMenuCloseButtonIconLineOne = document.createElement("div")
-                                                                            createNavBarMenuMobileSideMenuCloseButtonIconLineOne.className = `navBarOneMobileSideMenuButtonIconLineOne`
+                                                                            createNavBarMenuMobileSideMenuCloseButtonIconLineOne.className = `navBar${cushionNumber}MobileSideMenuButtonIconLineOne`
 
                                                                             var createNavBarMenuMobileSideMenuCloseButtonIconLineTwo = document.createElement("div")
-                                                                            createNavBarMenuMobileSideMenuCloseButtonIconLineTwo.className = `navBarOneMobileSideMenuButtonIconLineTwo`
+                                                                            createNavBarMenuMobileSideMenuCloseButtonIconLineTwo.className = `navBar${cushionNumber}MobileSideMenuButtonIconLineTwo`
 
                                                                             var createNavBarMenuMobileSideMenuCloseButtonIconLineThree = document.createElement("div")
-                                                                            createNavBarMenuMobileSideMenuCloseButtonIconLineThree.className = `navBarOneMobileSideMenuButtonIconLineThree`
+                                                                            createNavBarMenuMobileSideMenuCloseButtonIconLineThree.className = `navBar${cushionNumber}MobileSideMenuButtonIconLineThree`
 
 
 
@@ -1260,10 +1374,10 @@
                                                             // //////////
 
                                                                 var createNavBarMenuMobileSideMenuItemsContainer = document.createElement("div")
-                                                                createNavBarMenuMobileSideMenuItemsContainer.className = `navBarOneMobileSideMenuItemsContainer`
+                                                                createNavBarMenuMobileSideMenuItemsContainer.className = `navBar${cushionNumber}MobileSideMenuItemsContainer`
 
                                                                     var createNavBarMenuMobileSideMenuItemsScrollControl = document.createElement("div")
-                                                                    createNavBarMenuMobileSideMenuItemsScrollControl.className = `navBarOneMobileSideMenuItemsScrollContainer`
+                                                                    createNavBarMenuMobileSideMenuItemsScrollControl.className = `navBar${cushionNumber}MobileSideMenuItemsScrollContainer`
 
 
 
@@ -2033,10 +2147,10 @@
                                                             // //////////////////////
 
                                                                 var createNavBarOneMenuItem = document.createElement("div")
-                                                                createNavBarOneMenuItem.className = `navBarOneMenuItem${classNumberMapper[itemsGenerateCounter]}Container`
+                                                                createNavBarOneMenuItem.className = `navBar${cushionNumber}MenuItem${classNumberMapper[itemsGenerateCounter]}Container`
 
                                                                     var createNavBarOneMenuItemResizer = document.createElement("div")
-                                                                    createNavBarOneMenuItemResizer.className = `navBarOneMenuItem${classNumberMapper[itemsGenerateCounter]}Resizer`
+                                                                    createNavBarOneMenuItemResizer.className = `navBar${cushionNumber}MenuItem${classNumberMapper[itemsGenerateCounter]}Resizer`
 
 
 
@@ -2095,7 +2209,7 @@
                                                             // /////////////////////////////////
 
 
-                                                                storeNavBarItemsClassNames.push(`navBarOneMenuItem${classNumberMapper[itemsGenerateCounter]}Container`)
+                                                                storeNavBarItemsClassNames.push(`navBar${cushionNumber}MenuItem${classNumberMapper[itemsGenerateCounter]}Container`)
 
 
 
@@ -2344,7 +2458,7 @@
                                             // //////////////////////////
 
                                                 var createNavBarMenuMobileSideMenuItemBlockContainer = document.createElement("div")
-                                                createNavBarMenuMobileSideMenuItemBlockContainer.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockContainer`
+                                                createNavBarMenuMobileSideMenuItemBlockContainer.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockContainer`
 
 
 
@@ -2352,18 +2466,18 @@
 
 
                                                     var createNavBarMenuMobileSideMenuItemBlockTextSide = document.createElement("div")
-                                                    createNavBarMenuMobileSideMenuItemBlockTextSide.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextSideContainer`
+                                                    createNavBarMenuMobileSideMenuItemBlockTextSide.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextSideContainer`
 
                                                         var createNavBarMenuMobileSideMenuItemBlockTextActual = document.createElement("div")
-                                                        createNavBarMenuMobileSideMenuItemBlockTextActual.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextActual`
+                                                        createNavBarMenuMobileSideMenuItemBlockTextActual.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextActual`
 
 
 
                                                             var createNavBarMenuMobileSideMenuItemBlockTextUnderlinerContainer = document.createElement("div")
-                                                            createNavBarMenuMobileSideMenuItemBlockTextUnderlinerContainer.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextUnderlinerContainer`
+                                                            createNavBarMenuMobileSideMenuItemBlockTextUnderlinerContainer.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextUnderlinerContainer`
 
                                                                 var createNavBarMenuMobileSideMenuItemBlockTextUnderlinerActual = document.createElement("div")
-                                                                createNavBarMenuMobileSideMenuItemBlockTextUnderlinerActual.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextUnderlinerActual`
+                                                                createNavBarMenuMobileSideMenuItemBlockTextUnderlinerActual.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockTextUnderlinerActual`
 
 
 
@@ -2373,22 +2487,22 @@
 
 
                                                     var createNavBarMenuMobileSideMenuItemBlockIconSide = document.createElement("div")
-                                                    createNavBarMenuMobileSideMenuItemBlockIconSide.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconSideContainer`
+                                                    createNavBarMenuMobileSideMenuItemBlockIconSide.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconSideContainer`
 
                                                         var createNavBarMenuMobileSideMenuItemBlockIconCircle = document.createElement("div")
-                                                        createNavBarMenuMobileSideMenuItemBlockIconCircle.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconCircle`
+                                                        createNavBarMenuMobileSideMenuItemBlockIconCircle.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconCircle`
 
                                                             var createNavBarMenuMobileSideMenuItemBlockIconMover = document.createElement("div")
-                                                            createNavBarMenuMobileSideMenuItemBlockIconMover.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconMover`
+                                                            createNavBarMenuMobileSideMenuItemBlockIconMover.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconMover`
 
                                                                 var createNavBarMenuMobileSideMenuItemBlockIconLineOne = document.createElement("div")
-                                                                createNavBarMenuMobileSideMenuItemBlockIconLineOne.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconLineOne`
+                                                                createNavBarMenuMobileSideMenuItemBlockIconLineOne.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconLineOne`
 
                                                                 var createNavBarMenuMobileSideMenuItemBlockIconLineTwo = document.createElement("div")
-                                                                createNavBarMenuMobileSideMenuItemBlockIconLineTwo.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconLineTwo`
+                                                                createNavBarMenuMobileSideMenuItemBlockIconLineTwo.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconLineTwo`
 
                                                                 var createNavBarMenuMobileSideMenuItemBlockIconLineThree = document.createElement("div")
-                                                                createNavBarMenuMobileSideMenuItemBlockIconLineThree.className = `navBarOneMobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconLineThree`
+                                                                createNavBarMenuMobileSideMenuItemBlockIconLineThree.className = `navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[menuItemsPopulateCounter]}BlockIconLineThree`
 
 
 
@@ -2711,7 +2825,7 @@
                                             // ADD EVENT LISTENERS FOR ITEMS
                                             // //////////////////////////
 
-                                               var getListedItems = document.querySelector(`.navBarOneMobileSideMenuItemsScrollContainer`) 
+                                               var getListedItems = document.querySelector(`.navBar${cushionNumber}MobileSideMenuItemsScrollContainer`) 
 
                                                var getListeItemsChildren = getListedItems.children
 
@@ -2746,7 +2860,7 @@
 
                                                                 else {
 
-                                                                    var getSideMenuItemsTextObject = document.querySelector(`.navBarOneMobileSideMenuItem${classNumberMapper[sideMenuItemCounter]}BlockTextActual`)
+                                                                    var getSideMenuItemsTextObject = document.querySelector(`.navBar${cushionNumber}MobileSideMenuItem${classNumberMapper[sideMenuItemCounter]}BlockTextActual`)
 
                                                                     sideMenuItemsClassNamesArray.push(getListeItemsChildren[sideMenuItemCounter].className)
                                                                     sideMenuItemsTextClassNamesArray.push(getSideMenuItemsTextObject)
@@ -2857,14 +2971,14 @@
                                         // ADD EVENT LISTENERS FOR CLOSE MENU BUTTON
                                         // //////////////////////////
 
-                                            var getSideMenuSlider = document.querySelector(`.navBarOneMobileSideMenuContainer`)
+                                            var getSideMenuSlider = document.querySelector(`.navBar${cushionNumber}MobileSideMenuContainer`)
 
-                                            var getSideMenuCloseButtonALoaded = document.querySelector(`.navBarOneMobileSideMenuButtonContainer`)
+                                            var getSideMenuCloseButtonALoaded = document.querySelector(`.navBar${cushionNumber}MobileSideMenuButtonContainer`)
 
 
-                                            var getSideMenuCloseButtonIconLineOne = document.querySelector(`.navBarOneMobileSideMenuButtonIconLineOne`)
-                                            var getSideMenuCloseButtonIconLineTwo = document.querySelector(`.navBarOneMobileSideMenuButtonIconLineTwo`)
-                                            var getSideMenuCloseButtonIconLineThree = document.querySelector(`.navBarOneMobileSideMenuButtonIconLineThree`)
+                                            var getSideMenuCloseButtonIconLineOne = document.querySelector(`.navBar${cushionNumber}MobileSideMenuButtonIconLineOne`)
+                                            var getSideMenuCloseButtonIconLineTwo = document.querySelector(`.navBar${cushionNumber}MobileSideMenuButtonIconLineTwo`)
+                                            var getSideMenuCloseButtonIconLineThree = document.querySelector(`.navBar${cushionNumber}MobileSideMenuButtonIconLineThree`)
 
 
                                             getSideMenuCloseButtonALoaded.addEventListener("click", function () {
@@ -2967,14 +3081,14 @@
                                         // FOR DESKTOP NAV BAR ITEMS ----
                                         // //////////////////////////////
 
-                                            var getSideMenu = document.querySelector(".navBarOnePlateElementMobileMenuItemsSideContainer")
-                                            var getMobileSideMenuContainer = document.querySelector(".navBarOneMobileSideMenuContainer")
+                                            var getSideMenu = document.querySelector(`.navBar${cushionNumber}PlateElementMobileMenuItemsSideContainer`)
+                                            var getMobileSideMenuContainer = document.querySelector(`.navBar${cushionNumber}MobileSideMenuContainer`)
 
                                             getSideMenu.addEventListener("click", function () {
 
-                                                var getSideMenuCloseButtonIconLineOne = document.querySelector(".navBarOneMobileSideMenuButtonIconLineOne")
-                                                var getSideMenuCloseButtonIconLineTwo = document.querySelector(".navBarOneMobileSideMenuButtonIconLineTwo")
-                                                var getSideMenuCloseButtonIconLineThree = document.querySelector(".navBarOneMobileSideMenuButtonIconLineThree")
+                                                var getSideMenuCloseButtonIconLineOne = document.querySelector(`.navBar${cushionNumber}MobileSideMenuButtonIconLineOne`)
+                                                var getSideMenuCloseButtonIconLineTwo = document.querySelector(`.navBar${cushionNumber}MobileSideMenuButtonIconLineTwo`)
+                                                var getSideMenuCloseButtonIconLineThree = document.querySelector(`.navBar${cushionNumber}MobileSideMenuButtonIconLineThree`)
 
                                                 getMobileSideMenuContainer.style = `
                                                 
@@ -3085,10 +3199,10 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateTwoMainContainer = document.createElement("div")
-                                navBarPlateTwoMainContainer.className = `navBarTwoMainContainer`
+                                navBarPlateTwoMainContainer.className = `navBar${cushionNumber}MainContainer`
 
                                     var navBarPlateTwoMainBlocker = document.createElement("div")
-                                    navBarPlateTwoMainBlocker.className = `navBarTwoMainBackgroundBlocker`
+                                    navBarPlateTwoMainBlocker.className = `navBar${cushionNumber}MainBackgroundBlocker`
 
 
 
@@ -3098,10 +3212,10 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateTwoMainElement = document.createElement("div")
-                                navBarPlateTwoMainElement.className = `navBarTwoPlateElementContainer`
+                                navBarPlateTwoMainElement.className = `navBar${cushionNumber}PlateElementContainer`
 
                                     var navBarPlateTwoElementResizer = document.createElement("div")
-                                    navBarPlateTwoElementResizer.className = `navBarTwoPlateElementResizer`
+                                    navBarPlateTwoElementResizer.className = `navBar${cushionNumber}PlateElementResizer`
 
 
 
@@ -3111,13 +3225,13 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateTwoLogoSide = document.createElement("div")
-                                navBarPlateTwoLogoSide.className = `navBarTwoPlateElementLogoTitleSideContainer`
+                                navBarPlateTwoLogoSide.className = `navBar${cushionNumber}PlateElementLogoTitleSideContainer`
 
                                     var createNavBarPlateTwoLogoContainer = document.createElement("div")
-                                    createNavBarPlateTwoLogoContainer.className = `navBarTwoPlateLogoContainer`
+                                    createNavBarPlateTwoLogoContainer.className = `navBar${cushionNumber}PlateLogoContainer`
 
                                         var createNavBarPlateTwoLogoActual = document.createElement("div")
-                                        createNavBarPlateTwoLogoActual.className = `navBarTwoPlateLogoActual`
+                                        createNavBarPlateTwoLogoActual.className = `navBar${cushionNumber}PlateLogoActual`
 
 
 
@@ -3133,13 +3247,13 @@
                                     // ///////////////////////////////////////
 
                                         var navBarPlateTwoDesktopMenuItemsSide = document.createElement("div")
-                                        navBarPlateTwoDesktopMenuItemsSide.className = `navBarTwoPlateElementDesktopMenuItemsSideContainer`
+                                        navBarPlateTwoDesktopMenuItemsSide.className = `navBar${cushionNumber}PlateElementDesktopMenuItemsSideContainer`
 
                                     // FOR MOBILE MENU LIST ITEMS ............
                                     // ///////////////////////////////////////
 
                                         var navBarPlateTwoMobileMenuItemsSide = document.createElement("div")
-                                        navBarPlateTwoMobileMenuItemsSide.className = `navBarTwoPlateElementMobileMenuItemsSideContainer`
+                                        navBarPlateTwoMobileMenuItemsSide.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideContainer`
 
 
 
@@ -3152,21 +3266,21 @@
                                             // ///////////////////////////////
 
                                                 var createNavBarTwoMenuItemsMobileButtonContainer = document.createElement("div")
-                                                createNavBarTwoMenuItemsMobileButtonContainer.className = `navBarTwoMenuItemsButtonContainer`
+                                                createNavBarTwoMenuItemsMobileButtonContainer.className = `navBar${cushionNumber}MenuItemsButtonContainer`
                 
                                                     var createNavBarTwoMenuItemsMobileButtonIconMover = document.createElement("div")
-                                                    createNavBarTwoMenuItemsMobileButtonIconMover.className = `navBarTwoMenuItemsButtonIconMover`
+                                                    createNavBarTwoMenuItemsMobileButtonIconMover.className = `navBar${cushionNumber}MenuItemsButtonIconMover`
                 
                 
                 
                                                         var createNavBarTwoMenuItemsmobileButtonIconLineOne = document.createElement("div")
-                                                        createNavBarTwoMenuItemsmobileButtonIconLineOne.className = `navBarTwoMenuItemsButtonIconLineOne`
+                                                        createNavBarTwoMenuItemsmobileButtonIconLineOne.className = `navBar${cushionNumber}MenuItemsButtonIconLineOne`
                 
                                                         var createNavBarTwoMenuItemsmobileButtonIconLineTwo = document.createElement("div")
-                                                        createNavBarTwoMenuItemsmobileButtonIconLineTwo.className = `navBarTwoMenuItemsButtonIconLineTwo`
+                                                        createNavBarTwoMenuItemsmobileButtonIconLineTwo.className = `navBar${cushionNumber}MenuItemsButtonIconLineTwo`
                 
                                                         var createNavBarTwoMenuItemsmobileButtonIconLineThree = document.createElement("div")
-                                                        createNavBarTwoMenuItemsmobileButtonIconLineThree.className = `navBarTwoMenuItemsButtonIconLineThree`
+                                                        createNavBarTwoMenuItemsmobileButtonIconLineThree.className = `navBar${cushionNumber}MenuItemsButtonIconLineThree`
 
 
 
@@ -3179,62 +3293,62 @@
                                             // ///////////////////////////////
 
                                                 var createNavBarTwoMenuItemsMobileSideMenu = document.createElement("div")
-                                                createNavBarTwoMenuItemsMobileSideMenu.className = `navBarTwoPlateElementMobileMenuItemsSideContentContainer`
+                                                createNavBarTwoMenuItemsMobileSideMenu.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideContentContainer`
 
                                                     var createNavBarTwoMenuItemsMobileSideMenuResizer = document.createElement("div")
-                                                    createNavBarTwoMenuItemsMobileSideMenuResizer.className = `navBarTwoPlateElementMobileMenuItemsSideResizer`
+                                                    createNavBarTwoMenuItemsMobileSideMenuResizer.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideResizer`
 
 
                                                         // HEADER AND SIDE MENU CLOSE BUTTON CONTAINER
                                                         // ///////////////////
 
                                                             var createNavBarTwoMenuItemsMobileSideMenuHeadlineCloseMenuButtonContainer = document.createElement("div")
-                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineCloseMenuButtonContainer.className = `navBarTwoPlateElementMobileMenuItemsSideHeadlineCloseMenuButtonContainer`
+                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineCloseMenuButtonContainer.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideHeadlineCloseMenuButtonContainer`
 
 
                                                                 // HEADLINER TEXT CONTAINER
                                                                 // ///////////
 
                                                                     var createNavBarTwoMenuItemsMobileSideMenuHeadlineSideContainer = document.createElement("div")
-                                                                    createNavBarTwoMenuItemsMobileSideMenuHeadlineSideContainer.className = `navBarTwoPlateElementMobileMenuItemsSideHeadlineSideContainer`
+                                                                    createNavBarTwoMenuItemsMobileSideMenuHeadlineSideContainer.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideHeadlineSideContainer`
 
                                                                         var createNavBarTwoMenuItemsMobileSideMenuHeadlineTextContainer = document.createElement("div")
-                                                                        createNavBarTwoMenuItemsMobileSideMenuHeadlineTextContainer.className = `navBarTwoPlateElementMobileMenuItemsSideHeadlineTextContainer`
+                                                                        createNavBarTwoMenuItemsMobileSideMenuHeadlineTextContainer.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideHeadlineTextContainer`
 
                                                                             var createNavBarTwoMenuItemsMobileSideMenuHeadlineTextActual = document.createElement("div")
-                                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineTextActual.className = `navBarTwoPlateElementMobileMenuItemsSideHeadlineTextActual`
+                                                                            createNavBarTwoMenuItemsMobileSideMenuHeadlineTextActual.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideHeadlineTextActual`
 
 
                                                                 // MENU BUTTON CLOSE MENU CONTAINER
                                                                 // ///////////
 
                                                                     var createNavBarTwoMenuItemsMobileSideMenuCloseButtonSideContainer = document.createElement("div")
-                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonSideContainer.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonSideContainer`
+                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonSideContainer.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonSideContainer`
 
                                                                         var createNavBarTwoMenuItemsMobileSideMenuCloseButtonContainer = document.createElement("div")
-                                                                        createNavBarTwoMenuItemsMobileSideMenuCloseButtonContainer.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonContainer`
+                                                                        createNavBarTwoMenuItemsMobileSideMenuCloseButtonContainer.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonContainer`
 
                                                                             // MENU BUTTON CLOSE MENU BUTTON ICON 
                                                                             // 
 
                                                                                 var createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover = document.createElement("div")
-                                                                                createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconMover`
+                                                                                createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconMover.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonIconMover`
 
                                                                                     var createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineOne = document.createElement("div")
-                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineOne.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineOne`
+                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineOne.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonIconLineOne`
 
                                                                                     var createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineTwo = document.createElement("div")
-                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineTwo.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineTwo`
+                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineTwo.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonIconLineTwo`
 
                                                                                     var createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineThree = document.createElement("div")
-                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineThree.className = `navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineThree`
+                                                                                    createNavBarTwoMenuItemsMobileSideMenuCloseButtonIconLineThree.className = `navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonIconLineThree`
 
 
                                                                 // MENU ITEMS LIST CONTAINER
                                                                 // ///////////
 
                                                                     var createNavBarTwoMenuItemsSideMenuListItemsContainer = document.createElement("div")
-                                                                    createNavBarTwoMenuItemsSideMenuListItemsContainer.className = `navBarTwoPlateElementMobileMenuSideItemsListContainer`
+                                                                    createNavBarTwoMenuItemsSideMenuListItemsContainer.className = `navBar${cushionNumber}PlateElementMobileMenuSideItemsListContainer`
 
 
 
@@ -4015,7 +4129,7 @@
                                         // /////////////
 
 
-                                            var getListItemsContainerMain = document.querySelector(`.navBarTwoPlateElementMobileMenuSideItemsListContainer`)
+                                            var getListItemsContainerMain = document.querySelector(`.navBar${cushionNumber}PlateElementMobileMenuSideItemsListContainer`)
 
                                                 // IF CHILDREN LENGTH MORE THAN 0 RESET AND RESTART
                                                 // /////
@@ -4072,13 +4186,13 @@
                                                                             // //////////////
 
                                                                                 var createNavBarTwoSideMenuItemContainer = document.createElement("div")
-                                                                                createNavBarTwoSideMenuItemContainer.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}`
+                                                                                createNavBarTwoSideMenuItemContainer.className = `navBar${cushionNumber}MobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}`
 
                                                                                     var createNavBarTwoSideMenuItemTextContainer = document.createElement("div")
-                                                                                    createNavBarTwoSideMenuItemTextContainer.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}TextContainer`
+                                                                                    createNavBarTwoSideMenuItemTextContainer.className = `navBar${cushionNumber}MobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}TextContainer`
 
                                                                                         var createNavBarTwoSideMenuItemTextActual = document.createElement("div")
-                                                                                        createNavBarTwoSideMenuItemTextActual.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}TextActual`
+                                                                                        createNavBarTwoSideMenuItemTextActual.className = `navBar${cushionNumber}MobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}TextActual`
 
 
 
@@ -4086,10 +4200,10 @@
 
 
                                                                                     var createNavBarTwoSideMenuItemUnderlinerContainer = document.createElement("div")
-                                                                                    createNavBarTwoSideMenuItemUnderlinerContainer.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}UnderlinerContainer`
+                                                                                    createNavBarTwoSideMenuItemUnderlinerContainer.className = `navBar${cushionNumber}MobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}UnderlinerContainer`
 
                                                                                         var createNavBarTwoSideMenuItemUnderlinerActual = document.createElement("div")
-                                                                                        createNavBarTwoSideMenuItemUnderlinerActual.className = `navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}UnderlinerActual`
+                                                                                        createNavBarTwoSideMenuItemUnderlinerActual.className = `navBar${cushionNumber}MobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}UnderlinerActual`
 
 
 
@@ -4202,7 +4316,7 @@
                                                                             // APPEND ITEMS TO SIDE MENU LIST CONTAINER
                                                                             // //////////////
 
-                                                                                var getSideMenuItemsListContainer = document.querySelector(`.navBarTwoPlateElementMobileMenuSideItemsListContainer`)
+                                                                                var getSideMenuItemsListContainer = document.querySelector(`.navBar${cushionNumber}PlateElementMobileMenuSideItemsListContainer`)
 
 
 
@@ -4232,7 +4346,7 @@
                                                                             // //////////////
 
                                                                             
-                                                                                var getSideMenuItemsListTextBoxEntire = document.querySelector(`.navBarTwoMobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}TextActual`)
+                                                                                var getSideMenuItemsListTextBoxEntire = document.querySelector(`.navBar${cushionNumber}MobileSideMenuListItem${classNumberMapper[mobileItemsPopulateCounter]}TextActual`)
 
 
 
@@ -4372,14 +4486,14 @@
                             // ///////////////////////////////////////
 
 
-                                var getNavBarMainOpenMenuButton = document.querySelector(`.navBarTwoMenuItemsButtonContainer`)
+                                var getNavBarMainOpenMenuButton = document.querySelector(`.navBar${cushionNumber}MenuItemsButtonContainer`)
 
-                                var getsideMenuCloseButton = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonContainer`)
-                                var getsideMenuCloseButtonIconLineOne = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineOne`)
-                                var getsideMenuCloseButtonIconLineTwo = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineTwo`)
-                                var getsideMenuCloseButtonIconLineThree = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideCloseMenuButtonIconLineThree`)
+                                var getsideMenuCloseButton = document.querySelector(`.navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonContainer`)
+                                var getsideMenuCloseButtonIconLineOne = document.querySelector(`.navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonIconLineOne`)
+                                var getsideMenuCloseButtonIconLineTwo = document.querySelector(`.navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonIconLineTwo`)
+                                var getsideMenuCloseButtonIconLineThree = document.querySelector(`.navBar${cushionNumber}PlateElementMobileMenuItemsSideCloseMenuButtonIconLineThree`)
 
-                                var getSideMobileMenuContainer = document.querySelector(`.navBarTwoPlateElementMobileMenuItemsSideContentContainer`)
+                                var getSideMobileMenuContainer = document.querySelector(`.navBar${cushionNumber}PlateElementMobileMenuItemsSideContentContainer`)
 
 
 
@@ -4697,7 +4811,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateThreeMainContainer = document.createElement("div")
-                                navBarPlateThreeMainContainer.className = `navBarThreeMainContainer`
+                                navBarPlateThreeMainContainer.className = `navBar${cushionNumber}MainContainer`
 
 
 
@@ -4707,7 +4821,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateThreeMainElement = document.createElement("div")
-                                navBarPlateThreeMainElement.className = `navBarThreePlateElementContainer`
+                                navBarPlateThreeMainElement.className = `navBar${cushionNumber}PlateElementContainer`
 
 
 
@@ -4717,7 +4831,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateThreeMainElementResizer = document.createElement("div")
-                                navBarPlateThreeMainElementResizer.className = `navBarThreePlateElementContainerResizer`
+                                navBarPlateThreeMainElementResizer.className = `navBar${cushionNumber}PlateElementContainerResizer`
 
 
 
@@ -4727,13 +4841,13 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateThreeLogoSide = document.createElement("div")
-                                navBarPlateThreeLogoSide.className = `navBarThreePlateLogoSideContainer`
+                                navBarPlateThreeLogoSide.className = `navBar${cushionNumber}PlateLogoSideContainer`
 
                                     var createNavBarPlateThreeLogoContainer = document.createElement("div")
-                                    createNavBarPlateThreeLogoContainer.className = `navBarThreePlateLogoContainer`
+                                    createNavBarPlateThreeLogoContainer.className = `navBar${cushionNumber}PlateLogoContainer`
 
                                         var createNavBarPlateThreeLogoActual = document.createElement("div")
-                                        createNavBarPlateThreeLogoActual.className = `navBarThreePlateLogoActual`
+                                        createNavBarPlateThreeLogoActual.className = `navBar${cushionNumber}PlateLogoActual`
 
 
 
@@ -4743,13 +4857,13 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateThreeMenuSide = document.createElement("div")
-                                navBarPlateThreeMenuSide.className = `navBarThreePlateMenuSideContainer`
+                                navBarPlateThreeMenuSide.className = `navBar${cushionNumber}PlateMenuSideContainer`
 
                                     var navBarPlateThreeMenuButtonContainer = document.createElement("div")
-                                    navBarPlateThreeMenuButtonContainer.className = `navBarThreePlateMenuButtonContainer`
+                                    navBarPlateThreeMenuButtonContainer.className = `navBar${cushionNumber}PlateMenuButtonContainer`
 
                                         var navBarPlateThreeMenuButtonActual = document.createElement("div")
-                                        navBarPlateThreeMenuButtonActual.className = `navBarThreePlateMenuButtonActual`
+                                        navBarPlateThreeMenuButtonActual.className = `navBar${cushionNumber}PlateMenuButtonActual`
 
 
 
@@ -4758,13 +4872,13 @@
                                             // //////////////////////////////
 
                                                 var navBarPlateThreeMenuButtonClickerContainer = document.createElement("div")
-                                                navBarPlateThreeMenuButtonClickerContainer.className = `navBarThreePlateMenuButtonClickersContainer`
+                                                navBarPlateThreeMenuButtonClickerContainer.className = `navBar${cushionNumber}PlateMenuButtonClickersContainer`
 
                                                     var navBarPlateThreeMenuButtonClickerOn = document.createElement("div")
-                                                    navBarPlateThreeMenuButtonClickerOn.className = `navBarThreePlateMenuButtonClickerOn`
+                                                    navBarPlateThreeMenuButtonClickerOn.className = `navBar${cushionNumber}PlateMenuButtonClickerOn`
 
                                                     var navBarPlateThreeMenuButtonClickerOff = document.createElement("div")
-                                                    navBarPlateThreeMenuButtonClickerOff.className = `navBarThreePlateMenuButtonClickerOff`
+                                                    navBarPlateThreeMenuButtonClickerOff.className = `navBar${cushionNumber}PlateMenuButtonClickerOff`
 
 
 
@@ -4773,16 +4887,16 @@
                                             // //////////////////////////////
 
                                                 var navBarPlateThreeMenuButtonIconMover = document.createElement("div")
-                                                navBarPlateThreeMenuButtonIconMover.className = `navBarThreePlateMenuButtonIconMover`
+                                                navBarPlateThreeMenuButtonIconMover.className = `navBar${cushionNumber}PlateMenuButtonIconMover`
 
                                                     var navBarPlateThreeMenuButtonIconLineOne = document.createElement("div")
-                                                    navBarPlateThreeMenuButtonIconLineOne.className = `navBarThreePlateMenuButtonIconLineOne`
+                                                    navBarPlateThreeMenuButtonIconLineOne.className = `navBar${cushionNumber}PlateMenuButtonIconLineOne`
 
                                                     var navBarPlateThreeMenuButtonIconLineTwo = document.createElement("div")
-                                                    navBarPlateThreeMenuButtonIconLineTwo.className = `navBarThreePlateMenuButtonIconLineTwo`
+                                                    navBarPlateThreeMenuButtonIconLineTwo.className = `navBar${cushionNumber}PlateMenuButtonIconLineTwo`
 
                                                     var navBarPlateThreeMenuButtonIconLineThree = document.createElement("div")
-                                                    navBarPlateThreeMenuButtonIconLineThree.className = `navBarThreePlateMenuButtonIconLineThree`
+                                                    navBarPlateThreeMenuButtonIconLineThree.className = `navBar${cushionNumber}PlateMenuButtonIconLineThree`
 
 
 
@@ -4791,7 +4905,7 @@
                                             // //////////////////////////////
 
                                                 var navBarPlateThreeSideMenuContainer = document.createElement("div")
-                                                navBarPlateThreeSideMenuContainer.className = `navBarThreePlateSideMenuMainContainer`
+                                                navBarPlateThreeSideMenuContainer.className = `navBar${cushionNumber}PlateSideMenuMainContainer`
 
 
 
@@ -4799,10 +4913,10 @@
                                                     // /////////////////////
 
                                                         var navBarPlateThreeSideMenPointerContainer = document.createElement("div")
-                                                        navBarPlateThreeSideMenPointerContainer.className = `navBarThreePlateSideMenuPointerContainer`
+                                                        navBarPlateThreeSideMenPointerContainer.className = `navBar${cushionNumber}PlateSideMenuPointerContainer`
 
                                                             var navBarPlateThreeSideMenPointerActual = document.createElement("div")
-                                                            navBarPlateThreeSideMenPointerActual.className = `navBarThreePlateSideMenuPointerActual`
+                                                            navBarPlateThreeSideMenPointerActual.className = `navBar${cushionNumber}PlateSideMenuPointerActual`
 
 
 
@@ -4810,10 +4924,10 @@
                                                     // /////////////////////
 
                                                         var navBarPlateThreeSideMenContentContainer = document.createElement("div")
-                                                        navBarPlateThreeSideMenContentContainer.className = `navBarThreePlateSideMenuContentContainerElement`
+                                                        navBarPlateThreeSideMenContentContainer.className = `navBar${cushionNumber}PlateSideMenuContentContainerElement`
 
                                                             var navBarPlateThreeSideMenContentResizer = document.createElement("div")
-                                                            navBarPlateThreeSideMenContentResizer.className = `navBarThreePlateSideMenuContentResizer`
+                                                            navBarPlateThreeSideMenContentResizer.className = `navBar${cushionNumber}PlateSideMenuContentResizer`
 
 
 
@@ -5867,23 +5981,23 @@
                                         // //////////////////////////////////
 
                                             var navBarPlateThreeSideMenListItemContainer = document.createElement("div")
-                                            navBarPlateThreeSideMenListItemContainer.className = `navBarThreePlateSideMenuListItemContainer`
+                                            navBarPlateThreeSideMenListItemContainer.className = `navBar${cushionNumber}PlateSideMenuListItemContainer`
 
                                                 var navBarPlateThreeSideMenListItemHighlightBlockContainer = document.createElement("div")
-                                                navBarPlateThreeSideMenListItemHighlightBlockContainer.className = `navBarThreePlateSideMenuListItemHighlightBlock${classNumberMapper[menuItemsPopCounter]}Container`
+                                                navBarPlateThreeSideMenListItemHighlightBlockContainer.className = `navBar${cushionNumber}PlateSideMenuListItemHighlightBlock${classNumberMapper[menuItemsPopCounter]}Container`
 
                                                     var navBarPlateThreeSideMenListItemTextContainer = document.createElement("div")
-                                                    navBarPlateThreeSideMenListItemTextContainer.className = `navBarThreePlateSideMenuListItemTextContainer`
+                                                    navBarPlateThreeSideMenListItemTextContainer.className = `navBar${cushionNumber}PlateSideMenuListItemTextContainer`
 
 
 
 
 
                                             var navBarPlateThreeSideMenListItemDividerLineContainer = document.createElement("div")
-                                            navBarPlateThreeSideMenListItemDividerLineContainer.className = `navBarThreePlateSideMenuListItemDividerLineContainer`
+                                            navBarPlateThreeSideMenListItemDividerLineContainer.className = `navBar${cushionNumber}PlateSideMenuListItemDividerLineContainer`
 
                                                 var navBarPlateThreeSideMenListItemDividerLineActual = document.createElement("div")
-                                                navBarPlateThreeSideMenListItemDividerLineActual.className = `navBarThreePlateSideMenuListItemDividerLineActual`
+                                                navBarPlateThreeSideMenListItemDividerLineActual.className = `navBar${cushionNumber}PlateSideMenuListItemDividerLineActual`
         
         
         
@@ -6064,7 +6178,7 @@
                                         // PUSH ACCAPTED ELEMENTS INTO ELEMENTS ARRAY
                                         // //////////////////////////////////
                                                 
-                                            getListItemsObjects.push(document.querySelector(`.navBarThreePlateSideMenuListItemHighlightBlock${classNumberMapper[menuItemsPopCounter]}Container`))
+                                            getListItemsObjects.push(document.querySelector(`.navBar${cushionNumber}PlateSideMenuListItemHighlightBlock${classNumberMapper[menuItemsPopCounter]}Container`))
 
 
 
@@ -6206,7 +6320,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateFourMainContainer = document.createElement("div")
-                                navBarPlateFourMainContainer.className = `navBarFourMainContainer`
+                                navBarPlateFourMainContainer.className = `navBar${cushionNumber}MainContainer`
 
 
 
@@ -6216,7 +6330,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateFourMainElement = document.createElement("div")
-                                navBarPlateFourMainElement.className = `navBarFourPlateElementContainer`
+                                navBarPlateFourMainElement.className = `navBar${cushionNumber}PlateElementContainer`
 
 
 
@@ -6233,52 +6347,52 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateFourLogoSideContainer = document.createElement("div")
-                                navBarPlateFourLogoSideContainer.className = `navBarFourPlateElementLogoSideContainer`
+                                navBarPlateFourLogoSideContainer.className = `navBar${cushionNumber}PlateElementLogoSideContainer`
 
                                     // LOGO ACTUAL CONTAINER -------------
                                     // //////////////////////////////////
 
                                         var navBarPlateFourLogoActual = document.createElement("div")
-                                        navBarPlateFourLogoActual.className = `navBarFourPlateElementLogoActual`
+                                        navBarPlateFourLogoActual.className = `navBar${cushionNumber}PlateElementLogoActual`
 
                                 var navBarPlateFourMenuButtonSideContainer = document.createElement("div")
-                                navBarPlateFourMenuButtonSideContainer.className = `navBarFourPlateElementMenuButtonSideContainer`
+                                navBarPlateFourMenuButtonSideContainer.className = `navBar${cushionNumber}PlateElementMenuButtonSideContainer`
 
                                     // CLICKERS CONTAINER ---------------
                                     // //////////////////////////////////
 
                                         var navBarPlateFourMenuButtonSideClickerContainer = document.createElement("div")
-                                        navBarPlateFourMenuButtonSideClickerContainer.className = `navBarFourPlateElementMenuButtonSideClickerContainer`
+                                        navBarPlateFourMenuButtonSideClickerContainer.className = `navBar${cushionNumber}PlateElementMenuButtonSideClickerContainer`
 
                                             var navBarPlateFourMenuButtonSideClickerOn = document.createElement("div")
-                                            navBarPlateFourMenuButtonSideClickerOn.className = `navBarFourPlateElementMenuButtonSideClickerOn`
+                                            navBarPlateFourMenuButtonSideClickerOn.className = `navBar${cushionNumber}PlateElementMenuButtonSideClickerOn`
 
                                             var navBarPlateFourMenuButtonSideClickerOff = document.createElement("div")
-                                            navBarPlateFourMenuButtonSideClickerOff.className = `navBarFourPlateElementMenuButtonSideClickerOff`
+                                            navBarPlateFourMenuButtonSideClickerOff.className = `navBar${cushionNumber}PlateElementMenuButtonSideClickerOff`
 
                                     // DIVIDER LINE CONTAINER -----------
                                     // //////////////////////////////////
 
                                         var navBarPlateFourMenuButtonSideDividerLineContainer = document.createElement("div")
-                                        navBarPlateFourMenuButtonSideDividerLineContainer.className = `navBarFourPlateElementMenuButtonSideDividerLineContainer`
+                                        navBarPlateFourMenuButtonSideDividerLineContainer.className = `navBar${cushionNumber}PlateElementMenuButtonSideDividerLineContainer`
 
                                         var navBarPlateFourMenuButtonSideDividerLineActual = document.createElement("div")
-                                        navBarPlateFourMenuButtonSideDividerLineActual.className = `navBarFourPlateElementMenuButtonSideDividerLineActual`
+                                        navBarPlateFourMenuButtonSideDividerLineActual.className = `navBar${cushionNumber}PlateElementMenuButtonSideDividerLineActual`
 
                                     // MENU BUTTON CONTAINER ------------
                                     // //////////////////////////////////
 
                                         var navBarPlateFourMenuButtonSideMenuButtonIconMover = document.createElement("div")
-                                        navBarPlateFourMenuButtonSideMenuButtonIconMover.className = `navBarFourPlateElementMenuButtonSideMenuButtonIconMover`
+                                        navBarPlateFourMenuButtonSideMenuButtonIconMover.className = `navBar${cushionNumber}PlateElementMenuButtonSideMenuButtonIconMover`
 
                                             var navBarPlateFourMenuButtonSideMenuButtonIconLineOne = document.createElement("div")
-                                            navBarPlateFourMenuButtonSideMenuButtonIconLineOne.className = `navBarFourPlateElementMenuButtonSideMenuButtonIconLineOne`
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineOne.className = `navBar${cushionNumber}PlateElementMenuButtonSideMenuButtonIconLineOne`
 
                                             var navBarPlateFourMenuButtonSideMenuButtonIconLineTwo = document.createElement("div")
-                                            navBarPlateFourMenuButtonSideMenuButtonIconLineTwo.className = `navBarFourPlateElementMenuButtonSideMenuButtonIconLineTwo`
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineTwo.className = `navBar${cushionNumber}PlateElementMenuButtonSideMenuButtonIconLineTwo`
 
                                             var navBarPlateFourMenuButtonSideMenuButtonIconLineThree = document.createElement("div")
-                                            navBarPlateFourMenuButtonSideMenuButtonIconLineThree.className = `navBarFourPlateElementMenuButtonSideMenuButtonIconLineThree`
+                                            navBarPlateFourMenuButtonSideMenuButtonIconLineThree.className = `navBar${cushionNumber}PlateElementMenuButtonSideMenuButtonIconLineThree`
 
 
 
@@ -6295,7 +6409,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateFourSideMenuMainContainer = document.createElement("div")
-                                navBarPlateFourSideMenuMainContainer.className = `navBarFourPlateSideMenuMainContainer`
+                                navBarPlateFourSideMenuMainContainer.className = `navBar${cushionNumber}PlateSideMenuMainContainer`
 
 
 
@@ -6341,7 +6455,7 @@
                                         margin:auto;
                                         z-index:2;
                                         position:fixed;
-                                        box-shadow:0px 30px 30px -10px rgba(0,0,0,0.5);
+                                        /*box-shadow:0px 30px 30px -10px rgba(0,0,0,0.5);*/
                                         transition:all 600ms ease;
                                         -webkit-transition:all 600ms ease;
                                         -moz-transition:all 600ms ease;
@@ -7115,7 +7229,7 @@
                                         // DECLARE VARIABLES ------------
                                         // //////////////////////////////
 
-                                            var getSideMenuPannel = document.querySelector(`.navBarFourPlateSideMenuMainContainer`)
+                                            var getSideMenuPannel = document.querySelector(`.navBar${cushionNumber}PlateSideMenuMainContainer`)
 
 
 
@@ -7133,36 +7247,36 @@
                                         // //////////////////////////////
 
                                             var navBarPlateFourSideMenuIconeBlockContainer = document.createElement("div")
-                                            navBarPlateFourSideMenuIconeBlockContainer.className = `navBarFourPlateSideMenuIconBlockContainer${classNumberMapper[elementsIconCounter]}`
+                                            navBarPlateFourSideMenuIconeBlockContainer.className = `navBar${cushionNumber}PlateSideMenuIconBlockContainer${classNumberMapper[elementsIconCounter]}`
 
                                             var navBarPlateFourSideMenuIconBlockClicker = document.createElement("div")
-                                            navBarPlateFourSideMenuIconBlockClicker.className = `navBarFourPlateSideMenuIconBlockClicker${classNumberMapper[elementsIconCounter]}`
+                                            navBarPlateFourSideMenuIconBlockClicker.className = `navBar${cushionNumber}PlateSideMenuIconBlockClicker${classNumberMapper[elementsIconCounter]}`
 
 
                                                 // HOVER BLOCK FOR ICON CONTAINER
                                                 // //////////////////////
 
                                                     var navBarPlateFourSideMenuIconeBlockHoverBlock = document.createElement("div")
-                                                    navBarPlateFourSideMenuIconeBlockHoverBlock.className = `navBarFourPlateSideMenuIconBlockHoverBlockContainer${classNumberMapper[elementsIconCounter]}`
+                                                    navBarPlateFourSideMenuIconeBlockHoverBlock.className = `navBar${cushionNumber}PlateSideMenuIconBlockHoverBlockContainer${classNumberMapper[elementsIconCounter]}`
 
                                                         var navBarPlateFourSideMenuIconeActual = document.createElement("div")
-                                                        navBarPlateFourSideMenuIconeActual.className = `navBarFourPlateSideMenuIconActual${classNumberMapper[elementsIconCounter]}`
+                                                        navBarPlateFourSideMenuIconeActual.className = `navBar${cushionNumber}PlateSideMenuIconActual${classNumberMapper[elementsIconCounter]}`
 
 
                                                 // HOVER TAG FOR ICON DESCRIPTION
                                                 // //////////////////////
 
                                                     var navBarPlateFourSideMenuIconeBlockHoverTagContainer = document.createElement("div")
-                                                    navBarPlateFourSideMenuIconeBlockHoverTagContainer.className = `navBarFourPlateSideMenuIconBlockHoverTagContainer${classNumberMapper[elementsIconCounter]}`
+                                                    navBarPlateFourSideMenuIconeBlockHoverTagContainer.className = `navBar${cushionNumber}PlateSideMenuIconBlockHoverTagContainer${classNumberMapper[elementsIconCounter]}`
 
                                                         var navBarPlateFourSideMenuIconeBlockHoverTagPointer = document.createElement("div")
-                                                        navBarPlateFourSideMenuIconeBlockHoverTagPointer.className = `navBarFourPlateSideMenuIconBlockHoverTagPointer${classNumberMapper[elementsIconCounter]}`
+                                                        navBarPlateFourSideMenuIconeBlockHoverTagPointer.className = `navBar${cushionNumber}PlateSideMenuIconBlockHoverTagPointer${classNumberMapper[elementsIconCounter]}`
 
                                                         var navBarPlateFourSideMenuIconeBlockHoverTagActual = document.createElement("div")
-                                                        navBarPlateFourSideMenuIconeBlockHoverTagActual.className = `navBarFourPlateSideMenuIconBlockHoverTagActual${classNumberMapper[elementsIconCounter]}`
+                                                        navBarPlateFourSideMenuIconeBlockHoverTagActual.className = `navBar${cushionNumber}PlateSideMenuIconBlockHoverTagActual${classNumberMapper[elementsIconCounter]}`
 
                                                             var navBarPlateFourSideMenuIconeBlockHoverTagTextActual = document.createElement("div")
-                                                            navBarPlateFourSideMenuIconeBlockHoverTagTextActual.className = `navBarFourPlateSideMenuIconBlockHoverTagTextActual${classNumberMapper[elementsIconCounter]}`
+                                                            navBarPlateFourSideMenuIconeBlockHoverTagTextActual.className = `navBar${cushionNumber}PlateSideMenuIconBlockHoverTagTextActual${classNumberMapper[elementsIconCounter]}`
 
 
 
@@ -7403,7 +7517,7 @@
                                         // ADD CLASS NAMES TO ARRAY FOR USE
                                         // //////////////////////////////
 
-                                            storeNavBarItemsClassNames.push(`navBarFourPlateSideMenuIconBlockClicker${classNumberMapper[elementsIconCounter]}`)
+                                            storeNavBarItemsClassNames.push(`navBar${cushionNumber}PlateSideMenuIconBlockClicker${classNumberMapper[elementsIconCounter]}`)
 
 
 
@@ -7429,10 +7543,10 @@
                                                                 // //////////////
 
                                                                     var navBarPlateFourSideMenuIconeBlocDividerContainer = document.createElement("div")
-                                                                    navBarPlateFourSideMenuIconeBlocDividerContainer.className = `navBarFourPlateSideMenuIconBlockDividerContainer`
+                                                                    navBarPlateFourSideMenuIconeBlocDividerContainer.className = `navBar${cushionNumber}PlateSideMenuIconBlockDividerContainer`
 
                                                                         var navBarPlateFourSideMenuIconeBlocDividerLineActual = document.createElement("div")
-                                                                        navBarPlateFourSideMenuIconeBlocDividerLineActual.className = `navBarFourPlateSideMenuIconBlockDividerLineActual`
+                                                                        navBarPlateFourSideMenuIconeBlocDividerLineActual.className = `navBar${cushionNumber}PlateSideMenuIconBlockDividerLineActual`
 
                                                                         
 
@@ -7531,9 +7645,9 @@
 
                                         var makeIndexNumber = storeNavBarItemsClassNames.indexOf(selector)
 
-                                        var getTagBlock = document.querySelector(`.navBarFourPlateSideMenuIconBlockHoverTagContainer${classNumberMapper[makeIndexNumber]}`)
+                                        var getTagBlock = document.querySelector(`.navBar${cushionNumber}PlateSideMenuIconBlockHoverTagContainer${classNumberMapper[makeIndexNumber]}`)
 
-                                        var getIconHoverBlock = document.querySelector(`.navBarFourPlateSideMenuIconBlockHoverBlockContainer${classNumberMapper[makeIndexNumber]}`)
+                                        var getIconHoverBlock = document.querySelector(`.navBar${cushionNumber}PlateSideMenuIconBlockHoverBlockContainer${classNumberMapper[makeIndexNumber]}`)
 
 
                                     // HOVER EVENTS xxxxxxxxxxxxxxxxxxxxxxxxx
@@ -7812,7 +7926,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateFiveMainContainer = document.createElement("div")
-                                navBarPlateFiveMainContainer.className = `navBarFiveMainContainer`
+                                navBarPlateFiveMainContainer.className = `navBar${cushionNumber}MainContainer`
 
 
 
@@ -7822,7 +7936,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateFiveMainElement = document.createElement("div")
-                                navBarPlateFiveMainElement.className = `navBarFivePlateElementContainer`
+                                navBarPlateFiveMainElement.className = `navBar${cushionNumber}PlateElementContainer`
 
 
 
@@ -7830,7 +7944,7 @@
                                     // //////////////////////////////////////
 
                                         var navBarPlateFiveSideMenuContainer = document.createElement("div")
-                                        navBarPlateFiveSideMenuContainer.className = `navBarFivePlateSideMenuContainer`
+                                        navBarPlateFiveSideMenuContainer.className = `navBar${cushionNumber}PlateSideMenuContainer`
 
 
 
@@ -7838,13 +7952,13 @@
                                             // //////////////////////////////
 
                                                 var navBarPlateFiveSideMenuOpenerLipContainer = document.createElement("div")
-                                                navBarPlateFiveSideMenuOpenerLipContainer.className = `navBarFivePlateSideMenuOpenerLipContainer`
+                                                navBarPlateFiveSideMenuOpenerLipContainer.className = `navBar${cushionNumber}PlateSideMenuOpenerLipContainer`
 
                                                     var navBarPlateFiveSideMenuOpenerLipOpenClicker = document.createElement("div")
-                                                    navBarPlateFiveSideMenuOpenerLipOpenClicker.className = `navBarFivePlateSideMenuOpenerLipOpenClicker`
+                                                    navBarPlateFiveSideMenuOpenerLipOpenClicker.className = `navBar${cushionNumber}PlateSideMenuOpenerLipOpenClicker`
 
                                                     var navBarPlateFiveSideMenuOpenerLipCloseClicker = document.createElement("div")
-                                                    navBarPlateFiveSideMenuOpenerLipCloseClicker.className = `navBarFivePlateSideMenuOpenerLipCloseClicker`
+                                                    navBarPlateFiveSideMenuOpenerLipCloseClicker.className = `navBar${cushionNumber}PlateSideMenuOpenerLipCloseClicker`
 
 
 
@@ -7852,19 +7966,19 @@
                                             // //////////////////////////////
 
                                                 var navBarPlateFiveSideMenuPhysicalCloseButtonContainer = document.createElement("div")
-                                                navBarPlateFiveSideMenuPhysicalCloseButtonContainer.className = `navBarFivePlateSideMenuPhysicalCloseButtonContainer`
+                                                navBarPlateFiveSideMenuPhysicalCloseButtonContainer.className = `navBar${cushionNumber}PlateSideMenuPhysicalCloseButtonContainer`
 
                                                     var navBarPlateFiveSideMenuPhysicalCloseButtonElement = document.createElement("div")
-                                                    navBarPlateFiveSideMenuPhysicalCloseButtonElement.className = `navBarFivePlateSideMenuPhysicalCloseButtonElement`
+                                                    navBarPlateFiveSideMenuPhysicalCloseButtonElement.className = `navBar${cushionNumber}PlateSideMenuPhysicalCloseButtonElement`
 
                                                         var navBarPlateFiveSideMenuPhysicalCloseButtonIconMover = document.createElement("div")
-                                                        navBarPlateFiveSideMenuPhysicalCloseButtonIconMover.className = `navBarFivePlateSideMenuPhysicalCloseButtonIconMover`
+                                                        navBarPlateFiveSideMenuPhysicalCloseButtonIconMover.className = `navBar${cushionNumber}PlateSideMenuPhysicalCloseButtonIconMover`
 
                                                             var navBarPlateFiveSideMenuPhysicalCloseButtonIconLineOne = document.createElement("div")
-                                                            navBarPlateFiveSideMenuPhysicalCloseButtonIconLineOne.className = `navBarFivePlateSideMenuPhysicalCloseButtonIconLineOne`
+                                                            navBarPlateFiveSideMenuPhysicalCloseButtonIconLineOne.className = `navBar${cushionNumber}PlateSideMenuPhysicalCloseButtonIconLineOne`
 
                                                             var navBarPlateFiveSideMenuPhysicalCloseButtonIconLineTwo = document.createElement("div")
-                                                            navBarPlateFiveSideMenuPhysicalCloseButtonIconLineTwo.className = `navBarFivePlateSideMenuPhysicalCloseButtonIconLineTwo`
+                                                            navBarPlateFiveSideMenuPhysicalCloseButtonIconLineTwo.className = `navBar${cushionNumber}PlateSideMenuPhysicalCloseButtonIconLineTwo`
 
 
 
@@ -7874,7 +7988,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateFiveSideMenuListItemsContainer = document.createElement("div")
-                                navBarPlateFiveSideMenuListItemsContainer.className = `navBarFivePlateSideMenuListItemsContainer`
+                                navBarPlateFiveSideMenuListItemsContainer.className = `navBar${cushionNumber}PlateSideMenuListItemsContainer`
 
 
 
@@ -8255,14 +8369,14 @@
                                 // DECLARE VRAIABLES ------------------------
                                 // //////////////////////////////////////////
 
-                                    var getSideMenuLipContainerMain = document.querySelector(`.navBarFivePlateSideMenuOpenerLipContainer`)
+                                    var getSideMenuLipContainerMain = document.querySelector(`.navBar${cushionNumber}PlateSideMenuOpenerLipContainer`)
 
-                                    var getSideMenuOpenClicker = document.querySelector(`.navBarFivePlateSideMenuOpenerLipOpenClicker`)
-                                    var getSideMenuCloseClicker = document.querySelector(`.navBarFivePlateSideMenuOpenerLipCloseClicker`)
+                                    var getSideMenuOpenClicker = document.querySelector(`.navBar${cushionNumber}PlateSideMenuOpenerLipOpenClicker`)
+                                    var getSideMenuCloseClicker = document.querySelector(`.navBar${cushionNumber}PlateSideMenuOpenerLipCloseClicker`)
 
-                                    var getSideMenuTray = document.querySelector(`.navBarFivePlateSideMenuContainer`)
+                                    var getSideMenuTray = document.querySelector(`.navBar${cushionNumber}PlateSideMenuContainer`)
 
-                                    var getTrayCloseButton = document.querySelector(`.navBarFivePlateSideMenuPhysicalCloseButtonElement`)
+                                    var getTrayCloseButton = document.querySelector(`.navBar${cushionNumber}PlateSideMenuPhysicalCloseButtonElement`)
 
                                 // FOR OPEN SIDE TRAY MENU CLICKER ----------
                                 // //////////////////////////////////////////
@@ -8740,7 +8854,7 @@
                                         // DECLARE VARIABLES xxxxxxxxxxxxxxxxxxxxxxxx
                                         // //////////////////////////////////////////
 
-                                            var getSideMenuListItemMainContainer = document.querySelector(`.navBarFivePlateSideMenuListItemsContainer`)
+                                            var getSideMenuListItemMainContainer = document.querySelector(`.navBar${cushionNumber}PlateSideMenuListItemsContainer`)
 
 
 
@@ -8759,13 +8873,13 @@
                                         // //////////////////////////////////////////
 
                                             var navBarPlateFiveSideMenuListItemBlockContainer = document.createElement("div")
-                                            navBarPlateFiveSideMenuListItemBlockContainer.className = `navBarFivePlateSideMenuListItemBlockContainer${classNumberMapper[listItemsCounter]}`
+                                            navBarPlateFiveSideMenuListItemBlockContainer.className = `navBar${cushionNumber}PlateSideMenuListItemBlockContainer${classNumberMapper[listItemsCounter]}`
 
                                                 var navBarPlateFiveSideMenuListItemTextSide = document.createElement("div")
-                                                navBarPlateFiveSideMenuListItemTextSide.className = `navBarFivePlateSideMenuListItemTextSide${classNumberMapper[listItemsCounter]}`
+                                                navBarPlateFiveSideMenuListItemTextSide.className = `navBar${cushionNumber}PlateSideMenuListItemTextSide${classNumberMapper[listItemsCounter]}`
 
                                                     var navBarPlateFiveSideMenuListItemTextActual = document.createElement("div")
-                                                    navBarPlateFiveSideMenuListItemTextActual.className = `navBarFivePlateSideMenuListItemTextActual${classNumberMapper[listItemsCounter]}`
+                                                    navBarPlateFiveSideMenuListItemTextActual.className = `navBar${cushionNumber}PlateSideMenuListItemTextActual${classNumberMapper[listItemsCounter]}`
 
 
 
@@ -8773,22 +8887,22 @@
 
 
                                                 var navBarPlateFiveSideMenuListItemIconSide = document.createElement("div")
-                                                navBarPlateFiveSideMenuListItemIconSide.className = `navBarFivePlateSideMenuListItemIconSide${classNumberMapper[listItemsCounter]}`
+                                                navBarPlateFiveSideMenuListItemIconSide.className = `navBar${cushionNumber}PlateSideMenuListItemIconSide${classNumberMapper[listItemsCounter]}`
 
                                                     var navBarPlateFiveSideMenuListItemIconElementContainer = document.createElement("div")
-                                                    navBarPlateFiveSideMenuListItemIconElementContainer.className = `navBarFivePlateSideMenuListItemIconElement${classNumberMapper[listItemsCounter]}`
+                                                    navBarPlateFiveSideMenuListItemIconElementContainer.className = `navBar${cushionNumber}PlateSideMenuListItemIconElement${classNumberMapper[listItemsCounter]}`
 
                                                         var navBarPlateFiveSideMenuListItemIconMover = document.createElement("div")
-                                                        navBarPlateFiveSideMenuListItemIconMover.className = `navBarFivePlateSideMenuListItemIconMover${classNumberMapper[listItemsCounter]}`
+                                                        navBarPlateFiveSideMenuListItemIconMover.className = `navBar${cushionNumber}PlateSideMenuListItemIconMover${classNumberMapper[listItemsCounter]}`
 
                                                             var navBarPlateFiveSideMenuListItemIconLineOne = document.createElement("div")
-                                                            navBarPlateFiveSideMenuListItemIconLineOne.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineOne`
+                                                            navBarPlateFiveSideMenuListItemIconLineOne.className = `navBar${cushionNumber}PlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineOne`
 
                                                             var navBarPlateFiveSideMenuListItemIconLineTwo = document.createElement("div")
-                                                            navBarPlateFiveSideMenuListItemIconLineTwo.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineTwo`
+                                                            navBarPlateFiveSideMenuListItemIconLineTwo.className = `navBar${cushionNumber}PlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineTwo`
 
                                                             var navBarPlateFiveSideMenuListItemIconLineThree = document.createElement("div")
-                                                            navBarPlateFiveSideMenuListItemIconLineThree.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineThree`
+                                                            navBarPlateFiveSideMenuListItemIconLineThree.className = `navBar${cushionNumber}PlateSideMenuListItem${classNumberMapper[listItemsCounter]}IconLineThree`
 
 
                                                             
@@ -8796,10 +8910,10 @@
 
 
                                                 var navBarPlateFiveSideMenuListItemUnderlinerContainer = document.createElement("div")
-                                                navBarPlateFiveSideMenuListItemUnderlinerContainer.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}UnderlinerContainer`
+                                                navBarPlateFiveSideMenuListItemUnderlinerContainer.className = `navBar${cushionNumber}PlateSideMenuListItem${classNumberMapper[listItemsCounter]}UnderlinerContainer`
 
                                                     var navBarPlateFiveSideMenuListItemUnderlinerActual = document.createElement("div")
-                                                    navBarPlateFiveSideMenuListItemUnderlinerActual.className = `navBarFivePlateSideMenuListItem${classNumberMapper[listItemsCounter]}UnderlinerActual`
+                                                    navBarPlateFiveSideMenuListItemUnderlinerActual.className = `navBar${cushionNumber}PlateSideMenuListItem${classNumberMapper[listItemsCounter]}UnderlinerActual`
 
 
 
@@ -9139,7 +9253,7 @@
                                         // ADD ELEMENT CLASSNAME TO ARRAY AND GET READY FOR ASSIGNMENTS
                                         // //////////////////////////////////////////
 
-                                            storeNavBarItemsClassNames.push(`navBarFivePlateSideMenuListItemBlockContainer${classNumberMapper[listItemsCounter]}`)
+                                            storeNavBarItemsClassNames.push(`navBar${cushionNumber}PlateSideMenuListItemBlockContainer${classNumberMapper[listItemsCounter]}`)
 
                                             
 
@@ -9199,7 +9313,7 @@
 
                                         var getMenuListItem = document.querySelector(`.${elementSkipper}`)
     
-                                        var getMenuItemText = document.querySelector(`.navBarFivePlateSideMenuListItemTextActual${classNumberMapper[getNumberCounter]}`)
+                                        var getMenuItemText = document.querySelector(`.navBar${cushionNumber}PlateSideMenuListItemTextActual${classNumberMapper[getNumberCounter]}`)
 
 
                                             // HOVER EFFECTS FOR MENU ITEM ------
@@ -9333,7 +9447,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateSixMainContainer = document.createElement("div")
-                                navBarPlateSixMainContainer.className = `navBarSixMainContainer`
+                                navBarPlateSixMainContainer.className = `navBar${cushionNumber}MainContainer`
 
 
 
@@ -9343,7 +9457,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateSixMainElement = document.createElement("div")
-                                navBarPlateSixMainElement.className = `navBarSixPlateElementContainer`
+                                navBarPlateSixMainElement.className = `navBar${cushionNumber}PlateElementContainer`
 
 
 
@@ -9353,35 +9467,35 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateSixMainElementMenuButtonContainer = document.createElement("div")
-                                navBarPlateSixMainElementMenuButtonContainer.className = `navBarSixPlateElementMenuButtonContainer`
+                                navBarPlateSixMainElementMenuButtonContainer.className = `navBar${cushionNumber}PlateElementMenuButtonContainer`
 
                                     var navBarPlateSixMainElementMenuButtonElement = document.createElement("div")
-                                    navBarPlateSixMainElementMenuButtonElement.className = `navBarSixPlateElementMenuButtonElement`
+                                    navBarPlateSixMainElementMenuButtonElement.className = `navBar${cushionNumber}PlateElementMenuButtonElement`
 
 
 
                                         var navBarPlateSixMainElementMenuButtonClickerContainer = document.createElement("div")
-                                        navBarPlateSixMainElementMenuButtonClickerContainer.className = `navBarSixPlateElementMenuButtonClickerContainer`
+                                        navBarPlateSixMainElementMenuButtonClickerContainer.className = `navBar${cushionNumber}PlateElementMenuButtonClickerContainer`
 
                                             var navBarPlateSixMainElementMenuButtonClickerOpen = document.createElement("div")
-                                            navBarPlateSixMainElementMenuButtonClickerOpen.className = `navBarSixPlateElementMenuButtonClickerOpen`
+                                            navBarPlateSixMainElementMenuButtonClickerOpen.className = `navBar${cushionNumber}PlateElementMenuButtonClickerOpen`
 
                                             var navBarPlateSixMainElementMenuButtonClickerClose = document.createElement("div")
-                                            navBarPlateSixMainElementMenuButtonClickerClose.className = `navBarSixPlateElementMenuButtonClickerClose`
+                                            navBarPlateSixMainElementMenuButtonClickerClose.className = `navBar${cushionNumber}PlateElementMenuButtonClickerClose`
 
                                             
 
                                         var navBarPlateSixMainElementMenuButtonIconMover = document.createElement("div")
-                                        navBarPlateSixMainElementMenuButtonIconMover.className = `navBarSixPlateElementMenuButtonIconMover`
+                                        navBarPlateSixMainElementMenuButtonIconMover.className = `navBar${cushionNumber}PlateElementMenuButtonIconMover`
 
                                             var navBarPlateSixMainElementMenuButtonIconLineOne = document.createElement("div")
-                                            navBarPlateSixMainElementMenuButtonIconLineOne.className = `navBarSixPlateElementMenuButtonIconLineOne`
+                                            navBarPlateSixMainElementMenuButtonIconLineOne.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineOne`
 
                                             var navBarPlateSixMainElementMenuButtonIconLineTwo = document.createElement("div")
-                                            navBarPlateSixMainElementMenuButtonIconLineTwo.className = `navBarSixPlateElementMenuButtonIconLineTwo`
+                                            navBarPlateSixMainElementMenuButtonIconLineTwo.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineTwo`
 
                                             var navBarPlateSixMainElementMenuButtonIconLineThree = document.createElement("div")
-                                            navBarPlateSixMainElementMenuButtonIconLineThree.className = `navBarSixPlateElementMenuButtonIconLineThree`
+                                            navBarPlateSixMainElementMenuButtonIconLineThree.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineThree`
 
 
 
@@ -9391,7 +9505,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateSixMenuListItemsContainer = document.createElement("div")
-                                navBarPlateSixMenuListItemsContainer.className = `navBarSixPlateMenuItemsListContainer`
+                                navBarPlateSixMenuListItemsContainer.className = `navBar${cushionNumber}PlateMenuItemsListContainer`
 
 
 
@@ -9773,7 +9887,7 @@
                                 // DECLARE VARIABLES FOOR PREVIOUS ITEMS xxxx
                                 // //////////////////////////////////////////
 
-                                    var getMenuItemsListContainer = document.querySelector(`.navBarSixPlateMenuItemsListContainer`)
+                                    var getMenuItemsListContainer = document.querySelector(`.navBar${cushionNumber}PlateMenuItemsListContainer`)
 
                                 // CLEAR ARRAY OF CLASSNAMES FIRST xxxxxxxxxx
                                 // //////////////////////////////////////////
@@ -9792,42 +9906,42 @@
                                                 // //////////////////////////////////////////
                 
                                                     var navBarPlateSixMenuItemsListContainer = document.createElement("div")
-                                                    navBarPlateSixMenuItemsListContainer.className = `navBarSixPlateMenuItemsListContainer${classNumberMapper[elementCreateCounter]}`
+                                                    navBarPlateSixMenuItemsListContainer.className = `navBar${cushionNumber}PlateMenuItemsListContainer${classNumberMapper[elementCreateCounter]}`
 
                                                         var navBarPlateSixMenuItemsListFloaterElement = document.createElement("div")
-                                                        navBarPlateSixMenuItemsListFloaterElement.className = `navBarSixPlateMenuItemsListFloaterElement${classNumberMapper[elementCreateCounter]}`
+                                                        navBarPlateSixMenuItemsListFloaterElement.className = `navBar${cushionNumber}PlateMenuItemsListFloaterElement${classNumberMapper[elementCreateCounter]}`
 
 
 
 
 
                                                             var navBarPlateSixMenuItemsListTextSideContainer = document.createElement("div")
-                                                            navBarPlateSixMenuItemsListTextSideContainer.className = `navBarSixPlateMenuItemsListTextSideContainer${classNumberMapper[elementCreateCounter]}`
+                                                            navBarPlateSixMenuItemsListTextSideContainer.className = `navBar${cushionNumber}PlateMenuItemsListTextSideContainer${classNumberMapper[elementCreateCounter]}`
 
                                                                 var navBarPlateSixMenuItemsListTextSideTextActual = document.createElement("div")
-                                                                navBarPlateSixMenuItemsListTextSideTextActual.className = `navBarSixPlateMenuItemsListTextSideTextActual${classNumberMapper[elementCreateCounter]}`
+                                                                navBarPlateSixMenuItemsListTextSideTextActual.className = `navBar${cushionNumber}PlateMenuItemsListTextSideTextActual${classNumberMapper[elementCreateCounter]}`
 
 
 
 
 
                                                             var navBarPlateSixMenuItemsListButtonSideContainer = document.createElement("div")
-                                                            navBarPlateSixMenuItemsListButtonSideContainer.className = `navBarSixPlateMenuItemsListButtonSideContainer${classNumberMapper[elementCreateCounter]}`
+                                                            navBarPlateSixMenuItemsListButtonSideContainer.className = `navBar${cushionNumber}PlateMenuItemsListButtonSideContainer${classNumberMapper[elementCreateCounter]}`
 
                                                                 var navBarPlateSixMenuItemsListButtonSideElementContainer = document.createElement("div")
-                                                                navBarPlateSixMenuItemsListButtonSideElementContainer.className = `navBarSixPlateMenuItemsListButtonSideElementContainer${classNumberMapper[elementCreateCounter]}`
+                                                                navBarPlateSixMenuItemsListButtonSideElementContainer.className = `navBar${cushionNumber}PlateMenuItemsListButtonSideElementContainer${classNumberMapper[elementCreateCounter]}`
 
                                                                     var navBarPlateSixMenuItemsListButtonSideIconMover = document.createElement("div")
-                                                                    navBarPlateSixMenuItemsListButtonSideIconMover.className = `navBarSixPlateMenuItemsListButtonSideIconMover${classNumberMapper[elementCreateCounter]}`
+                                                                    navBarPlateSixMenuItemsListButtonSideIconMover.className = `navBar${cushionNumber}PlateMenuItemsListButtonSideIconMover${classNumberMapper[elementCreateCounter]}`
 
                                                                         var navBarPlateSixMenuItemsListButtonSideIconLineOne = document.createElement("div")
-                                                                        navBarPlateSixMenuItemsListButtonSideIconLineOne.className = `navBarSixPlateMenuItemsListButtonSideIconLineOne${classNumberMapper[elementCreateCounter]}`
+                                                                        navBarPlateSixMenuItemsListButtonSideIconLineOne.className = `navBar${cushionNumber}PlateMenuItemsListButtonSideIconLineOne${classNumberMapper[elementCreateCounter]}`
 
                                                                         var navBarPlateSixMenuItemsListButtonSideIconLineTwo = document.createElement("div")
-                                                                        navBarPlateSixMenuItemsListButtonSideIconLineTwo.className = `navBarSixPlateMenuItemsListButtonSideIconLineTwo${classNumberMapper[elementCreateCounter]}`
+                                                                        navBarPlateSixMenuItemsListButtonSideIconLineTwo.className = `navBar${cushionNumber}PlateMenuItemsListButtonSideIconLineTwo${classNumberMapper[elementCreateCounter]}`
 
                                                                         var navBarPlateSixMenuItemsListButtonSideIconLineThree = document.createElement("div")
-                                                                        navBarPlateSixMenuItemsListButtonSideIconLineThree.className = `navBarSixPlateMenuItemsListButtonSideIconLineThree${classNumberMapper[elementCreateCounter]}`
+                                                                        navBarPlateSixMenuItemsListButtonSideIconLineThree.className = `navBar${cushionNumber}PlateMenuItemsListButtonSideIconLineThree${classNumberMapper[elementCreateCounter]}`
 
 
 
@@ -9839,7 +9953,7 @@
                                                 // PUSH CLASSNAMES TO ARRAY xxxxxxxxxxxxxxxxx
                                                 // //////////////////////////////////////////
 
-                                                    storeNavBarItemsClassNames.push(`navBarSixPlateMenuItemsListFloaterElement${classNumberMapper[elementCreateCounter]}`)
+                                                    storeNavBarItemsClassNames.push(`navBar${cushionNumber}PlateMenuItemsListFloaterElement${classNumberMapper[elementCreateCounter]}`)
                 
                                                 // STYLE MENU LIST ITEMS xxxxxxxxxxxxxxxxxxxx
                                                 // //////////////////////////////////////////
@@ -10301,14 +10415,14 @@
                                 // DECLARE VARIABLES FOR MENU OPEN CLOSE ----
                                 // //////////////////////////////////////////
 
-                                    var getMenuOpenButton = document.querySelector(".navBarSixPlateElementMenuButtonClickerOpen")
-                                    var getMenuCloseButton = document.querySelector(".navBarSixPlateElementMenuButtonClickerClose")
+                                    var getMenuOpenButton = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonClickerOpen`)
+                                    var getMenuCloseButton = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonClickerClose`)
 
-                                    var getListItemsMainContainer = document.querySelector(".navBarSixPlateMenuItemsListContainer")
+                                    var getListItemsMainContainer = document.querySelector(`.navBar${cushionNumber}PlateMenuItemsListContainer`)
 
-                                    var getMenuIconLineOne = document.querySelector(".navBarSixPlateElementMenuButtonIconLineOne")
-                                    var getMenuIconLineTwo = document.querySelector(".navBarSixPlateElementMenuButtonIconLineTwo")
-                                    var getMenuIconLineThree = document.querySelector(".navBarSixPlateElementMenuButtonIconLineThree")
+                                    var getMenuIconLineOne = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineOne`)
+                                    var getMenuIconLineTwo = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineTwo`)
+                                    var getMenuIconLineThree = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineThree`)
 
                                 // FOR OPEN BUTTON --------------------------
                                 // //////////////////////////////////////////
@@ -10453,7 +10567,7 @@
 
                                                 for ( menuItemsCounter = 0; menuItemsCounter < storeNavBarItems.length; menuItemsCounter++ ) {
     
-                                                    var getMenuListItem = document.querySelector(`.navBarSixPlateMenuItemsListFloaterElement${classNumberMapper[menuItemsCounter]}`)
+                                                    var getMenuListItem = document.querySelector(`.navBar${cushionNumber}PlateMenuItemsListFloaterElement${classNumberMapper[menuItemsCounter]}`)
     
                                                         // BRING DOWN LIST ITEM x
                                                         // //////////////////////
@@ -10620,7 +10734,7 @@
 
                                             for ( menuItemsCounter = 0; menuItemsCounter < storeNavBarItems.length; menuItemsCounter++ ) {
 
-                                                var getMenuListItem = document.querySelector(`.navBarSixPlateMenuItemsListFloaterElement${classNumberMapper[menuItemsCounter]}`)
+                                                var getMenuListItem = document.querySelector(`.navBar${cushionNumber}PlateMenuItemsListFloaterElement${classNumberMapper[menuItemsCounter]}`)
 
                                                     // BRING DOWN LIST ITEM x
                                                     // //////////////////////
@@ -10705,7 +10819,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateSevenMainContainer = document.createElement("div")
-                                navBarPlateSevenMainContainer.className = `navBarSevenMainContainer`
+                                navBarPlateSevenMainContainer.className = `navBar${cushionNumber}MainContainer`
 
 
 
@@ -10715,7 +10829,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateSevenMainElement = document.createElement("div")
-                                navBarPlateSevenMainElement.className = `navBarSevenPlateElementContainer`
+                                navBarPlateSevenMainElement.className = `navBar${cushionNumber}PlateElementContainer`
 
 
 
@@ -10725,10 +10839,10 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateSevenMainElementMenuButtonContainer = document.createElement("div")
-                                navBarPlateSevenMainElementMenuButtonContainer.className = `navBarSevenPlateElementMenuButtonContainer`
+                                navBarPlateSevenMainElementMenuButtonContainer.className = `navBar${cushionNumber}PlateElementMenuButtonContainer`
 
                                     var navBarPlateSevenMainElementMenuButtonElement = document.createElement("div")
-                                    navBarPlateSevenMainElementMenuButtonElement.className = `navBarSevenPlateElementMenuButtonElement`
+                                    navBarPlateSevenMainElementMenuButtonElement.className = `navBar${cushionNumber}PlateElementMenuButtonElement`
 
 
 
@@ -10737,13 +10851,13 @@
                                         
 
                                         var navBarPlateSevenMainElementMenuButtonClickerContainer = document.createElement("div")
-                                        navBarPlateSevenMainElementMenuButtonClickerContainer.className = `navBarSevenPlateElementMenuButtonClickerContainer`
+                                        navBarPlateSevenMainElementMenuButtonClickerContainer.className = `navBar${cushionNumber}PlateElementMenuButtonClickerContainer`
 
                                             var navBarPlateSevenMainElementMenuButtonClickerOn = document.createElement("div")
-                                            navBarPlateSevenMainElementMenuButtonClickerOn.className = `navBarSevenPlateElementMenuButtonClickerOn`
+                                            navBarPlateSevenMainElementMenuButtonClickerOn.className = `navBar${cushionNumber}PlateElementMenuButtonClickerOn`
 
                                             var navBarPlateSevenMainElementMenuButtonClickerOff = document.createElement("div")
-                                            navBarPlateSevenMainElementMenuButtonClickerOff.className = `navBarSevenPlateElementMenuButtonClickerOff`
+                                            navBarPlateSevenMainElementMenuButtonClickerOff.className = `navBar${cushionNumber}PlateElementMenuButtonClickerOff`
 
 
 
@@ -10752,19 +10866,19 @@
                                         
 
                                         var navBarPlateSevenMainElementMenuButtonIconContainer = document.createElement("div")
-                                        navBarPlateSevenMainElementMenuButtonIconContainer.className = `navBarSevenPlateElementMenuButtonIconContainer`
+                                        navBarPlateSevenMainElementMenuButtonIconContainer.className = `navBar${cushionNumber}PlateElementMenuButtonIconContainer`
 
                                             var navBarPlateSevenMainElementMenuButtonIconMover = document.createElement("div")
-                                            navBarPlateSevenMainElementMenuButtonIconMover.className = `navBarSevenPlateElementMenuButtonIconMover`
+                                            navBarPlateSevenMainElementMenuButtonIconMover.className = `navBar${cushionNumber}PlateElementMenuButtonIconMover`
 
                                                 var navBarPlateSevenMainElementMenuButtonIconLineOne = document.createElement("div")
-                                                navBarPlateSevenMainElementMenuButtonIconLineOne.className = `navBarSevenPlateElementMenuButtonIconLineOne`
+                                                navBarPlateSevenMainElementMenuButtonIconLineOne.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineOne`
 
                                                 var navBarPlateSevenMainElementMenuButtonIconLineTwo = document.createElement("div")
-                                                navBarPlateSevenMainElementMenuButtonIconLineTwo.className = `navBarSevenPlateElementMenuButtonIconLineTwo`
+                                                navBarPlateSevenMainElementMenuButtonIconLineTwo.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineTwo`
 
                                                 var navBarPlateSevenMainElementMenuButtonIconLineThree = document.createElement("div")
-                                                navBarPlateSevenMainElementMenuButtonIconLineThree.className = `navBarSevenPlateElementMenuButtonIconLineThree`
+                                                navBarPlateSevenMainElementMenuButtonIconLineThree.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineThree`
 
 
 
@@ -10774,41 +10888,41 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateSevenMainElementBottomMenuContainer = document.createElement("div")
-                                navBarPlateSevenMainElementBottomMenuContainer.className = `navBarSevenPlateElementBottomMenuContainer`
+                                navBarPlateSevenMainElementBottomMenuContainer.className = `navBar${cushionNumber}PlateElementBottomMenuContainer`
 
 
 
 
 
                                     var navBarPlateSevenMainElementBottomLeftButtonContainer = document.createElement("div")
-                                    navBarPlateSevenMainElementBottomLeftButtonContainer.className = `navBarSevenPlateElementBottomLeftButtonContainer`
+                                    navBarPlateSevenMainElementBottomLeftButtonContainer.className = `navBar${cushionNumber}PlateElementBottomLeftButtonContainer`
 
                                             // LEFT BUTTON CLICKER CONTAINER -----------------------------
                                             // ///////////////////////////////////////////////////////////
 
                                                 var navBarPlateSevenMainElementBottomLeftButtonClickerContainer = document.createElement("div")
-                                                navBarPlateSevenMainElementBottomLeftButtonClickerContainer.className = `navBarSevenPlateElementBottomLeftButtonClickerContainer`
+                                                navBarPlateSevenMainElementBottomLeftButtonClickerContainer.className = `navBar${cushionNumber}PlateElementBottomLeftButtonClickerContainer`
 
                                                     var navBarPlateSevenMainElementBottomLeftButtonClickerActual = document.createElement("div")
-                                                    navBarPlateSevenMainElementBottomLeftButtonClickerActual.className = `navBarSevenPlateElementBottomLeftButtonClickerActual`
+                                                    navBarPlateSevenMainElementBottomLeftButtonClickerActual.className = `navBar${cushionNumber}PlateElementBottomLeftButtonClickerActual`
 
                                             // LEFT BUTTON ICON CONTAINER --------------------------------
                                             // ///////////////////////////////////////////////////////////
 
                                                 var navBarPlateSevenMainElementBottomLeftButtonIconContainer = document.createElement("div")
-                                                navBarPlateSevenMainElementBottomLeftButtonIconContainer.className = `navBarSevenPlateElementBottomLeftButtonIconContainer`
+                                                navBarPlateSevenMainElementBottomLeftButtonIconContainer.className = `navBar${cushionNumber}PlateElementBottomLeftButtonIconContainer`
 
                                                     var navBarPlateSevenMainElementBottomLeftButtonIconMoverContainer = document.createElement("div")
-                                                    navBarPlateSevenMainElementBottomLeftButtonIconMoverContainer.className = `navBarSevenPlateElementBottomLeftButtonIconMoverContainer`
+                                                    navBarPlateSevenMainElementBottomLeftButtonIconMoverContainer.className = `navBar${cushionNumber}PlateElementBottomLeftButtonIconMoverContainer`
 
                                                         var navBarPlateSevenMainElementBottomLeftButtonIconLineOneContainer = document.createElement("div")
-                                                        navBarPlateSevenMainElementBottomLeftButtonIconLineOneContainer.className = `navBarSevenPlateElementBottomLeftButtonIconLineOneContainer`
+                                                        navBarPlateSevenMainElementBottomLeftButtonIconLineOneContainer.className = `navBar${cushionNumber}PlateElementBottomLeftButtonIconLineOneContainer`
 
                                                         var navBarPlateSevenMainElementBottomLeftButtonIconLineTwoContainer = document.createElement("div")
-                                                        navBarPlateSevenMainElementBottomLeftButtonIconLineTwoContainer.className = `navBarSevenPlateElementBottomLeftButtonIconLineTwoContainer`
+                                                        navBarPlateSevenMainElementBottomLeftButtonIconLineTwoContainer.className = `navBar${cushionNumber}PlateElementBottomLeftButtonIconLineTwoContainer`
 
                                                         var navBarPlateSevenMainElementBottomLeftButtonIconLineThreeContainer = document.createElement("div")
-                                                        navBarPlateSevenMainElementBottomLeftButtonIconLineThreeContainer.className = `navBarSevenPlateElementBottomLeftButtonIconLineThreeContainer`
+                                                        navBarPlateSevenMainElementBottomLeftButtonIconLineThreeContainer.className = `navBar${cushionNumber}PlateElementBottomLeftButtonIconLineThreeContainer`
 
 
 
@@ -10817,10 +10931,10 @@
 
 
                                     var navBarPlateSevenMainElementBottomListItemContainer = document.createElement("div")
-                                    navBarPlateSevenMainElementBottomListItemContainer.className = `navBarSevenPlateElementBottomLeftListItemContainer`
+                                    navBarPlateSevenMainElementBottomListItemContainer.className = `navBar${cushionNumber}PlateElementBottomLeftListItemContainer`
 
                                         var navBarPlateSevenMainElementBottomListItemShelf = document.createElement("div")
-                                        navBarPlateSevenMainElementBottomListItemShelf.className = `navBarSevenPlateElementBottomLeftListItemShelf`
+                                        navBarPlateSevenMainElementBottomListItemShelf.className = `navBar${cushionNumber}PlateElementBottomLeftListItemShelf`
 
 
 
@@ -10829,34 +10943,34 @@
 
 
                                     var navBarPlateSevenMainElementBottomRightButtonContainer = document.createElement("div")
-                                    navBarPlateSevenMainElementBottomRightButtonContainer.className = `navBarSevenPlateElementBottomRightButtonContainer`
+                                    navBarPlateSevenMainElementBottomRightButtonContainer.className = `navBar${cushionNumber}PlateElementBottomRightButtonContainer`
 
                                             // RIGHT BUTTON CLICKER CONTAINER ----------------------------
                                             // ///////////////////////////////////////////////////////////
 
                                                 var navBarPlateSevenMainElementBottomRightButtonClickerContainer = document.createElement("div")
-                                                navBarPlateSevenMainElementBottomRightButtonClickerContainer.className = `navBarSevenPlateElementBottomRightButtonClickerContainer`
+                                                navBarPlateSevenMainElementBottomRightButtonClickerContainer.className = `navBar${cushionNumber}PlateElementBottomRightButtonClickerContainer`
 
                                                     var navBarPlateSevenMainElementBottomRightButtonClickerActual = document.createElement("div")
-                                                    navBarPlateSevenMainElementBottomRightButtonClickerActual.className = `navBarSevenPlateElementBottomRightButtonClickerActual`
+                                                    navBarPlateSevenMainElementBottomRightButtonClickerActual.className = `navBar${cushionNumber}PlateElementBottomRightButtonClickerActual`
 
                                             // RIGHT BUTTON ICON CONTAINER -------------------------------
                                             // ///////////////////////////////////////////////////////////
 
                                                 var navBarPlateSevenMainElementBottomRightButtonIconContainer = document.createElement("div")
-                                                navBarPlateSevenMainElementBottomRightButtonIconContainer.className = `navBarSevenPlateElementBottomRightButtonIconContainer`
+                                                navBarPlateSevenMainElementBottomRightButtonIconContainer.className = `navBar${cushionNumber}PlateElementBottomRightButtonIconContainer`
 
                                                     var navBarPlateSevenMainElementBottomRightButtonIconMoverContainer = document.createElement("div")
-                                                    navBarPlateSevenMainElementBottomRightButtonIconMoverContainer.className = `navBarSevenPlateElementBottomRightButtonIconMoverContainer`
+                                                    navBarPlateSevenMainElementBottomRightButtonIconMoverContainer.className = `navBar${cushionNumber}PlateElementBottomRightButtonIconMoverContainer`
 
                                                         var navBarPlateSevenMainElementBottomRightButtonIconLineOneContainer = document.createElement("div")
-                                                        navBarPlateSevenMainElementBottomRightButtonIconLineOneContainer.className = `navBarSevenPlateElementBottomRightButtonIconLineOneContainer`
+                                                        navBarPlateSevenMainElementBottomRightButtonIconLineOneContainer.className = `navBar${cushionNumber}PlateElementBottomRightButtonIconLineOneContainer`
 
                                                         var navBarPlateSevenMainElementBottomRightButtonIconLineTwoContainer = document.createElement("div")
-                                                        navBarPlateSevenMainElementBottomRightButtonIconLineTwoContainer.className = `navBarSevenPlateElementBottomRightButtonIconLineTwoContainer`
+                                                        navBarPlateSevenMainElementBottomRightButtonIconLineTwoContainer.className = `navBar${cushionNumber}PlateElementBottomRightButtonIconLineTwoContainer`
 
                                                         var navBarPlateSevenMainElementBottomRightButtonIconLineThreeContainer = document.createElement("div")
-                                                        navBarPlateSevenMainElementBottomRightButtonIconLineThreeContainer.className = `navBarSevenPlateElementBottomRightButtonIconLineThreeContainer`
+                                                        navBarPlateSevenMainElementBottomRightButtonIconLineThreeContainer.className = `navBar${cushionNumber}PlateElementBottomRightButtonIconLineThreeContainer`
 
 
 
@@ -11713,9 +11827,9 @@
                                 // DECLARE VARIABLES FOR USE xxxxxxxxxxxxxxxx
                                 // //////////////////////////////////////////
 
-                                    var getListItemsShelfContainer = document.querySelector(`.navBarSevenPlateElementBottomLeftListItemShelf`)
-                                    var getMenuLeftClickerButton = document.querySelector(".navBarSevenPlateElementBottomLeftButtonClickerActual")
-                                    var getMenuRightClickerButton = document.querySelector(".navBarSevenPlateElementBottomRightButtonClickerActual")
+                                    var getListItemsShelfContainer = document.querySelector(`.navBar${cushionNumber}PlateElementBottomLeftListItemShelf`)
+                                    var getMenuLeftClickerButton = document.querySelector(`.navBar${cushionNumber}PlateElementBottomLeftButtonClickerActual`)
+                                    var getMenuRightClickerButton = document.querySelector(`.navBar${cushionNumber}PlateElementBottomRightButtonClickerActual`)
                                     var makeBlockDivision = (100/makeMenuListWidthLength)
 
 
@@ -11731,17 +11845,17 @@
                                                 // //////////////////////////
 
                                                     var navBarPlateSevenMainElementBottomNewListItemContainer = document.createElement("div")
-                                                    navBarPlateSevenMainElementBottomNewListItemContainer.className = `navBarSevenPlateElementBottomLefNewtListItem${classNumberMapper[shelfItemsCounter]}Container`
+                                                    navBarPlateSevenMainElementBottomNewListItemContainer.className = `navBar${cushionNumber}PlateElementBottomLefNewtListItem${classNumberMapper[shelfItemsCounter]}Container`
 
                                                         var navBarPlateSevenMainElementBottomNewListItemTextActual = document.createElement("div")
-                                                        navBarPlateSevenMainElementBottomNewListItemTextActual.className = `navBarSevenPlateElementBottomLefNewtListItem${classNumberMapper[shelfItemsCounter]}TextActual`
+                                                        navBarPlateSevenMainElementBottomNewListItemTextActual.className = `navBar${cushionNumber}PlateElementBottomLefNewtListItem${classNumberMapper[shelfItemsCounter]}TextActual`
 
 
                                                 // ADD DROP DOWN MENU TEXT TO CLASS COLLECTOR ARRAY
                                                 // //////////////////////////
 
 
-                                                    storeNavBarItemsClassNames.push(`navBarSevenPlateElementBottomLefNewtListItem${classNumberMapper[shelfItemsCounter]}TextActual`)
+                                                    storeNavBarItemsClassNames.push(`navBar${cushionNumber}PlateElementBottomLefNewtListItem${classNumberMapper[shelfItemsCounter]}TextActual`)
 
 
                                                 // STYLE NEW VARIABLES ------
@@ -11814,17 +11928,17 @@
                                             var makeMarginShifterMax = Number(`${storeNavBarItems.length}00`)
                                             var createNewModifiedNumber = 0
 
-                                            var getLeftMenuScrollButton = document.querySelector(".navBarSevenPlateElementBottomLeftButtonIconContainer")
+                                            var getLeftMenuScrollButton = document.querySelector(`.navBar${cushionNumber}PlateElementBottomLeftButtonIconContainer`)
 
-                                                var getLeftMenuIconLineOne = document.querySelector(".navBarSevenPlateElementBottomLeftButtonIconLineOneContainer")
-                                                var getLeftMenuIconLineThree = document.querySelector(".navBarSevenPlateElementBottomLeftButtonIconLineThreeContainer")
+                                                var getLeftMenuIconLineOne = document.querySelector(`.navBar${cushionNumber}PlateElementBottomLeftButtonIconLineOneContainer`)
+                                                var getLeftMenuIconLineThree = document.querySelector(`.navBar${cushionNumber}PlateElementBottomLeftButtonIconLineThreeContainer`)
 
 
 
-                                            var getRightMenuScrollButton = document.querySelector(".navBarSevenPlateElementBottomRightButtonIconContainer")
+                                            var getRightMenuScrollButton = document.querySelector(`.navBar${cushionNumber}PlateElementBottomRightButtonIconContainer`)
 
-                                                var getRightMenuIconLineOne = document.querySelector(".navBarSevenPlateElementBottomRightButtonIconLineOneContainer")
-                                                var getRightMenuIconLineThree = document.querySelector(".navBarSevenPlateElementBottomRightButtonIconLineThreeContainer")
+                                                var getRightMenuIconLineOne = document.querySelector(`.navBar${cushionNumber}PlateElementBottomRightButtonIconLineOneContainer`)
+                                                var getRightMenuIconLineThree = document.querySelector(`.navBar${cushionNumber}PlateElementBottomRightButtonIconLineThreeContainer`)
 
 
 
@@ -12338,14 +12452,14 @@
                                         // DECLARE VARIABLES xxxxxxxxxxxxxxxx
                                         // //////////////////////////////////
 
-                                            var getMenuOpenClicker = document.querySelector(`.navBarSevenPlateElementMenuButtonClickerOn`)
-                                            var getMenuCloseClicker = document.querySelector(`.navBarSevenPlateElementMenuButtonClickerOff`)
+                                            var getMenuOpenClicker = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonClickerOn`)
+                                            var getMenuCloseClicker = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonClickerOff`)
 
-                                            var getMenuIconLineOne = document.querySelector(`.navBarSevenPlateElementMenuButtonIconLineOne`)
-                                            var getMenuIconLineTwo = document.querySelector(`.navBarSevenPlateElementMenuButtonIconLineTwo`)
-                                            var getMenuIconLineThree = document.querySelector(`.navBarSevenPlateElementMenuButtonIconLineThree`)
+                                            var getMenuIconLineOne = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineOne`)
+                                            var getMenuIconLineTwo = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineTwo`)
+                                            var getMenuIconLineThree = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineThree`)
 
-                                            var getDropDownMenu = document.querySelector(`.navBarSevenPlateElementBottomMenuContainer`)
+                                            var getDropDownMenu = document.querySelector(`.navBar${cushionNumber}PlateElementBottomMenuContainer`)
 
 
 
@@ -12768,7 +12882,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateEightMainContainer = document.createElement("div")
-                                navBarPlateEightMainContainer.className = `navBarEightMainContainer`
+                                navBarPlateEightMainContainer.className = `navBar${cushionNumber}MainContainer`
 
 
 
@@ -12778,7 +12892,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateEightMainElement = document.createElement("div")
-                                navBarPlateEightMainElement.className = `navBarEightPlateElementContainer`
+                                navBarPlateEightMainElement.className = `navBar${cushionNumber}PlateElementContainer`
 
 
 
@@ -12788,10 +12902,10 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateEightMainElementMenuButtonContainer = document.createElement("div")
-                                navBarPlateEightMainElementMenuButtonContainer.className = `navBarEightPlateElementMenuButtonContainer`
+                                navBarPlateEightMainElementMenuButtonContainer.className = `navBar${cushionNumber}PlateElementMenuButtonContainer`
 
                                     var navBarPlateEightMainElementMenuButtonElement = document.createElement("div")
-                                    navBarPlateEightMainElementMenuButtonElement.className = `navBarEightPlateElementMenuButtonElement`
+                                    navBarPlateEightMainElementMenuButtonElement.className = `navBar${cushionNumber}PlateElementMenuButtonElement`
 
 
 
@@ -12800,13 +12914,13 @@
                                         
 
                                         var navBarPlateEightMainElementMenuButtonClickerContainer = document.createElement("div")
-                                        navBarPlateEightMainElementMenuButtonClickerContainer.className = `navBarEightPlateElementMenuButtonClickerContainer`
+                                        navBarPlateEightMainElementMenuButtonClickerContainer.className = `navBar${cushionNumber}PlateElementMenuButtonClickerContainer`
 
                                             var navBarPlateEightMainElementMenuButtonClickerOn = document.createElement("div")
-                                            navBarPlateEightMainElementMenuButtonClickerOn.className = `navBarEightPlateElementMenuButtonClickerOn`
+                                            navBarPlateEightMainElementMenuButtonClickerOn.className = `navBar${cushionNumber}PlateElementMenuButtonClickerOn`
 
                                             var navBarPlateEightMainElementMenuButtonClickerOff = document.createElement("div")
-                                            navBarPlateEightMainElementMenuButtonClickerOff.className = `navBarEightPlateElementMenuButtonClickerOff`
+                                            navBarPlateEightMainElementMenuButtonClickerOff.className = `navBar${cushionNumber}PlateElementMenuButtonClickerOff`
 
 
 
@@ -12815,19 +12929,19 @@
                                         
 
                                         var navBarPlateEightMainElementMenuButtonIconContainer = document.createElement("div")
-                                        navBarPlateEightMainElementMenuButtonIconContainer.className = `navBarEightPlateElementMenuButtonIconContainer`
+                                        navBarPlateEightMainElementMenuButtonIconContainer.className = `navBar${cushionNumber}PlateElementMenuButtonIconContainer`
 
                                             var navBarPlateEightMainElementMenuButtonIconMover = document.createElement("div")
-                                            navBarPlateEightMainElementMenuButtonIconMover.className = `navBarEightPlateElementMenuButtonIconMover`
+                                            navBarPlateEightMainElementMenuButtonIconMover.className = `navBar${cushionNumber}PlateElementMenuButtonIconMover`
 
                                                 var navBarPlateEightMainElementMenuButtonIconLineOne = document.createElement("div")
-                                                navBarPlateEightMainElementMenuButtonIconLineOne.className = `navBarEightPlateElementMenuButtonIconLineOne`
+                                                navBarPlateEightMainElementMenuButtonIconLineOne.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineOne`
 
                                                 var navBarPlateEightMainElementMenuButtonIconLineTwo = document.createElement("div")
-                                                navBarPlateEightMainElementMenuButtonIconLineTwo.className = `navBarEightPlateElementMenuButtonIconLineTwo`
+                                                navBarPlateEightMainElementMenuButtonIconLineTwo.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineTwo`
 
                                                 var navBarPlateEightMainElementMenuButtonIconLineThree = document.createElement("div")
-                                                navBarPlateEightMainElementMenuButtonIconLineThree.className = `navBarEightPlateElementMenuButtonIconLineThree`
+                                                navBarPlateEightMainElementMenuButtonIconLineThree.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineThree`
 
 
 
@@ -12837,10 +12951,10 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateEightDropDownMenuContainer = document.createElement("div")
-                                navBarPlateEightDropDownMenuContainer.className = `navBarEightPlateDropDownMenuListContainer`
+                                navBarPlateEightDropDownMenuContainer.className = `navBar${cushionNumber}PlateDropDownMenuListContainer`
 
                                     var navBarPlateEightDropDownMenuResizer = document.createElement("div")
-                                    navBarPlateEightDropDownMenuResizer.className = `navBarEightPlateDropDownMenuListResizer`
+                                    navBarPlateEightDropDownMenuResizer.className = `navBar${cushionNumber}PlateDropDownMenuListResizer`
 
 
 
@@ -13297,17 +13411,17 @@
                                         // ////////////////////////////////
 
 
-                                            var navBarListMenuItemMainContainer = document.querySelector(".navBarEightPlateDropDownMenuListResizer")
+                                            var navBarListMenuItemMainContainer = document.querySelector(`.navBar${cushionNumber}PlateDropDownMenuListResizer`)
 
 
                                             var navBarListItemContainer = document.createElement("div")
-                                            navBarListItemContainer.className = `navBarListItemContainerMain${classNumberMapper[menuItemCounter]}`
+                                            navBarListItemContainer.className = `navBarListItemContainerMain${menuItemCounter}`
 
                                                 var navBarListItemActualElement = document.createElement("div")
-                                                navBarListItemActualElement.className = `navBarListItemContainerActualElement${classNumberMapper[menuItemCounter]}`
+                                                navBarListItemActualElement.className = `navBarListItemContainerActualElement${menuItemCounter}`
 
                                                     var navBarListItemTextActual = document.createElement("div")
-                                                    navBarListItemTextActual.className = `navBarListItemTextActual${classNumberMapper[menuItemCounter]}`
+                                                    navBarListItemTextActual.className = `navBarListItemTextActual${menuItemCounter}`
 
 
 
@@ -13379,7 +13493,7 @@
                                         // ADD TEXT TO BLOCK CONTAINER ----
                                         // ////////////////////////////////
 
-                                            navBarListItemTextActual.textContent = `${storeNavBarItems[menuItemCounter]}`
+                                            navBarListItemTextActual.textContent = `${menuItemCounter}`
 
 
 
@@ -13388,7 +13502,7 @@
                                         // MAKE ARRAYS FOR DROP DOWN MENU LIST ITEMS ====
                                         // //////////////////////////////////////////////
 
-                                            storeNavBarItemsClassNames.push(`navBarListItemContainerActualElement${classNumberMapper[menuItemCounter]}`)
+                                            storeNavBarItemsClassNames.push(`navBarListItemContainerActualElement${menuItemCounter}`)
 
 
 
@@ -13574,14 +13688,14 @@
                                 // DECLARE VARIABLES FOR EVENTS USE ---------
                                 // //////////////////////////////////////////
 
-                                    var getMenuOpenClicker = document.querySelector(".navBarEightPlateElementMenuButtonClickerOn")
-                                    var getMenuCloseClicker = document.querySelector(".navBarEightPlateElementMenuButtonClickerOff")
+                                    var getMenuOpenClicker = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonClickerOn`)
+                                    var getMenuCloseClicker = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonClickerOff`)
 
-                                    var getDropDownTrayMain = document.querySelector(".navBarEightPlateDropDownMenuListContainer")
+                                    var getDropDownTrayMain = document.querySelector(`.navBar${cushionNumber}PlateDropDownMenuListContainer`)
 
-                                    var getMenuIconLineOne = document.querySelector(".navBarEightPlateElementMenuButtonIconLineOne")
-                                    var getMenuIconLineTwo = document.querySelector(".navBarEightPlateElementMenuButtonIconLineTwo")
-                                    var getMenuIconLineThree = document.querySelector(".navBarEightPlateElementMenuButtonIconLineThree")
+                                    var getMenuIconLineOne = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineOne`)
+                                    var getMenuIconLineTwo = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineTwo`)
+                                    var getMenuIconLineThree = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineThree`)
 
 
 
@@ -14023,7 +14137,7 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateNineMainContainer = document.createElement("div")
-                                navBarPlateNineMainContainer.className = `navBarNineMainContainer`
+                                navBarPlateNineMainContainer.className = `navBar${cushionNumber}MainContainer`
 
 
 
@@ -14033,19 +14147,19 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateNineMainElement = document.createElement("div")
-                                navBarPlateNineMainElement.className = `navBarNinePlateElementContainer`
+                                navBarPlateNineMainElement.className = `navBar${cushionNumber}PlateElementContainer`
 
                                     var navBarPlateNineLogoMenuItemsContainer = document.createElement("div")
-                                    navBarPlateNineLogoMenuItemsContainer.className = `navBarNinePlateLogoMenuItemsContainer`
+                                    navBarPlateNineLogoMenuItemsContainer.className = `navBar${cushionNumber}PlateLogoMenuItemsContainer`
 
                                         var navBarPlateNineLogoMenuItemsShifter = document.createElement("div")
-                                        navBarPlateNineLogoMenuItemsShifter.className = `navBarNinePlateLogoMenuItemsShifter`
+                                        navBarPlateNineLogoMenuItemsShifter.className = `navBar${cushionNumber}PlateLogoMenuItemsShifter`
 
                                             var navBarPlateNineLogoContainer = document.createElement("div")
-                                            navBarPlateNineLogoContainer.className = `navBarNinePlateLogoContainer`
+                                            navBarPlateNineLogoContainer.className = `navBar${cushionNumber}PlateLogoContainer`
 
                                                 var navBarPlateNineLogoActual = document.createElement("div")
-                                                navBarPlateNineLogoActual.className = `navBarNinePlateLogoActual`
+                                                navBarPlateNineLogoActual.className = `navBar${cushionNumber}PlateLogoActual`
 
 
 
@@ -14055,10 +14169,10 @@
                             // //////////////////////////////////////////////
 
                                 var navBarPlateNineMainElementMenuButtonContainer = document.createElement("div")
-                                navBarPlateNineMainElementMenuButtonContainer.className = `navBarNinePlateElementMenuButtonContainer`
+                                navBarPlateNineMainElementMenuButtonContainer.className = `navBar${cushionNumber}PlateElementMenuButtonContainer`
 
                                     var navBarPlateNineMainElementMenuButtonElement = document.createElement("div")
-                                    navBarPlateNineMainElementMenuButtonElement.className = `navBarNinePlateElementMenuButtonElement`
+                                    navBarPlateNineMainElementMenuButtonElement.className = `navBar${cushionNumber}PlateElementMenuButtonElement`
 
 
 
@@ -14067,13 +14181,13 @@
                                         
 
                                         var navBarPlateNineMainElementMenuButtonClickerContainer = document.createElement("div")
-                                        navBarPlateNineMainElementMenuButtonClickerContainer.className = `navBarNinePlateElementMenuButtonClickerContainer`
+                                        navBarPlateNineMainElementMenuButtonClickerContainer.className = `navBar${cushionNumber}PlateElementMenuButtonClickerContainer`
 
                                             var navBarPlateNineMainElementMenuButtonClickerOn = document.createElement("div")
-                                            navBarPlateNineMainElementMenuButtonClickerOn.className = `navBarNinePlateElementMenuButtonClickerOn`
+                                            navBarPlateNineMainElementMenuButtonClickerOn.className = `navBar${cushionNumber}PlateElementMenuButtonClickerOn`
 
                                             var navBarPlateNineMainElementMenuButtonClickerOff = document.createElement("div")
-                                            navBarPlateNineMainElementMenuButtonClickerOff.className = `navBarNinePlateElementMenuButtonClickerOff`
+                                            navBarPlateNineMainElementMenuButtonClickerOff.className = `navBar${cushionNumber}PlateElementMenuButtonClickerOff`
 
 
 
@@ -14082,19 +14196,19 @@
                                         
 
                                         var navBarPlateNineMainElementMenuButtonIconContainer = document.createElement("div")
-                                        navBarPlateNineMainElementMenuButtonIconContainer.className = `navBarNinePlateElementMenuButtonIconContainer`
+                                        navBarPlateNineMainElementMenuButtonIconContainer.className = `navBar${cushionNumber}PlateElementMenuButtonIconContainer`
 
                                             var navBarPlateNineMainElementMenuButtonIconMover = document.createElement("div")
-                                            navBarPlateNineMainElementMenuButtonIconMover.className = `navBarNinePlateElementMenuButtonIconMover`
+                                            navBarPlateNineMainElementMenuButtonIconMover.className = `navBar${cushionNumber}PlateElementMenuButtonIconMover`
 
                                                 var navBarPlateNineMainElementMenuButtonIconLineOne = document.createElement("div")
-                                                navBarPlateNineMainElementMenuButtonIconLineOne.className = `navBarNinePlateElementMenuButtonIconLineOne`
+                                                navBarPlateNineMainElementMenuButtonIconLineOne.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineOne`
 
                                                 var navBarPlateNineMainElementMenuButtonIconLineTwo = document.createElement("div")
-                                                navBarPlateNineMainElementMenuButtonIconLineTwo.className = `navBarNinePlateElementMenuButtonIconLineTwo`
+                                                navBarPlateNineMainElementMenuButtonIconLineTwo.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineTwo`
 
                                                 var navBarPlateNineMainElementMenuButtonIconLineThree = document.createElement("div")
-                                                navBarPlateNineMainElementMenuButtonIconLineThree.className = `navBarNinePlateElementMenuButtonIconLineThree`
+                                                navBarPlateNineMainElementMenuButtonIconLineThree.className = `navBar${cushionNumber}PlateElementMenuButtonIconLineThree`
 
 
 
@@ -14563,7 +14677,7 @@
                                 // DECLARE VARIEBALES xxxxxxxxxxxxxxxxxxxxxxx
                                 // //////////////////////////////////////////
 
-                                    var getShifterContainer = document.querySelector(".navBarNinePlateLogoMenuItemsShifter")
+                                    var getShifterContainer = document.querySelector(`.navBar${cushionNumber}PlateLogoMenuItemsShifter`)
 
 
 
@@ -14578,10 +14692,10 @@
                                         // //////////////////////////////////
     
                                             var createMenuItemContainer = document.createElement("div")
-                                            createMenuItemContainer.className = `navBarNinePlateMenuItem${classNumberMapper[menuCreateCounter]}`
+                                            createMenuItemContainer.className = `navBarNinePlateMenuItem${menuCreateCounter}`
 
                                                 var createMenuItemActual = document.createElement("div")
-                                                createMenuItemActual.className = `navBarNinePlateMenuItem${classNumberMapper[menuCreateCounter]}ActualText`
+                                                createMenuItemActual.className = `navBarNinePlateMenuItem${menuCreateCounter}ActualText`
                                                 
     
                                         // STYLE MENU ITEM BLOCK xxxxxxxxxxxx
@@ -14631,13 +14745,13 @@
                                         // ADD TEXT TO ITEM BLOCK xxxxxxxxxxx
                                         // //////////////////////////////////
 
-                                            createMenuItemActual.textContent = `${storeNavBarItems[menuCreateCounter]}`
+                                            createMenuItemActual.textContent = `${menuCreateCounter}`
                                                 
     
                                         // ADD TEXT BLOCK CLASSNAME TO ARRAY HOLDER
                                         // //////////////////////////////////
 
-                                            storeNavBarItemsClassNames.push(`navBarNinePlateMenuItem${classNumberMapper[menuCreateCounter]}ActualText`)
+                                            storeNavBarItemsClassNames.push(`navBarNinePlateMenuItem${menuCreateCounter}ActualText`)
 
     
                                         // APPEND NEW ELEMENTS xxxxxxxxxxxxxx
@@ -14718,7 +14832,7 @@
                                 // DECLARE STRINGVARIABLES xxxxxxxxxxxxxxxxxx
                                 // //////////////////////////////////////////
 
-                                    var getMainNavBarTab = document.querySelector(`.navBarNineMainContainer`)
+                                    var getMainNavBarTab = document.querySelector(`.navBar${cushionNumber}MainContainer`)
 
                                     
 
@@ -14726,16 +14840,16 @@
                                 // //////////////////////////////////////////
 
                                     var navBarPlateNineShifterButtonsContainer = document.createElement("div")
-                                    navBarPlateNineShifterButtonsContainer.className = `navBarNinePlateElementShifterButtonsContainer`
+                                    navBarPlateNineShifterButtonsContainer.className = `navBar${cushionNumber}PlateElementShifterButtonsContainer`
 
                                         var navBarPlateNineShifterButtonsElementResizer = document.createElement("div")
-                                        navBarPlateNineShifterButtonsElementResizer.className = `navBarNinePlateElementShifterButtonsElementResizer`
+                                        navBarPlateNineShifterButtonsElementResizer.className = `navBar${cushionNumber}PlateElementShifterButtonsElementResizer`
 
                                             // LEFT BUTTON CONTAINER --------
                                             // //////////////////////////////
 
                                                 var navBarPlateNineShifterButtonsElementLeftButtonContainer = document.createElement("div")
-                                                navBarPlateNineShifterButtonsElementLeftButtonContainer.className = `navBarNinePlateElementShifterButtonsElementLeftButtonContainer`
+                                                navBarPlateNineShifterButtonsElementLeftButtonContainer.className = `navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonContainer`
 
 
 
@@ -14743,10 +14857,10 @@
                                                     // /////////////////////
 
                                                         var navBarPlateNineShifterButtonsElementLeftButtonClickerContainer = document.createElement("div")
-                                                        navBarPlateNineShifterButtonsElementLeftButtonClickerContainer.className = `navBarNinePlateElementShifterButtonsElementLeftButtonClickerContainer`
+                                                        navBarPlateNineShifterButtonsElementLeftButtonClickerContainer.className = `navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonClickerContainer`
 
                                                             var navBarPlateNineShifterButtonsElementLeftButtonClickerActual = document.createElement("div")
-                                                            navBarPlateNineShifterButtonsElementLeftButtonClickerActual.className = `navBarNinePlateElementShifterButtonsElementLeftButtonClickerActual`
+                                                            navBarPlateNineShifterButtonsElementLeftButtonClickerActual.className = `navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonClickerActual`
 
 
 
@@ -14754,16 +14868,16 @@
                                                     // /////////////////////
 
                                                         var navBarPlateNineShifterButtonsElementLeftButtonIconMover = document.createElement("div")
-                                                        navBarPlateNineShifterButtonsElementLeftButtonIconMover.className = `navBarNinePlateElementShifterButtonsElementLeftButtonMover`
+                                                        navBarPlateNineShifterButtonsElementLeftButtonIconMover.className = `navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonMover`
 
                                                             var navBarPlateNineShifterButtonsElementLeftButtonIconLineOne = document.createElement("div")
-                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineOne.className = `navBarNinePlateElementShifterButtonsElementLeftButtonIconLineOne`
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineOne.className = `navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonIconLineOne`
 
                                                             var navBarPlateNineShifterButtonsElementLeftButtonIconLineTwo = document.createElement("div")
-                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineTwo.className = `navBarNinePlateElementShifterButtonsElementLeftButtonIconLineTwo`
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineTwo.className = `navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonIconLineTwo`
 
                                                             var navBarPlateNineShifterButtonsElementLeftButtonIconLineThree = document.createElement("div")
-                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineThree.className = `navBarNinePlateElementShifterButtonsElementLeftButtonIconLineThree`
+                                                            navBarPlateNineShifterButtonsElementLeftButtonIconLineThree.className = `navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonIconLineThree`
 
 
 
@@ -14772,7 +14886,7 @@
                                             // //////////////////////////////
 
                                                 var navBarPlateNineShifterButtonsElementRightButtonContainer = document.createElement("div")
-                                                navBarPlateNineShifterButtonsElementRightButtonContainer.className = `navBarNinePlateElementShifterButtonsElementRightButtonContainer`
+                                                navBarPlateNineShifterButtonsElementRightButtonContainer.className = `navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonContainer`
 
 
 
@@ -14780,10 +14894,10 @@
                                                     // /////////////////////
 
                                                         var navBarPlateNineShifterButtonsElementRightButtonClickerContainer = document.createElement("div")
-                                                        navBarPlateNineShifterButtonsElementRightButtonClickerContainer.className = `navBarNinePlateElementShifterButtonsElementRightButtonClickerContainer`
+                                                        navBarPlateNineShifterButtonsElementRightButtonClickerContainer.className = `navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonClickerContainer`
 
                                                             var navBarPlateNineShifterButtonsElementRightButtonClickerActual = document.createElement("div")
-                                                            navBarPlateNineShifterButtonsElementRightButtonClickerActual.className = `navBarNinePlateElementShifterButtonsElementRightButtonClickerActual`
+                                                            navBarPlateNineShifterButtonsElementRightButtonClickerActual.className = `navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonClickerActual`
 
 
 
@@ -14791,16 +14905,16 @@
                                                     // /////////////////////
 
                                                         var navBarPlateNineShifterButtonsElementRightButtonIconMover = document.createElement("div")
-                                                        navBarPlateNineShifterButtonsElementRightButtonIconMover.className = `navBarNinePlateElementShifterButtonsElementRightButtonMover`
+                                                        navBarPlateNineShifterButtonsElementRightButtonIconMover.className = `navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonMover`
 
                                                             var navBarPlateNineShifterButtonsElementRightButtonIconLineOne = document.createElement("div")
-                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineOne.className = `navBarNinePlateElementShifterButtonsElementRightButtonIconLineOne`
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineOne.className = `navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonIconLineOne`
 
                                                             var navBarPlateNineShifterButtonsElementRightButtonIconLineTwo = document.createElement("div")
-                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineTwo.className = `navBarNinePlateElementShifterButtonsElementRightButtonIconLineTwo`
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineTwo.className = `navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonIconLineTwo`
 
                                                             var navBarPlateNineShifterButtonsElementRightButtonIconLineThree = document.createElement("div")
-                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineThree.className = `navBarNinePlateElementShifterButtonsElementRightButtonIconLineThree`
+                                                            navBarPlateNineShifterButtonsElementRightButtonIconLineThree.className = `navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonIconLineThree`
 
 
 
@@ -15252,27 +15366,27 @@
                                 // DECLARE VARAIBLES FOR USE ----------------
                                 // //////////////////////////////////////////
 
-                                    var getMenuOpenClicker = document.querySelector(".navBarNinePlateElementMenuButtonClickerOn")
-                                    var getMenuCloseClicker = document.querySelector(".navBarNinePlateElementMenuButtonClickerOff")
+                                    var getMenuOpenClicker = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonClickerOn`)
+                                    var getMenuCloseClicker = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonClickerOff`)
 
-                                    var getMenuIconLineOne = document.querySelector(".navBarNinePlateElementMenuButtonIconLineOne")
-                                    var getMenuIconLineTwo = document.querySelector(".navBarNinePlateElementMenuButtonIconLineTwo")
-                                    var getMenuIconLineThree = document.querySelector(".navBarNinePlateElementMenuButtonIconLineThree")
+                                    var getMenuIconLineOne = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineOne`)
+                                    var getMenuIconLineTwo = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineTwo`)
+                                    var getMenuIconLineThree = document.querySelector(`.navBar${cushionNumber}PlateElementMenuButtonIconLineThree`)
 
-                                    var getMenuShifter = document.querySelector(".navBarNinePlateLogoMenuItemsShifter")
+                                    var getMenuShifter = document.querySelector(`.navBar${cushionNumber}PlateLogoMenuItemsShifter`)
 
-                                    var getMenuShifterButtonsContainerMain = document.querySelector(".navBarNinePlateElementShifterButtonsContainer")
+                                    var getMenuShifterButtonsContainerMain = document.querySelector(`.navBar${cushionNumber}PlateElementShifterButtonsContainer`)
 
-                                        var getMenuShifterButtonLeftClicker = document.querySelector(".navBarNinePlateElementShifterButtonsElementLeftButtonClickerActual")
+                                        var getMenuShifterButtonLeftClicker = document.querySelector(`.navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonClickerActual`)
 
-                                            var getMenuShifterButtonLeftIconLineOne = document.querySelector(".navBarNinePlateElementShifterButtonsElementLeftButtonIconLineOne")
-                                            var getMenuShifterButtonLeftIconLineThree = document.querySelector(".navBarNinePlateElementShifterButtonsElementLeftButtonIconLineThree")
+                                            var getMenuShifterButtonLeftIconLineOne = document.querySelector(`.navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonIconLineOne`)
+                                            var getMenuShifterButtonLeftIconLineThree = document.querySelector(`.navBar${cushionNumber}PlateElementShifterButtonsElementLeftButtonIconLineThree`)
                                         
 
-                                        var getMenuShifterButtonRightClicker = document.querySelector(".navBarNinePlateElementShifterButtonsElementRightButtonClickerActual")
+                                        var getMenuShifterButtonRightClicker = document.querySelector(`.navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonClickerActual`)
 
-                                            var getMenuShifterButtonRightIconLineOne = document.querySelector(".navBarNinePlateElementShifterButtonsElementRightButtonIconLineOne")
-                                            var getMenuShifterButtonRightIconLineThree = document.querySelector(".navBarNinePlateElementShifterButtonsElementRightButtonIconLineThree")
+                                            var getMenuShifterButtonRightIconLineOne = document.querySelector(`.navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonIconLineOne`)
+                                            var getMenuShifterButtonRightIconLineThree = document.querySelector(`.navBar${cushionNumber}PlateElementShifterButtonsElementRightButtonIconLineThree`)
 
                                     
 
@@ -15634,7 +15748,7 @@
                                                 menuListShifterNumberAltered = 0
 
                                                 makeMenuListItemShifterWidth = 0
-                                                
+
 
                                             // CHANGE RIGHT BUTTON CLICKER TO DISABLED MODE
                                             // ///////////////
@@ -16367,6 +16481,336 @@
 
                     function createNavBarTenMainPlate (cushionNumber) {
 
+                        // GET NAV BAR CUSHION xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            var createNavBarCushion = document.querySelector(`.navBar${cushionNumber}`)
+
+                        // CREATE NAV BAR FOUR ELEMENTS xxxxxxxxxxxxxxxxxxxxx
+                        // //////////////////////////////////////////////////
+
+                            // CREATE MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateTenMainContainer = document.createElement("div")
+                                navBarPlateTenMainContainer.className = `navBar${cushionNumber}MainContainer`
+
+
+
+
+
+                                    // CREATE MAIN NAV BAR PLATE ELEMENT ==== 
+                                    // //////////////////////////////////////
+
+                                        var navBarPlateTenMainElement = document.createElement("div")
+                                        navBarPlateTenMainElement.className = `navBar${cushionNumber}PlateElementContainer`
+
+
+
+                                    // CREATE MAIN NAV BAR MENU BUTTON CONTAINER 
+                                    // //////////////////////////////////////
+
+                                        var navBarPlateTenMenuButtonContainer = document.createElement("div")
+                                        navBarPlateTenMenuButtonContainer.className = `navBar${cushionNumber}PlateMenuButtonContainer`
+
+
+
+
+
+
+
+                            // CREATE NAV BAR MENU BAR ELEMENT ============== 
+                            // //////////////////////////////////////////////
+
+                                var navBarPlateTenMainMenuBarContainer = document.createElement("div")
+                                navBarPlateTenMainMenuBarContainer.className = `navBar${cushionNumber}PlateMenuBarContainer`
+
+
+                                    // MENU ITEMS SIDE CONTAINER ------------
+                                    // //////////////////////////////////////
+
+                                        var navBarPlateTenMainMenuBarItemsSideContainer = document.createElement("div")
+                                        navBarPlateTenMainMenuBarItemsSideContainer.className = `navBar${cushionNumber}PlateMenuBarItemsSideContainer`
+
+                                            var navBarPlateTenMainMenuBarItemsSideResizer = document.createElement("div")
+                                            navBarPlateTenMainMenuBarItemsSideResizer.className = `navBar${cushionNumber}PlateMenuBarItemsSideResizer`
+
+
+                                    // OPEN CLOSE MENU SIDE CONTAINER -------
+                                    // //////////////////////////////////////
+
+                                        var navBarPlateTenMainMenuBarOpenCloseSideContainer = document.createElement("div")
+                                        navBarPlateTenMainMenuBarOpenCloseSideContainer.className = `navBar${cushionNumber}PlateMenuBarOpenCloseSideContainer`
+
+                                            // OPEN CLOSE MENU CLICKERS CONTAINER
+                                            // //////////////////////////////
+
+                                                var navBarPlateTenMainMenuBarOpenCloseSideClickerContainer = document.createElement("div")
+                                                navBarPlateTenMainMenuBarOpenCloseSideClickerContainer.className = `navBar${cushionNumber}PlateMenuBarOpenCloseSideClickerContainer`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // STYLE MAIN NAV BAR PLATE AND ELEMENTS ========
+                            // //////////////////////////////////////////////
+
+                                // STYLE MAIN NAV BAR ELEMENTS xxxxxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateTenMainContainer.style = `
+                                    
+                                        width:200px;
+                                        height:50px;
+                                        top:20px;
+                                        left:0;
+                                        right:0;
+                                        margin:auto;
+                                        z-index:2;
+                                        position:fixed;
+                                        border-radius:10px;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+                                    
+
+                                    // STYLE MAIN NAV BAR PLATE ELEMENT -----
+                                    // //////////////////////////////////////
+
+                                        navBarPlateTenMainElement.style = `
+                                        
+                                            width:75%;
+                                            height:50px;
+                                            top:0px;
+                                            left:0px;
+                                            right:0;
+                                            margin:0px auto;
+                                            z-index:2;
+                                            opacity:1;
+                                            display:inline-block;
+                                            position:relative;
+                                            background:#FFFFFF;
+                                            border-radius:5px 5px 5px 5px;
+                                            transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+
+                                        `
+                                    
+
+                                    // STYLE MAIN NAV BAR MENU BUTTON CONTAINER
+                                    // //////////////////////////////////////
+
+                                        navBarPlateTenMenuButtonContainer.style = `
+                                        
+                                            width:24%;
+                                            height:50px;
+                                            top:0;
+                                            left:10px;
+                                            right:0;
+                                            bottom:0;
+                                            margin:0px auto;
+                                            opacity:1;
+                                            z-index:2;
+                                            display:inline-table;
+                                            position:relative;
+                                            background:#FFFFFF;
+                                            border-radius:5px 5px 5px 5px;
+                                            transition:all 600ms ease;
+                                            -o-transition:all 600ms ease;
+                                            -ms-transition:all 600ms ease;
+                                            -moz-transition:all 600ms ease;
+                                            -webkit-transition:all 600ms ease;
+
+
+                                        `
+
+
+                                // STYLE NAV BAR MENU BAR ELEMENT xxxxxxxxxxx
+                                // //////////////////////////////////////////
+
+                                    navBarPlateTenMainMenuBarContainer.style = `
+                                    
+                                        width:${screenWidthSelector};
+                                        height:50px;
+                                        top:20px;
+                                        left:0;
+                                        right:0;
+                                        bottom:0;
+                                        margin:0px auto;
+                                        opacity:1;
+                                        z-index:2;
+                                        display:block;
+                                        position:fixed;
+                                        transform:scale(1);
+                                        background:#FFFFFF;
+                                        border-radius:5px 5px 5px 5px;
+                                        transition:all 600ms ease;
+                                        -o-transition:all 600ms ease;
+                                        -ms-transition:all 600ms ease;
+                                        -moz-transition:all 600ms ease;
+                                        -webkit-transition:all 600ms ease;
+
+                                    `
+
+
+                                        // STYLE MENU ITEMS SIDE CONTAINER --
+                                        // //////////////////////////////////
+
+                                            navBarPlateTenMainMenuBarItemsSideContainer.style = `
+                                            
+                                                width:${menuItemsSideWidth}%;
+                                                height:50px;
+                                                float:left;
+                                                background:#2c2c2c;
+                                                border-radius:5px 0px 0px 5px;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                navBarPlateTenMainMenuBarItemsSideResizer.style = `
+                                                
+                                                    
+
+                                                `
+
+
+                                        // STYLE OPEN CLOSE MENU SIDE CONTAINER
+                                        // //////////////////////////////////
+
+                                            navBarPlateTenMainMenuBarOpenCloseSideContainer.style = `
+                                            
+                                                width:50px;
+                                                height:50px;
+                                                float:right;
+                                                background:green;
+                                                border-radius:0px 5px 5px 0px;
+                                                transition:all 600ms ease;
+                                                -o-transition:all 600ms ease;
+                                                -ms-transition:all 600ms ease;
+                                                -moz-transition:all 600ms ease;
+                                                -webkit-transition:all 600ms ease;
+
+                                            `
+
+                                                // STYLE OPEN CLOSE MENU CLICKERS CONTAINER
+                                                // //////////////////////////
+
+                                                    navBarPlateTenMainMenuBarOpenCloseSideClickerContainer.style = `
+                                                    
+
+
+                                                    `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                            // APPEND MAIN NAV BAR PLATE AND ELEMENTS =======
+                            // //////////////////////////////////////////////
+
+                                createNavBarCushion.appendChild(navBarPlateTenMainContainer)
+
+
+
+                                // APPEND MAIN NAV BAR PLATE ELEMENT --------
+                                // //////////////////////////////////////////
+
+                                    navBarPlateTenMainContainer.appendChild(navBarPlateTenMainElement)
+
+
+
+                                // APPEND MAIN NAV BAR MENU BUTTON CONTAINER
+                                // //////////////////////////////////////////
+
+                                    navBarPlateTenMainContainer.appendChild(navBarPlateTenMenuButtonContainer)
+
+
+
+                            // APPEND STYLE NAV BAR MENU BAR ELEMENT --------
+                            // //////////////////////////////////////////////
+
+                                navBarPlateTenMainContainer.appendChild(navBarPlateTenMainMenuBarContainer)
+
+
+                                    // APPEND MENU ITEMS SIDE CONTAINER -----
+                                    // //////////////////////////////////////
+
+                                        navBarPlateTenMainMenuBarContainer.appendChild(navBarPlateTenMainMenuBarItemsSideContainer)
+
+                                            navBarPlateTenMainMenuBarItemsSideContainer.appendChild(navBarPlateTenMainMenuBarItemsSideResizer)
+
+
+                                    // APPEND OPEN CLOSE MENU SIDE CONTAINER 
+                                    // //////////////////////////////////////
+
+                                        navBarPlateTenMainMenuBarContainer.appendChild(navBarPlateTenMainMenuBarOpenCloseSideContainer)
+
+                                            // APPEND OPEN CLOSE MENU CLICKERS CONTAINER
+                                            // //////////////////////////////
+
+                                                navBarPlateTenMainMenuBarOpenCloseSideContainer.appendChild(navBarPlateTenMainMenuBarOpenCloseSideClickerContainer)
+
                         
 
                     }
@@ -16398,107 +16842,184 @@
                     for ( navBarFinderCounter = 0; navBarFinderCounter < sectionLoopCounter; navBarFinderCounter ++ ) {
 
                         var getNavBarSetter = document.querySelector(`.navBar${classNumberMapper[navBarFinderCounter]}`)
-
-                        if ( getNavBarSetter == null || getNavBarSetter == undefined ) {
-
-                        } else {
-
-                            // GET VISIBLE NAV BAR CLASS NAME
-                            // //////////////
-
-                                var getVisibleNavBarClassName = getNavBarSetter.className
-
-                            // CHECK IF DOESNT HAVE CHILDREN THEN ADD NEW FROM SCRATCH
-                            // //////////////////////
-
-                                if ( 
-                                    
-                                        getNavBarSetter.children[0] == null || 
-                                        getNavBarSetter.children[0] == undefined 
-                                    
-                                    ) 
-                                    
-                                {
-
-                                    console.log("NEW COPY LOADING...")
-
-                                    // CHECK WHICH NUMBER IS INCLUDED IN CLASS NAME
-                                    // //////////////
-
-                                        
-                                        for ( navBarSeekerCounter = 0; navBarSeekerCounter < classNumberMapper.length; navBarSeekerCounter++ ) {
-
-                                            // IF NAV BAR IS A MATCH
-                                            // //////
-
-                                                if ( getVisibleNavBarClassName.includes(classNumberMapper[navBarSeekerCounter]) ) {
+                        var getNavBarSetterRegular = document.querySelector(`.navBar${navBarFinderCounter}`)
 
 
-                                                        // CREATE NEW COPY OF NAV BAR ITEMS
-                                                        // //////////////
+                            // IF ITS A TEXT NUMBER THEN RUN TEXT NUMBER COLLECTION
+                            // //////////////////////////////////////////////
 
-                                                            storeNavBarMainPlates[navBarSeekerCounter](classNumberMapper[navBarSeekerCounter])
+                                if ( getNavBarSetter != null || getNavBarSetter != undefined ) {
 
+
+
+
+                                    if ( getNavBarSetter == null || getNavBarSetter == undefined ) {
+
+                                    } else {
+
+                                        // GET VISIBLE NAV BAR CLASS NAME
+                                        // //////////////
+
+                                            var getVisibleNavBarClassName = getNavBarSetter.className
+
+                                        // CHECK IF DOESNT HAVE CHILDREN THEN ADD NEW FROM SCRATCH
+                                        // //////////////////////
+
+                                            if ( 
+                                                
+                                                    getNavBarSetter.children[0] == null || 
+                                                    getNavBarSetter.children[0] == undefined 
+                                                
+                                                ) 
+                                                
+                                            {
+
+                                                console.log("NEW COPY LOADING...")
+
+                                                // CHECK WHICH NUMBER IS INCLUDED IN CLASS NAME
+                                                // //////////////
+
+                                                    
+                                                    for ( navBarSeekerCounter = 0; navBarSeekerCounter < classNumberMapper.length; navBarSeekerCounter++ ) {
+
+                                                        // IF NAV BAR IS A MATCH
+                                                        // //////
+
+                                                            if ( getVisibleNavBarClassName.includes(classNumberMapper[navBarSeekerCounter]) ) {
+
+
+                                                                    // CREATE NEW COPY OF NAV BAR ITEMS
+                                                                    // //////////////
+
+                                                                        storeNavBarMainPlates[navBarSeekerCounter](classNumberMapper[navBarSeekerCounter])
+
+
+                                                            }
+
+                                                        // IF NAV BAR IS NOT A MATCH
+                                                        // //////
+
+                                                            else {
+
+                                                            }
+
+                                                    }
+
+                                            }
+
+                                        // AND IF HAS CHILDREN THEN REMOVE AND RESTART
+                                        // //////////////////////
+
+                                            else {
+
+                                                console.log("RESTARTING...")
+
+                                                // CHECK WHICH NUMBER IS INCLUDED IN CLASS NAME
+                                                // //////////////
+
+                                                    
+                                                    for ( navBarSeekerCounter = 0; navBarSeekerCounter < classNumberMapper.length; navBarSeekerCounter++ ) {
+
+                                                        // IF NAV BAR IS A MATCH
+                                                        // //////
+
+                                                            if ( getVisibleNavBarClassName.includes(classNumberMapper[navBarSeekerCounter]) ) {
+
+
+                                                                    // WIPE NAV BAR OF ALL CHILDREN
+                                                                    // //////////////
+                                
+                                                                        getNavBarSetter.removeChild(getNavBarSetter.children[0])
+                                
+                                                                    // CREATE NEW COPY OF NAV BAR ITEMS
+                                                                    // //////////////
+
+                                                                        storeNavBarMainPlates[navBarSeekerCounter](classNumberMapper[navBarSeekerCounter])
+
+
+                                                            }
+
+                                                        // IF NAV BAR IS NOT A MATCH
+                                                        // //////
+
+                                                            else {
+
+                                                            }
+
+                                                    }
+
+
+
+                                            }
+
+                                    }
+
+
+                                }
+
+
+                            // IF ITS A REGULAR NUMBER THEN RUN REGULAR NUMBER COLLECTION
+                            // //////////////////////////////////////////////
+
+                                else if ( getNavBarSetterRegular != null || getNavBarSetterRegular != undefined ) {
+
+                                    // CHECK IF SELECTOR IS ALIVE THEN SKIP -
+                                    // //////////////////////////////////////
+
+                                        if ( getNavBarSetterRegular == null || getNavBarSetterRegular == undefined ) {
+
+                                            console.log("SKIPPED BLOCK: " + getNavBarSetterRegular.className)
+
+                                        }
+
+                                    // AND IF ALIVE THEN SELECT -------------
+                                    // //////////////////////////////////////
+
+                                        else {
+
+                                            // MAKE SELECTED BLOCK NUMBER HERE ------
+                                            // //////////////////////////////////////
+        
+                                                var getSelectedBlockNumber = (navBarFinderCounter)
+
+                                                console.log("SHOW ME THAT NUMBER: " + getSelectedBlockNumber)
+
+                                            // CHECK IF SELECTED BLOCK HAS ANY CHILDREN
+                                            // //////////////////////////////
+
+                                                if ( getNavBarSetterRegular.children[0] != null || getNavBarSetterRegular.children[0] != undefined ) {
+
+                                                    // REMOVE ALL CHILDREN AND START NEW COPY
+                                                    // //////////////////////
+
+                                                        getNavBarSetterRegular.removeChild(getNavBarSetterRegular.children[0])
+
+                                                            // CREATE NEW COPY
+                                                            // //////////////
+
+                                                                storeNavBarMainPlates[getSelectedBlockNumber-1](getSelectedBlockNumber)
+
+                                                                    console.log("NEW COPY LOADED")
 
                                                 }
 
-                                            // IF NAV BAR IS NOT A MATCH
-                                            // //////
+                                            // AND IF BLOCK DOES NOT HAVE ANY CHILDREN
+                                            // //////////////////////////////
 
-                                                else {
+                                                else if ( getNavBarSetterRegular.children[0] == null || getNavBarSetterRegular.children[0] == undefined ) {
+
+                                                    // START NEW COPY xxxxxxx
+                                                    // //////////////////////
+
+                                                        storeNavBarMainPlates[getSelectedBlockNumber-1](getSelectedBlockNumber)
+
+                                                        console.log("NEW COPY LOADED")
 
                                                 }
 
                                         }
 
                                 }
-
-                            // AND IF HAS CHILDREN THEN REMOVE AND RESTART
-                            // //////////////////////
-
-                                else {
-
-                                    console.log("RESTARTING...")
-
-                                    // CHECK WHICH NUMBER IS INCLUDED IN CLASS NAME
-                                    // //////////////
-
-                                        
-                                        for ( navBarSeekerCounter = 0; navBarSeekerCounter < classNumberMapper.length; navBarSeekerCounter++ ) {
-
-                                            // IF NAV BAR IS A MATCH
-                                            // //////
-
-                                                if ( getVisibleNavBarClassName.includes(classNumberMapper[navBarSeekerCounter]) ) {
-
-
-                                                        // WIPE NAV BAR OF ALL CHILDREN
-                                                        // //////////////
-                    
-                                                            getNavBarSetter.removeChild(getNavBarSetter.children[0])
-                    
-                                                        // CREATE NEW COPY OF NAV BAR ITEMS
-                                                        // //////////////
-
-                                                            storeNavBarMainPlates[navBarSeekerCounter](classNumberMapper[navBarSeekerCounter])
-
-
-                                                }
-
-                                            // IF NAV BAR IS NOT A MATCH
-                                            // //////
-
-                                                else {
-
-                                                }
-
-                                        }
-
-
-
-                                }
-
-                        }
 
                     }
 
@@ -16538,8 +17059,8 @@
             // RUN TEXT COLLECTIONS -------------------------------------
             // //////////////////////////////////////////////////////////
 
-                getNavBarTitleTextItemFromTextDoc()
-                getNavBarItemLinksFromTextDoc()
+                // getNavBarTitleTextItemFromTextDoc()
+                // getNavBarItemLinksFromTextDoc()
                 // getNavBarItemsFromTextDoc()
                 getItemsFromHtmlBody()
 
